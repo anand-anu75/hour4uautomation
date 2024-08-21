@@ -39,10 +39,6 @@ public class Listeners extends TakeScreenshot implements ITestListener {
 			extentTest.log(Status.FAIL, "No assertion details available");
 		}
 
-		// Log the stack trace of the failure
-		// extentTest.log(Status.FAIL, "Failure details:" +
-		// getError(result.getThrowable()));
-
 		String testCaseName = result.getMethod().getMethodName();
 		try {
 			takeScreenshot(testCaseName);
