@@ -2,6 +2,7 @@
 *.png
 *.html
 test-output/
+screenshot/
 
 # Compiled class files
 *.class
