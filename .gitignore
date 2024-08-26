@@ -34,3 +34,7 @@ node_modules/
 local.properties
 credentials/
 secrets/
+*.html
+/test-output
+/test-output
+extent-report.html
