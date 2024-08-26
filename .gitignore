@@ -1,1 +1,36 @@
 /target/
+*.png
+*.html
+test-output/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Maven and Gradle directories
+/build/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# Node.js directories
+node_modules/
+
+# Environment-specific files
+.env
+local.properties
+credentials/
+secrets/
