@@ -32,7 +32,12 @@ public class ProofOfWorktest extends BaseTest {
 		Thread.sleep(1000);
 		actualURL = driver.getCurrentUrl();
 		softAssert.assertEquals(actualURL, expectedURL);
-		softAssert.assertAll();
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
 		
 		
 		proofOfWorktest = new ProofOfWork(driver);
@@ -53,7 +58,12 @@ public class ProofOfWorktest extends BaseTest {
 		Thread.sleep(1000);
 		actualURL = driver.getCurrentUrl();
 		softAssert.assertEquals(actualURL, expectedURL);
-		softAssert.assertAll();
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
 		
 		
 		proofOfWorktest = new ProofOfWork(driver);
@@ -79,7 +89,12 @@ public class ProofOfWorktest extends BaseTest {
 		Thread.sleep(1000);
 		actualURL = driver.getCurrentUrl();
 		softAssert.assertEquals(actualURL, expectedURL);
-		softAssert.assertAll();
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
 		
 		
 		proofOfWorktest = new ProofOfWork(driver);
@@ -114,7 +129,12 @@ public class ProofOfWorktest extends BaseTest {
 		Thread.sleep(1000);
 		actualURL = driver.getCurrentUrl();
 		softAssert.assertEquals(actualURL, expectedURL);
-		softAssert.assertAll();
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
 		
 		
 		proofOfWorktest = new ProofOfWork(driver);

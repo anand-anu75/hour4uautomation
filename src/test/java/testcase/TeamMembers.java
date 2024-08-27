@@ -26,7 +26,6 @@ public class TeamMembers extends BaseTest {
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
 		Thread.sleep(5000);
-		// softAssert.assertAll();
 		
 		teamMembers = new AddTeamMembers(driver);
         teamMembers.clickOnbtn_Users();
@@ -58,7 +57,7 @@ public class TeamMembers extends BaseTest {
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
 		Thread.sleep(5000);
-		// softAssert.assertAll();
+		
 		
 		teamMembers = new AddTeamMembers(driver);
         teamMembers.clickOnbtn_Users();
@@ -89,7 +88,7 @@ public class TeamMembers extends BaseTest {
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
 		Thread.sleep(5000);
-		// softAssert.assertAll();
+		
 		
 		teamMembers = new AddTeamMembers(driver);
         teamMembers.clickOnbtn_Users();
