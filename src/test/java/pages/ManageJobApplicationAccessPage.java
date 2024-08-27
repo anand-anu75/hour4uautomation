@@ -16,6 +16,8 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 	
 	WebElement btn_Approve;
 	
+	WebElement btn_Reject;
+	
 	public ManageJobApplicationAccessPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -38,5 +40,12 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Approve"))))
 			.click();
 	    }
+	
+	public void clickOnReject() {
+	       // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Reject"))))
+			.click();
+	    }
+
 
 }
