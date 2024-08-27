@@ -10,19 +10,56 @@ import pages.LoginPage;
 import utilities.ReadXLData;
 
 public class AppLogin extends BaseTest{
-	LoginPage Applogin;
+	AppLoginPage Applogin;
 	
 	static String actualURL;
 	
+	//Champ applied to Work Order using Workorbit Application
+	
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void Applogin(String MobileNumber) throws InterruptedException, IOException {
-		Applogin = new LoginPage(driver);
+	public void ApploginChamp(String MobileNumber,String EnterOTP) throws InterruptedException, IOException {
+		Applogin = new AppLoginPage(driver);
 		
 		driver.get(prop.getProperty("AppURL"));
 		
- 
+		Applogin.clickOnLetStartButton();
+		Applogin.clickOnSkiptButton();
+		Applogin.enterMobileNumber(MobileNumber);
+		Applogin.clickOnNextButton();
+		Thread.sleep(2000);
+		Applogin.enterOTP(EnterOTP);
+		Thread.sleep(4000);
+		Applogin.clickOnNext2Button();
+		Applogin.clickOnWorkorbitButton();
+		Applogin.clickOnApplyWorkorbitButton();
+	}
+	
+	//Vendor applied to Work Order using Workorbit Application
+	
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
+	public void ApploginVendor(String MobileNumber,String EnterOTP,String VendorName,String EnterDOB) 
+			throws InterruptedException, IOException {
+		Applogin = new AppLoginPage(driver);
 		
- 
+		driver.get(prop.getProperty("AppURL"));
+		
+		Applogin.clickOnLetStartButton();
+		Applogin.clickOnSkiptButton();
+		Applogin.enterMobileNumber(MobileNumber);
+		Applogin.clickOnNextButton();
+		Thread.sleep(2000);
+		Applogin.enterOTP(EnterOTP);
+		Thread.sleep(3000);
+		Applogin.clickOnNext2Button();
+		Thread.sleep(2000);
+	//	Applogin.enterVendorName(VendorName);
+	//	Applogin.enterOTP(EnterDOB);
+		Applogin.clickOnGenderMale();
+		Thread.sleep(3000);
+		Applogin.clickOnNext3();
+		System.out.println("Next button clicked");
+		Applogin.clickOnWorkorbitButton();
+		Applogin.clickOnApplyWorkorbitButton();
 	}
 
 }

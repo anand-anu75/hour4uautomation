@@ -74,6 +74,13 @@ public class CreateProject extends BaseTest {
         String ProjectCreatedSuccesfully = ProjectPage.ProjectCreatedSuccesfully();
         softAssert.assertEquals(ProjectCreatedSuccesfully, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Test for Selecting Invalid Project Type for Self Enterprise
@@ -99,6 +106,13 @@ public class CreateProject extends BaseTest {
         String SelectedImproperProjectType = ProjectPage.SelectedImproperProjectType();
         softAssert.assertEquals(SelectedImproperProjectType, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Test for Invalid Project Description for Self Enterprise
@@ -126,6 +140,13 @@ public class CreateProject extends BaseTest {
         String ProperProjectDescription = ProjectPage.EnterProperProjectDescription();
         softAssert.assertEquals(ProperProjectDescription, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Test for Invalid Field Name for Self Enterprise
@@ -175,6 +196,13 @@ public class CreateProject extends BaseTest {
         String InvalidFieldName = ProjectPage.InvalidFieldName();
         softAssert.assertEquals(InvalidFieldName, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     // Test for Invalid Field Type for Self Enterprise
@@ -222,6 +250,13 @@ public class CreateProject extends BaseTest {
         String InvalidFieldType = ProjectPage.InvalidFielType() ;
         softAssert.assertEquals(InvalidFieldType, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Test for Invalid Frequency for Self Enterprise
@@ -271,6 +306,13 @@ public class CreateProject extends BaseTest {
         String InvalidFrequency = ProjectPage.InvalidFrequency();
         softAssert.assertEquals(InvalidFrequency, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Test for Invalid Radius for Self Enterprise
@@ -347,6 +389,13 @@ public class CreateProject extends BaseTest {
         String InvalidProjectTitle = ProjectPage.InvalidProjectTitle();
         softAssert.assertEquals(InvalidProjectTitle, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Create Project for New Enterprise
@@ -423,6 +472,13 @@ public class CreateProject extends BaseTest {
         String ProjectEnterpriseCreatedSuccesfully = ProjectPage.EnterpriseProjectCreatedSuccesfully();
         softAssert.assertEquals(ProjectEnterpriseCreatedSuccesfully, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Create Project for Existing Enterprise
@@ -500,6 +556,13 @@ public class CreateProject extends BaseTest {
         String ExistingCreatedSuccesfully = ProjectPage.ExistingCreatedSuccesfully();
         softAssert.assertEquals(ExistingCreatedSuccesfully, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Existing Enterprise - Invalid Project Type
@@ -525,6 +588,13 @@ public class CreateProject extends BaseTest {
         String ExistingInvalidProjectType = ProjectPage.ExistingInvalidProjectTitle();
         softAssert.assertEquals(ExistingInvalidProjectType, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     // Existing Enterprise - Invalid Project Title
@@ -555,6 +625,13 @@ public class CreateProject extends BaseTest {
         String InvalidProjectTitle = ProjectPage.InvalidProjectTitle();
         softAssert.assertEquals(InvalidProjectTitle, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Existing Enterprise - Invalid Project Description
@@ -584,6 +661,13 @@ public class CreateProject extends BaseTest {
         String InvalidProjectDescription = ProjectPage.EnterProperProjectDescription();
         softAssert.assertEquals(InvalidProjectDescription, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Existing Enterprise - Invalid Field Name
@@ -636,6 +720,13 @@ public class CreateProject extends BaseTest {
         String InvalidFieldName = ProjectPage.InvalidFieldName();
         softAssert.assertEquals(InvalidFieldName, ExpectedResult);
 	    softAssert.assertAll();
+	    
+	    try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
 }
     
     //Existing Enterprise - Invalid Frequency
@@ -687,6 +778,13 @@ public class CreateProject extends BaseTest {
     String InvalidFrequency = ProjectPage.InvalidFrequency();
     softAssert.assertEquals(InvalidFrequency, ExpectedResult);
 	softAssert.assertAll();
+	
+	try {
+		softAssert.assertAll();
+	} catch (AssertionError e) {
+		assertionMessage.set(e.getMessage());
+		throw e;
+	}
 }
     
     //Existing Enterprise - Invalid Radius
@@ -739,6 +837,13 @@ public class CreateProject extends BaseTest {
     String InvalidRadius = ProjectPage.InvalidRadius();
     softAssert.assertEquals(InvalidRadius, ExpectedResult);
 	softAssert.assertAll();
+	
+	try {
+		softAssert.assertAll();
+	} catch (AssertionError e) {
+		assertionMessage.set(e.getMessage());
+		throw e;
+	}
 }
    
     //Self Enterprise - Send Proposals Without Bills
@@ -800,6 +905,13 @@ public class CreateProject extends BaseTest {
         String SendProposalWithoutBill = ProjectPage.ProjectCreatedSuccesfully();
         softAssert.assertEquals(SendProposalWithoutBill, ExpectedResult);
 		softAssert.assertAll();
+		
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     

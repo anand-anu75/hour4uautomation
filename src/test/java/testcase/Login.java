@@ -14,6 +14,8 @@ public class Login extends BaseTest {
 	LoginPage login;
 
 	static String actualURL;
+	
+	//Testing
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	public void login(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
