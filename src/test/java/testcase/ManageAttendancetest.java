@@ -57,7 +57,7 @@ static String actualURL;
 		    }
 		}
 		manageAttendancetest.clickOn_Openmenutoexplore();
-		manageAttendancetest.clickOn_ViewJobSeekerSchedules();
+		manageAttendancetest.clickOn_ViewJobSeekerSchedules1();
 		String actualMessage = manageAttendancetest.get_Actualmessage();
 		softAssert.assertEquals(actualMessage, expectedMessage);
 		try {
@@ -93,7 +93,7 @@ static String actualURL;
 		manageAttendancetest.clickOnbtn_Workorder();
 		manageAttendancetest.clickOnbtn_More1();
 		manageAttendancetest.clickOn_ViewJobSeekerSchedules();
-		String actualMessage = manageAttendancetest.get_Actualmessage();
+		String actualMessage = manageAttendancetest.get_Actualmessage1();
 		softAssert.assertEquals(actualMessage, expectedMessage);
 		try {
 			softAssert.assertAll();
@@ -129,7 +129,7 @@ static String actualURL;
 		Thread.sleep(2000);
 		manageAttendancetest.clickOn_Openmenutoexplore();
 		manageAttendancetest.clickOn_ViewJobSeekerSchedules1();
-		String actualMessage = manageAttendancetest.get_Actualmessage1();
+		String actualMessage = manageAttendancetest.get_Actualmessage();
 		softAssert.assertEquals(actualMessage, expectedMessage);
 		try {
 			softAssert.assertAll();

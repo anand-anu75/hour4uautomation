@@ -76,7 +76,7 @@ public class ProofOfWorktest extends BaseTest {
 		Actions actions = new Actions(driver);
         actions.sendKeys(Keys.ARROW_LEFT).perform();
         Thread.sleep(1000);
-		proofOfWorktest.clickOnbtn_More();
+        proofOfWorktest.clickOn_Openmenutoexplore();
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
 		
 	}
