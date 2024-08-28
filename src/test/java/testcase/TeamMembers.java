@@ -12,11 +12,12 @@ import utilities.ReadXLData;
 public class TeamMembers extends BaseTest {
 	AddTeamMembers teamMembers;
 	LoginPage login;
+	static String actualURL;
 
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 
-	public void teamMember(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectedMessage)
+	public void teamMember(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectedURL)
 			throws InterruptedException {
 		login = new LoginPage(driver);
 
@@ -35,8 +36,9 @@ public class TeamMembers extends BaseTest {
 		teamMembers.enterMobile(mobile);
 		teamMembers.enterEmail(email);
 		teamMembers.click_On_AddTeamMember_Button();
-		String actualMessage = teamMembers.get_MessageForTeamMemberAddedSuccessfully();
-		softAssert.assertEquals(actualMessage, expectedMessage);
+		actualURL = driver.getCurrentUrl();
+		softAssert.assertEquals(actualURL, expectedURL);
+
 		try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
@@ -120,7 +122,7 @@ public class TeamMembers extends BaseTest {
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
 		Thread.sleep(5000);
-		// softAssert.assertAll();
+		
 		
 		teamMembers = new AddTeamMembers(driver);
         teamMembers.clickOnbtn_Users();

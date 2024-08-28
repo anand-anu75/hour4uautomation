@@ -19,7 +19,6 @@ public class AddTeamMembers extends BaseTest {
     WebElement txt_Mobile;
     WebElement txt_Email;
     WebElement btn_AddTeamMember;
-    WebElement expected_Message;
 	WebElement errorMessage_InvalidName;
 	WebElement errorMessage_InvalidMobile;
 	WebElement errorMessage_InvalidEmail;
@@ -72,13 +71,7 @@ public class AddTeamMembers extends BaseTest {
        }catch(Exception e) {
 			System.out.println("complete");
 		}
-
-	}
-    
-    public String get_MessageForTeamMemberAddedSuccessfully() {
-   	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("expected_Message")))).getText();
-    	
-   }
+    }
     
     public String get_ErrorMessageForInvalidName() {
     	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_InvalidName")))).getText();
