@@ -54,7 +54,7 @@ public class BaseTest {
 		sparkReporter.config().setReportName("Selenium Test Report");
 	}
 
-	@BeforeMethod
+	@BeforeTest
 	public void setup() throws IOException {
 
 		if (driver == null) {
@@ -96,7 +96,7 @@ public class BaseTest {
 		return assertionMessage.get();
 	}
 
-	@AfterMethod
+	@AfterTest
 	public void tearDown() {
 		driver.close();
 
