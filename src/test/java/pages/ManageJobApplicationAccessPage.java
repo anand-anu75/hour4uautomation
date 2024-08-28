@@ -16,8 +16,6 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 	
 	WebElement btn_Approve;
 	
-	WebElement btn_Reject;
-	
 	public ManageJobApplicationAccessPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

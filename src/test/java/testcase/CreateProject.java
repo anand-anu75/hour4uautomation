@@ -73,9 +73,7 @@ public class CreateProject extends BaseTest {
         
         String ProjectCreatedSuccesfully = ProjectPage.ProjectCreatedSuccesfully();
         softAssert.assertEquals(ProjectCreatedSuccesfully, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -105,9 +103,7 @@ public class CreateProject extends BaseTest {
         
         String SelectedImproperProjectType = ProjectPage.SelectedImproperProjectType();
         softAssert.assertEquals(SelectedImproperProjectType, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -139,9 +135,7 @@ public class CreateProject extends BaseTest {
         
         String ProperProjectDescription = ProjectPage.EnterProperProjectDescription();
         softAssert.assertEquals(ProperProjectDescription, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -195,9 +189,7 @@ public class CreateProject extends BaseTest {
         
         String InvalidFieldName = ProjectPage.InvalidFieldName();
         softAssert.assertEquals(InvalidFieldName, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -249,9 +241,7 @@ public class CreateProject extends BaseTest {
         
         String InvalidFieldType = ProjectPage.InvalidFielType() ;
         softAssert.assertEquals(InvalidFieldType, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -305,9 +295,7 @@ public class CreateProject extends BaseTest {
         
         String InvalidFrequency = ProjectPage.InvalidFrequency();
         softAssert.assertEquals(InvalidFrequency, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -361,7 +349,12 @@ public class CreateProject extends BaseTest {
         
         String InvalidRadius = ProjectPage.InvalidRadius();
         softAssert.assertEquals(InvalidRadius, ExpectedResult);
-		softAssert.assertAll();
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
     
     //Test for Invalid Project Title for Self Enterprise
@@ -388,9 +381,7 @@ public class CreateProject extends BaseTest {
         
         String InvalidProjectTitle = ProjectPage.InvalidProjectTitle();
         softAssert.assertEquals(InvalidProjectTitle, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -471,9 +462,7 @@ public class CreateProject extends BaseTest {
         
         String ProjectEnterpriseCreatedSuccesfully = ProjectPage.EnterpriseProjectCreatedSuccesfully();
         softAssert.assertEquals(ProjectEnterpriseCreatedSuccesfully, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -555,9 +544,7 @@ public class CreateProject extends BaseTest {
         
         String ExistingCreatedSuccesfully = ProjectPage.ExistingCreatedSuccesfully();
         softAssert.assertEquals(ExistingCreatedSuccesfully, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -587,9 +574,7 @@ public class CreateProject extends BaseTest {
         
         String ExistingInvalidProjectType = ProjectPage.ExistingInvalidProjectTitle();
         softAssert.assertEquals(ExistingInvalidProjectType, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -624,9 +609,7 @@ public class CreateProject extends BaseTest {
         
         String InvalidProjectTitle = ProjectPage.InvalidProjectTitle();
         softAssert.assertEquals(InvalidProjectTitle, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -660,9 +643,7 @@ public class CreateProject extends BaseTest {
         
         String InvalidProjectDescription = ProjectPage.EnterProperProjectDescription();
         softAssert.assertEquals(InvalidProjectDescription, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -719,9 +700,7 @@ public class CreateProject extends BaseTest {
     
         String InvalidFieldName = ProjectPage.InvalidFieldName();
         softAssert.assertEquals(InvalidFieldName, ExpectedResult);
-	    softAssert.assertAll();
-	    
-	    try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
@@ -777,9 +756,7 @@ public class CreateProject extends BaseTest {
     
     String InvalidFrequency = ProjectPage.InvalidFrequency();
     softAssert.assertEquals(InvalidFrequency, ExpectedResult);
-	softAssert.assertAll();
-	
-	try {
+    try {
 		softAssert.assertAll();
 	} catch (AssertionError e) {
 		assertionMessage.set(e.getMessage());
@@ -836,9 +813,7 @@ public class CreateProject extends BaseTest {
     
     String InvalidRadius = ProjectPage.InvalidRadius();
     softAssert.assertEquals(InvalidRadius, ExpectedResult);
-	softAssert.assertAll();
-	
-	try {
+    try {
 		softAssert.assertAll();
 	} catch (AssertionError e) {
 		assertionMessage.set(e.getMessage());
@@ -904,9 +879,7 @@ public class CreateProject extends BaseTest {
         
         String SendProposalWithoutBill = ProjectPage.ProjectCreatedSuccesfully();
         softAssert.assertEquals(SendProposalWithoutBill, ExpectedResult);
-		softAssert.assertAll();
-		
-		try {
+        try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
