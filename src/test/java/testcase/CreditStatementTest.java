@@ -1,16 +1,20 @@
 package testcase;
 
 import java.io.IOException;
+
 import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.CreditStatement;
 import utilities.ReadXLData;
+
+@Listeners(base.Listeners.class)
 
 public class CreditStatementTest extends BaseTest {
 	CreditStatement CreditStatementTest;

@@ -2,12 +2,15 @@ package testcase;
 
 import static org.testng.Assert.assertEquals;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.AddTeamMembers;
 import pages.LoginPage;
 import utilities.ReadXLData;
+
+@Listeners(base.Listeners.class)
 
 public class TeamMembers extends BaseTest {
 	AddTeamMembers teamMembers;
