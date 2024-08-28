@@ -2,12 +2,14 @@ package testcase;
 
 import java.util.Set;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.ViewAttendanceChamps;
 import utilities.ReadXLData;
 
+@Listeners(base.Listeners.class)
 public class ViewAttendanceChampsTest extends BaseTest {
     private ViewAttendanceChamps viewAttendanceChamps;
 
@@ -30,8 +32,12 @@ public class ViewAttendanceChampsTest extends BaseTest {
         String actualMessage = viewAttendanceChamps.getActualMessage();
         softAssert.assertEquals(actualMessage, expectedMessage);
 
-        // Assert all soft assertions
-        softAssert.assertAll();
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
 
     /**
@@ -71,8 +77,12 @@ public class ViewAttendanceChampsTest extends BaseTest {
         String actualMessage = viewAttendanceChamps.getActualMessage();
         softAssert.assertEquals(actualMessage, expectedMessage);
 
-        // Assert all soft assertions
-        softAssert.assertAll();
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
 
     /**
@@ -102,7 +112,11 @@ public class ViewAttendanceChampsTest extends BaseTest {
         String actualMessage = viewAttendanceChamps.getActualMessage();
         softAssert.assertEquals(actualMessage, expectedMessage);
 
-        // Assert all soft assertions
-        softAssert.assertAll();
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
 }

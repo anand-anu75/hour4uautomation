@@ -2,11 +2,13 @@ package testcase;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.AddChamps;
 import utilities.ReadXLData;
 import base.BaseTest;
 
+@Listeners(base.Listeners.class)
 public class AddChampsTest extends BaseTest {
 
     private AddChamps addChamps;
@@ -37,7 +39,12 @@ public class AddChampsTest extends BaseTest {
         String actualSuccessMessage = addChamps.getSuccessMessage();
         softAssert.assertEquals(actualSuccessMessage, expectedSuccessMessage);
 
-        softAssert.assertAll();
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     }
 
     /**
@@ -72,7 +79,13 @@ public class AddChampsTest extends BaseTest {
         // Navigate back to the Users section
         addChamps.navigateToUsersSection();
 
-        softAssert.assertAll();
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+    
     }
 
     /**
@@ -101,6 +114,12 @@ public class AddChampsTest extends BaseTest {
         String actualErrorMessage = addChamps.getErrorMessageForInvalidName();
         softAssert.assertEquals(actualErrorMessage, expectedErrorMessage);
 
-        softAssert.assertAll();
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+
     }
 }

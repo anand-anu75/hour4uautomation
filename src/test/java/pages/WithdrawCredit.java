@@ -79,7 +79,7 @@ public class WithdrawCredit extends BaseTest {
         InputUpiId.sendKeys(Upi);  // Enter the UPI from Excel
     }
     
- // Method to enter the Remark
+    // Method to enter the Remark
     public void enterRemark(String Remark) {
     	InputRemarks = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("InputRemarks"))));
     	InputRemarks.click();
@@ -87,48 +87,98 @@ public class WithdrawCredit extends BaseTest {
     }
     
     
- // Method to click the "Checkbox" button
+    // Method to click the "Checkbox" button
     public void clickCheckBox() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("InputCheckBox")))).click();
     }
     
- // Method to enter the Otp
+    // Method to enter the Otp
     public void enterOtp(String Otp) {
     	InputVerificationCode = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("InputVerificationCode"))));
     	InputVerificationCode.click();
     	InputVerificationCode.sendKeys(Otp);
     }
     
- // Method to click the "Radio" button
+    // Method to click the "Radio" button
     public void clickRadioButton() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("ClickRadioButton")))).click();
     }
     
- // Method to enter the BankAccount Number
+    // Method to enter the BankAccount Number
     public void enterBankAccount(String BankAccountNumber) {
     	InputBankAccount = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("InputBankAccount"))));
     	InputBankAccount.click();
     	InputBankAccount.sendKeys(BankAccountNumber);
     }
     
- // Method to enter the BankAccount Number
+    // Method to enter the BankAccount Number
     public void enterBankAccountConfirm(String BankAccountNumberConfirm) {
     	InputBankAccountConfirm = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("InputBankAccountConfirm"))));
     	InputBankAccountConfirm.click();
     	InputBankAccountConfirm.sendKeys(BankAccountNumberConfirm);
     }
     
- // Method to enter the IFSC code
+    // Method to enter the IFSC code
     public void enterIFSCcode(String IFSCcode) {
     	InputIfscCode = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("InputIfscCode"))));
     	InputIfscCode.click();
     	InputIfscCode.sendKeys(IFSCcode);
     }
-    
- // Method to enter the IFSC code
+     
+    // Method to enter the IFSC code
     public void enterAccountHolderName(String AccountHolderName) {
     	InputAccountHolderName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("InputAccountHolderName"))));
     	InputAccountHolderName.click();
     	InputAccountHolderName.sendKeys(AccountHolderName);
+    }
+    
+    // Method to get the Confirm Payment Status 
+    public String getPaymentStatus() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("ConfirmPaymentStatus")))).getText();
+    }
+    
+    // Method to get the Confirm Credit Status 
+    public String getCreditStatus() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("ConfirmCreditStatus")))).getText();
+    }
+    
+    // Method to get the Confirm Credit Type Task
+    public String getCreditTypeTask() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("ConfirmCreditTypeTask")))).getText();
+    }
+    
+    // Method to get the Success message 
+    public String getSuccessMessage() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("SuccessMessage")))).getText();
+    }
+    
+    // Method to get the error message for an invalid UPI
+    public String getErrorMessageForInvalidUpi() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidUpi")))).getText();
+    }
+    
+    // Method to get the error message for an invalid BankAccount number
+    public String getErrorMessageForInvalidBankAccountNumber() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidBankAccountNumber")))).getText();
+    }
+    
+    // Method to get the error message for Invalid IFSC code
+    public String getErrorMessageForInvalidIFSCcode() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidIFSCcode")))).getText();
+    }
+    
+    // Method to get the error message for Short IFSC code
+    public String getErrorMessageForShortIFSCcode() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("ShortIFSCcode")))).getText();
+    }
+    
+    // Method to get the error message for Invalid Account Holder name
+    public String getErrorMessageForInvalidName() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidName")))).getText();
+    }
+    
+    // Method to get the error message for Short Account Holder name
+    public String getErrorMessageForShortName() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("ShortName")))).getText();
     }
 }

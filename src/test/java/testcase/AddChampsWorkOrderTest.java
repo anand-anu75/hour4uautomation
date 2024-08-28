@@ -2,12 +2,14 @@ package testcase;
 
 import java.util.Set;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.AddChampsWorkOrder;
 import utilities.ReadXLData;
 
+@Listeners(base.Listeners.class)
 public class AddChampsWorkOrderTest extends BaseTest {
 
     private AddChampsWorkOrder addChampsWorkorder;
@@ -40,7 +42,13 @@ public class AddChampsWorkOrderTest extends BaseTest {
         String actualSuccessMessage = addChampsWorkorder.getSuccessMessage();
         softAssert.assertEquals(actualSuccessMessage, expectedSuccessMessage);
 
-        softAssert.assertAll(); // Final assertion check
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+
     }
 
     /**
@@ -71,7 +79,13 @@ public class AddChampsWorkOrderTest extends BaseTest {
         String actualSuccessMessage = addChampsWorkorder.getSuccessMessage();
         softAssert.assertEquals(actualSuccessMessage, expectedSuccessMessage);
 
-        softAssert.assertAll(); // Final assertion check
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+
     }
 
     /**
@@ -121,7 +135,13 @@ public class AddChampsWorkOrderTest extends BaseTest {
         String actualSuccessMessage = addChampsWorkorder.getSuccessMessage();
         softAssert.assertEquals(actualSuccessMessage, expectedSuccessMessage);
 
-        softAssert.assertAll(); // Final assertion check
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+
     }
 
     /**
@@ -162,7 +182,13 @@ public class AddChampsWorkOrderTest extends BaseTest {
         String actualSuccessMessage = addChampsWorkorder.getSuccessMessage();
         softAssert.assertEquals(actualSuccessMessage, expectedSuccessMessage);
 
-        softAssert.assertAll(); // Final assertion check
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+
     }
 
     /**
@@ -193,7 +219,13 @@ public class AddChampsWorkOrderTest extends BaseTest {
         String actualErrorMessage = addChampsWorkorder.getErrorMessage();
         softAssert.assertEquals(actualErrorMessage, expectedErrorMessage);
 
-        softAssert.assertAll(); // Final assertion check
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+
     }
 
     /**
@@ -224,7 +256,13 @@ public class AddChampsWorkOrderTest extends BaseTest {
         String actualErrorMessage = addChampsWorkorder.getErrorMessage();
         softAssert.assertEquals(actualErrorMessage, expectedErrorMessage);
 
-        softAssert.assertAll(); // Final assertion check
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+
     }
 
     /**
@@ -274,6 +312,12 @@ public class AddChampsWorkOrderTest extends BaseTest {
         String actualErrorMessage = addChampsWorkorder.getErrorMessage();
         softAssert.assertEquals(actualErrorMessage, expectedErrorMessage);
 
-        softAssert.assertAll(); // Final assertion check
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+
     }
 }
