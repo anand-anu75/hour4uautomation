@@ -320,4 +320,45 @@ public class AddChampsWorkOrderTest extends BaseTest {
 		}
 
     }
+    
+    @Test(dependsOnMethods = "testcase.Login.login", dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    public void addChamp_via_dashBoard2_Error(String expectedErrorMessage) {
+
+        addChampsWorkorder = new AddChampsWorkOrder(driver);
+
+        addChampsWorkorder.clickMoreOptions(); // Click on More Options
+        addChampsWorkorder.clickJobSeeker1(); // Click on the first Job Seeker
+
+        // Wait for 5 seconds to allow any UI changes to take effect
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace(); // Handle the exception if sleep is interrupted
+        }
+
+        addChampsWorkorder.clickMoreOptions(); // Click on More Options again
+        addChampsWorkorder.clickAddChamps(); // Click to Add Champs
+
+        // Wait for 5 seconds to allow any UI changes to take effect
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace(); // Handle the exception if sleep is interrupted
+        }
+
+        addChampsWorkorder.clickSelectChamp(); // Select a Champ
+        addChampsWorkorder.clickSendReq(); // Send the Request
+
+     // Assert error message
+        String actualErrorMessage = addChampsWorkorder.getErrorMessage();
+        softAssert.assertEquals(actualErrorMessage, expectedErrorMessage);
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+
+    }
+
 }
