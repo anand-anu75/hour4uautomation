@@ -53,8 +53,8 @@ static String actualURL;
 		    }
 		}
 		manageAttendancetest.clickOn_Openmenutoexplore();
-		manageAttendancetest.clickOn_ViewJobSeekerSchedules1();
-		String actualMessage = manageAttendancetest.get_Actualmessage1();
+		manageAttendancetest.clickOn_ViewJobSeekerSchedules();
+		String actualMessage = manageAttendancetest.get_Actualmessage();
 		softAssert.assertEquals(actualMessage, expectedMessage);
 		try {
 			softAssert.assertAll();
