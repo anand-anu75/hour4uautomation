@@ -129,7 +129,12 @@ public class ManageDownloadstest extends BaseTest {
 			Thread.sleep(1000);
 			actualURL = driver.getCurrentUrl();
 			softAssert.assertEquals(actualURL, expectedURL);
-			softAssert.assertAll();
+			try {
+				softAssert.assertAll();
+			} catch (AssertionError e) {
+				assertionMessage.set(e.getMessage());
+				throw e;
+			}
 			
 			
 			managedownloadtest = new ManageDownloads(driver);
