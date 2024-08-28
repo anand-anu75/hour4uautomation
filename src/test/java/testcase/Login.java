@@ -2,6 +2,10 @@ package testcase;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import base.BaseTest;
@@ -18,13 +22,13 @@ public class Login extends BaseTest {
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	public void login(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
-
 		login.clickOnLink_SignInUsingOtp();
 		login.enterPhoneOrEmail(phoneOrEmail);
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
 		Thread.sleep(1000);
+		
 		actualURL = driver.getCurrentUrl();
 		softAssert.assertEquals(actualURL, expectedURL);
 
@@ -46,6 +50,21 @@ public class Login extends BaseTest {
 		login.enterPassword(password);
 		login.clickOnBtn_Login();
 		Thread.sleep(1000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/app-main-layout/codemiro-layout/div/mat-sidenav-container/mat-sidenav[1]/div/codemiro-sidenav/div/div[2]/div[1]/div[2]/div/div/div/codemiro-sidenav-item[4]/div/a/span"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/app-main-layout/codemiro-layout/div/mat-sidenav-container/mat-sidenav-content/main/hour4u-admin-credit-list/div/div[3]/div/div/table/tbody/tr[1]/td[9]/div/div/div/button/span"))).click();
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='stack-overlay absolute left-0 top-0 z-50 h-full w-full']")));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='overflow-hidden bg-surface d:pt-12']")));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Mobile number']"))).sendKeys("123");
+		WebElement parentframe = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='razorpay-checkout-frame']"))); 
+		driver.switchTo().frame(parentframe);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Mobile number']"))).sendKeys("123");
+		
+		
+		
+		
+		
+		
 		actualURL = driver.getCurrentUrl();
 		softAssert.assertEquals(actualURL, expectedURL);
 		try {
