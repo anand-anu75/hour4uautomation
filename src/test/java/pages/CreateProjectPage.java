@@ -155,6 +155,12 @@ public class CreateProjectPage extends BaseTest{
 	
 	WebElement btn_ToggleSwitch;
 	
+	WebElement msg_ProjectCreatedSuccessfullyClose;
+	
+	WebElement msg_InvalidEnterprise;
+	
+	WebElement msg_SelectEnterprise;
+	
 	// Initializing Driver
 	
 	public CreateProjectPage(WebDriver driver) {
@@ -717,7 +723,7 @@ public void ClickOnAddAditionalItems() {
 	.click();
 }
 
-public String ExistingInvalidProjectTitle() {
+public String ExistingInvalidProjectType() {
 	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("SelectedImproperProjectType_msg")))).getText();
 	
 }
@@ -727,6 +733,24 @@ public void ClickOnToggleSwitch() {
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ToggleSwitch"))))
 	.click();
 }
+
+public void ClickOnCloseMsgProjectCreatedSuccessfully() {
+    
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_ProjectCreatedSuccessfullyClose"))))
+	.click();
+}
+
+public String ExistingInvalidEnterprise() {
+	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_InvalidEnterprise")))).getText();
+	
+}
+
+public String AcceptRejectInvalidEnterprise() {
+	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_SelectEnterprise")))).getText();
+	
+}
+
+
 
 
 }

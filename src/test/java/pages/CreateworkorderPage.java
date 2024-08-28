@@ -47,6 +47,8 @@ public class CreateworkorderPage extends BaseTest {
     
     WebElement btn_SubmitforApproval;
     
+    WebElement msg_WorkOrderCreatedSuccessfully;
+    
     
     
     
@@ -157,7 +159,7 @@ public class CreateworkorderPage extends BaseTest {
      } 
     
     public String getSuccessmessage() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("SuccessmessageXpath")))).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_WorkOrderCreatedSuccessfully")))).getText();
     }
     
     public String getLocationErrorMessage() {
