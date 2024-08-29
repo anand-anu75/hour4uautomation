@@ -70,28 +70,35 @@ public class DashboardAndDataPopulatePage extends BaseTest {
         wait.until(ExpectedConditions.elementToBeClickable(btn_CityDelhiOption)).click();
     }
 
-    // Method to check the Workorders label
+ // Method to retrieve the text of the Workorders label
     public String getWorkordersText() {
-        lbl_Workorders = driver.findElement(By.xpath(loc.getProperty("lbl_Workorders_XPath")));
+        WebElement lbl_Workorders = driver.findElement(By.xpath(loc.getProperty("lbl_Workorders_XPath")));
         return lbl_Workorders.getText();
     }
 
-    // Method to check the Fulfilment label
+    // Method to retrieve the text of the Fulfilment label
     public String getFulfilmentText() {
-        lbl_Fulfilment = driver.findElement(By.xpath(loc.getProperty("lbl_Fulfilment_XPath")));
+        WebElement lbl_Fulfilment = driver.findElement(By.xpath(loc.getProperty("lbl_Fulfilment_XPath")));
         return lbl_Fulfilment.getText();
     }
 
-    // Method to check the Completed Tasks label
+    // Method to retrieve the text of the Completed Tasks label
     public String getCompletedTasksText() {
-        lbl_CompletedTasks = driver.findElement(By.xpath(loc.getProperty("lbl_CompletedTasks_XPath")));
+        WebElement lbl_CompletedTasks = driver.findElement(By.xpath(loc.getProperty("lbl_CompletedTasks_XPath")));
         return lbl_CompletedTasks.getText();
     }
 
-    // Method to select items per page from the dropdown
-    public void selectItemsPerPage(String items) {
-        ddl_ItemsPerPage = driver.findElement(By.xpath(loc.getProperty("ddl_ItemsPerPage_XPath")));
-        ddl_ItemsPerPage.click();
-        // Logic to select the desired option can be added here
+    public String getPaginatorRangeText() {
+        WebElement paginatorRangeLabel = driver.findElement(By.xpath(loc.getProperty("paginatorRangeLabel_XPath")));
+        return paginatorRangeLabel.getText();
+    }
+    
+    public void clickOnThirdMatSelectValue() {
+        WebElement thirdMatSelectValue = driver.findElement(By.xpath(loc.getProperty("thirdMatSelectValue_XPath")));
+        wait.until(ExpectedConditions.elementToBeClickable(thirdMatSelectValue)).click();
+    }
+    public void selectOptionTwenty() {
+        WebElement optionTwenty = driver.findElement(By.xpath(loc.getProperty("optionTwenty_XPath")));
+        wait.until(ExpectedConditions.elementToBeClickable(optionTwenty)).click();
     }
 }
