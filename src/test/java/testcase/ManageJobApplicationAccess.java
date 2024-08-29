@@ -13,7 +13,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 	
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void JobApplicationApproval(String Name) throws InterruptedException {
-    	JobApplicationPage = new ManageJobApplicationAccessPage(driver);
+    	JobApplicationPage = new ManageJobApplicationAccessPage(driver);                
     	
     	JobApplicationPage.clickOnWorkorderTab();
     //	Thread.sleep(3000);

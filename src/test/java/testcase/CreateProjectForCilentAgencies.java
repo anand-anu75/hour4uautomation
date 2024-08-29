@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.CreateProjectPage;
+import pages.CreateworkorderPage;
 import pages.InvitingclientPage;
 import utilities.ReadXLData;
 
@@ -98,6 +99,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     }
     
     // Invalid Enterprise - Creating Project agencies
+    
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void CreateProjectInvalidEnterprise(String Name, String Phone, String Email, String Address, String
     		expectedSuccessMessage, String ExpectedResult) throws InterruptedException {
@@ -449,5 +451,166 @@ public class CreateProjectForCilentAgencies extends BaseTest{
 	}
 	
     }
+    
+    // Invalid Name
+    
+    @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    public void verify_NameError(String Name, String Phone, String Email, String Address, String
+    		expectedErrorMessage) throws InterruptedException {
+        InvitingclientPage ClientPage = new InvitingclientPage(driver);
+ 
+        ClientPage.clickOnUserButton();
+ 
+        ClientPage.clickOnClientsOption();
+ 
+        ClientPage.clickOnInviteClientButton();
+        
+        ClientPage.NavigateToDialogBox();
+        
+        
+        ClientPage.enterClientName(Name);
+        
+        ClientPage.enterMobileNumber(Phone);
+        
+        ClientPage.enterEmail(Email);
+        
+        ClientPage.enterAddress(Address);
+        
+        ClientPage.clickOnCreateClientButton();
+        
+        String actualErrorMessage = ClientPage.getErrorMessage();
+        softAssert.assertEquals(actualErrorMessage, expectedErrorMessage);
+ 
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+        
+    }
+    
+    //Invalid Phone number
+    
+    @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    public void verify_PhoneError(String Name, String Phone, String Email, String Address, String
+    		expectedPhoneErrorMessage) throws InterruptedException {
+        InvitingclientPage ClientPage = new InvitingclientPage(driver);
+ 
+        ClientPage.clickOnUserButton();
+ 
+        ClientPage.clickOnClientsOption();
+ 
+        ClientPage.clickOnInviteClientButton();
+        
+        ClientPage.NavigateToDialogBox();
+        
+        
+        ClientPage.enterClientName(Name);
+        
+        ClientPage.enterMobileNumber(Phone);
+        
+        ClientPage.enterEmail(Email);
+        
+        ClientPage.enterAddress(Address);
+        
+        ClientPage.clickOnCreateClientButton();
+        
+        String actualPhoneErrorMessage = ClientPage.getPhoneErrorMessage();
+        softAssert.assertEquals(actualPhoneErrorMessage, expectedPhoneErrorMessage);
+ 
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}     
+        
+    }
+    
+    //Invalid Email
+    
+    @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    public void verify_EmailError(String Name, String Phone, String Email, String Address, String
+    		expectedEmailErrorMessage) throws InterruptedException {
+        InvitingclientPage ClientPage = new InvitingclientPage(driver);
+ 
+        ClientPage.clickOnUserButton();
+ 
+        ClientPage.clickOnClientsOption();
+ 
+        ClientPage.clickOnInviteClientButton();
+        
+        ClientPage.NavigateToDialogBox();
+        
+        
+        ClientPage.enterClientName(Name);
+        
+        ClientPage.enterMobileNumber(Phone);
+        
+        ClientPage.enterEmail(Email);
+        
+        ClientPage.enterAddress(Address);
+        
+        ClientPage.clickOnCreateClientButton();
+        
+        String actualEmailErrorMessage = ClientPage.getEmailErrorMessage();
+        softAssert.assertEquals(actualEmailErrorMessage, expectedEmailErrorMessage);
+ 
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+               
+    }
+    
+    // Invalid Enterprise
+    
+    @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    public void ProjectClientInvalidEnterprise(String Name, String Phone, String Email, String Address, String
+    		expectedSuccessMessage,String ExpectedMessage) throws InterruptedException {
+        InvitingclientPage ClientPage = new InvitingclientPage(driver);
+        CreateProjectPage ProjectPage = new CreateProjectPage(driver);
+        CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 
-}
+        ClientPage.clickOnUserButton();
+       
+        ClientPage.clickOnClientsOption();
+
+        ClientPage.clickOnInviteClientButton();
+       
+        ClientPage.NavigateToDialogBox();
+       
+       
+        ClientPage.enterClientName(Name);
+       
+        ClientPage.enterMobileNumber(Phone);
+       
+        ClientPage.enterEmail(Email);
+       
+        ClientPage.enterAddress(Address);
+       
+        ClientPage.clickOnCreateClientButton();
+        
+      //ProjectPage.clickOnErrorMessage();
+        ProjectPage.clickOnProjectTabButton();
+       // ProjectPage.clickOnErrorMessage();
+        ProjectPage.clickOnCreateProjectButton();
+   //     ProjectPage.clickOnSelfClientButton();
+        ProjectPage.clickOnNext1Button();
+        
+        String AcceptRejectInvalidEnterprise = ProjectPage.AcceptRejectInvalidEnterprise();
+        softAssert.assertEquals(AcceptRejectInvalidEnterprise, ExpectedMessage);
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}    
+	}
+                 
+        
+    }
+

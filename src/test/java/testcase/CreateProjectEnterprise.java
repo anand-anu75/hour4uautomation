@@ -19,7 +19,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     // Test for Creating Project Successfully 
  
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginEnterprise.loginEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void CreateProjectPageTestData(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
     		String EnterRadius,String EnterItem, String EnterDescription

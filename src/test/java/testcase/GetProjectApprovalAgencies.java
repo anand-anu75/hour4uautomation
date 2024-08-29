@@ -153,7 +153,9 @@ public class GetProjectApprovalAgencies extends BaseTest {
         ProjectPage.clickOnCreateProjectButton();
         //ProjectPage.clickOnSelfClientButton();
         ProjectPage.clickOnExistingEnterprise();
+        Thread.sleep(2000);
         ProjectPage.SelectDropdownEnterprise();
+        Thread.sleep(2000);
         ProjectPage.SelectOptionEnterprise();
         ProjectPage.clickOnNext1Button();
         Thread.sleep(2000);
