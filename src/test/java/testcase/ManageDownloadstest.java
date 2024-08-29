@@ -5,15 +5,12 @@ import java.util.Set;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.LoginPage;
 import pages.ManageDownloads;
 import utilities.ReadXLData;
-
-@Listeners(base.Listeners.class)
 
 public class ManageDownloadstest extends BaseTest {
 		ManageDownloads managedownloadtest;
@@ -113,7 +110,7 @@ public class ManageDownloadstest extends BaseTest {
 			
 			
 			managedownloadtest = new ManageDownloads(driver);
-			managedownloadtest.clickOn_Completed();
+			managedownloadtest.clickOn_Active();
 			Thread.sleep(2000);
 			managedownloadtest.clickOn_Openmenutoexplore();
 			managedownloadtest.clickOnbtn_DownloadProofofwork();

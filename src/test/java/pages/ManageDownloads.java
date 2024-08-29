@@ -15,7 +15,7 @@ public class ManageDownloads extends BaseTest {
 	WebElement btn_ViewTasks;
 	WebElement click_Openmenutoexplore;
 	WebElement click_ExportXLS;
-	WebElement btn_Completed;
+	WebElement btn_Active;
 	
 	
 	public ManageDownloads(WebDriver driver) {
@@ -43,8 +43,8 @@ public class ManageDownloads extends BaseTest {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_ExportXLS")))).click();
 	}
 	
-	public void clickOn_Completed() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Completed")))).click();
+	public void clickOn_Active() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Active")))).click();
 	}
 	
 	
