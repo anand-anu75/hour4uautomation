@@ -1,18 +1,14 @@
 package testcase;
 
 import java.io.IOException;
-
 import java.util.Set;
 
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.LoginPage;
 import pages.ManageAttendance;
 import utilities.ReadXLData;
-
-@Listeners(base.Listeners.class)
 
 public class ManageAttendancetest extends BaseTest {
 	
@@ -57,7 +53,7 @@ static String actualURL;
 		    }
 		}
 		manageAttendancetest.clickOn_Openmenutoexplore();
-		manageAttendancetest.clickOn_ViewJobSeekerSchedules1();
+		manageAttendancetest.clickOn_ViewJobSeekerSchedules();
 		String actualMessage = manageAttendancetest.get_Actualmessage();
 		softAssert.assertEquals(actualMessage, expectedMessage);
 		try {
@@ -91,9 +87,9 @@ static String actualURL;
 		
 		manageAttendancetest = new ManageAttendance(driver);
 		manageAttendancetest.clickOnbtn_Workorder();
-		manageAttendancetest.clickOnbtn_More1();
+		manageAttendancetest.clickOnbtn_More();
 		manageAttendancetest.clickOn_ViewJobSeekerSchedules();
-		String actualMessage = manageAttendancetest.get_Actualmessage1();
+		String actualMessage = manageAttendancetest.get_Actualmessage();
 		softAssert.assertEquals(actualMessage, expectedMessage);
 		try {
 			softAssert.assertAll();
@@ -125,10 +121,10 @@ static String actualURL;
 		
 		manageAttendancetest = new ManageAttendance(driver);
 		manageAttendancetest.clickOnbtn_Workorder();
-		manageAttendancetest.clickOn_Completed();
+		manageAttendancetest.clickOn_Active();
 		Thread.sleep(2000);
 		manageAttendancetest.clickOn_Openmenutoexplore();
-		manageAttendancetest.clickOn_ViewJobSeekerSchedules1();
+		manageAttendancetest.clickOn_ViewJobSeekerSchedules();
 		String actualMessage = manageAttendancetest.get_Actualmessage();
 		softAssert.assertEquals(actualMessage, expectedMessage);
 		try {
@@ -142,3 +138,4 @@ static String actualURL;
 	
 
 }
+     

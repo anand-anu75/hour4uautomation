@@ -15,11 +15,10 @@ public class ManageAttendance extends BaseTest {
 	WebElement click_ViewJobSeekerSchedules;
 	WebElement btn_ViewTasks;
 	WebElement click_Openmenutoexplore;
-	WebElement click_Completed;
+	WebElement click_Active;
 	WebElement actual_message;
-	WebElement btn_More1;
-	WebElement click_ViewJobSeekerSchedules1;
-	WebElement actual_message1;
+
+	
 	
 	
 	
@@ -49,25 +48,12 @@ public class ManageAttendance extends BaseTest {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Openmenutoexplore")))).click();
 	}
 	
-	public void clickOn_Completed() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Completed")))).click();
+	public void clickOn_Active() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Active")))).click();
 	}
 	
 	public String get_Actualmessage() {
 		   return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("actual_message")))).getText();
 	 }
 	
-	public void clickOnbtn_More1() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_More1")))).click();
-	}
-	public void clickOn_ViewJobSeekerSchedules1() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_ViewJobSeekerSchedules1")))).click();
-	}
-	
-	public String get_Actualmessage1() {
-		   return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("actual_message1")))).getText();
-	 }
-	
-
-
 }
