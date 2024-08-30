@@ -6,8 +6,16 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
+			<!-- 	
 			<class name="testcase.SignUp" />
 			<class name="testcase.Login" />
+			-->
+			<class name="testcase.CreditStatementTest" />
+		<!--	<class name="testcase.ManageAttendancetest" />
+			<class name="testcase.ManageDownloadstest" />
+			<class name="testcase.ProofOfWorktest" />
+			<class name="testcase.TeamMembers" /> -->
+
 		</classes>
 	</test> <!--
 	Test -->
