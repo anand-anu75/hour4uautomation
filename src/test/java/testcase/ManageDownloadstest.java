@@ -19,8 +19,8 @@ public class ManageDownloadstest extends BaseTest {
 		static String actualURL;
 		
 		
-		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-		public void managedownload(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
+		public void verify_Download_Dashboard(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
 			login = new LoginPage(driver);
 
 			login.clickOnLink_SignInUsingOtp();
@@ -45,8 +45,8 @@ public class ManageDownloadstest extends BaseTest {
 		
 		}
 		
-		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-		public void managedownload1(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
+		public void verify_Download_ViewTask(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
 			login = new LoginPage(driver);
 
 			login.clickOnLink_SignInUsingOtp();
@@ -89,8 +89,8 @@ public class ManageDownloadstest extends BaseTest {
 		
 		}
 		
-		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-		public void managedownload2(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Workorders")
+		public void verify_Download_Workorder(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
 			login = new LoginPage(driver);
 
 			login.clickOnLink_SignInUsingOtp();
@@ -117,8 +117,8 @@ public class ManageDownloadstest extends BaseTest {
 			
 		}
 		
-		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-		public void managedownload3(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
+		public void verify_Download_XLS(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
 			login = new LoginPage(driver);
 
 			login.clickOnLink_SignInUsingOtp();

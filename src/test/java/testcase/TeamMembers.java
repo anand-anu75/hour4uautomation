@@ -18,9 +18,9 @@ public class TeamMembers extends BaseTest {
 	static String actualURL;
 
 
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify that team member is added with valid name, mobile number and email.")
 
-	public void teamMember(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectedURL)
+	public void validation_for_valid_Details(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectedURL)
 			throws InterruptedException {
 		login = new LoginPage(driver);
 
@@ -50,7 +50,7 @@ public class TeamMembers extends BaseTest {
 		}
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify error message for invalid name in Team Members Section.")
 
 	public void validation_for_invalid_Name(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectederrorMessage)
 			throws InterruptedException {
@@ -81,7 +81,7 @@ public class TeamMembers extends BaseTest {
 			throw e;
 		}
 	}
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify error message for invalid mobile number in Team Members Section.")
 
 	public void validation_for_invalid_Mobile(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectederrorMessage)
 			throws InterruptedException {
@@ -113,7 +113,7 @@ public class TeamMembers extends BaseTest {
 		}
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify error message for Invalid Email in Team Members Section.")
 
 	public void validation_for_invalid_Email(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectederrorMessage)
 			throws InterruptedException {

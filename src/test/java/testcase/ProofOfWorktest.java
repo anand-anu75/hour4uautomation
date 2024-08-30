@@ -23,8 +23,8 @@ public class ProofOfWorktest extends BaseTest {
 	static String actualURL;
 	
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void proofofwork(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from Dashboard Page")
+	public void verify_proofofwork_Dashboard(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -49,8 +49,8 @@ public class ProofOfWorktest extends BaseTest {
 	
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void proofofwork1(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from Projects section")
+	public void verify_proofofwork_Project(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -80,8 +80,8 @@ public class ProofOfWorktest extends BaseTest {
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
 		
 	}
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void proofofwork2(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from Job Application Page")
+	public void verify_proofofwork_JobApp(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -101,6 +101,9 @@ public class ProofOfWorktest extends BaseTest {
 		
 		
 		proofOfWorktest = new ProofOfWork(driver);
+		Actions actions = new Actions(driver); 
+		actions.sendKeys(Keys.PAGE_DOWN).perform();
+		Thread.sleep(2000);
 		proofOfWorktest.clickOnbtn_ViewTasks();
 		String originalWindow = driver.getWindowHandle();
 		 
@@ -120,8 +123,8 @@ public class ProofOfWorktest extends BaseTest {
 	
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void proofofwork3(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from View Tasks Page")
+	public void verify_proofofwork_ViewTask(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -141,7 +144,9 @@ public class ProofOfWorktest extends BaseTest {
 		
 		
 		proofOfWorktest = new ProofOfWork(driver);
-		proofOfWorktest.clickOn_Completed();
+		Actions actions = new Actions(driver); 
+		actions.sendKeys(Keys.PAGE_DOWN).perform();
+		proofOfWorktest.clickOn_Active();
 		Thread.sleep(2000);
 		proofOfWorktest.clickOn_Openmenutoexplore();
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();

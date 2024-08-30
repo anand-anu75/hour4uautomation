@@ -22,8 +22,8 @@ public class CreditStatementTest extends BaseTest {
 	static String actualURL;
 	
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void enterprise(String phoneOrEmail, String password, String amount, String Superadminemail, String Superadminpassword, String Verificationcode, String Expectedmessage) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Requesting Cash Credit")
+	public void verify_Req_cash_credit(String phoneOrEmail, String password, String amount, String Superadminemail, String Superadminpassword, String Verificationcode, String Expectedmessage) throws InterruptedException, IOException {
 		CreditStatementTest = new CreditStatement(driver);
 		
 		
@@ -58,8 +58,8 @@ public class CreditStatementTest extends BaseTest {
 		
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void enterprise1(String phoneOrEmail, String password, String amount, String Superadminemail, String Superadminpassword, String Verificationcode, String Expectedmessage) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Requesting Task Credit")
+	public void verify_Req_Task_credit(String phoneOrEmail, String password, String amount, String Superadminemail, String Superadminpassword, String Verificationcode, String Expectedmessage) throws InterruptedException, IOException {
 		CreditStatementTest = new CreditStatement(driver);
 		
 		
@@ -94,8 +94,8 @@ public class CreditStatementTest extends BaseTest {
 		
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void enterprise2(String phoneOrEmail, String password, String expectedURL) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify View Statement button")
+	public void verify_view_statement(String phoneOrEmail, String password, String expectedURL) throws InterruptedException, IOException {
 		CreditStatementTest = new CreditStatement(driver);
 		
 		
@@ -114,8 +114,8 @@ public class CreditStatementTest extends BaseTest {
 		}
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void enterprise3(String phoneOrEmail, String password) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData",description = "Verify Export to XLS button on Credits Page")
+	public void verify_Export_credits_page(String phoneOrEmail, String password) throws InterruptedException, IOException {
 		CreditStatementTest = new CreditStatement(driver);
 		
 		
@@ -126,8 +126,8 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOn_ExporttoXLS();
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void enterprise4(String phoneOrEmail, String password) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Export to XLS button on Credit payouts Page")
+	public void verify_Export_credits_payout(String phoneOrEmail, String password) throws InterruptedException, IOException {
 		CreditStatementTest = new CreditStatement(driver);
 		
 		
@@ -139,8 +139,8 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOn_ExporttoXLS();
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void enterprise5(String phoneOrEmail, String password, String Mobilenumber, String UPIID, String expectedmessage) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify paying Task Credit Type Amount ")
+	public void verify_paying_cash_credit(String phoneOrEmail, String password, String Mobilenumber, String UPIID, String expectedmessage) throws InterruptedException, IOException {
 		CreditStatementTest = new CreditStatement(driver);
 		
 		
@@ -166,8 +166,8 @@ public class CreditStatementTest extends BaseTest {
 		}
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void enterprise6(String phoneOrEmail, String password, String Mobilenumber, String UPIID, String expectedmessage) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify paying Cash Credit Type Amount ")
+	public void verify_paying_Task_credit(String phoneOrEmail, String password, String Mobilenumber, String UPIID, String expectedmessage) throws InterruptedException, IOException {
 		CreditStatementTest = new CreditStatement(driver);
 		
 		

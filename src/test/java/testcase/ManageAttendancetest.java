@@ -18,8 +18,8 @@ public class ManageAttendancetest extends BaseTest {
 	
 static String actualURL;
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void manageattendance(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
+	public void verify_Attendance_Workorder(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -65,8 +65,8 @@ static String actualURL;
 		
 	}
 	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void manageattendance1(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
+	public void verify_Attendance_ViewTask(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -99,8 +99,8 @@ static String actualURL;
 		}
 		
 	}
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void manageattendance2(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
+	public void verify_Attendance_Active(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();

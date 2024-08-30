@@ -19,7 +19,7 @@ public class ProofOfWork extends BaseTest  {
 	WebElement btn_clickheretoviewWorkorders;
 	WebElement btn_Workorders;
     WebElement btn_ViewTasks;
-    WebElement click_Completed;
+    WebElement click_Active;
     WebElement click_Openmenutoexplore;
 	
 	public ProofOfWork(WebDriver driver) {
@@ -63,8 +63,8 @@ public class ProofOfWork extends BaseTest  {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ViewTasks")))).click();
 	}
 	
-	public void clickOn_Completed() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Completed")))).click();
+	public void clickOn_Active() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Active")))).click();
 	}
 	
 	public void clickOn_Openmenutoexplore() {
