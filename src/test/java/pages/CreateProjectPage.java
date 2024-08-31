@@ -161,6 +161,22 @@ public class CreateProjectPage extends BaseTest{
 	
 	WebElement msg_SelectEnterprise;
 	
+	WebElement btn_AssignAgency;
+	
+	WebElement opt_ClickOnAugustAgency;
+	
+	WebElement btn_ClickOnSearchAssignAgency;
+	
+	WebElement btn_ClickOnProfile;
+	
+	WebElement btn_Logout;
+	
+	WebElement txt_EnterAgencyEmail;
+	
+	WebElement btn_AcceptProject;
+	
+	WebElement btn_AcceptWorkOrder;
+	
 	// Initializing Driver
 	
 	public CreateProjectPage(WebDriver driver) {
@@ -749,6 +765,84 @@ public String AcceptRejectInvalidEnterprise() {
 	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_SelectEnterprise")))).getText();
 	
 }
+
+public void ClickOnAssignAgency() {
+    
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AssignAgency"))))
+	.click();
+}
+
+public void enterSearchAgency(String SearchAgency) {
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_SearchAgency"))))
+	.sendKeys(SearchAgency);
+}
+
+public void ClickOnAugustAgency() {
+    
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_ClickOnAugustAgency"))))
+	.click();
+}
+
+public void clickOnSearchAssignAgency() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnSearchAssignAgency"))))
+		.click();
+ }
+
+public void clickOnProfileButton() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnProfile"))))
+		.click();
+ }
+
+public void clickOnLogoutButton() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Logout"))))
+		.click();
+ }
+
+public void enterAgencyEmail(String EnterAgencyEmail) {
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_EnterAgencyEmail"))))
+	.sendKeys(EnterAgencyEmail);
+}
+
+public void clickOnSignInUsingOTP() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnSignInUsingOtp"))))
+		.click();
+ }
+
+public void clickOnGetOTP() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnGetOtp"))))
+		.click();
+ }
+
+public void enterOTPforAgencyLogin(String EnterOTP) {
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_EnterOTPforAgencyLogin"))))
+	.sendKeys(EnterOTP);
+}
+
+public void clickOnLoginButton() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnLoginforAgency"))))
+		.click();
+ }
+
+public void clickOnAcceptProject() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AcceptProject"))))
+		.click();
+ }
+
+public void clickOnAcceptWorkOrder() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AcceptWorkOrder"))))
+		.click();
+ }
 
 
 

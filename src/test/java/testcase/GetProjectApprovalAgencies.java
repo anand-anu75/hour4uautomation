@@ -21,8 +21,9 @@ public class GetProjectApprovalAgencies extends BaseTest {
     public void ProjectApprovalAgencies(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
     		String EnterRadius,String EnterItem, String EnterDescription
-    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,String Date, String Title, String
-    		expectedSuccessmessage,String phoneOrEmail,String EnterPassword) throws InterruptedException {
+    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,
+    		String SearchAgency,String EnterAgencyEmail,String EnterOTP,String Date, String Title, 
+    		String expectedSuccessmessage,String phoneOrEmail,String EnterPassword) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
         CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 
@@ -71,8 +72,23 @@ public class GetProjectApprovalAgencies extends BaseTest {
         ProjectPage.enterDays(EnterDays);
         ProjectPage.clickOnReviewProject();
         ProjectPage.clickOnSaveProject();
-        ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
+//      ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
         Thread.sleep(2000);
+        ProjectPage.ClickOnAssignAgency();
+        ProjectPage.enterSearchAgency(SearchAgency);
+        Thread.sleep(2000);
+        ProjectPage.ClickOnAugustAgency();
+        ProjectPage.clickOnSearchAssignAgency();
+        ProjectPage.clickOnProfileButton();
+        ProjectPage.clickOnLogoutButton();
+        ProjectPage.enterAgencyEmail(EnterAgencyEmail);
+        ProjectPage.clickOnSignInUsingOTP();
+        ProjectPage.clickOnGetOTP();
+        ProjectPage.enterOTPforAgencyLogin(EnterOTP);
+        ProjectPage.clickOnLoginButton();
+        ProjectPage.clickOnErrorMessage();
+        ProjectPage.clickOnProjectTabButton();
+        ProjectPage.clickOnAcceptProject();
         
         WorkorderPage.clickOnWorkorderButton(); 
     	WorkorderPage.clickOnCreateWorkorderButton();
@@ -102,13 +118,20 @@ public class GetProjectApprovalAgencies extends BaseTest {
     	    WorkorderPage.clickOnSeeSummaryButton();
     	
     	    WorkorderPage.clickOnSubmitforApprovalButton();
+    	//    ProjectPage.clickOnErrorMessage();
     	    
-    	    WorkorderPage.clickOnProfile();
-    	    WorkorderPage.clickOnLogout();
+    	    ProjectPage.clickOnProfileButton();
+            ProjectPage.clickOnLogoutButton();
     	    WorkorderPage.enterDhruviEmail(phoneOrEmail);
     	    WorkorderPage.enterDhruviPassword(EnterPassword);
     	    WorkorderPage.clickOnLoginButton();
-    
+    	    ProjectPage.clickOnErrorMessage();
+    	    ProjectPage.clickOnAcceptWorkOrder();
+    	    
+    	   
+         
+            
+        
     	   String actualSuccessmessage = WorkorderPage.getSuccessmessage();
            softAssert.assertEquals(actualSuccessmessage, expectedSuccessmessage);
     
