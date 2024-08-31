@@ -2,6 +2,7 @@ package testcase;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -9,6 +10,8 @@ import pages.CreateProjectPage;
 import pages.CreateworkorderPage;
 import pages.InvitingclientPage;
 import utilities.ReadXLData;
+
+@Listeners(base.Listeners.class)
 
 public class AcceptRejectFromClients extends BaseTest{
 	

@@ -1,5 +1,6 @@
 package testcase;
  
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -10,6 +11,8 @@ import utilities.ReadXLData;
 import base.BaseTest;
 import pages.CreateProjectPage;
 import pages.InvitingclientPage;
+
+@Listeners(base.Listeners.class)
  
 public class InvitingClient extends BaseTest {
 	InvitingclientPage ClientPage;

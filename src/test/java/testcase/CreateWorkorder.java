@@ -10,6 +10,8 @@ import base.BaseTest;
 import pages.CreateworkorderPage;
 import utilities.ReadXLData;
 
+@Listeners(base.Listeners.class)
+
  
 public class CreateWorkorder extends BaseTest {
 	CreateworkorderPage WorkorderPage;

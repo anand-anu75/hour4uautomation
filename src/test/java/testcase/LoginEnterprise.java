@@ -2,11 +2,14 @@ package testcase;
 
 import java.io.IOException;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.LoginPage;
 import utilities.ReadXLData;
+
+@Listeners(base.Listeners.class)
 
 public class LoginEnterprise extends BaseTest{
 	

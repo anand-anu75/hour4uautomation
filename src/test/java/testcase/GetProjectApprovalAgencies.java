@@ -2,6 +2,7 @@ package testcase;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -9,29 +10,32 @@ import pages.CreateProjectPage;
 import pages.CreateworkorderPage;
 import utilities.ReadXLData;
 
+@Listeners(base.Listeners.class)
+
 public class GetProjectApprovalAgencies extends BaseTest {
 	
 	//Get Project Approvals - Agencies
     // Workorder is done Successfully
 
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginDhruviEnterprise.loginDhruviEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void ProjectApprovalAgencies(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
     		String EnterRadius,String EnterItem, String EnterDescription
     		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,String Date, String Title, String
-    		expectedSuccessmessage) throws InterruptedException {
+    		expectedSuccessmessage,String phoneOrEmail,String EnterPassword) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
         CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 
         //ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnProjectTabButton();
        //ProjectPage.clickOnErrorMessage();
-        ProjectPage.clickOnCreateProjectButton();
-        ProjectPage.clickOnSelfClientButton();
-        ProjectPage.clickOnNext1Button();
+       ProjectPage.clickOnCreateProjectButton();
+ //       ProjectPage.clickOnSelfClientButton();
+ //       ProjectPage.clickOnNext1Button();
         Thread.sleep(2000);
-        ProjectPage.clickOnProjectTypeButton();
+  //      ProjectPage.clickOnProjectTypeButton();
         ProjectPage.clickOnSelectProjectTypeButton();
+//        Thread.sleep(2000);
         ProjectPage.clickOnHotspotButton();
         ProjectPage.clickOnNext2Button();
         //ProjectPage.clickOnProjectDetailsButton();
@@ -79,6 +83,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
     	WorkorderPage.enterDate(Date);   	
     	WorkorderPage.clickOnStartTimeButton();   	
     	WorkorderPage.clickOnSelectStarttimeButton();
+   	
     	
     	 Actions actions = new Actions(driver); 
     	    actions.sendKeys(Keys.ESCAPE).perform();
@@ -97,6 +102,12 @@ public class GetProjectApprovalAgencies extends BaseTest {
     	    WorkorderPage.clickOnSeeSummaryButton();
     	
     	    WorkorderPage.clickOnSubmitforApprovalButton();
+    	    
+    	    WorkorderPage.clickOnProfile();
+    	    WorkorderPage.clickOnLogout();
+    	    WorkorderPage.enterDhruviEmail(phoneOrEmail);
+    	    WorkorderPage.enterDhruviPassword(EnterPassword);
+    	    WorkorderPage.clickOnLoginButton();
     
     	   String actualSuccessmessage = WorkorderPage.getSuccessmessage();
            softAssert.assertEquals(actualSuccessmessage, expectedSuccessmessage);

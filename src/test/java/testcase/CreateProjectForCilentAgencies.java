@@ -1,5 +1,6 @@
 package testcase;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -8,6 +9,7 @@ import pages.CreateworkorderPage;
 import pages.InvitingclientPage;
 import utilities.ReadXLData;
 
+@Listeners(base.Listeners.class)
 public class CreateProjectForCilentAgencies extends BaseTest{
 	
  //Create Project for Client/Agencies

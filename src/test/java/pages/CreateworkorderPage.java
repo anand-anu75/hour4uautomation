@@ -49,7 +49,9 @@ public class CreateworkorderPage extends BaseTest {
     
     WebElement msg_WorkOrderCreatedSuccessfully;
     
+    WebElement btn_ClickOnProfile;
     
+    WebElement btn_Logout;
     
     
     
@@ -177,4 +179,37 @@ public class CreateworkorderPage extends BaseTest {
     public String getEndtimeErrorMessage() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidEndTime")))).getText();
     }
+    
+    public void clickOnProfile() {
+        // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnProfile"))))
+ 		.click();
+     } 
+    
+    public void clickOnLogout() {
+        // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Logout"))))
+ 		.click();
+     } 
+    
+public void enterDhruviEmail(String phoneOrEmail) {
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_enterDhruviEmail"))))
+		.sendKeys(phoneOrEmail);
+	}
+
+public void enterDhruviPassword(String EnterPassword) {
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_enterDhruviPassword"))))
+	.sendKeys(EnterPassword);
+}
+
+public void clickOnLoginButton() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnLogin"))))
+		.click();
+ }
+    
+    
+    
 }

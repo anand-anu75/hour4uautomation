@@ -1,11 +1,14 @@
 package testcase;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.LoginPage;
 import pages.SignupPage;
 import utilities.ReadXLData;
+
+@Listeners(base.Listeners.class)
 
 public class SignUp extends BaseTest {
 

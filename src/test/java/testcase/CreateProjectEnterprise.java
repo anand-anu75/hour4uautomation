@@ -1,5 +1,6 @@
 package testcase;
  
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
@@ -13,6 +14,8 @@ import base.BaseTest;
 import pages.CreateProjectPage;
 import pages.CreateworkorderPage;
 import utilities.ReadXLData;
+
+@Listeners(base.Listeners.class)
  
 public class CreateProjectEnterprise extends BaseTest {
     CreateProjectPage ProjectPage;
