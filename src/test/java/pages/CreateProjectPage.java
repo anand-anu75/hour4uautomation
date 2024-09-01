@@ -177,6 +177,8 @@ public class CreateProjectPage extends BaseTest{
 	
 	WebElement btn_AcceptWorkOrder;
 	
+	WebElement msg_ProjectStatusUpdated;
+	
 	// Initializing Driver
 	
 	public CreateProjectPage(WebDriver driver) {
@@ -844,7 +846,10 @@ public void clickOnAcceptWorkOrder() {
 		.click();
  }
 
-
+public String ProjectStatusUpdated() {
+	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_ProjectStatusUpdated")))).getText();
+	
+}
 
 
 }

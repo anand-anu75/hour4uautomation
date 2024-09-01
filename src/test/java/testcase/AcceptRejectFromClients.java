@@ -20,14 +20,14 @@ public class AcceptRejectFromClients extends BaseTest{
 	CreateProjectPage ProjectPage;
 	@Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	    public void AcceptRejectClients(String Name, String Phone, String Email, String Address, String
-	    		expectedSuccessMessage, String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+	    		expectedSuccessMessage,String NewEnterpriseEmail,String OTP,
+ String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
 	    		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency,
 	    		String EnterRadius,String EnterItem, String EnterDescription
-	    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult, String Date, String Title, String
-	    		expectedSuccessmessage) throws InterruptedException {
+	    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult, String SearchAgency,
+	    		String EnterAgencyEmail,String EnterOTP,String ExpectedMessage) throws InterruptedException {
 	        ClientPage = new InvitingclientPage(driver);
 	        ProjectPage = new CreateProjectPage(driver);
-	        WorkorderPage = new CreateworkorderPage(driver);
 	
 	        ClientPage.clickOnUserButton();
 	       
@@ -47,16 +47,29 @@ public class AcceptRejectFromClients extends BaseTest{
 	        ClientPage.enterAddress(Address);
 	       
 	        ClientPage.clickOnCreateClientButton();
+	        
+	        ProjectPage.clickOnProfileButton();
+	        ProjectPage.clickOnLogoutButton();
+	        
+	   //     ProjectPage.clickOnErrorMessage();
+	        
+	        ProjectPage.enterAgencyEmail(NewEnterpriseEmail);
+	        ProjectPage.clickOnSignInUsingOTP();
+	        ProjectPage.clickOnGetOTP();
+	        ProjectPage.enterOTPforAgencyLogin(OTP);
+	        ProjectPage.clickOnLoginButton();
+	        ProjectPage.clickOnErrorMessage();
 	       
 	      //ProjectPage.clickOnErrorMessage();
 	        ProjectPage.clickOnProjectTabButton();
-	      //ProjectPage.clickOnErrorMessage();
-	        ProjectPage.clickOnCreateProjectButton();
-	        ProjectPage.clickOnSelfClientButton();
-	        ProjectPage.clickOnNext1Button();
+	       //ProjectPage.clickOnErrorMessage();
+	       ProjectPage.clickOnCreateProjectButton();
+	 //       ProjectPage.clickOnSelfClientButton();
+	 //       ProjectPage.clickOnNext1Button();
 	        Thread.sleep(2000);
-	        ProjectPage.clickOnProjectTypeButton();
+	  //      ProjectPage.clickOnProjectTypeButton();
 	        ProjectPage.clickOnSelectProjectTypeButton();
+//	        Thread.sleep(2000);
 	        ProjectPage.clickOnHotspotButton();
 	        ProjectPage.clickOnNext2Button();
 	        //ProjectPage.clickOnProjectDetailsButton();
@@ -92,48 +105,29 @@ public class AcceptRejectFromClients extends BaseTest{
 	        ProjectPage.enterDays(EnterDays);
 	        ProjectPage.clickOnReviewProject();
 	        ProjectPage.clickOnSaveProject();
-	        ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
-	       
+//	      ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
+	        Thread.sleep(2000);
+	        ProjectPage.ClickOnAssignAgency();
+	        ProjectPage.enterSearchAgency(SearchAgency);
+	        Thread.sleep(2000);
+	        ProjectPage.ClickOnAugustAgency();
+	        ProjectPage.clickOnSearchAssignAgency();
+	        ProjectPage.clickOnProfileButton();
+	        ProjectPage.clickOnLogoutButton();
+	        ProjectPage.enterAgencyEmail(EnterAgencyEmail);
+	        ProjectPage.clickOnSignInUsingOTP();
+	        ProjectPage.clickOnGetOTP();
+	        ProjectPage.enterOTPforAgencyLogin(EnterOTP);
+	        ProjectPage.clickOnLoginButton();
+	        ProjectPage.clickOnErrorMessage();
+	        ProjectPage.clickOnProjectTabButton();
+	        ProjectPage.clickOnAcceptProject();
 	        
+	 //       ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
 	       
-	        WorkorderPage.clickOnWorkorderButton();
-	       
-	    	WorkorderPage.clickOnCreateWorkorderButton();
-	       
-	    	WorkorderPage.NavigateTodialogBox();
-	
-	    	WorkorderPage.clickOnSelectProjectButton();
-	   	
-	    	WorkorderPage.clickOnAddDetailsButton();
-	   	
-	        WorkorderPage.clickOnSearchAddressButton(); 	
-	   	
-	    	WorkorderPage.enterDate(Date);
-	   	
-	    	WorkorderPage.clickOnStartTimeButton();
-	   	
-	    	WorkorderPage.clickOnSelectStarttimeButton();
-	   	
-	   	Actions actions = new Actions(driver);
-	    	    actions.sendKeys(Keys.ESCAPE).perform();
-	   	
-	    	WorkorderPage.clickOnEndTimeButton();
-	   	
-	        WorkorderPage.clickOnSelectEndtimeButton();
-	   	   	
-	  	    WorkorderPage.clickOnAddBillingButton();
-	     	
-	  	    WorkorderPage.clickOnAddTitleButton();
-	     
-	  	    WorkorderPage.enterTitle(Title);
-	     	
-	  	    WorkorderPage.clickOnSeeSummaryButton();
-	   	
-	    	    WorkorderPage.clickOnSubmitforApprovalButton();
-	   
  
-	     	  String actualSuccessmessage = WorkorderPage.getSuccessmessage();
-	            softAssert.assertEquals(actualSuccessmessage, expectedSuccessmessage);
+	     	  String actualSuccessmessage = ProjectPage.ProjectStatusUpdated();
+	            softAssert.assertEquals(actualSuccessmessage, ExpectedMessage);
 	     
 	            softAssert.assertAll();
  

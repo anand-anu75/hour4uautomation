@@ -41,6 +41,15 @@ public class ManageJobApplicationAccess extends BaseTest {
     //	Thread.sleep(3000);
     //	JobApplicationPage.ClickToRejectChamp();
     //	JobApplicationPage.JobApplicationStatus();
+    	
+    	String JobApplicationstatus = JobApplicationPage.JobApplicationStatus();
+        softAssert.assertEquals(JobApplicationstatus, ExpectedMessage);
+        try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
     	}
 	 
 	// Job Application for Reject when logging as Enterprise
@@ -57,7 +66,18 @@ public class ManageJobApplicationAccess extends BaseTest {
 	//    	Thread.sleep(3000);
 	    	JobApplicationPage.ClickToRejectChamp();
 	    	JobApplicationPage.JobApplicationStatus();
+	    	
+	    	String JobApplicationstatus = JobApplicationPage.JobApplicationStatus();
+	        softAssert.assertEquals(JobApplicationstatus, ExpectedResult);
+	        try {
+				softAssert.assertAll();
+			} catch (AssertionError e) {
+				assertionMessage.set(e.getMessage());
+				throw e;
+			}
 	    	}
+	 
+	 
 	 
 	// Job Application for Approval when logging as Agency 
 	 
@@ -74,6 +94,15 @@ public class ManageJobApplicationAccess extends BaseTest {
 	  //  	Thread.sleep(3000);
 	  //  	JobApplicationPage.ClickToRejectChamp();
 	 //   	JobApplicationPage.JobApplicationStatus();
+	    	
+	    	String JobApplicationstatus = JobApplicationPage.JobApplicationStatus();
+	        softAssert.assertEquals(JobApplicationstatus, ExpectedMessage);
+	        try {
+				softAssert.assertAll();
+			} catch (AssertionError e) {
+				assertionMessage.set(e.getMessage());
+				throw e;
+			}
 	    	}
 	 
 	// Job Application for Reject when logging as Agency 
@@ -91,5 +120,14 @@ public class ManageJobApplicationAccess extends BaseTest {
 	 //   	Thread.sleep(3000);
 	    	JobApplicationPage.ClickToRejectChamp();
 	    	JobApplicationPage.JobApplicationStatus();
+	    	
+	    	String JobApplicationstatus = JobApplicationPage.JobApplicationStatus();
+	        softAssert.assertEquals(JobApplicationstatus, ExpectedResult);
+	        try {
+				softAssert.assertAll();
+			} catch (AssertionError e) {
+				assertionMessage.set(e.getMessage());
+				throw e;
+			}
 	    	}
 }

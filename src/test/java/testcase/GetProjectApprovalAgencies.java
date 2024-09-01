@@ -23,7 +23,8 @@ public class GetProjectApprovalAgencies extends BaseTest {
     		String EnterRadius,String EnterItem, String EnterDescription
     		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,
     		String SearchAgency,String EnterAgencyEmail,String EnterOTP,String Date, String Title, 
-    		String expectedSuccessmessage,String phoneOrEmail,String EnterPassword) throws InterruptedException {
+    		String expectedSuccessmessage,String phoneOrEmail,String EnterPassword,String ExpectedMessage
+) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
         CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 
@@ -132,8 +133,8 @@ public class GetProjectApprovalAgencies extends BaseTest {
          
             
         
-    	   String actualSuccessmessage = WorkorderPage.getSuccessmessage();
-           softAssert.assertEquals(actualSuccessmessage, expectedSuccessmessage);
+    	   String actualSuccessmessage = WorkorderPage.WorkOrderApprovedMessage();
+           softAssert.assertEquals(actualSuccessmessage, ExpectedMessage);
     
            try {
    			softAssert.assertAll();

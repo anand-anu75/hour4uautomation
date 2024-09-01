@@ -53,7 +53,7 @@ public class CreateworkorderPage extends BaseTest {
     
     WebElement btn_Logout;
     
-    
+    WebElement mgs_JobOrderApprovedSuccessfully;
     
     // Constructor to initialize the driver and web elements
     public CreateworkorderPage(WebDriver driver) {
@@ -184,7 +184,11 @@ public class CreateworkorderPage extends BaseTest {
         // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
  		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnProfile"))))
  		.click();
-     } 
+    }
+ 		
+ 		  public String WorkOrderApprovedMessage() {
+ 		        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("mgs_JobOrderApprovedSuccessfully")))).getText();
+ 		    }
     
     public void clickOnLogout() {
         // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
