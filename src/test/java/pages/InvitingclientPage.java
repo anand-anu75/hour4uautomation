@@ -92,5 +92,5 @@ public class InvitingclientPage extends BaseTest {
     public String getEmailErrorMessage() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidEmail")))).getText();
     }
-
+  
 }
