@@ -20,7 +20,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	CreateProjectPage ProjectPage;
 	@Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	    public void AcceptRejectClients(String Name, String Phone, String Email, String Address, String
-	    		expectedSuccessMessage,String NewEnterpriseEmail,String OTP,
+	    		expectedSuccessMessage,String OTP,
  String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
 	    		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency,
 	    		String EnterRadius,String EnterItem, String EnterDescription
@@ -38,11 +38,13 @@ public class AcceptRejectFromClients extends BaseTest{
 	        ClientPage.NavigateToDialogBox();
 	       
 	       
-	        ClientPage.enterClientName(Name);
-	       
-	        ClientPage.enterMobileNumber(Phone);
-	       
-	        ClientPage.enterEmail(Email);
+	        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+	        String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
+	        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+	 
+	        ClientPage.enterClientName(randomName);
+	        ClientPage.enterMobileNumber(randomPhone);
+	        ClientPage.enterEmail(randomEmail);
 	       
 	        ClientPage.enterAddress(Address);
 	       
@@ -53,7 +55,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	        
 	   //     ProjectPage.clickOnErrorMessage();
 	        
-	        ProjectPage.enterAgencyEmail(NewEnterpriseEmail);
+	        ProjectPage.enterAgencyEmail(randomEmail);
 	        ProjectPage.clickOnSignInUsingOTP();
 	        ProjectPage.clickOnGetOTP();
 	        ProjectPage.enterOTPforAgencyLogin(OTP);
@@ -129,9 +131,28 @@ public class AcceptRejectFromClients extends BaseTest{
 	     	  String actualSuccessmessage = ProjectPage.ProjectStatusUpdated();
 	            softAssert.assertEquals(actualSuccessmessage, ExpectedMessage);
 	     
-	            softAssert.assertAll();
+	            try {
+	    			softAssert.assertAll();
+	    		} catch (AssertionError e) {
+	    			assertionMessage.set(e.getMessage());
+	    			throw e;
+	    		}
  
 	  
+	    }
+	 private String generateRandomPhoneNumber() {
+	        long randomPhone = (long) (Math.random() * 10000000000L); // Generates a random number and ensures it's 10 digits
+	        return String.format("%010d", randomPhone); // Formats it as a 10-digit string
+	    }
+	 
+	    // Utility method to generate a random email
+	    private String generateRandomEmail(String baseEmail) {
+	        int randomNum = (int) (Math.random() * 1000); // Generates a random number between 0 and 999
+	        String[] emailParts = baseEmail.split("@");
+	        if (emailParts.length == 2) {
+	            return emailParts[0] + randomNum + "@" + emailParts[1]; // Inserts the random number before the '@' symbol
+	        }
+	        return baseEmail; // Fallback to the original email if the format is unexpected
 	    }
 	
 	// Accept/Reject from Clients - Invalid Enterprise
