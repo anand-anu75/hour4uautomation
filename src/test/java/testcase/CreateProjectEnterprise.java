@@ -23,7 +23,7 @@ public class CreateProjectEnterprise extends BaseTest {
     // Test for Creating Project Successfully 
  
     @Test(dependsOnMethods = {"testcase.LoginEnterprise.loginEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectPageTestData(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void CreateProjectEnterpriseData(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
     		String EnterRadius,String EnterItem, String EnterDescription
     		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult) throws InterruptedException {
@@ -89,7 +89,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     
-    public void SelectingImproperProjectType(String ExpectedResult) throws InterruptedException {
+    public void EnterpriseImproperProjectType(String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
 
         //ProjectPage.clickOnErrorMessage();
@@ -118,7 +118,7 @@ public class CreateProjectEnterprise extends BaseTest {
     //Test for Invalid Project Description 
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void InvalidProjectDescription(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
+    public void EnterpriseInvalidProjectDesc(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
 
         //ProjectPage.clickOnErrorMessage();
@@ -150,7 +150,7 @@ public class CreateProjectEnterprise extends BaseTest {
     //Test for Invalid Field Name 
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void InvalidFieldName(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void EnterpriseInvalidFieldName(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
@@ -204,7 +204,7 @@ public class CreateProjectEnterprise extends BaseTest {
     // Test for Invalid Field Type 
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void InvalidFieldType(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void EnterpriseInvalidFieldType(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,
     		String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
@@ -256,7 +256,7 @@ public class CreateProjectEnterprise extends BaseTest {
     //Test for Invalid Frequency 
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void InvalidFrequency(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void EnterpriseInvalidFrequency(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
@@ -310,7 +310,7 @@ public class CreateProjectEnterprise extends BaseTest {
     //Test for Invalid Radius 
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void InvalidRadius(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void EnterpriseInvalidRadius(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
@@ -364,7 +364,7 @@ public class CreateProjectEnterprise extends BaseTest {
     //Test for Invalid Project Title 
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void InvalidProjectTitle(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
+    public void EnterpriseInvalidProjectTitle(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
 
         //ProjectPage.clickOnErrorMessage();
