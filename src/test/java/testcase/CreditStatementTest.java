@@ -1,5 +1,6 @@
 package testcase;
 
+import java.io.File;
 import java.io.IOException;
 
 import java.util.Set;
@@ -38,6 +39,7 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOn_days();
 		CreditStatementTest.clickOn_checkbox();
 		CreditStatementTest.clickOnbtn_RequestCredits();
+		Thread.sleep(2000);
 		CreditStatementTest.clickOn_accounticon();
 		CreditStatementTest.clickOn_logout();
 		CreditStatementTest.enterSuperadminemail(Superadminemail);
@@ -124,6 +126,22 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOnBtn_Login();
 		CreditStatementTest.clickOnbtn_Credits();
 		CreditStatementTest.clickOn_ExporttoXLS();
+		Thread.sleep(5000);
+		File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\credit-list.xlsx");
+		if(downloadedfile.exists()) {
+			softAssert.assertTrue(true);
+		
+		}
+		else { 
+			softAssert.assertTrue(false);
+		}
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+		
 	}
 	
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Export to XLS button on Credit payouts Page")
@@ -137,10 +155,26 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOnbtn_Credits();
 		CreditStatementTest.clickOn_ViewStatement();
 		CreditStatementTest.clickOn_ExporttoXLS();
+		Thread.sleep(5000);
+		File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\withdrawn-payouts.xlsx");
+		if(downloadedfile.exists()) {
+			softAssert.assertTrue(true);
+		
+		}
+		else { 
+			softAssert.assertTrue(false);
+		}
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+		
 	}
 	
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify paying Task Credit Type Amount ")
-	public void verify_paying_cash_credit(String phoneOrEmail, String password, String Mobilenumber, String UPIID, String expectedmessage) throws InterruptedException, IOException {
+	public void verify_paying_cash_credit(String phoneOrEmail, String password, String Mobilenumber, String UPIID, String expectedmessage, String expectedmessage1) throws InterruptedException, IOException {
 		CreditStatementTest = new CreditStatement(driver);
 		
 		
@@ -149,8 +183,7 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOnBtn_Login();
 		CreditStatementTest.clickOnbtn_Credits();
 		CreditStatementTest.clickOnbtn_Pay();
-		WebElement frame = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='razorpay-checkout-frame']")));
-		driver.switchTo().frame(frame);
+		CreditStatementTest.switchToFrame();
 		CreditStatementTest.enterMobilenumber(Mobilenumber);
 		CreditStatementTest.clickOnbtn_Continue();
 		CreditStatementTest.clickOn_upi();
@@ -158,6 +191,9 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOnbtn_verifyandpay();
 		String actualMessage = CreditStatementTest.get_MessageForPaymentSuccessful();
 		softAssert.assertEquals(actualMessage, expectedmessage);
+		driver.switchTo().parentFrame();
+		String actualMessage1 = CreditStatementTest.get_MessageForPaid();
+		softAssert.assertEquals(actualMessage1, expectedmessage1);
 		try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
@@ -167,7 +203,7 @@ public class CreditStatementTest extends BaseTest {
 	}
 	
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify paying Cash Credit Type Amount ")
-	public void verify_paying_Task_credit(String phoneOrEmail, String password, String Mobilenumber, String UPIID, String expectedmessage) throws InterruptedException, IOException {
+	public void verify_paying_Task_credit(String phoneOrEmail, String password, String Mobilenumber, String UPIID, String expectedmessage, String expectedmessage1) throws InterruptedException, IOException {
 		CreditStatementTest = new CreditStatement(driver);
 		
 		
@@ -176,8 +212,7 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOnBtn_Login();
 		CreditStatementTest.clickOnbtn_Credits();
 		CreditStatementTest.clickOnbtn_Pay1();
-		WebElement frame = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='razorpay-checkout-frame']")));
-		driver.switchTo().frame(frame);
+		CreditStatementTest.switchToFrame();
 		CreditStatementTest.enterMobilenumber(Mobilenumber);
 		CreditStatementTest.clickOnbtn_Continue();
 		CreditStatementTest.clickOn_upi();
@@ -185,6 +220,9 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOnbtn_verifyandpay();
 		String actualMessage = CreditStatementTest.get_MessageForPaymentSuccessful();
 		softAssert.assertEquals(actualMessage, expectedmessage);
+		driver.switchTo().parentFrame();
+		String actualMessage1 = CreditStatementTest.get_MessageForPaid();
+		softAssert.assertEquals(actualMessage1, expectedmessage1);
 		try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
