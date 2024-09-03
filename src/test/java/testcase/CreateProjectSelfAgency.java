@@ -20,7 +20,8 @@ public class CreateProjectSelfAgency extends BaseTest {
     public void CreateProjectPageTestData(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
     		String EnterRadius,String EnterItem, String EnterDescription
-    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult) throws InterruptedException {
+    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,String ExpectedMessage
+) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
 
         //ProjectPage.clickOnErrorMessage();
@@ -71,6 +72,9 @@ public class CreateProjectSelfAgency extends BaseTest {
         
         String ProjectCreatedSuccesfully = ProjectPage.ProjectCreatedSuccesfully();
         softAssert.assertEquals(ProjectCreatedSuccesfully, ExpectedResult);
+        
+        String ProjectCreatedMessage = ProjectPage.ProjectCreatedMessage();
+        softAssert.assertEquals(ProjectCreatedMessage, ExpectedMessage);
         try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
