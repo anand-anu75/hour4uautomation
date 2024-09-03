@@ -1,5 +1,6 @@
 package testcase;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
@@ -20,7 +21,7 @@ public class ManageDownloadstest extends BaseTest {
 		
 		
 		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
-		public void verify_Download_Dashboard(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+		public void verify_Download_Dashboard(String phoneOrEmail, String OTP) throws InterruptedException, IOException {
 			login = new LoginPage(driver);
 
 			login.clickOnLink_SignInUsingOtp();
@@ -28,35 +29,19 @@ public class ManageDownloadstest extends BaseTest {
 			login.clickOnBtn_GetOTP();
 			login.enterOTP(OTP);
 			login.clickOnBtn_Login();
-			Thread.sleep(1000);
-			actualURL = driver.getCurrentUrl();
-			softAssert.assertEquals(actualURL, expectedURL);
-			try {
-				softAssert.assertAll();
-			} catch (AssertionError e) {
-				assertionMessage.set(e.getMessage());
-				throw e;
-			}
-			
 			
 			managedownloadtest = new ManageDownloads(driver);
 			managedownloadtest.clickOnbtn_More();
 			managedownloadtest.clickOnbtn_DownloadProofofwork();
-		
-		}
-		
-		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
-		public void verify_Download_ViewTask(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
-			login = new LoginPage(driver);
-
-			login.clickOnLink_SignInUsingOtp();
-			login.enterPhoneOrEmail(phoneOrEmail);
-			login.clickOnBtn_GetOTP();
-			login.enterOTP(OTP);
-			login.clickOnBtn_Login();
-			Thread.sleep(1000);
-			actualURL = driver.getCurrentUrl();
-			softAssert.assertEquals(actualURL, expectedURL);
+			Thread.sleep(5000);
+			File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\proof_of_work_66d41c10ef900e1c45d355c8.pptx");
+			if(downloadedfile.exists()) {
+				softAssert.assertTrue(true);
+			
+			}
+			else { 
+				softAssert.assertTrue(false);
+			}
 			try {
 				softAssert.assertAll();
 			} catch (AssertionError e) {
@@ -64,12 +49,24 @@ public class ManageDownloadstest extends BaseTest {
 				throw e;
 			}
 			
+		
+		}
+		
+		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
+		public void verify_Download_ViewTask(String phoneOrEmail, String OTP) throws InterruptedException, IOException {
+			login = new LoginPage(driver);
+
+			login.clickOnLink_SignInUsingOtp();
+			login.enterPhoneOrEmail(phoneOrEmail);
+			login.clickOnBtn_GetOTP();
+			login.enterOTP(OTP);
+			login.clickOnBtn_Login();
+		
 			
 			managedownloadtest = new ManageDownloads(driver);
-			
-  		    Actions actions = new Actions(driver); 
-			actions.sendKeys(Keys.PAGE_DOWN).perform();
 			Thread.sleep(2000);
+			Actions actions = new Actions(driver); 
+			actions.sendKeys(Keys.ARROW_DOWN).perform();
 			managedownloadtest.clickOnbtn_ViewTasks();
 			String originalWindow = driver.getWindowHandle();
 			 
@@ -84,13 +81,28 @@ public class ManageDownloadstest extends BaseTest {
 			}
 			Thread.sleep(2000);
 			managedownloadtest.clickOn_Openmenutoexplore();
-			managedownloadtest.clickOnbtn_DownloadProofofwork();		
+			managedownloadtest.clickOnbtn_DownloadProofofwork();
+			Thread.sleep(5000);
+			File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\proof_of_work_66d595ab18789317173dd1b6.pptx");
+			if(downloadedfile.exists()) {
+				softAssert.assertTrue(true);
+			
+			}
+			else { 
+				softAssert.assertTrue(false);
+			}
+			try {
+				softAssert.assertAll();
+			} catch (AssertionError e) {
+				assertionMessage.set(e.getMessage());
+				throw e;
+			}
 			
 		
 		}
 		
 		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Workorders")
-		public void verify_Download_Workorder(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+		public void verify_Download_Workorder(String phoneOrEmail, String OTP) throws InterruptedException, IOException {
 			login = new LoginPage(driver);
 
 			login.clickOnLink_SignInUsingOtp();
@@ -98,27 +110,33 @@ public class ManageDownloadstest extends BaseTest {
 			login.clickOnBtn_GetOTP();
 			login.enterOTP(OTP);
 			login.clickOnBtn_Login();
-			Thread.sleep(1000);
-			actualURL = driver.getCurrentUrl();
-			softAssert.assertEquals(actualURL, expectedURL);
+					
+			
+			managedownloadtest = new ManageDownloads(driver);
+			managedownloadtest.clickOn_Completed();
+			Thread.sleep(2000);
+			managedownloadtest.clickOn_Openmenutoexplore();
+			managedownloadtest.clickOnbtn_DownloadProofofwork();
+			Thread.sleep(5000);
+			File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\proof_of_work_66d41c10ef900e1c45d355c8.pptx");
+			if(downloadedfile.exists()) {
+				softAssert.assertTrue(true);
+			
+			}
+			else { 
+				softAssert.assertTrue(false);
+			}
 			try {
 				softAssert.assertAll();
 			} catch (AssertionError e) {
 				assertionMessage.set(e.getMessage());
 				throw e;
 			}
-			
-			
-			managedownloadtest = new ManageDownloads(driver);
-			managedownloadtest.clickOn_Active();
-			Thread.sleep(2000);
-			managedownloadtest.clickOn_Openmenutoexplore();
-			managedownloadtest.clickOnbtn_DownloadProofofwork();
 			
 		}
 		
 		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
-		public void verify_Download_XLS(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+		public void verify_Download_XLS(String phoneOrEmail, String OTP) throws InterruptedException, IOException {
 			login = new LoginPage(driver);
 
 			login.clickOnLink_SignInUsingOtp();
@@ -126,19 +144,25 @@ public class ManageDownloadstest extends BaseTest {
 			login.clickOnBtn_GetOTP();
 			login.enterOTP(OTP);
 			login.clickOnBtn_Login();
-			Thread.sleep(1000);
-			actualURL = driver.getCurrentUrl();
-			softAssert.assertEquals(actualURL, expectedURL);
+			
+			
+			managedownloadtest = new ManageDownloads(driver);
+			managedownloadtest.clickOn_ExportXLS();
+			Thread.sleep(5000);
+			File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\workorder-data.xlsx");
+			if(downloadedfile.exists()) {
+				softAssert.assertTrue(true);
+			
+			}
+			else { 
+				softAssert.assertTrue(false);
+			}
 			try {
 				softAssert.assertAll();
 			} catch (AssertionError e) {
 				assertionMessage.set(e.getMessage());
 				throw e;
 			}
-			
-			
-			managedownloadtest = new ManageDownloads(driver);
-			managedownloadtest.clickOn_ExportXLS();
 		}
 	
 

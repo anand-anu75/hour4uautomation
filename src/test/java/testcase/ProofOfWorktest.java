@@ -1,5 +1,6 @@
 package testcase;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
@@ -24,7 +25,7 @@ public class ProofOfWorktest extends BaseTest {
 	
 	
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from Dashboard Page")
-	public void verify_proofofwork_Dashboard(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+	public void verify_proofofwork_Dashboard(String phoneOrEmail, String OTP) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -32,25 +33,30 @@ public class ProofOfWorktest extends BaseTest {
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(1000);
-		actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
-		try {
-			softAssert.assertAll();
-		} catch (AssertionError e) {
-			assertionMessage.set(e.getMessage());
-			throw e;
-		}
-		
 		
 		proofOfWorktest = new ProofOfWork(driver);
 		proofOfWorktest.clickOnbtn_More();
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
+		Thread.sleep(5000);
+		File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\proof_of_work_66d41c10ef900e1c45d355c8.pptx");
+		if(downloadedfile.exists()) {
+			softAssert.assertTrue(true);
+		
+		}
+		else { 
+			softAssert.assertTrue(false);
+		}
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
 	
 	}
 	
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from Projects section")
-	public void verify_proofofwork_Project(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
+	public void verify_proofofwork_Project(String phoneOrEmail, String OTP) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -58,40 +64,24 @@ public class ProofOfWorktest extends BaseTest {
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(1000);
-		actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
-		try {
-			softAssert.assertAll();
-		} catch (AssertionError e) {
-			assertionMessage.set(e.getMessage());
-			throw e;
-		}
-		
 		
 		proofOfWorktest = new ProofOfWork(driver);
 		proofOfWorktest.clickOnbtn_Projects();
-		proofOfWorktest.clickOnbtn_NextPage();
 		proofOfWorktest.clickOnbtn_clickheretoviewWorkorders();
 		Actions actions = new Actions(driver);
         actions.sendKeys(Keys.ARROW_LEFT).perform();
         Thread.sleep(1000);
         proofOfWorktest.clickOn_Openmenutoexplore();
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
+		Thread.sleep(5000);
+		File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\proof_of_work_66d41c10ef900e1c45d355c8.pptx");
+		if(downloadedfile.exists()) {
+			softAssert.assertTrue(true);
 		
-	}
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from Job Application Page")
-	public void verify_proofofwork_JobApp(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
-		login = new LoginPage(driver);
-
-		login.clickOnLink_SignInUsingOtp();
-		login.enterPhoneOrEmail(phoneOrEmail);
-		login.clickOnBtn_GetOTP();
-		login.enterOTP(OTP);
-		login.clickOnBtn_Login();
-		Thread.sleep(1000);
-		actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
+		}
+		else { 
+			softAssert.assertTrue(false);
+		}
 		try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
@@ -99,6 +89,16 @@ public class ProofOfWorktest extends BaseTest {
 			throw e;
 		}
 		
+	}
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from Job Application Page")
+	public void verify_proofofwork_JobApp(String phoneOrEmail, String OTP) throws InterruptedException, IOException {
+		login = new LoginPage(driver);
+
+		login.clickOnLink_SignInUsingOtp();
+		login.enterPhoneOrEmail(phoneOrEmail);
+		login.clickOnBtn_GetOTP();
+		login.enterOTP(OTP);
+		login.clickOnBtn_Login();
 		
 		proofOfWorktest = new ProofOfWork(driver);
 		Actions actions = new Actions(driver); 
@@ -119,22 +119,15 @@ public class ProofOfWorktest extends BaseTest {
 		Thread.sleep(2000);
 		proofOfWorktest.clickOn_Openmenutoexplore();
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
+		Thread.sleep(5000);
+		File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\proof_of_work_66d41c10ef900e1c45d355c8.pptx");
+		if(downloadedfile.exists()) {
+			softAssert.assertTrue(true);
 		
-	
-	}
-	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from View Tasks Page")
-	public void verify_proofofwork_ViewTask(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
-		login = new LoginPage(driver);
-
-		login.clickOnLink_SignInUsingOtp();
-		login.enterPhoneOrEmail(phoneOrEmail);
-		login.clickOnBtn_GetOTP();
-		login.enterOTP(OTP);
-		login.clickOnBtn_Login();
-		Thread.sleep(1000);
-		actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
+		}
+		else { 
+			softAssert.assertTrue(false);
+		}
 		try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
@@ -142,14 +135,41 @@ public class ProofOfWorktest extends BaseTest {
 			throw e;
 		}
 		
+	
+	}
+	
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Proof of Work from View Tasks Page")
+	public void verify_proofofwork_ViewTask(String phoneOrEmail, String OTP) throws InterruptedException, IOException {
+		login = new LoginPage(driver);
+
+		login.clickOnLink_SignInUsingOtp();
+		login.enterPhoneOrEmail(phoneOrEmail);
+		login.clickOnBtn_GetOTP();
+		login.enterOTP(OTP);
+		login.clickOnBtn_Login();
 		
 		proofOfWorktest = new ProofOfWork(driver);
 		Actions actions = new Actions(driver); 
 		actions.sendKeys(Keys.PAGE_DOWN).perform();
-		proofOfWorktest.clickOn_Active();
+		proofOfWorktest.clickOn_Completed();
 		Thread.sleep(2000);
 		proofOfWorktest.clickOn_Openmenutoexplore();
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
+		Thread.sleep(5000);
+		File downloadedfile = new File("C:\\Users\\Apptad\\Downloads\\proof_of_work_66d41c10ef900e1c45d355c8.pptx");
+		if(downloadedfile.exists()) {
+			softAssert.assertTrue(true);
+		
+		}
+		else { 
+			softAssert.assertTrue(false);
+		}
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
 		
 	
 	}

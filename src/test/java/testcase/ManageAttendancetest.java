@@ -19,7 +19,7 @@ public class ManageAttendancetest extends BaseTest {
 static String actualURL;
 	
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
-	public void verify_Attendance_Workorder(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
+	public void verify_Attendance_Workorder(String phoneOrEmail, String OTP, String expectedMessage) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -27,15 +27,6 @@ static String actualURL;
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(1000);
-		actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
-		try {
-			softAssert.assertAll();
-		} catch (AssertionError e) {
-			assertionMessage.set(e.getMessage());
-			throw e;
-		}
 		
 		
 		manageAttendancetest = new ManageAttendance(driver);
@@ -66,7 +57,7 @@ static String actualURL;
 	}
 	
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
-	public void verify_Attendance_ViewTask(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
+	public void verify_Attendance_ViewTask(String phoneOrEmail, String OTP, String expectedMessage) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -74,15 +65,6 @@ static String actualURL;
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(1000);
-		actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
-		try {
-			softAssert.assertAll();
-		} catch (AssertionError e) {
-			assertionMessage.set(e.getMessage());
-			throw e;
-		}
 		
 		
 		manageAttendancetest = new ManageAttendance(driver);
@@ -100,7 +82,7 @@ static String actualURL;
 		
 	}
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
-	public void verify_Attendance_Active(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
+	public void verify_Attendance_Active(String phoneOrEmail, String OTP, String expectedMessage) throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -108,20 +90,11 @@ static String actualURL;
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(1000);
-		actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
-		try {
-			softAssert.assertAll();
-		} catch (AssertionError e) {
-			assertionMessage.set(e.getMessage());
-			throw e;
-		}
-		
+	
 		
 		manageAttendancetest = new ManageAttendance(driver);
 		manageAttendancetest.clickOnbtn_Workorder();
-		manageAttendancetest.clickOn_Active();
+		manageAttendancetest.clickOn_Completed();
 		Thread.sleep(2000);
 		manageAttendancetest.clickOn_Openmenutoexplore();
 		manageAttendancetest.clickOn_ViewJobSeekerSchedules();

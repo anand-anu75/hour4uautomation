@@ -20,7 +20,7 @@ public class TeamMembers extends BaseTest {
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify that team member is added with valid name, mobile number and email.")
 
-	public void validation_for_valid_Details(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectedURL)
+	public void validation_for_valid_Details(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectedMessage)
 			throws InterruptedException {
 		login = new LoginPage(driver);
 
@@ -29,7 +29,6 @@ public class TeamMembers extends BaseTest {
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(5000);
 		
 		teamMembers = new AddTeamMembers(driver);
         teamMembers.clickOnbtn_Users();
@@ -38,10 +37,9 @@ public class TeamMembers extends BaseTest {
 		teamMembers.enterName(name);
 		teamMembers.enterMobile(mobile);
 		teamMembers.enterEmail(email);
-		teamMembers.click_On_AddTeamMember_Button();
-		actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
-
+		teamMembers.click_On_AddTeamMemberButton();
+		String actualMessage = teamMembers.get_MessageForTeamMemberAddedSuccessfully();
+		softAssert.assertEquals(actualMessage, expectedMessage);
 		try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
@@ -61,7 +59,6 @@ public class TeamMembers extends BaseTest {
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(5000);
 		
 		
 		teamMembers = new AddTeamMembers(driver);
@@ -71,7 +68,7 @@ public class TeamMembers extends BaseTest {
 		teamMembers.enterName(name);
 		teamMembers.enterMobile(mobile);
 		teamMembers.enterEmail(email);
-		teamMembers.click_On_AddTeamMember_Button();
+		teamMembers.click_On_AddTeamMemberButton();
 		String actualerrorMessage = teamMembers.get_ErrorMessageForInvalidName();
 		softAssert.assertEquals(actualerrorMessage, expectederrorMessage);
 		try {
@@ -92,7 +89,6 @@ public class TeamMembers extends BaseTest {
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(5000);
 		
 		
 		teamMembers = new AddTeamMembers(driver);
@@ -102,7 +98,7 @@ public class TeamMembers extends BaseTest {
 		teamMembers.enterName(name);
 		teamMembers.enterMobile(mobile);
 		teamMembers.enterEmail(email);
-		teamMembers.click_On_AddTeamMember_Button();
+		teamMembers.click_On_AddTeamMemberButton();
 		String actualerrorMessage = teamMembers.get_ErrorMessageForInvalidMobile();
 		softAssert.assertEquals(actualerrorMessage, expectederrorMessage);
 		try {
@@ -134,7 +130,7 @@ public class TeamMembers extends BaseTest {
 		teamMembers.enterName(name);
 		teamMembers.enterMobile(mobile);
 		teamMembers.enterEmail(email);
-		teamMembers.click_On_AddTeamMember_Button();
+		teamMembers.click_On_AddTeamMemberButton();
 		String actualerrorMessage = teamMembers.get_ErrorMessageForInvalidEmail();
 		softAssert.assertEquals(actualerrorMessage, expectederrorMessage);
 		try {

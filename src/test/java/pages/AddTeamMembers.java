@@ -19,6 +19,7 @@ public class AddTeamMembers extends BaseTest {
     WebElement txt_Mobile;
     WebElement txt_Email;
     WebElement btn_AddTeamMember;
+    WebElement expected_Message;
 	WebElement errorMessage_InvalidName;
 	WebElement errorMessage_InvalidMobile;
 	WebElement errorMessage_InvalidEmail;
@@ -47,31 +48,35 @@ public class AddTeamMembers extends BaseTest {
 
     //Method to enter Name
 	public void enterName(String Name) {
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_Name"))))
 		.sendKeys(Name);
 		
 	}
    //Method to enter mobile
 	public void enterMobile(String Mobile) {
+	
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_Mobile"))))
 		.sendKeys(Mobile);
 	
 	}
     //Method to enter Email
 	public void enterEmail(String Email) {
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_Email"))))
 		.sendKeys(Email);
 		
 	}
 	
-    public void click_On_AddTeamMember_Button() {
+    public void click_On_AddTeamMemberButton() {
 		
-		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AddTeamMember")))).click();
-       }catch(Exception e) {
-			System.out.println("complete");
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AddTeamMember")))).click();
 		}
-    }
+
+    
+    public String get_MessageForTeamMemberAddedSuccessfully() {
+ 	   return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("expected_Message")))).getText();
+  	}
     
     public String get_ErrorMessageForInvalidName() {
     	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_InvalidName")))).getText();
