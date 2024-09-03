@@ -22,7 +22,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     // Test for Creating Project Successfully 
  
-    @Test(dependsOnMethods = {"testcase.LoginEnterprise.loginEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginDhruviEnterprise.loginDhruviEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void CreateProjectEnterpriseData(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
     		String EnterRadius,String EnterItem, String EnterDescription
@@ -33,10 +33,10 @@ public class CreateProjectEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTabButton();
        //ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnCreateProjectButton();
-        ProjectPage.clickOnSelfClientButton();
-        ProjectPage.clickOnNext1Button();
-        Thread.sleep(2000);
-        ProjectPage.clickOnProjectTypeButton();
+ //       ProjectPage.clickOnSelfClientButton();
+ //       ProjectPage.clickOnNext1Button();
+ //       Thread.sleep(2000);
+ //       ProjectPage.clickOnProjectTypeButton();
         ProjectPage.clickOnSelectProjectTypeButton();
         ProjectPage.clickOnHotspotButton();
         ProjectPage.clickOnNext2Button();
@@ -87,7 +87,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     //Test for Selecting Invalid Project Type 
     
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginDhruviEnterprise.loginDhruviEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     
     public void EnterpriseImproperProjectType(String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
@@ -96,10 +96,10 @@ public class CreateProjectEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTabButton();
        // ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnCreateProjectButton();
-        ProjectPage.clickOnSelfClientButton();
-        ProjectPage.clickOnNext1Button();
-        Thread.sleep(2000);
-        ProjectPage.clickOnProjectTypeButton();
+ //       ProjectPage.clickOnSelfClientButton();
+ //       ProjectPage.clickOnNext1Button();
+ //       Thread.sleep(2000);
+ //       ProjectPage.clickOnProjectTypeButton();
         //ProjectPage.clickOnSelectProjectTypeButton();
        // ProjectPage.clickOnHotspotButton();
         ProjectPage.clickOnNext2Button();
@@ -117,7 +117,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     //Test for Invalid Project Description 
     
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginDhruviEnterprise.loginDhruviEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void EnterpriseInvalidProjectDesc(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
 
@@ -125,10 +125,10 @@ public class CreateProjectEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTabButton();
        // ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnCreateProjectButton();
-        ProjectPage.clickOnSelfClientButton();
-        ProjectPage.clickOnNext1Button();
-        Thread.sleep(2000);
-        ProjectPage.clickOnProjectTypeButton();
+//        ProjectPage.clickOnSelfClientButton();
+//        ProjectPage.clickOnNext1Button();
+ //       Thread.sleep(2000);
+ //       ProjectPage.clickOnProjectTypeButton();
         ProjectPage.clickOnSelectProjectTypeButton();
         ProjectPage.clickOnHotspotButton();
         ProjectPage.clickOnNext2Button();
@@ -149,7 +149,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     //Test for Invalid Field Name 
     
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginDhruviEnterprise.loginDhruviEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void EnterpriseInvalidFieldName(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
@@ -159,10 +159,10 @@ public class CreateProjectEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTabButton();
         //ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnCreateProjectButton();
-        ProjectPage.clickOnSelfClientButton();
-        ProjectPage.clickOnNext1Button();
-        Thread.sleep(2000);
-        ProjectPage.clickOnProjectTypeButton();
+//        ProjectPage.clickOnSelfClientButton();
+//        ProjectPage.clickOnNext1Button();
+//        Thread.sleep(2000);
+//        ProjectPage.clickOnProjectTypeButton();
         ProjectPage.clickOnSelectProjectTypeButton();
         ProjectPage.clickOnHotspotButton();
         ProjectPage.clickOnNext2Button();
@@ -203,7 +203,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     // Test for Invalid Field Type 
     
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginDhruviEnterprise.loginDhruviEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void EnterpriseInvalidFieldType(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,
     		String ExpectedResult) throws InterruptedException {
@@ -213,10 +213,10 @@ public class CreateProjectEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTabButton();
         //ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnCreateProjectButton();
-        ProjectPage.clickOnSelfClientButton();
-        ProjectPage.clickOnNext1Button();
-        Thread.sleep(2000);
-        ProjectPage.clickOnProjectTypeButton();
+ //       ProjectPage.clickOnSelfClientButton();
+//        ProjectPage.clickOnNext1Button();
+//        Thread.sleep(2000);
+ //       ProjectPage.clickOnProjectTypeButton();
         ProjectPage.clickOnSelectProjectTypeButton();
         ProjectPage.clickOnHotspotButton();
         ProjectPage.clickOnNext2Button();
@@ -255,7 +255,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     //Test for Invalid Frequency 
     
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginDhruviEnterprise.loginDhruviEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void EnterpriseInvalidFrequency(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
@@ -265,10 +265,10 @@ public class CreateProjectEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTabButton();
         //ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnCreateProjectButton();
-        ProjectPage.clickOnSelfClientButton();
-        ProjectPage.clickOnNext1Button();
-        Thread.sleep(2000);
-        ProjectPage.clickOnProjectTypeButton();
+   //     ProjectPage.clickOnSelfClientButton();
+   //     ProjectPage.clickOnNext1Button();
+   //     Thread.sleep(2000);
+  //      ProjectPage.clickOnProjectTypeButton();
         ProjectPage.clickOnSelectProjectTypeButton();
         ProjectPage.clickOnHotspotButton();
         ProjectPage.clickOnNext2Button();
@@ -309,7 +309,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     //Test for Invalid Radius 
     
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginDhruviEnterprise.loginDhruviEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void EnterpriseInvalidRadius(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
@@ -319,10 +319,10 @@ public class CreateProjectEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTabButton();
         //ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnCreateProjectButton();
-        ProjectPage.clickOnSelfClientButton();
-        ProjectPage.clickOnNext1Button();
-        Thread.sleep(2000);
-        ProjectPage.clickOnProjectTypeButton();
+  //      ProjectPage.clickOnSelfClientButton();
+  //      ProjectPage.clickOnNext1Button();
+   //     Thread.sleep(2000);
+  //      ProjectPage.clickOnProjectTypeButton();
         ProjectPage.clickOnSelectProjectTypeButton();
         ProjectPage.clickOnHotspotButton();
         ProjectPage.clickOnNext2Button();
@@ -363,7 +363,7 @@ public class CreateProjectEnterprise extends BaseTest {
     
     //Test for Invalid Project Title 
     
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+    @Test(dependsOnMethods = {"testcase.LoginDhruviEnterprise.loginDhruviEnterprise"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
     public void EnterpriseInvalidProjectTitle(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
         ProjectPage = new CreateProjectPage(driver);
 
@@ -371,10 +371,10 @@ public class CreateProjectEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTabButton();
         //ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnCreateProjectButton();
-        ProjectPage.clickOnSelfClientButton();
-        ProjectPage.clickOnNext1Button();
-        Thread.sleep(2000);
-        ProjectPage.clickOnProjectTypeButton();
+   //     ProjectPage.clickOnSelfClientButton();
+   //     ProjectPage.clickOnNext1Button();
+   //     Thread.sleep(2000);
+  //      ProjectPage.clickOnProjectTypeButton();
         ProjectPage.clickOnSelectProjectTypeButton();
         ProjectPage.clickOnHotspotButton();
         ProjectPage.clickOnNext2Button();
