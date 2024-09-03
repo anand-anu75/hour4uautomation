@@ -1,14 +1,18 @@
 package testcase;
 
 import java.io.IOException;
+
 import java.util.Set;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.LoginPage;
 import pages.ManageAttendance;
 import utilities.ReadXLData;
+
+@Listeners(base.Listeners.class)
 
 public class ManageAttendancetest extends BaseTest {
 	
