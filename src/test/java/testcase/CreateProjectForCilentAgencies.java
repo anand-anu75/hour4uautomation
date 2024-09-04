@@ -116,10 +116,10 @@ public class CreateProjectForCilentAgencies extends BaseTest{
         return baseEmail; // Fallback to the original email if the format is unexpected
     }
     
-    // Invalid Enterprise - Creating Project agencies
+    // Invalid Project Type - Creating Project agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidEnterprise(String Name, String Phone, String Email, String Address, String
+    public void CreateProjectInvalidProjectType(String Name, String Phone, String Email, String Address, String
     		expectedSuccessMessage, String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
