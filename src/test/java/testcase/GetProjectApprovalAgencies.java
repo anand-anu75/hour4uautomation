@@ -149,7 +149,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
     //Existing Enterprise - Invalid Project Type
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void ExistingInvalidProjectType(String ExpectedResult) throws InterruptedException {
+    public void ProjectApproveInvalidProjectTyp(String ExpectedResult) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
         //ProjectPage.clickOnErrorMessage();
@@ -179,7 +179,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
     // Existing Enterprise - Invalid Project Title
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void ExistingInvalidProjectTitle(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
+    public void ProjectApprovInvalidProjectTltl(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
       //ProjectPage.clickOnErrorMessage();
@@ -216,7 +216,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
     //Existing Enterprise - Invalid Project Description
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void ExistingInvalidProjectDesc(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
+    public void ProjectApprovInvalidProjectDesc(String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
       //ProjectPage.clickOnErrorMessage();
@@ -250,7 +250,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
     //Existing Enterprise - Invalid Field Name
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void ExistingInvalidFieldName(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void ProjectApprovInvalidFieldName(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -307,7 +307,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
     //Existing Enterprise - Invalid Frequency
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void ExistingInvalidFrequency(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void ProjectApprovInvalidFrequency(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -317,6 +317,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
    //ProjectPage.clickOnErrorMessage();
     ProjectPage.clickOnCreateProjectButton();
     //ProjectPage.clickOnSelfClientButton();
+    Thread.sleep(2000);
     ProjectPage.clickOnExistingEnterprise();
     ProjectPage.SelectDropdownEnterprise();
     ProjectPage.SelectOptionEnterprise();
@@ -363,7 +364,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
     //Existing Enterprise - Invalid Radius
     
     @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void ExistingInvalidRadius(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void ProjectApprovInvalidRadius(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -373,6 +374,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
        //ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnCreateProjectButton();
         //ProjectPage.clickOnSelfClientButton();
+        Thread.sleep(2000);
         ProjectPage.clickOnExistingEnterprise();
         ProjectPage.SelectDropdownEnterprise();
         ProjectPage.SelectOptionEnterprise();
