@@ -16,15 +16,15 @@ public class AppLoginPage extends BaseTest {
 	
 	WebElement txt_MobileNumber;
 	
-	WebElement btn_Next;
+	WebElement btn_MobileNextButton;
 	
 	WebElement txt_EnterOTP;
 	
-	WebElement btn_Next2;
+	WebElement btn_OTPNext;
 	
-	WebElement btn_Workorbit;
+	WebElement opt_AppActiveJobAvailable ;
 	
-	WebElement btn_ApplyWorkorbit;
+	WebElement btn_ApplyActiveJob;
 	
 	WebElement txt_VendorName;
 	
@@ -57,9 +57,9 @@ public void enterMobileNumber(String MobileNumber) {
 		.sendKeys(MobileNumber);
 	}
 
-public void clickOnNextButton() {
+public void clickOnMobileNextButton() {
     // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Next"))))
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_MobileNextButton"))))
 		.click();
  }
 
@@ -69,21 +69,21 @@ public void enterOTP(String EnterOTP) {
 	.sendKeys(EnterOTP);
 }
 
-public void clickOnNext2Button() {
+public void clickOnOTPNext() {
     // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Next2"))))
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_OTPNext"))))
 		.click();
  }
 
-public void clickOnWorkorbitButton() {
+public void clickOnAppActiveJob() {
     // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Workorbit"))))
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_AppActiveJobAvailable"))))
 		.click();
  }
 
-public void clickOnApplyWorkorbitButton() {
+public void clickOnApplyActiveJob() {
     // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ApplyWorkorbit"))))
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ApplyActiveJob"))))
 		.click();
  }
 

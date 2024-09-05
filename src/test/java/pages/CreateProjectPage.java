@@ -858,5 +858,17 @@ public String ProjectCreatedMessage() {
 	
 }
 
+public void enterDhruviPassword(String EnterPassword) {
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_enterDhruviPassword"))))
+	.sendKeys(EnterPassword);
+}
+
+public void enterDhruviEmail(String EnterpriseLogin) {
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_EnterAgencyEmail"))))
+	.sendKeys(EnterpriseLogin);
+}
+
 
 }
