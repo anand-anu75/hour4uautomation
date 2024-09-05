@@ -113,7 +113,7 @@ public class ManageJobApplicationAccess extends BaseTest {
     		
     	    
     	JobApplicationPage.clickOnWorkorderButton();
-    	Thread.sleep(2000);
+    	Thread.sleep(4000);
     	JobApplicationPage.clickOnActiveWorkorder();
     	JobApplicationPage.ClickToApproveChamp();
     	JobApplicationPage.JobApplicationStatus();
