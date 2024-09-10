@@ -22,7 +22,7 @@ public class AssignProjectVendorAgency extends BaseTest {
 		  AssignProjectVendor.SelectCreatedProject();
 		  AssignProjectVendor.ClickOnAssignVendor();
 		  Thread.sleep(2000);
-		  AssignProjectVendor.SelectVendorToAssignProject();
+		  AssignProjectVendor.clickOn_DropDown();
 		  AssignProjectVendor.SelectVendorToAssignProject();
 		  AssignProjectVendor.ClickOnAssignVendorButton();
 		  AssignProjectVendor.SelectedVendorAssignedSuccessfully();
@@ -112,11 +112,12 @@ public class AssignProjectVendorAgency extends BaseTest {
 	        ProjectPage.clickOnSaveProject();
 	        ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
 	       
-			  ProjectPage.clickOnProjectTabButton();
+	        ProjectPage.clickOnProjectTabButton();
 			  Thread.sleep(2000);
 			  AssignProjectVendor.SelectCreatedProject();
 			  AssignProjectVendor.ClickOnAssignVendor();
 			  Thread.sleep(2000);
+			  AssignProjectVendor.clickOn_DropDown();
 			  AssignProjectVendor.SelectVendorToAssignProject();
 			  AssignProjectVendor.ClickOnAssignVendorButton();
 			  AssignProjectVendor.SelectedVendorAssignedSuccessfully();

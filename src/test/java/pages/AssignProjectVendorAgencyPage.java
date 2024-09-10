@@ -14,7 +14,7 @@ public class AssignProjectVendorAgencyPage extends BaseTest{
 	
 	WebElement btn_AssignVendor;
 	
-	WebElement drpd_SelectVendor;
+	WebElement click_dropdown;
 	
 	WebElement opt_ClickOnVendor;
 	
@@ -39,11 +39,10 @@ public class AssignProjectVendorAgencyPage extends BaseTest{
 			.click();
 	    }
 	
-	public void ClickOnSelectVendor() {
-	       // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_SelectVendor"))))
-			.click();
-	    }
+	public void clickOn_DropDown() {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("click_dropdown")))).click();
+ 
+	}
 	
 	public void SelectVendorToAssignProject() {
 	       // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
