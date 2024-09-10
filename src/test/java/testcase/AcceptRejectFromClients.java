@@ -19,9 +19,8 @@ public class AcceptRejectFromClients extends BaseTest{
 	CreateworkorderPage WorkorderPage;
 	CreateProjectPage ProjectPage;
 	@Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	    public void AcceptRejectClients(String Name, String Phone, String Email, String Address, String
-	    		expectedSuccessMessage,String OTP,
- String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+	    public void AcceptRejectClients(String CompanyName, String PersonName, String Email, String MobileResponsible
+, String expectedSuccessMessage,String OTP, String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
 	    		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency,
 	    		String EnterRadius,String EnterItem, String EnterDescription
 	    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult, String SearchAgency,
@@ -38,17 +37,20 @@ public class AcceptRejectFromClients extends BaseTest{
 	        ClientPage.NavigateToDialogBox();
 	       
 	       
-	        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+	        String randomName = CompanyName + (int) (Math.random() * 1000);
+	        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
 	        String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-	        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+	        String randomEmail = generateRandomEmail(Email);
+	        // Appends a random number to the email username
 	 
 	        ClientPage.enterClientName(randomName);
-	        ClientPage.enterMobileNumber(randomPhone);
+	        ClientPage.enterMobileNumber(randomAnotherName);
 	        ClientPage.enterEmail(randomEmail);
-	       
-	        ClientPage.enterAddress(Address);
-	       
+	        ClientPage.enterAddress(randomPhone);
+	        Thread.sleep(4000);
 	        ClientPage.clickOnCreateClientButton();
+	        
+	        Thread.sleep(3000);
 	        
 	        ProjectPage.clickOnProfileButton();
 	        ProjectPage.clickOnLogoutButton();
@@ -60,7 +62,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	        ProjectPage.clickOnGetOTP();
 	        ProjectPage.enterOTPforAgencyLogin(OTP);
 	        ProjectPage.clickOnLoginButton();
-	        ProjectPage.clickOnErrorMessage();
+//	        ProjectPage.clickOnErrorMessage();
 	       
 	      //ProjectPage.clickOnErrorMessage();
 	        ProjectPage.clickOnProjectTabButton();
@@ -114,6 +116,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	        Thread.sleep(2000);
 	        ProjectPage.ClickOnAugustAgency();
 	        ProjectPage.clickOnSearchAssignAgency();
+	        Thread.sleep(2000);
 	        ProjectPage.clickOnProfileButton();
 	        ProjectPage.clickOnLogoutButton();
 	        ProjectPage.enterAgencyEmail(EnterAgencyEmail);
@@ -121,7 +124,9 @@ public class AcceptRejectFromClients extends BaseTest{
 	        ProjectPage.clickOnGetOTP();
 	        ProjectPage.enterOTPforAgencyLogin(EnterOTP);
 	        ProjectPage.clickOnLoginButton();
-	        ProjectPage.clickOnErrorMessage();
+	        
+	//        ProjectPage.clickOnErrorMessage();
+	        
 	        ProjectPage.clickOnProjectTabButton();
 	        ProjectPage.clickOnAcceptProject();
 	        
