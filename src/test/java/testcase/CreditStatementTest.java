@@ -4,10 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import java.util.Set;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -35,7 +31,7 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOnbtn_Topup();
 		CreditStatementTest.enteramount(amount);
 		CreditStatementTest.clickOnbtn_Paylater();
-		CreditStatementTest.clickOn_dropdown();
+		CreditStatementTest.clickOn_DropDown();
 		CreditStatementTest.clickOn_days();
 		CreditStatementTest.clickOn_checkbox();
 		CreditStatementTest.clickOnbtn_RequestCredits();
@@ -72,7 +68,8 @@ public class CreditStatementTest extends BaseTest {
 		CreditStatementTest.clickOnbtn_Topup1();
 		CreditStatementTest.enteramount(amount);
 		CreditStatementTest.clickOnbtn_Paylater();
-		CreditStatementTest.clickOn_dropdown();
+		Thread.sleep(2000);
+		CreditStatementTest.clickOn_DropDown();
 		CreditStatementTest.clickOn_days();
 		CreditStatementTest.clickOn_checkbox();
 		CreditStatementTest.clickOnbtn_RequestCredits();

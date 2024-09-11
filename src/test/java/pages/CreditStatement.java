@@ -16,6 +16,7 @@ public class CreditStatement extends BaseTest {
 	WebElement btn_Credits;
 	WebElement txt_amount;
 	WebElement btn_Paylater;
+	WebElement click_DropDown;
 	WebElement click_days;
 	WebElement click_checkbox;
 	WebElement btn_RequestCredits;
@@ -33,6 +34,7 @@ public class CreditStatement extends BaseTest {
 	WebElement txt_UPIID;
 	WebElement btn_Verifyandpay;
 	WebElement message_PaymentSuccessful;
+	WebElement message_Paid;
 	
 	
 	public CreditStatement(WebDriver driver) {
@@ -84,8 +86,8 @@ public class CreditStatement extends BaseTest {
 		.click();
 	}
 	
-	public void clickOn_dropdown() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_dropdown"))))
+	public void clickOn_DropDown() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_DropDown"))))
 		.click();
 	}
 	
@@ -196,5 +198,16 @@ public class CreditStatement extends BaseTest {
 		   	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("message_PaymentSuccessful")))).getText();
 		    	
 	 }
-	
+	 
+	 public String get_MessageForPaid() {
+		   	return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("message_Paid")))).getText();
+		    	
+	 }
+	 
+	 public void switchToFrame() {
+	 WebElement frame = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='razorpay-checkout-frame']")));
+	 driver.switchTo().frame(frame);
+	 }
+	 
+	 
 }
