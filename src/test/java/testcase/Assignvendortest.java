@@ -2,13 +2,17 @@ package testcase;
 
 import java.io.IOException;
 
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.Assignvendor;
 import utilities.ReadXLData;
+
+@Listeners(base.Listeners.class)
 
 public class Assignvendortest extends BaseTest {
 	
