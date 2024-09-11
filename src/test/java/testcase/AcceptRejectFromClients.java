@@ -145,11 +145,23 @@ public class AcceptRejectFromClients extends BaseTest{
  
 	  
 	    }
-	 private String generateRandomPhoneNumber() {
+/*	 private String generateRandomPhoneNumber() {
 	        long randomPhone = (long) (Math.random() * 10000000000L); // Generates a random number and ensures it's 10 digits
 	        return String.format("%010d", randomPhone); // Formats it as a 10-digit string
 	    }
-	 
+	*/
+	
+	private String generateRandomPhoneNumber() {
+	    // Generate the first digit as a random number between 5 and 9
+	    int firstDigit = 5 + (int) (Math.random() * 5);
+
+	    // Generate the remaining 9 digits
+	    long remainingDigits = (long) (Math.random() * 1000000000L); // 9 digits
+
+	    // Combine the first digit with the remaining 9 digits and format as a 10-digit number
+	    return String.format("%d%09d", firstDigit, remainingDigits);
+	}
+	
 	    // Utility method to generate a random email
 	    private String generateRandomEmail(String baseEmail) {
 	        int randomNum = (int) (Math.random() * 1000); // Generates a random number between 0 and 999
@@ -163,7 +175,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	// Accept/Reject from Clients - Invalid Enterprise
 	
 	@Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void AcceptRejectInvalidEnterprise(String Name, String Phone, String Email, String Address, String
+    public void AcceptRejectInvalidEnterprise(String CompanyName, String PersonName, String Email, String MobileResponsible, String
     		expectedSuccessMessage,String ExpectedMessage) throws InterruptedException {
         ClientPage = new InvitingclientPage(driver);
         ProjectPage = new CreateProjectPage(driver);
@@ -178,17 +190,21 @@ public class AcceptRejectFromClients extends BaseTest{
         ClientPage.NavigateToDialogBox();
        
        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
-        String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name 
+        String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-       
-        ClientPage.enterAddress(Address);
-       
+        Thread.sleep(3000);
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
+        
+        Thread.sleep(3000);
         
       //ProjectPage.clickOnErrorMessage();
         ProjectPage.clickOnProjectTabButton();
@@ -210,7 +226,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	//Accept Reject Invalid Project Type
 	
 	@Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void AcceptRejectInvalidProjectType(String Name, String Phone, String Email, String Address, String
+    public void AcceptRejectInvalidProjectType(String CompanyName, String PersonName, String Email, String MobileResponsible, String
     		expectedSuccessMessage,String ExpectedResult) throws InterruptedException {
         ClientPage = new InvitingclientPage(driver);
         ProjectPage = new CreateProjectPage(driver);
@@ -225,16 +241,18 @@ public class AcceptRejectFromClients extends BaseTest{
         ClientPage.NavigateToDialogBox();
        
        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
-        String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name 
+        String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-       
-        ClientPage.enterAddress(Address);
-       
+        Thread.sleep(3000);
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
         //ProjectPage.clickOnErrorMessage();
@@ -267,7 +285,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	// Accept Reject From Client - Invalid Project Title
 	
 	@Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void AcceptRejectInvalidProjectTitle(String Name, String Phone, String Email, String Address, String
+    public void AcceptRejectInvalidProjectTitle(String CompanyName, String PersonName, String Email, String MobileResponsible, String
     		expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
         ClientPage = new InvitingclientPage(driver);
         ProjectPage = new CreateProjectPage(driver);
@@ -282,16 +300,18 @@ public class AcceptRejectFromClients extends BaseTest{
         ClientPage.NavigateToDialogBox();
        
        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
-        String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name 
+        String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-       
-        ClientPage.enterAddress(Address);
-       
+        Thread.sleep(3000);
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
       //ProjectPage.clickOnErrorMessage();
@@ -327,7 +347,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	//Accept Reject From Client - Invalid Project Description
 	
 	@Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void AcceptRejectInvalidProjectDesc(String Name, String Phone, String Email, String Address, String
+    public void AcceptRejectInvalidProjectDesc(String CompanyName, String PersonName, String Email, String MobileResponsible, String
     		expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ExpectedResult) throws InterruptedException {
         ClientPage = new InvitingclientPage(driver);
         ProjectPage = new CreateProjectPage(driver);
@@ -342,16 +362,18 @@ public class AcceptRejectFromClients extends BaseTest{
         ClientPage.NavigateToDialogBox();
        
        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
-        String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name 
+        String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-       
-        ClientPage.enterAddress(Address);
-       
+        Thread.sleep(3000);
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
       //ProjectPage.clickOnErrorMessage();
@@ -385,7 +407,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	//Accept/Reject from Client - Invalid Frequency
 	
 	@Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void AcceptRejectInvalidFrequency(String Name, String Phone, String Email, String Address, String
+    public void AcceptRejectInvalidFrequency(String CompanyName, String PersonName, String Email, String MobileResponsible, String
     		expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
@@ -402,16 +424,18 @@ public class AcceptRejectFromClients extends BaseTest{
         ClientPage.NavigateToDialogBox();
        
        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
-        String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name 
+        String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-       
-        ClientPage.enterAddress(Address);
-       
+        Thread.sleep(3000);
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
       //ProjectPage.clickOnErrorMessage();
@@ -467,7 +491,7 @@ public class AcceptRejectFromClients extends BaseTest{
 	// Accept/Reject for Client - Invalid Radius
 	
 	@Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void AcceptRejectInvalidRadius(String Name, String Phone, String Email, String Address, String
+    public void AcceptRejectInvalidRadius(String CompanyName, String PersonName, String Email, String MobileResponsible, String
     		expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
@@ -484,16 +508,18 @@ public class AcceptRejectFromClients extends BaseTest{
         ClientPage.NavigateToDialogBox();
        
        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
-        String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name 
+        String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-       
-        ClientPage.enterAddress(Address);
-       
+        Thread.sleep(3000);
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
       //ProjectPage.clickOnErrorMessage();
