@@ -46,6 +46,29 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 	
 	WebElement btn_ChampReject;
 	
+	WebElement btn_PrepareAndSendQuote;
+	
+	WebElement txt_EnterAmount;
+	
+	WebElement btn_SendingQuoteOpenCalendar;
+	
+	WebElement btn_SendQuoteSelectDate;
+	
+	WebElement txt_EnterPaymentTerms;
+	
+	WebElement txt_AdditionalTerms;
+	
+	WebElement btn_SendQuote;
+	
+	WebElement drpd_AssignVendor;
+	
+	WebElement opt_SelectToAssignVendor;
+	
+	WebElement btn_SubmitForApporval;
+	
+	WebElement btn_CloseMessagesAfterSuccess;
+	
+	
 	public ManageJobApplicationAccessPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -158,5 +181,76 @@ public void ClickToRejectChamp() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ChampReject"))))
 		.click();
  }
+
+public void clickOnPrepareAndSendQuote() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_PrepareAndSendQuote"))))
+		.click();
+ }
+
+public void enterAmount(String Amount) {
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_EnterAmount"))))
+	.sendKeys(Amount);
+}
+
+public void clickToOpenCalendar() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SendingQuoteOpenCalendar"))))
+		.click();
+ }
+
+public void clickToSelectDate() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SendQuoteSelectDate"))))
+		.click();
+ }
+
+public void enterPaymentTerms(String PaymentTerms) {
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_EnterPaymentTerms"))))
+	.sendKeys(PaymentTerms);
+}
+
+public void enterAdditionalTerms(String AdditionalTerms) {
+	
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_AdditionalTerms"))))
+	.sendKeys(AdditionalTerms);
+}
+
+public void clickOnSendQuote() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SendQuote"))))
+		.click();
+ }
+
+public void clickOnAssignVendor() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_AssignVendor"))))
+		.click();
+ }
+
+public void clickToSelectVendorFromOption() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_SelectToAssignVendor"))))
+		.click();
+ }
+
+public void clickOnSubmitApproval() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SubmitForApporval"))))
+		.click();
+ }
+
+public void clickOnCloseMessage() {
+    // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_CloseMessagesAfterSuccess"))))
+		.click();
+ }
+
+public String getStarttimeErrorMessage() {
+    return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidStartTime")))).getText();
+}
+
 
 }

@@ -7,9 +7,11 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.AppLoginPage;
+import pages.AssignProjectVendorAgencyPage;
 import pages.CreateProjectPage;
 import pages.CreateworkorderPage;
 import pages.ManageJobApplicationAccessPage;
+import pages.VendorLoginPage;
 import utilities.ReadXLData;
 
 @Listeners(base.Listeners.class)
@@ -364,7 +366,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 				assertionMessage.set(e.getMessage());
 				throw e;
 			}
-	    	}
+	}
 	 
 	// Job Application for Reject when logging as Agency 
 
@@ -482,4 +484,406 @@ public class ManageJobApplicationAccess extends BaseTest {
 				throw e;
 			}
 	    	}
+	 
+	// Job Application for Accepting when logging as Vendor
+	 
+	 @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+	    public void JobApplicationVendorAcceptChamp(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+	    		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
+	    		String EnterRadius,String EnterItem, String EnterDescription
+	    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,String ExpectedMessage,String phoneOrEmail,String OTP
+	,String Amount,String PaymentTerms,String AdditionalTerms,String EnterEmail,String EnterOTP,String Date,String Title, String MobileNumber,
+String VendorEmail,String VendorOTP,String ExpectedOutcome) throws InterruptedException {
+	        CreateProjectPage ProjectPage = new CreateProjectPage(driver);
+	        AssignProjectVendorAgencyPage AssignProjectVendor = new AssignProjectVendorAgencyPage(driver);
+	        VendorLoginPage Vendorlogin = new VendorLoginPage(driver);
+	        CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
+	        JobApplicationPage = new ManageJobApplicationAccessPage(driver);
+	        AppLoginPage Applogin = new AppLoginPage(driver);
+	        ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver);
+
+	      //  ProjectPage.clickOnErrorMessage();
+	        ProjectPage.clickOnProjectTabButton();
+	       //ProjectPage.clickOnErrorMessage();
+	        ProjectPage.clickOnCreateProjectButton();
+	        ProjectPage.clickOnSelfClientButton();
+	        ProjectPage.clickOnNext1Button();
+	        Thread.sleep(2000);
+	        ProjectPage.clickOnProjectTypeButton();
+	        ProjectPage.clickOnSelectProjectTypeButton();
+	        ProjectPage.clickOnHotspotButton();
+	        ProjectPage.clickOnNext2Button();
+	        //ProjectPage.clickOnProjectDetailsButton();
+	        ProjectPage.enterProjectTitle(ProjectTitle);
+	        ProjectPage.enterProjectDescription(ProjectDescription);
+	        ProjectPage.enterProjectCode(ProjectCode);
+	        ProjectPage.enterLinkTitle(LinkTitle);
+	        ProjectPage.enterURL(LinkURL);
+	        ProjectPage.enterMetrics(EnterMetrics);
+	        ProjectPage.enterQuantity(EnterQuantity);
+	        ProjectPage.clickOnStartDateButton();
+	      //ProjectPage.enterStartDate(StartDate);
+	        ProjectPage.clickOnSelectStartDate();
+	        ProjectPage.clickOnEndDateButton();
+	      //ProjectPage.enterEndDate(EndDate);
+	        ProjectPage.clickOnSelectEndDate();
+	        ProjectPage.clickOnSelectLocationButton();
+	        ProjectPage.clickOnSelectLocationDelhiButton();
+	        ProjectPage.clickOnAddTrackingButton();
+	        ProjectPage.enterFieldName(FieldName);
+	        ProjectPage.clickOnFieldTypeDropDown();
+	        ProjectPage.clickOnPhoneNumberButton();
+	        ProjectPage.clickOnContinuousLocationTracking();
+	        ProjectPage.enterFrequency(EnterFrequency);
+	        ProjectPage.enterRadius(EnterRadius);
+	        //ProjectPage.clickOnOnlyGpsCoordinate();
+	        ProjectPage.clickOnAddBilling();
+	        ProjectPage.clickOnPricingFixed();
+	        ProjectPage.enterItem(EnterItem);
+	        ProjectPage.enterDescription(EnterDescription);
+	        ProjectPage.enterRate(EnterRates);
+	        ProjectPage.enterQty(EnterQty);
+	        ProjectPage.enterDays(EnterDays);
+	        ProjectPage.clickOnReviewProject();
+	        ProjectPage.clickOnSaveProject();
+	        ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
+		  
+		  ProjectPage.clickOnProjectTabButton();
+		  Thread.sleep(2000);
+		  AssignProjectVendor.SelectCreatedProject();
+		  AssignProjectVendor.ClickOnAssignVendor();
+		  Thread.sleep(2000);
+		  AssignProjectVendor.clickOn_DropDown();
+		  AssignProjectVendor.SelectVendorToAssignProject();
+		  AssignProjectVendor.ClickOnAssignVendorButton();
+		  AssignProjectVendor.SelectedVendorAssignedSuccessfully();
+		  Thread.sleep(2000);
+	
+	      ProjectPage.clickOnProfileButton();
+	      ProjectPage.clickOnLogoutButton();
+	      
+	      Vendorlogin.clickOnLink_SignInUsingOtp();
+			Vendorlogin.enterPhoneOrEmail(phoneOrEmail);
+			Vendorlogin.clickOnBtn_GetOTP();
+			Vendorlogin.enterOTP(OTP);
+			Vendorlogin.clickOnBtn_Login();
+			
+			Thread.sleep(2000);
+			
+			ProjectPage.clickOnProjectTabButton();
+			AssignProjectVendor.SelectCreatedProject();
+			
+			JobApplication.clickOnPrepareAndSendQuote();
+			Thread.sleep(2000);
+			JobApplication.enterAmount(Amount);
+			
+			Actions actions = new Actions(driver); 
+	        actions.sendKeys(Keys.PAGE_DOWN).perform();
+	        Thread.sleep(2000);
+	        
+	        JobApplication.clickToOpenCalendar();
+	        JobApplication.clickToSelectDate();
+	        JobApplication.enterPaymentTerms(PaymentTerms);
+	        JobApplication.enterAdditionalTerms(AdditionalTerms);
+	        JobApplication.clickOnSendQuote();
+	        Thread.sleep(2000);
+	        
+	        ProjectPage.clickOnProfileButton();
+		    ProjectPage.clickOnLogoutButton();
+		    Thread.sleep(2000);
+		    
+		    Vendorlogin.clickOnLink_SignInUsingOtp();
+			Vendorlogin.enterPhoneOrEmail(EnterEmail);
+			Vendorlogin.clickOnBtn_GetOTP();
+			Vendorlogin.enterOTP(EnterOTP);
+			Vendorlogin.clickOnBtn_Login();
+			Thread.sleep(2000);
+			
+			WorkorderPage.clickOnWorkorderButton(); 
+			Thread.sleep(2000);
+	    	WorkorderPage.clickOnCreateWorkorderButton();
+	    	Thread.sleep(2000);
+	    	WorkorderPage.NavigateTodialogBox();
+	    	WorkorderPage.clickOnSelectProjectButton();  	
+	    	WorkorderPage.clickOnAddDetailsButton();    	
+	        WorkorderPage.clickOnSearchAddressButton(); 	   	
+	    	WorkorderPage.enterDate(Date);   	
+	    	WorkorderPage.clickOnStartTimeButton();   	
+	    	WorkorderPage.clickOnSelectStarttimeButton();
+	   	
+	    	
+	    	 Actions actions1 = new Actions(driver); 
+	    	    actions1.sendKeys(Keys.ESCAPE).perform();
+	    	    WorkorderPage.clickOnEndTimeButton();
+	    	    WorkorderPage.clickOnSelectEndtimeButton();
+	    	    Thread.sleep(2000);	
+	    	    WorkorderPage.clickOnAddBillingButton();
+	    	    Thread.sleep(2000);	
+	    	    WorkorderPage.clickOnAddTitleButton();
+	    	    WorkorderPage.enterTitle(Title);
+	    	    Thread.sleep(2000);	
+	    	    JobApplication.clickOnAssignVendor();
+	    	    Thread.sleep(2000);	
+	    	    JobApplication.clickToSelectVendorFromOption();
+	    	    Thread.sleep(2000);	
+	    	    WorkorderPage.clickOnSeeSummaryButton();
+	    	    Thread.sleep(2000);	
+	    	    JobApplication.clickOnSubmitApproval();
+	    	    JobApplication.clickOnCloseMessage(); 
+	    	    Thread.sleep(2000);	
+	    	    
+	    	  ProjectPage.clickOnProfileButton();
+	  	      ProjectPage.clickOnLogoutButton();
+	  	      
+	  	    driver.get(prop.getProperty("AppURL"));
+            
+            
+            Applogin.clickOnLetStartButton();
+    		Applogin.clickOnSkiptButton();
+    		Thread.sleep(2000);
+    		Applogin.enterMobileNumber(MobileNumber);
+    		Thread.sleep(2000);
+    		Applogin.clickOnMobileNextButton();
+    		Thread.sleep(2000);
+    		Applogin.enterOTP(EnterOTP);
+    		Thread.sleep(4000);
+    		Applogin.clickOnOTPNext();
+    		Thread.sleep(5000);
+    		Applogin.clickOnAppActiveJob();
+    		Thread.sleep(2000);
+    		Applogin.clickOnApplyActiveJob();
+    		
+    		Thread.sleep(4000);
+    		
+    		driver.get(prop.getProperty("testURL"));
+    		
+    		Vendorlogin.clickOnLink_SignInUsingOtp();
+			Vendorlogin.enterPhoneOrEmail(VendorEmail);
+			Vendorlogin.clickOnBtn_GetOTP();
+			Vendorlogin.enterOTP(VendorOTP);
+			Vendorlogin.clickOnBtn_Login();
+			Thread.sleep(2000);
+			
+			WorkorderPage.clickOnWorkorderButton();
+	    	Thread.sleep(2000);
+	    	JobApplicationPage.clickOnActiveWorkorder();
+	    	Thread.sleep(2000);
+	    	JobApplicationPage.ClickToApproveChamp();
+	    	JobApplicationPage.JobApplicationStatus();
+	  //  	Thread.sleep(3000);
+	  //  	JobApplicationPage.ClickToRejectChamp();
+	 //   	JobApplicationPage.JobApplicationStatus();
+	    	
+		  
+	        String VendorChampAcceptSuccessfully = JobApplicationPage.JobApplicationStatus();
+	        softAssert.assertEquals(VendorChampAcceptSuccessfully, ExpectedOutcome);
+	        try {
+				softAssert.assertAll();
+			} catch (AssertionError e) {
+				assertionMessage.set(e.getMessage());
+				throw e;
+			}
+	  }
+	 
+	// Job Application for Rejecting when logging as Vendor
+	 
+	 @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
+	    public void JobApplicationVendorRejectChamp(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+	    		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
+	    		String EnterRadius,String EnterItem, String EnterDescription
+	    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,String ExpectedMessage,String phoneOrEmail,String OTP
+	,String Amount,String PaymentTerms,String AdditionalTerms,String EnterEmail,String EnterOTP,String Date,String Title, String MobileNumber,
+String VendorEmail,String VendorOTP,String ExpectedOutcome) throws InterruptedException {
+	        CreateProjectPage ProjectPage = new CreateProjectPage(driver);
+	        AssignProjectVendorAgencyPage AssignProjectVendor = new AssignProjectVendorAgencyPage(driver);
+	        VendorLoginPage Vendorlogin = new VendorLoginPage(driver);
+	        CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
+	        JobApplicationPage = new ManageJobApplicationAccessPage(driver);
+	        AppLoginPage Applogin = new AppLoginPage(driver);
+	        ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver);
+
+	      //  ProjectPage.clickOnErrorMessage();
+	        ProjectPage.clickOnProjectTabButton();
+	       //ProjectPage.clickOnErrorMessage();
+	        ProjectPage.clickOnCreateProjectButton();
+	        ProjectPage.clickOnSelfClientButton();
+	        ProjectPage.clickOnNext1Button();
+	        Thread.sleep(2000);
+	        ProjectPage.clickOnProjectTypeButton();
+	        ProjectPage.clickOnSelectProjectTypeButton();
+	        ProjectPage.clickOnHotspotButton();
+	        ProjectPage.clickOnNext2Button();
+	        //ProjectPage.clickOnProjectDetailsButton();
+	        ProjectPage.enterProjectTitle(ProjectTitle);
+	        ProjectPage.enterProjectDescription(ProjectDescription);
+	        ProjectPage.enterProjectCode(ProjectCode);
+	        ProjectPage.enterLinkTitle(LinkTitle);
+	        ProjectPage.enterURL(LinkURL);
+	        ProjectPage.enterMetrics(EnterMetrics);
+	        ProjectPage.enterQuantity(EnterQuantity);
+	        ProjectPage.clickOnStartDateButton();
+	      //ProjectPage.enterStartDate(StartDate);
+	        ProjectPage.clickOnSelectStartDate();
+	        ProjectPage.clickOnEndDateButton();
+	      //ProjectPage.enterEndDate(EndDate);
+	        ProjectPage.clickOnSelectEndDate();
+	        ProjectPage.clickOnSelectLocationButton();
+	        ProjectPage.clickOnSelectLocationDelhiButton();
+	        ProjectPage.clickOnAddTrackingButton();
+	        ProjectPage.enterFieldName(FieldName);
+	        ProjectPage.clickOnFieldTypeDropDown();
+	        ProjectPage.clickOnPhoneNumberButton();
+	        ProjectPage.clickOnContinuousLocationTracking();
+	        ProjectPage.enterFrequency(EnterFrequency);
+	        ProjectPage.enterRadius(EnterRadius);
+	        //ProjectPage.clickOnOnlyGpsCoordinate();
+	        ProjectPage.clickOnAddBilling();
+	        ProjectPage.clickOnPricingFixed();
+	        ProjectPage.enterItem(EnterItem);
+	        ProjectPage.enterDescription(EnterDescription);
+	        ProjectPage.enterRate(EnterRates);
+	        ProjectPage.enterQty(EnterQty);
+	        ProjectPage.enterDays(EnterDays);
+	        ProjectPage.clickOnReviewProject();
+	        ProjectPage.clickOnSaveProject();
+	        ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
+		  
+		  ProjectPage.clickOnProjectTabButton();
+		  Thread.sleep(2000);
+		  AssignProjectVendor.SelectCreatedProject();
+		  AssignProjectVendor.ClickOnAssignVendor();
+		  Thread.sleep(2000);
+		  AssignProjectVendor.clickOn_DropDown();
+		  AssignProjectVendor.SelectVendorToAssignProject();
+		  AssignProjectVendor.ClickOnAssignVendorButton();
+		  AssignProjectVendor.SelectedVendorAssignedSuccessfully();
+		  Thread.sleep(2000);
+	
+	      ProjectPage.clickOnProfileButton();
+	      ProjectPage.clickOnLogoutButton();
+	      
+	      Vendorlogin.clickOnLink_SignInUsingOtp();
+			Vendorlogin.enterPhoneOrEmail(phoneOrEmail);
+			Vendorlogin.clickOnBtn_GetOTP();
+			Vendorlogin.enterOTP(OTP);
+			Vendorlogin.clickOnBtn_Login();
+			
+			Thread.sleep(2000);
+			
+			ProjectPage.clickOnProjectTabButton();
+			AssignProjectVendor.SelectCreatedProject();
+			
+			JobApplication.clickOnPrepareAndSendQuote();
+			Thread.sleep(2000);
+			JobApplication.enterAmount(Amount);
+			
+			Actions actions = new Actions(driver); 
+	        actions.sendKeys(Keys.PAGE_DOWN).perform();
+	        Thread.sleep(2000);
+	        
+	        JobApplication.clickToOpenCalendar();
+	        JobApplication.clickToSelectDate();
+	        JobApplication.enterPaymentTerms(PaymentTerms);
+	        JobApplication.enterAdditionalTerms(AdditionalTerms);
+	        JobApplication.clickOnSendQuote();
+	        Thread.sleep(2000);
+	        
+	        ProjectPage.clickOnProfileButton();
+		    ProjectPage.clickOnLogoutButton();
+		    Thread.sleep(2000);
+		    
+		    Vendorlogin.clickOnLink_SignInUsingOtp();
+			Vendorlogin.enterPhoneOrEmail(EnterEmail);
+			Vendorlogin.clickOnBtn_GetOTP();
+			Vendorlogin.enterOTP(EnterOTP);
+			Vendorlogin.clickOnBtn_Login();
+			Thread.sleep(2000);
+			
+			WorkorderPage.clickOnWorkorderButton(); 
+			Thread.sleep(2000);
+	    	WorkorderPage.clickOnCreateWorkorderButton();
+	    	Thread.sleep(2000);
+	    	WorkorderPage.NavigateTodialogBox();
+	    	WorkorderPage.clickOnSelectProjectButton();  	
+	    	WorkorderPage.clickOnAddDetailsButton();    	
+	        WorkorderPage.clickOnSearchAddressButton(); 	   	
+	    	WorkorderPage.enterDate(Date);   	
+	    	WorkorderPage.clickOnStartTimeButton();   	
+	    	WorkorderPage.clickOnSelectStarttimeButton();
+	   	
+	    	
+	    	 Actions actions1 = new Actions(driver); 
+	    	    actions1.sendKeys(Keys.ESCAPE).perform();
+	    	    WorkorderPage.clickOnEndTimeButton();
+	    	    WorkorderPage.clickOnSelectEndtimeButton();
+	    	    Thread.sleep(2000);	
+	    	    WorkorderPage.clickOnAddBillingButton();
+	    	    Thread.sleep(2000);	
+	    	    WorkorderPage.clickOnAddTitleButton();
+	    	    WorkorderPage.enterTitle(Title);
+	    	    Thread.sleep(2000);	
+	    	    JobApplication.clickOnAssignVendor();
+	    	    Thread.sleep(2000);	
+	    	    JobApplication.clickToSelectVendorFromOption();
+	    	    Thread.sleep(2000);	
+	    	    WorkorderPage.clickOnSeeSummaryButton();
+	    	    Thread.sleep(2000);	
+	    	    JobApplication.clickOnSubmitApproval();
+	    	    JobApplication.clickOnCloseMessage(); 
+	    	    Thread.sleep(2000);	
+	    	    
+	    	  ProjectPage.clickOnProfileButton();
+	  	      ProjectPage.clickOnLogoutButton();
+	  	      
+	  	    driver.get(prop.getProperty("AppURL"));
+         
+         
+         Applogin.clickOnLetStartButton();
+ 		Applogin.clickOnSkiptButton();
+ 		Thread.sleep(2000);
+ 		Applogin.enterMobileNumber(MobileNumber);
+ 		Thread.sleep(2000);
+ 		Applogin.clickOnMobileNextButton();
+ 		Thread.sleep(2000);
+ 		Applogin.enterOTP(EnterOTP);
+ 		Thread.sleep(4000);
+ 		Applogin.clickOnOTPNext();
+ 		Thread.sleep(5000);
+ 		Applogin.clickOnAppActiveJob();
+ 		Thread.sleep(2000);
+ 		Applogin.clickOnApplyActiveJob();
+ 		
+ 		Thread.sleep(4000);
+ 		
+ 		driver.get(prop.getProperty("testURL"));
+ 		
+ 		Vendorlogin.clickOnLink_SignInUsingOtp();
+			Vendorlogin.enterPhoneOrEmail(VendorEmail);
+			Vendorlogin.clickOnBtn_GetOTP();
+			Vendorlogin.enterOTP(VendorOTP);
+			Vendorlogin.clickOnBtn_Login();
+			Thread.sleep(2000);
+			
+			WorkorderPage.clickOnWorkorderButton();
+	    	Thread.sleep(2000);
+	    	JobApplicationPage.clickOnActiveWorkorder();
+	    	Thread.sleep(3000);
+	   // 	JobApplicationPage.ClickToApproveChamp();
+	   // 	JobApplicationPage.JobApplicationStatus();
+	   //  	Thread.sleep(3000);
+	    	JobApplicationPage.ClickToRejectChamp();
+	     	JobApplicationPage.JobApplicationStatus();
+		  
+		  
+		  String VendorChampRejectSuccessfully = JobApplicationPage.JobApplicationStatus();
+	        softAssert.assertEquals(VendorChampRejectSuccessfully, ExpectedOutcome);
+	        try {
+				softAssert.assertAll();
+			} catch (AssertionError e) {
+				assertionMessage.set(e.getMessage());
+				throw e;
+			}
+	  }
+	 
+	 
 }

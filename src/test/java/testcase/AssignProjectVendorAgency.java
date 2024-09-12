@@ -23,6 +23,7 @@ public class AssignProjectVendorAgency extends BaseTest {
 		  AssignProjectVendor.ClickOnAssignVendor();
 		  Thread.sleep(2000);
 		  AssignProjectVendor.clickOn_DropDown();
+		  Thread.sleep(2000);
 		  AssignProjectVendor.SelectVendorToAssignProject();
 		  AssignProjectVendor.ClickOnAssignVendorButton();
 		  AssignProjectVendor.SelectedVendorAssignedSuccessfully();

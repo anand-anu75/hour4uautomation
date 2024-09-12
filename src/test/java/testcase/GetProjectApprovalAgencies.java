@@ -80,6 +80,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
         Thread.sleep(2000);
         ProjectPage.ClickOnAugustAgency();
         ProjectPage.clickOnSearchAssignAgency();
+        Thread.sleep(3000);
         ProjectPage.clickOnProfileButton();
         ProjectPage.clickOnLogoutButton();
         ProjectPage.enterAgencyEmail(EnterAgencyEmail);
@@ -87,7 +88,9 @@ public class GetProjectApprovalAgencies extends BaseTest {
         ProjectPage.clickOnGetOTP();
         ProjectPage.enterOTPforAgencyLogin(EnterOTP);
         ProjectPage.clickOnLoginButton();
-        ProjectPage.clickOnErrorMessage();
+        
+   //     ProjectPage.clickOnErrorMessage();
+        
         ProjectPage.clickOnProjectTabButton();
         ProjectPage.clickOnAcceptProject();
         
@@ -126,7 +129,9 @@ public class GetProjectApprovalAgencies extends BaseTest {
     	    WorkorderPage.enterDhruviEmail(phoneOrEmail);
     	    WorkorderPage.enterDhruviPassword(EnterPassword);
     	    WorkorderPage.clickOnLoginButton();
-    	    ProjectPage.clickOnErrorMessage();
+    	    
+    	//    ProjectPage.clickOnErrorMessage();
+    	    
     	    ProjectPage.clickOnAcceptWorkOrder();
     	    
     	   
