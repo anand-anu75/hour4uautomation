@@ -23,6 +23,8 @@ public class CreateworkorderPage extends BaseTest {
     
     WebElement btn_SelectProject;
     
+    WebElement btn_SelectProjectforVendor;
+    
     WebElement btn_AddDetails;
     
     WebElement btn_SearchAddress;  
@@ -43,13 +45,21 @@ public class CreateworkorderPage extends BaseTest {
     
     WebElement input_EnterTitle;
     
+    WebElement btn_AddVendorBtn;
+    
+    WebElement btn_SelectVendor;
+    
     WebElement btn_SeeSummary;
     
     WebElement btn_SubmitforApproval;
     
+    WebElement msg_DesiredProject;
     
+    WebElement btn_VendorView;
     
+    WebElement btn_VendorQuotes;
     
+    WebElement btn_CreateWorkOrder;
     
     // Constructor to initialize the driver and web elements
     public CreateworkorderPage(WebDriver driver) {
@@ -78,6 +88,12 @@ public class CreateworkorderPage extends BaseTest {
     public void clickOnSelectProjectButton() {
         // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
  		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SelectProject"))))
+ 		.click();
+     }
+    
+    public void clickOnSelectProjectVendor() {
+        // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SelectProjectforVendor"))))
  		.click();
      }
     
@@ -142,7 +158,17 @@ public class CreateworkorderPage extends BaseTest {
     	input_EnterTitle.sendKeys(enterTitle);
     }
 	
-  
+    public void clickOnAddVendorBtn() {
+        // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AddVendorBtn"))))
+ 		.click();
+     }
+    
+    public void clickOnSelectVendor() {
+        // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SelectVendor"))))
+ 		.click();
+     }
  
     public void clickOnSeeSummaryButton() {
         // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
@@ -156,8 +182,40 @@ public class CreateworkorderPage extends BaseTest {
  		.click();
      } 
     
+    public void clickOnDesiredProject() {
+        // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_DesiredProject"))))
+ 		.click();
+     } 
+    
+    public void clickOnVendorViewTab() {
+        // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_VendorView"))))
+ 		.click();
+     } 
+    
+    public void clickOnVendorQuotes() {
+        // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_VendorQuotes"))))
+ 		.click();
+     } 
+    
+    public void clickOnCreateWorkOrder() {
+        // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_CreateWorkOrder"))))
+ 		.click();
+     } 
+    
     public String getSuccessmessage() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("SuccessmessageXpath")))).getText();
+    }
+    
+    public String getToastmessage() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("Toastmessage")))).getText();
+    }
+    
+    public String getToastWorkOrdermessage() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("ToastWorkOrdermessage")))).getText();
     }
     
     public String getLocationErrorMessage() {

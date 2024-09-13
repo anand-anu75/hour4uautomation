@@ -10,7 +10,7 @@ import base.BaseTest;
 import pages.CreateworkorderPage;
 import utilities.ReadXLData;
 
- 
+@Listeners(base.Listeners.class)
 public class CreateWorkorder extends BaseTest {
 	CreateworkorderPage WorkorderPage;
  
@@ -58,9 +58,13 @@ public class CreateWorkorder extends BaseTest {
     	   String actualSuccessmessage = WorkorderPage.getSuccessmessage();
            softAssert.assertEquals(actualSuccessmessage, expectedSuccessmessage);
     
-           softAssert.assertAll();
+       	try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
 
-   		
        	}
     
     // Work order for Self
@@ -107,9 +111,14 @@ public class CreateWorkorder extends BaseTest {
     	    String actualLocationErrorMessage = WorkorderPage.getLocationErrorMessage();
             softAssert.assertEquals(actualLocationErrorMessage, expectedLocationErrorMessage);
      
-            softAssert.assertAll();
+        	try {
+    			softAssert.assertAll();
+    		} catch (AssertionError e) {
+    			assertionMessage.set(e.getMessage());
+    			throw e;
+    		}
 
-    	
+
     }
     
     @Test(dependsOnMethods ={"testcase.Login.login"}, dataProviderClass = ReadXLData.class, dataProvider = "testData")
@@ -155,9 +164,13 @@ public class CreateWorkorder extends BaseTest {
     	    String actualDateErrorMessage = WorkorderPage.getDateErrorMessage();
             softAssert.assertEquals(actualDateErrorMessage, expectedDateErrorMessage);
      
-            softAssert.assertAll();
+        	try {
+    			softAssert.assertAll();
+    		} catch (AssertionError e) {
+    			assertionMessage.set(e.getMessage());
+    			throw e;
+    		}
 
-    	
     }
     
     @Test(dependsOnMethods ={"testcase.Login.login"}, dataProviderClass = ReadXLData.class, dataProvider = "testData")
@@ -203,9 +216,13 @@ public class CreateWorkorder extends BaseTest {
     	    String actualStarttimeErrorMessage = WorkorderPage.getStarttimeErrorMessage();
             softAssert.assertEquals(actualStarttimeErrorMessage, expectedStarttimeErrorMessage);
      
-            softAssert.assertAll();
+        	try {
+    			softAssert.assertAll();
+    		} catch (AssertionError e) {
+    			assertionMessage.set(e.getMessage());
+    			throw e;
+    		}
 
-    	
     }
     
     @Test(dependsOnMethods ={"testcase.Login.login"}, dataProviderClass = ReadXLData.class, dataProvider = "testData")
@@ -255,7 +272,12 @@ public class CreateWorkorder extends BaseTest {
     	    String actualEndtimeErrorMessage = WorkorderPage.getEndtimeErrorMessage();
             softAssert.assertEquals(actualEndtimeErrorMessage, expectedEndtimeErrorMessage);
      
-            softAssert.assertAll();
+        	try {
+    			softAssert.assertAll();
+    		} catch (AssertionError e) {
+    			assertionMessage.set(e.getMessage());
+    			throw e;
+    		}
 
     }
     
