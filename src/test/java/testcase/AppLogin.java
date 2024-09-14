@@ -28,13 +28,13 @@ public class AppLogin extends BaseTest{
 		Applogin.clickOnLetStartButton();
 		Applogin.clickOnSkiptButton();
 		Applogin.enterMobileNumber(MobileNumber);
-		Applogin.clickOnMobileNextButton();
+		Applogin.clickOnNextButton();
 		Thread.sleep(2000);
 		Applogin.enterOTP(EnterOTP);
 		Thread.sleep(4000);
-		Applogin.clickOnOTPNext();
-		Applogin.clickOnAppActiveJob();
-		Applogin.clickOnApplyActiveJob();
+		Applogin.clickOnNext2Button();
+		Applogin.clickOnWorkorbitButton();
+		Applogin.clickOnApplyWorkorbitButton();
 	}
 	
 	//Vendor applied to Work Order using Workorbit Application
@@ -49,11 +49,11 @@ public class AppLogin extends BaseTest{
 		Applogin.clickOnLetStartButton();
 		Applogin.clickOnSkiptButton();
 		Applogin.enterMobileNumber(MobileNumber);
-		Applogin.clickOnMobileNextButton();
+		Applogin.clickOnNextButton();
 		Thread.sleep(2000);
 		Applogin.enterOTP(EnterOTP);
 		Thread.sleep(3000);
-		Applogin.clickOnOTPNext();
+		Applogin.clickOnNext2Button();
 		Thread.sleep(2000);
 	//	Applogin.enterVendorName(VendorName);
 	//	Applogin.enterOTP(EnterDOB);
@@ -61,8 +61,8 @@ public class AppLogin extends BaseTest{
 		Thread.sleep(3000);
 		Applogin.clickOnNext3();
 		System.out.println("Next button clicked");
-		Applogin.clickOnAppActiveJob();
-		Applogin.clickOnApplyActiveJob();
+		Applogin.clickOnWorkorbitButton();
+		Applogin.clickOnApplyWorkorbitButton();
 	}
 
 }

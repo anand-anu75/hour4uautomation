@@ -45,7 +45,7 @@ public class CreateProjectNewEnterprise extends BaseTest{
         ProjectPage.clickOnProjectTypeButton();
         ProjectPage.clickOnSelectProjectTypeButton();
         ProjectPage.clickOnHotspotButton();
-        ProjectPage.clickOnNext2Button();
+        ProjectPage.clickOnProjectTypeNextButton();
         //ProjectPage.clickOnProjectDetailsButton();
         ProjectPage.enterProjectTitle(ProjectTitle);
         ProjectPage.enterProjectDescription(ProjectDescription);

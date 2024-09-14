@@ -6,20 +6,17 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testcase.SignUp">
+      <class name="testcase.ManageJobApplicationAccess">
         <methods>
           <include name="setup"/>
+          <include name="JobApplicationVendorAcceptChamp" invocation-numbers="0"/>
+          <include name="JobApplicationVendorRejectChamp" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="signUp" invocation-numbers="0"/>
+          <include name="setupReport"/>
+          <include name="ApplicationAgencyReject" invocation-numbers="0"/>
+          <include name="tearDownReport"/>
         </methods>
-      </class> <!-- testcase.SignUp -->
-      <class name="testcase.Login">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="login" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- testcase.Login -->
+      </class> <!-- testcase.ManageJobApplicationAccess -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Regression] -->

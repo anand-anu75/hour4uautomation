@@ -81,10 +81,10 @@ public class InvitingclientPage extends BaseTest {
  		.click();
      }
     public String getSuccessMessage() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("successMessageXpath")))).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("successMessageClient")))).getText();
     }
     public String getErrorMessage() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidName")))).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidNameClient")))).getText();
     }
     public String getPhoneErrorMessage() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidPhone")))).getText();
@@ -92,5 +92,5 @@ public class InvitingclientPage extends BaseTest {
     public String getEmailErrorMessage() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("InvalidEmail")))).getText();
     }
-
+  
 }

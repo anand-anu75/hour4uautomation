@@ -6,10 +6,10 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="testcase.SignUp" />
-			<class name="testcase.Login" />
+			<!-- 	<class name="testcase.Login" />
+			<class name="testcase.CreateProjectEnterprise" />
+			<class name="testcase.AddChampsTest" />  -->
+			<class name="testcase.ManageJobApplicationAccess" />
 		</classes>
-	</test> <!--
-	Test -->
-</suite> <!--
-Suite -->
+	</test>
+</suite>

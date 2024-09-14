@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Aug 16 12:31:41 IST 2024</td>
+<td>Started on:</td><td>Sat Sep 14 17:11:19 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>52 seconds (52385 ms)</td>
+<tr><td>Total time:</td><td>415 seconds (415959 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -70,52 +70,176 @@ function toggleAllBoxes() {
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testcase.SignUp.signUp()'><b>signUp</b><br>Test class: testcase.SignUp<br>Parameters: xyz2@demo.com, 123456, 1234567893, TestCompany, GST12345, India</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [India] but found [GST12345]
-	at testcase.SignUp.signUp(SignUp.java:36)
+<td title='testcase.ManageJobApplicationAccess.JobApplicationVendorAcceptChamp()'><b>JobApplicationVendorAcceptChamp</b><br>Test class: testcase.ManageJobApplicationAccess<br>Parameters: test@agency.com, 123456, https://demo.workorbits.com/dashboard/ongoing, Assign Project To Vendor , Description, 112233, Hello123, https://www.youtube.com/, Order1, 3, 9/2/2024, 9/10/2024, Name, 10, 50, Car, CarDescription, 50000, 1, 5, Project Created Succsessfully!, Congratulations! The project is Created., rohitsingh@gmail.com, 123456, 1000, Terms and Conditions, Not Available, test@agency.com, 123456, 8/30/24, Assign Project To Vendor, 8376972313, rohitsingh@gmail.com, 123456, Job application status updated...</td>
+<td><div><pre>java.lang.IllegalArgumentException: Cannot find elements when the XPath is null.
+	at org.openqa.selenium.internal.Require$ArgumentChecker.nonNull(Require.java:214)
+	at org.openqa.selenium.By$ByXPath.&lt;init&gt;(By.java:286)
+	at org.openqa.selenium.By.xpath(By.java:89)
+	at pages.CreateProjectPage.clickOnNext2Button(CreateProjectPage.java:933)
+	at testcase.ManageJobApplicationAccess.JobApplicationVendorAcceptChamp(ManageJobApplicationAccess.java:533)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1530977859", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1530977859'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [India] but found [GST12345]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-	at testcase.SignUp.signUp(SignUp.java:36)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace196646633", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace196646633'><pre>java.lang.IllegalArgumentException: Cannot find elements when the XPath is null.
+	at org.openqa.selenium.internal.Require$ArgumentChecker.nonNull(Require.java:214)
+	at org.openqa.selenium.By$ByXPath.&lt;init&gt;(By.java:286)
+	at org.openqa.selenium.By.xpath(By.java:89)
+	at pages.CreateProjectPage.clickOnNext2Button(CreateProjectPage.java:933)
+	at testcase.ManageJobApplicationAccess.JobApplicationVendorAcceptChamp(ManageJobApplicationAccess.java:533)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>5</td>
-<td>testcase.SignUp@4c163e3</td></tr>
+<td>57</td>
+<td>testcase.ManageJobApplicationAccess@543295b0</td></tr>
+<tr>
+<td title='testcase.ManageJobApplicationAccess.JobApplicationVendorRejectChamp()'><b>JobApplicationVendorRejectChamp</b><br>Test class: testcase.ManageJobApplicationAccess<br>Parameters: test@agency.com, https://demo.workorbits.com/dashboard/ongoing, Assign Project To Vendor , Description, 112233, Hello123, https://www.youtube.com/, Order1, 3, 9/2/2024, 9/10/2024, Name, 10, 50, Car, CarDescription, 50000, 1, 5, Project Created Succsessfully!, Congratulations! The project is Created., rohitsingh@gmail.com, 123456, 1000, Terms and Conditions, Not Available, test@agency.com, 123456, 8/30/24, Assign Project To Vendor, 8376972313, rohitsingh@gmail.com, 123456, Job application status updated...</td>
+<td><div><pre>java.lang.IllegalArgumentException: Cannot find elements when the XPath is null.
+	at org.openqa.selenium.internal.Require$ArgumentChecker.nonNull(Require.java:214)
+	at org.openqa.selenium.By$ByXPath.&lt;init&gt;(By.java:286)
+	at org.openqa.selenium.By.xpath(By.java:89)
+	at pages.CreateProjectPage.clickOnNext2Button(CreateProjectPage.java:933)
+	at testcase.ManageJobApplicationAccess.JobApplicationVendorRejectChamp(ManageJobApplicationAccess.java:737)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1180307997", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1180307997'><pre>java.lang.IllegalArgumentException: Cannot find elements when the XPath is null.
+	at org.openqa.selenium.internal.Require$ArgumentChecker.nonNull(Require.java:214)
+	at org.openqa.selenium.By$ByXPath.&lt;init&gt;(By.java:286)
+	at org.openqa.selenium.By.xpath(By.java:89)
+	at pages.CreateProjectPage.clickOnNext2Button(CreateProjectPage.java:933)
+	at testcase.ManageJobApplicationAccess.JobApplicationVendorRejectChamp(ManageJobApplicationAccess.java:737)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>55</td>
+<td>testcase.ManageJobApplicationAccess@543295b0</td></tr>
+<tr>
+<td title='testcase.ManageJobApplicationAccess.ApplicationAgencyReject()'><b>ApplicationAgencyReject</b><br>Test class: testcase.ManageJobApplicationAccess<br>Parameters: test@agency.com, 123456, https://demo.workorbits.com/dashboard/ongoing, 08/30/2024, Manage Job Application Access [1], Work order added successfully!, dhruviEnterpriseTeam@gmail.com, Enterprise*383, 8376972312, 123456, test@agency.com, 123456, Job application status updated...</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//ion-card[@class=&quot;c-card-wrap md hydrated&quot;])[1] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.23.1&apos;, revision: &apos;656257d8e9&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.138, chrome: {chromedriverVersion: 128.0.6613.137 (fe621c5aa2d..., userDataDir: C:\Users\Apptad\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62923}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62923/devtoo..., se:cdpVersion: 128.0.6613.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 177bcadd31c8f5f9cda268bcf1f219da
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.AppLoginPage.clickOnAppActiveJob(AppLoginPage.java:120)
+	at testcase.ManageJobApplicationAccess.ApplicationAgencyReject(ManageJobApplicationAccess.java:463)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1621419545", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1621419545'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//ion-card[@class=&quot;c-card-wrap md hydrated&quot;])[1] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.23.1&apos;, revision: &apos;656257d8e9&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.138, chrome: {chromedriverVersion: 128.0.6613.137 (fe621c5aa2d..., userDataDir: C:\Users\Apptad\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62923}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62923/devtoo..., se:cdpVersion: 128.0.6613.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 177bcadd31c8f5f9cda268bcf1f219da
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.AppLoginPage.clickOnAppActiveJob(AppLoginPage.java:120)
+	at testcase.ManageJobApplicationAccess.ApplicationAgencyReject(ManageJobApplicationAccess.java:463)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>69</td>
+<td>testcase.ManageJobApplicationAccess@543295b0</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testcase.ManageJobApplicationAccess.ApplicationAgencyAccept()'><b>ApplicationAgencyAccept</b><br>Test class: testcase.ManageJobApplicationAccess<br>Parameters: test@agency.com, 123456, https://demo.workorbits.com/dashboard/ongoing, 08/30/2024, Manage Job Application Access [1], Work order added successfully!, dhruviEnterpriseTeam@gmail.com, Enterprise*383, 8376972312, 123456, test@agency.com, 123456, Job application status updated...</td>
+<td></td>
+<td>68</td>
+<td>testcase.ManageJobApplicationAccess@543295b0</td></tr>
+<tr>
+<td title='testcase.ManageJobApplicationAccess.ApplicationEnterpriseReject()'><b>ApplicationEnterpriseReject</b><br>Test class: testcase.ManageJobApplicationAccess<br>Parameters: test@agency.com, 123456, https://demo.workorbits.com/dashboard/ongoing, 08/30/2024, Manage Job Application Access [1], Work order added successfully!, dhruviEnterpriseTeam@gmail.com, Enterprise*383, 8376972312, 123456, dhruviEnterpriseTeam@gmail.com, Enterprise*383, Job application status updated...</td>
+<td></td>
+<td>62</td>
+<td>testcase.ManageJobApplicationAccess@543295b0</td></tr>
+<tr>
+<td title='testcase.ManageJobApplicationAccess.ApplicationEnterpriseAccept()'><b>ApplicationEnterpriseAccept</b><br>Test class: testcase.ManageJobApplicationAccess<br>Parameters: test@agency.com, 123456, https://demo.workorbits.com/dashboard/ongoing, 08/30/2024, Manage Job Application Access [1], Work order added successfully!, dhruviEnterpriseTeam@gmail.com, Enterprise*383, 8376972312, 123456, dhruviEnterpriseTeam@gmail.com, Enterprise*383, Job application status updated...</td>
+<td></td>
+<td>72</td>
+<td>testcase.ManageJobApplicationAccess@543295b0</td></tr>
 </table><p>
 </body>
 </html>

@@ -38,7 +38,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTypeButton();
         ProjectPage.SelectNewProjectType();
         ProjectPage.clickOnHotspotButton();
-        ProjectPage.clickOnNext2Button();
+        ProjectPage.clickOnProjectTypeNextButton();
         //ProjectPage.clickOnProjectDetailsButton();
         ProjectPage.enterProjectTitle(ProjectTitle);
         ProjectPage.enterProjectDescription(ProjectDescription);
@@ -117,7 +117,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
         Thread.sleep(2000);
         ProjectPage.clickOnProjectTypeButton();
     //    ProjectPage.SelectNewProjectType();
-        ProjectPage.clickOnNext2Button();
+        ProjectPage.clickOnProjectTypeNextButton();
         
         String ExistingInvalidProjectType = ProjectPage.ExistingInvalidProjectType();
         softAssert.assertEquals(ExistingInvalidProjectType, ExpectedResult);
@@ -148,7 +148,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTypeButton();
         ProjectPage.SelectNewProjectType();
         ProjectPage.clickOnHotspotButton();
-        ProjectPage.clickOnNext2Button();
+        ProjectPage.clickOnProjectTypeNextButton();
       //  ProjectPage.clickOnProjectDetailsButton();
         ProjectPage.enterProjectTitle(ProjectTitle);
         ProjectPage.enterProjectDescription(ProjectDescription);
@@ -183,7 +183,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTypeButton();
         ProjectPage.SelectNewProjectType();
         ProjectPage.clickOnHotspotButton();
-        ProjectPage.clickOnNext2Button();
+        ProjectPage.clickOnProjectTypeNextButton();
         ProjectPage.enterProjectTitle(ProjectTitle);
         ProjectPage.enterProjectDescription(ProjectDescription);
         ProjectPage.clickOnSelectLocationButton();
@@ -221,7 +221,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTypeButton();
         ProjectPage.SelectNewProjectType();
         ProjectPage.clickOnHotspotButton();
-        ProjectPage.clickOnNext2Button();
+        ProjectPage.clickOnProjectTypeNextButton();
       //ProjectPage.clickOnProjectDetailsButton();
         ProjectPage.enterProjectTitle(ProjectTitle);
         ProjectPage.enterProjectDescription(ProjectDescription);
@@ -278,7 +278,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
     ProjectPage.clickOnProjectTypeButton();
     ProjectPage.SelectNewProjectType();
     ProjectPage.clickOnHotspotButton();
-    ProjectPage.clickOnNext2Button();  
+    ProjectPage.clickOnProjectTypeNextButton();  
     //ProjectPage.clickOnProjectDetailsButton();
     ProjectPage.enterProjectTitle(ProjectTitle);
     ProjectPage.enterProjectDescription(ProjectDescription);
@@ -334,7 +334,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
         ProjectPage.clickOnProjectTypeButton();
         ProjectPage.SelectNewProjectType();
         ProjectPage.clickOnHotspotButton();
-        ProjectPage.clickOnNext2Button();  
+        ProjectPage.clickOnProjectTypeNextButton();  
       //ProjectPage.clickOnProjectDetailsButton();
         ProjectPage.enterProjectTitle(ProjectTitle);
         ProjectPage.enterProjectDescription(ProjectDescription);

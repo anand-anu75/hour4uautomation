@@ -35,6 +35,7 @@ public class Listeners extends TakeScreenshot implements ITestListener {
 
 		if (assertionMsg != null) {
 			extentTest.log(Status.FAIL, "Assertion Details : " + assertionMsg);
+			
 		} else {
 			extentTest.log(Status.FAIL, "No assertion details available");
 		}
@@ -45,6 +46,7 @@ public class Listeners extends TakeScreenshot implements ITestListener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		 assertionMessage.remove();
 	}
 
 	public void onTestSkipped(ITestResult result) {

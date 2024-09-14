@@ -4,11 +4,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.Set;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -54,7 +57,7 @@ public class BaseTest {
 		sparkReporter.config().setReportName("Selenium Test Report");
 	}
 
-	@BeforeTest
+	@BeforeMethod
 	public void setup() throws IOException {
 
 		if (driver == null) {
@@ -67,7 +70,8 @@ public class BaseTest {
 					System.getProperty("user.dir") + "\\src\\test\\resources\\configFiles\\locators.properties");
 			loc.load(frloc);
 
-			softAssert = new SoftAssert();
+			// softAssert = new SoftAssert();
+
 			assertionMessage = new ThreadLocal<>();
 
 		}
@@ -90,15 +94,33 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("testURL"));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
 	}
 
 	public static String getAssertionMessage() {
 		return assertionMessage.get();
 	}
 
-	@AfterTest
-	public void tearDown() {
-		driver.close();
+	public static void scrollPageDown() {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+	}
+
+	public static void switchToNewTab() {
+		String originalWindow = driver.getWindowHandle();
+		Set<String> allWindows = driver.getWindowHandles();
+		for (String windowHandle : allWindows) {
+			if (!windowHandle.equals(originalWindow)) {
+				driver.switchTo().window(windowHandle);
+				break;
+			}
+		}
+	}
+
+	@AfterMethod
+	public void tearDown() throws InterruptedException {
+		// driver.close();
+		// driver.quit();
 
 	}
 
