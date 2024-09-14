@@ -15,8 +15,8 @@ public class CreateProjectForCilentAgencies extends BaseTest{
  //Create Project for Client/Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void createProjectForAgencies(String Name, String Phone, String Email, String Address, String
-    		expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void createProjectForAgencies(String CompanyName, String PersonName, String Email, String MobileResponsible
+, String expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
     		String EnterRadius,String EnterItem, String EnterDescription
     		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult) throws InterruptedException {
@@ -24,23 +24,25 @@ public class CreateProjectForCilentAgencies extends BaseTest{
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
  
         ClientPage.clickOnUserButton();
-        
+	       
         ClientPage.clickOnClientsOption();
- 
+
         ClientPage.clickOnInviteClientButton();
-        
+       
         ClientPage.NavigateToDialogBox();
-        
-        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+       
+       
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
         String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-        ClientPage.enterAddress(Address);
-        
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
       //ProjectPage.clickOnErrorMessage();
@@ -102,9 +104,15 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     }
     
     private String generateRandomPhoneNumber() {
-        long randomPhone = (long) (Math.random() * 10000000000L); // Generates a random number and ensures it's 10 digits
-        return String.format("%010d", randomPhone); // Formats it as a 10-digit string
-    }
+	    // Generate the first digit as a random number between 5 and 9
+	    int firstDigit = 5 + (int) (Math.random() * 5);
+
+	    // Generate the remaining 9 digits
+	    long remainingDigits = (long) (Math.random() * 1000000000L); // 9 digits
+
+	    // Combine the first digit with the remaining 9 digits and format as a 10-digit number
+	    return String.format("%d%09d", firstDigit, remainingDigits);
+	}
  
     // Utility method to generate a random email
     private String generateRandomEmail(String baseEmail) {
@@ -119,29 +127,31 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     // Invalid Project Type - Creating Project agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidProjectType(String Name, String Phone, String Email, String Address, String
-    		expectedSuccessMessage, String ExpectedResult) throws InterruptedException {
+    public void CreateProjectInvalidProjectType(String CompanyName, String PersonName, String Email, String MobileResponsible
+, String expectedSuccessMessage, String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
  
- ClientPage.clickOnUserButton();
-        
+        ClientPage.clickOnUserButton();
+	       
         ClientPage.clickOnClientsOption();
- 
+
         ClientPage.clickOnInviteClientButton();
-        
+       
         ClientPage.NavigateToDialogBox();
-        
-        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+       
+       
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
         String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-        ClientPage.enterAddress(Address);
-        
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
 
         //ProjectPage.clickOnErrorMessage();
@@ -171,29 +181,31 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Project Title - Creating Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidProjectTitl(String Name, String Phone, String Email, String Address, String
-    		expectedSuccessMessage,String ProjectTitle,String ProjectDescription, String ExpectedResult) throws InterruptedException {
+    public void CreateProjectInvalidProjectTitl(String CompanyName, String PersonName, String Email, String MobileResponsible
+, String expectedSuccessMessage,String ProjectTitle,String ProjectDescription, String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
  
- ClientPage.clickOnUserButton();
-        
+        ClientPage.clickOnUserButton();
+	       
         ClientPage.clickOnClientsOption();
- 
+
         ClientPage.clickOnInviteClientButton();
-        
+       
         ClientPage.NavigateToDialogBox();
-        
-        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+       
+       
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
         String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-        ClientPage.enterAddress(Address);
-        
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
        //ProjectPage.clickOnErrorMessage();
@@ -228,29 +240,31 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Project Description - Creating Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidProjectDesc(String Name, String Phone, String Email, String Address, String
-    		expectedSuccessMessage,String ProjectTitle,String ProjectDescription, String ExpectedResult) throws InterruptedException {
+    public void CreateProjectInvalidProjectDesc(String CompanyName, String PersonName, String Email, String MobileResponsible
+, String expectedSuccessMessage,String ProjectTitle,String ProjectDescription, String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
  
- ClientPage.clickOnUserButton();
-        
+        ClientPage.clickOnUserButton();
+	       
         ClientPage.clickOnClientsOption();
- 
+
         ClientPage.clickOnInviteClientButton();
-        
+       
         ClientPage.NavigateToDialogBox();
-        
-        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+       
+       
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
         String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-        ClientPage.enterAddress(Address);
-        
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
       //ProjectPage.clickOnErrorMessage();
@@ -285,31 +299,33 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Field Name - Create Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidFieldName(String Name, String Phone, String Email, String Address, String
-    		expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void CreateProjectInvalidFieldName(String CompanyName, String PersonName, String Email, String MobileResponsible
+    		, String expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
  
- ClientPage.clickOnUserButton();
-        
+        ClientPage.clickOnUserButton();
+	       
         ClientPage.clickOnClientsOption();
- 
+
         ClientPage.clickOnInviteClientButton();
-        
+       
         ClientPage.NavigateToDialogBox();
-        
-        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+       
+       
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
         String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-        ClientPage.enterAddress(Address);
-        
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
         
@@ -366,31 +382,33 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Frequency - Create Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidFrequency(String Name, String Phone, String Email, String Address, String
-    		expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void CreateProjectInvalidFrequency(String CompanyName, String PersonName, String Email, String MobileResponsible
+    		, String expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
  
- ClientPage.clickOnUserButton();
-        
+        ClientPage.clickOnUserButton();
+	       
         ClientPage.clickOnClientsOption();
- 
+
         ClientPage.clickOnInviteClientButton();
-        
+       
         ClientPage.NavigateToDialogBox();
-        
-        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+       
+       
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
         String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-        ClientPage.enterAddress(Address);
-        
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
       //ProjectPage.clickOnErrorMessage();
@@ -445,31 +463,33 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Radius - Create Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidRadius(String Name, String Phone, String Email, String Address, String
-    		expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+    public void CreateProjectInvalidRadius(String CompanyName, String PersonName, String Email, String MobileResponsible
+    		, String expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
  
- ClientPage.clickOnUserButton();
-        
+        ClientPage.clickOnUserButton();
+	       
         ClientPage.clickOnClientsOption();
- 
+
         ClientPage.clickOnInviteClientButton();
-        
+       
         ClientPage.NavigateToDialogBox();
-        
-        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+       
+       
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
         String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-        ClientPage.enterAddress(Address);
-        
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
       //ProjectPage.clickOnErrorMessage();
@@ -525,28 +545,30 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     // Invalid Name
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void verify_NameError(String Name, String Phone, String Email, String Address, String
-    		expectedErrorMessage) throws InterruptedException {
+    public void verify_NameError(String CompanyName, String PersonName, String Email, String MobileResponsible
+    		, String expectedErrorMessage) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
  
- ClientPage.clickOnUserButton();
-        
+        ClientPage.clickOnUserButton();
+	       
         ClientPage.clickOnClientsOption();
- 
+
         ClientPage.clickOnInviteClientButton();
-        
+       
         ClientPage.NavigateToDialogBox();
-        
-        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+       
+       
+  //      String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
         String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
-  //      ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+    //    ClientPage.enterClientName(randomName);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-        ClientPage.enterAddress(Address);
-        
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
         String actualErrorMessage = ClientPage.getErrorMessage();
@@ -642,30 +664,32 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     // Invalid Enterprise
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void ProjectClientInvalidEnterprise(String Name, String Phone, String Email, String Address, String
-    		expectedSuccessMessage,String ExpectedMessage) throws InterruptedException {
+    public void ProjectClientInvalidEnterprise(String CompanyName, String PersonName, String Email, String MobileResponsible
+    		, String expectedSuccessMessage,String ExpectedMessage) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
         CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 
- ClientPage.clickOnUserButton();
-        
+        ClientPage.clickOnUserButton();
+	       
         ClientPage.clickOnClientsOption();
- 
+
         ClientPage.clickOnInviteClientButton();
-        
+       
         ClientPage.NavigateToDialogBox();
-        
-        
-        String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
+       
+       
+        String randomName = CompanyName + (int) (Math.random() * 1000);
+        String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the name
         String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-        String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+        String randomEmail = generateRandomEmail(Email);
+        // Appends a random number to the email username
  
         ClientPage.enterClientName(randomName);
-        ClientPage.enterMobileNumber(randomPhone);
+        ClientPage.enterMobileNumber(randomAnotherName);
         ClientPage.enterEmail(randomEmail);
-        ClientPage.enterAddress(Address);
-        
+        ClientPage.enterAddress(randomPhone);
+        Thread.sleep(4000);
         ClientPage.clickOnCreateClientButton();
         
       //ProjectPage.clickOnErrorMessage();

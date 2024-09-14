@@ -24,7 +24,7 @@ public class ManageJobApplicationAccess extends BaseTest {
     public void ApplicationEnterpriseAccept(String Date,String Title, String expectedSuccessmessage,
     		String EnterpriseLogin,String EnterprisePassword,String MobileNumber,
     		String EnterOTP,String enterpriseLogin,String enterprisePassword,String ExpectedResult) throws InterruptedException {
-    	JobApplicationPage = new ManageJobApplicationAccessPage(driver);
+    	ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver);
     	CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
     	CreateProjectPage ProjectPage = new CreateProjectPage(driver);
     	AppLoginPage Applogin = new AppLoginPage(driver);
@@ -68,6 +68,8 @@ public class ManageJobApplicationAccess extends BaseTest {
     	    WorkorderPage.enterTitle(Title);     	
     	    WorkorderPage.clickOnSeeSummaryButton();    	
     	    WorkorderPage.clickOnSubmitforApprovalButton();
+    	    
+    	    JobApplication.clickOnCloseMessage(); 
     	    Thread.sleep(2000);
     	    
     	    ProjectPage.clickOnProfileButton();
@@ -76,10 +78,12 @@ public class ManageJobApplicationAccess extends BaseTest {
             ProjectPage.enterDhruviPassword(EnterprisePassword);;	
             ProjectPage.clickOnLoginButton();
             
-            ProjectPage.clickOnErrorMessage();
+     //       ProjectPage.clickOnErrorMessage();
             
             WorkorderPage.clickOnWorkorderButton(); 
             WorkorderPage.clickOnApproveWorkorder();
+            
+            JobApplication.clickOnCloseMessage(); 
             Thread.sleep(2000);
     	    
     	    ProjectPage.clickOnProfileButton();
@@ -98,14 +102,15 @@ public class ManageJobApplicationAccess extends BaseTest {
     		Applogin.enterOTP(EnterOTP);
     		Thread.sleep(4000);
     		Applogin.clickOnOTPNext();
-    		Thread.sleep(3000);
+    		Thread.sleep(5000);
     		Applogin.clickOnAppActiveJob();
-    		Thread.sleep(2000);
+    		Thread.sleep(4000);
     		Applogin.clickOnApplyActiveJob();
     		
     		Thread.sleep(4000);
     		
     		driver.get(prop.getProperty("testURL"));
+    		Thread.sleep(4000);
     		
     		ProjectPage.enterDhruviEmail(enterpriseLogin);
             ProjectPage.enterDhruviPassword(enterprisePassword);;	
