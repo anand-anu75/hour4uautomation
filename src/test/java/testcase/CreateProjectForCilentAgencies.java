@@ -15,7 +15,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
  //Create Project for Client/Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void createProjectForAgencies(String CompanyName, String PersonName, String Email, String MobileResponsible
+    public void createProjectForAgencies(String phoneOrEmail, String OTP, String expectedURL,String CompanyName, String PersonName, String Email, String MobileResponsible
 , String expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
     		String EnterRadius,String EnterItem, String EnterDescription
@@ -127,7 +127,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     // Invalid Project Type - Creating Project agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidProjectType(String CompanyName, String PersonName, String Email, String MobileResponsible
+    public void CreateProjectInvalidProjectType(String phoneOrEmail, String OTP, String expectedURL,String CompanyName, String PersonName, String Email, String MobileResponsible
 , String expectedSuccessMessage, String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -181,7 +181,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Project Title - Creating Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidProjectTitl(String CompanyName, String PersonName, String Email, String MobileResponsible
+    public void CreateProjectInvalidProjectTitl(String phoneOrEmail, String OTP, String expectedURL,String CompanyName, String PersonName, String Email, String MobileResponsible
 , String expectedSuccessMessage,String ProjectTitle,String ProjectDescription, String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -240,7 +240,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Project Description - Creating Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidProjectDesc(String CompanyName, String PersonName, String Email, String MobileResponsible
+    public void CreateProjectInvalidProjectDesc(String phoneOrEmail, String OTP, String expectedURL,String CompanyName, String PersonName, String Email, String MobileResponsible
 , String expectedSuccessMessage,String ProjectTitle,String ProjectDescription, String ExpectedResult) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -299,7 +299,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Field Name - Create Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidFieldName(String CompanyName, String PersonName, String Email, String MobileResponsible
+    public void CreateProjectInvalidFieldName(String phoneOrEmail, String OTP, String expectedURL,String CompanyName, String PersonName, String Email, String MobileResponsible
     		, String expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
@@ -382,7 +382,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Frequency - Create Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidFrequency(String CompanyName, String PersonName, String Email, String MobileResponsible
+    public void CreateProjectInvalidFrequency(String phoneOrEmail, String OTP, String expectedURL,String CompanyName, String PersonName, String Email, String MobileResponsible
     		, String expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
@@ -463,7 +463,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Radius - Create Project Agencies
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void CreateProjectInvalidRadius(String CompanyName, String PersonName, String Email, String MobileResponsible
+    public void CreateProjectInvalidRadius(String phoneOrEmail, String OTP, String expectedURL,String CompanyName, String PersonName, String Email, String MobileResponsible
     		, String expectedSuccessMessage,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
     		String LinkURL,String EnterMetrics,String EnterQuantity,String FieldName,String EnterFrequency,
     		String EnterRadius,String ExpectedResult) throws InterruptedException {
@@ -545,7 +545,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     // Invalid Name
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void verify_NameError(String CompanyName, String PersonName, String Email, String MobileResponsible
+    public void verify_NameError(String phoneOrEmail, String OTP, String expectedURL,String CompanyName, String PersonName, String Email, String MobileResponsible
     		, String expectedErrorMessage) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
  
@@ -586,7 +586,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Phone number
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void verify_PhoneError(String Name, String Phone, String Email, String Address, String
+    public void verify_PhoneError(String phoneOrEmail, String OTP, String expectedURL,String Name, String Phone, String Email, String Address, String
     		expectedPhoneErrorMessage) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
  
@@ -625,7 +625,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     //Invalid Email
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void verify_EmailError(String Name, String Phone, String Email, String Address, String
+    public void verify_EmailError(String phoneOrEmail, String OTP, String expectedURL,String Name, String Phone, String Email, String Address, String
     		expectedEmailErrorMessage) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
  
@@ -664,7 +664,7 @@ public class CreateProjectForCilentAgencies extends BaseTest{
     // Invalid Enterprise
     
     @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void ProjectClientInvalidEnterprise(String CompanyName, String PersonName, String Email, String MobileResponsible
+    public void ProjectClientInvalidEnterprise(String phoneOrEmail, String OTP, String expectedURL,String CompanyName, String PersonName, String Email, String MobileResponsible
     		, String expectedSuccessMessage,String ExpectedMessage) throws InterruptedException {
         InvitingclientPage ClientPage = new InvitingclientPage(driver);
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);

@@ -21,7 +21,8 @@ public class ManageJobApplicationAccess extends BaseTest {
     // Job Application for Approval when logging as Enterprise
 	
 	 @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-    public void ApplicationEnterpriseAccept(String Date,String Title, String expectedSuccessmessage,
+    public void ApplicationEnterpriseAccept(String phoneOrEmail
+    		, String OTP, String expectedURL,String Date,String Title, String expectedSuccessmessage,
     		String EnterpriseLogin,String EnterprisePassword,String MobileNumber,
     		String EnterOTP,String enterpriseLogin,String enterprisePassword,String ExpectedResult) throws InterruptedException {
     	ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver);
@@ -143,7 +144,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 	// Job Application for Reject when logging as Enterprise
 	 
 	 @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	    public void ApplicationEnterpriseReject(String Date,String Title, String expectedSuccessmessage,
+	    public void ApplicationEnterpriseReject(String phoneOrEmail, String OTP, String expectedURL,String Date,String Title, String expectedSuccessmessage,
 	    		String EnterpriseLogin,String EnterprisePassword,String MobileNumber,
 	    		String EnterOTP,String enterpriseLogin,String enterprisePassword,String ExpectedResult) throws InterruptedException {
 	    	ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver); 
@@ -263,7 +264,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 	// Job Application for Approval when logging as Agency 
 	 
 	 @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	 public void ApplicationAgencyAccept(String Date,String Title, String expectedSuccessmessage,
+	 public void ApplicationAgencyAccept(String phoneOrEmail, String OTP, String expectedURL,String Date,String Title, String expectedSuccessmessage,
 	    		String EnterpriseLogin,String EnterprisePassword,String MobileNumber,
 	    		String EnterOTP,String agencyLogin,String agencyOTP,String ExpectedResult) throws InterruptedException {
 	    	ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver); 
@@ -388,7 +389,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 	// Job Application for Reject when logging as Agency 
 
 	 @Test(dependsOnMethods = {"testcase.Login.login"} ,dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	 public void ApplicationAgencyReject(String Date,String Title, String expectedSuccessmessage,
+	 public void ApplicationAgencyReject(String phoneOrEmail, String OTP, String expectedURL,String Date,String Title, String expectedSuccessmessage,
 	    		String EnterpriseLogin,String EnterprisePassword,String MobileNumber,
 	    		String EnterOTP,String agencyLogin,String agencyOTP,String ExpectedResult) throws InterruptedException {
 	    	ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver); 
@@ -512,10 +513,10 @@ public class ManageJobApplicationAccess extends BaseTest {
 	// Job Application for Accepting when logging as Vendor
 	 
 	 @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	    public void JobApplicationVendorAcceptChamp(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+	    public void JobApplicationVendorAcceptChamp(String phoneOrEmail, String OTP, String expectedURL,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
 	    		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
 	    		String EnterRadius,String EnterItem, String EnterDescription
-	    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,String ExpectedMessage,String phoneOrEmail,String OTP
+	    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,String ExpectedMessage,String vendorphoneOrEmail,String RevievedOTP
 	,String Amount,String PaymentTerms,String AdditionalTerms,String EnterEmail,String EnterOTP,String Date,String Title, String MobileNumber,
 String VendorEmail,String VendorOTP,String ExpectedOutcome) throws InterruptedException {
 	        CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -587,9 +588,9 @@ String VendorEmail,String VendorOTP,String ExpectedOutcome) throws InterruptedEx
 	      ProjectPage.clickOnLogoutButton();
 	      
 	      Vendorlogin.clickOnLink_SignInUsingOtp();
-			Vendorlogin.enterPhoneOrEmail(phoneOrEmail);
+			Vendorlogin.enterPhoneOrEmail(vendorphoneOrEmail);
 			Vendorlogin.clickOnBtn_GetOTP();
-			Vendorlogin.enterOTP(OTP);
+			Vendorlogin.enterOTP(RevievedOTP);
 			Vendorlogin.clickOnBtn_Login();
 			
 			Thread.sleep(2000);
@@ -712,11 +713,11 @@ String VendorEmail,String VendorOTP,String ExpectedOutcome) throws InterruptedEx
 	// Job Application for Rejecting when logging as Vendor
 	 
 	 @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	    public void JobApplicationVendorRejectChamp(String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
+	    public void JobApplicationVendorRejectChamp(String phoneOrEmail, String expectedURL,String ProjectTitle,String ProjectDescription,String ProjectCode,String LinkTitle,
 	    		String LinkURL,String EnterMetrics,String EnterQuantity,String StartDate,String EndDate,String FieldName, String EnterFrequency, 
 	    		String EnterRadius,String EnterItem, String EnterDescription
-	    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,String ExpectedMessage,String phoneOrEmail,String OTP
-	,String Amount,String PaymentTerms,String AdditionalTerms,String EnterEmail,String EnterOTP,String Date,String Title, String MobileNumber,
+	    		,String EnterRates,String EnterQty, String EnterDays, String ExpectedResult,String ExpectedMessage,String vendorphororEmail
+,String OTP,String Amount,String PaymentTerms,String AdditionalTerms,String EnterEmail,String EnterOTP,String Date,String Title, String MobileNumber,
 String VendorEmail,String VendorOTP,String ExpectedOutcome) throws InterruptedException {
 	        CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 	        AssignProjectVendorAgencyPage AssignProjectVendor = new AssignProjectVendorAgencyPage(driver);
@@ -787,7 +788,7 @@ String VendorEmail,String VendorOTP,String ExpectedOutcome) throws InterruptedEx
 	      ProjectPage.clickOnLogoutButton();
 	      
 	      Vendorlogin.clickOnLink_SignInUsingOtp();
-			Vendorlogin.enterPhoneOrEmail(phoneOrEmail);
+			Vendorlogin.enterPhoneOrEmail(vendorphororEmail);
 			Vendorlogin.clickOnBtn_GetOTP();
 			Vendorlogin.enterOTP(OTP);
 			Vendorlogin.clickOnBtn_Login();

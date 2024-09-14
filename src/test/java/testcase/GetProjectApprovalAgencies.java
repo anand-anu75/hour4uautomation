@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 import pages.CreateProjectPage;
 import pages.CreateworkorderPage;
+import pages.ManageJobApplicationAccessPage;
 import utilities.ReadXLData;
 
 @Listeners(base.Listeners.class)
@@ -26,6 +27,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
     		String expectedSuccessmessage,String phoneOrEmail,String EnterPassword,String ExpectedMessage
 ) throws InterruptedException {
         CreateProjectPage ProjectPage = new CreateProjectPage(driver);
+        ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver);
         CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 
         //ProjectPage.clickOnErrorMessage();
@@ -122,6 +124,8 @@ public class GetProjectApprovalAgencies extends BaseTest {
     	    WorkorderPage.clickOnSeeSummaryButton();
     	
     	    WorkorderPage.clickOnSubmitforApprovalButton();
+    	    
+    	    JobApplication.clickOnCloseMessage(); 
     	//    ProjectPage.clickOnErrorMessage();
     	    
     	    ProjectPage.clickOnProfileButton();
