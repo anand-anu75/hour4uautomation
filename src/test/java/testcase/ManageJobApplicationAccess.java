@@ -74,11 +74,13 @@ public class ManageJobApplicationAccess extends BaseTest {
     	    
     	    ProjectPage.clickOnProfileButton();
             ProjectPage.clickOnLogoutButton();
+            
+            
             ProjectPage.enterDhruviEmail(EnterpriseLogin);
             ProjectPage.enterDhruviPassword(EnterprisePassword);;	
             ProjectPage.clickOnLoginButton();
             
-     //       ProjectPage.clickOnErrorMessage();
+   //         ProjectPage.clickOnErrorMessage();
             
             WorkorderPage.clickOnWorkorderButton(); 
             WorkorderPage.clickOnApproveWorkorder();
@@ -119,16 +121,16 @@ public class ManageJobApplicationAccess extends BaseTest {
      //       ProjectPage.clickOnErrorMessage();
     		
     	    
-    	JobApplicationPage.clickOnWorkorderButton();
+            JobApplication.clickOnWorkorderButton();
     	Thread.sleep(4000);
-    	JobApplicationPage.clickOnActiveWorkorder();
-    	JobApplicationPage.ClickToApproveChamp();
-    	JobApplicationPage.JobApplicationStatus();
+    	JobApplication.clickOnActiveWorkorder();
+    	JobApplication.ClickToApproveChamp();
+    	JobApplication.JobApplicationStatus();
     //	Thread.sleep(3000);
     //	JobApplicationPage.ClickToRejectChamp();
     //	JobApplicationPage.JobApplicationStatus();
     	
-    	String JobApplicationstatus = JobApplicationPage.JobApplicationStatus();
+    	String JobApplicationstatus = JobApplication.JobApplicationStatus();
         softAssert.assertEquals(JobApplicationstatus,ExpectedResult);
         try {
 			softAssert.assertAll();
@@ -144,7 +146,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 	    public void ApplicationEnterpriseReject(String Date,String Title, String expectedSuccessmessage,
 	    		String EnterpriseLogin,String EnterprisePassword,String MobileNumber,
 	    		String EnterOTP,String enterpriseLogin,String enterprisePassword,String ExpectedResult) throws InterruptedException {
-	    	JobApplicationPage = new ManageJobApplicationAccessPage(driver); 
+	    	ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver); 
 	    	CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 	    	CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 	    	AppLoginPage Applogin = new AppLoginPage(driver);
@@ -188,6 +190,8 @@ public class ManageJobApplicationAccess extends BaseTest {
 	    	    WorkorderPage.enterTitle(Title);     	
 	    	    WorkorderPage.clickOnSeeSummaryButton();    	
 	    	    WorkorderPage.clickOnSubmitforApprovalButton();
+	    	    
+	    	    JobApplication.clickOnCloseMessage(); 
 	    	    Thread.sleep(2000);
 	    	    
 	    	    ProjectPage.clickOnProfileButton();
@@ -196,10 +200,12 @@ public class ManageJobApplicationAccess extends BaseTest {
 	            ProjectPage.enterDhruviPassword(EnterprisePassword);;	
 	            ProjectPage.clickOnLoginButton();
 	            
-	            ProjectPage.clickOnErrorMessage();
+	   //         ProjectPage.clickOnErrorMessage();
 	            
 	            WorkorderPage.clickOnWorkorderButton(); 
 	            WorkorderPage.clickOnApproveWorkorder();
+	            
+	            JobApplication.clickOnCloseMessage();
 	            Thread.sleep(2000);
 	    	    
 	    	    ProjectPage.clickOnProfileButton();
@@ -233,16 +239,16 @@ public class ManageJobApplicationAccess extends BaseTest {
 	            
 	     //       ProjectPage.clickOnErrorMessage();
 	    	
-	    	JobApplicationPage.clickOnWorkorderButton();
+	            JobApplication.clickOnWorkorderButton();
 	    	Thread.sleep(2000);
-	    	JobApplicationPage.clickOnActiveWorkorder();
+	    	JobApplication.clickOnActiveWorkorder();
 	//    	JobApplicationPage.ClickToApproveChamp();
 	//    	JobApplicationPage.JobApplicationStatus();
 	//    	Thread.sleep(3000);
-	    	JobApplicationPage.ClickToRejectChamp();
-	    	JobApplicationPage.JobApplicationStatus();
+	    	JobApplication.ClickToRejectChamp();
+	    	JobApplication.JobApplicationStatus();
 	    	
-	    	String JobApplicationstatus = JobApplicationPage.JobApplicationStatus();
+	    	String JobApplicationstatus = JobApplication.JobApplicationStatus();
 	        softAssert.assertEquals(JobApplicationstatus, ExpectedResult);
 	        try {
 				softAssert.assertAll();
@@ -260,7 +266,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 	 public void ApplicationAgencyAccept(String Date,String Title, String expectedSuccessmessage,
 	    		String EnterpriseLogin,String EnterprisePassword,String MobileNumber,
 	    		String EnterOTP,String agencyLogin,String agencyOTP,String ExpectedResult) throws InterruptedException {
-	    	JobApplicationPage = new ManageJobApplicationAccessPage(driver); 
+	    	ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver); 
 	    	 
 	    	CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 	    	CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -305,22 +311,28 @@ public class ManageJobApplicationAccess extends BaseTest {
 	    	    WorkorderPage.enterTitle(Title);     	
 	    	    WorkorderPage.clickOnSeeSummaryButton();    	
 	    	    WorkorderPage.clickOnSubmitforApprovalButton();
+	    	    
+	    	    JobApplication.clickOnCloseMessage(); 
                 Thread.sleep(2000);
 	    	    
 	    	    ProjectPage.clickOnProfileButton();
 	            ProjectPage.clickOnLogoutButton();
+	            
 	            ProjectPage.enterDhruviEmail(EnterpriseLogin);
 	            ProjectPage.enterDhruviPassword(EnterprisePassword);;	
 	            ProjectPage.clickOnLoginButton();
 	            
-	            ProjectPage.clickOnErrorMessage();
+	   //         ProjectPage.clickOnErrorMessage();
 	            
 	            WorkorderPage.clickOnWorkorderButton(); 
 	            WorkorderPage.clickOnApproveWorkorder();
+	            
+	            JobApplication.clickOnCloseMessage(); 
 	            Thread.sleep(2000);
 	    	    
 	    	    ProjectPage.clickOnProfileButton();
 	            ProjectPage.clickOnLogoutButton();
+	
 	            
 	            driver.get(prop.getProperty("AppURL"));
 	            
@@ -353,17 +365,17 @@ public class ManageJobApplicationAccess extends BaseTest {
 	     //       ProjectPage.clickOnErrorMessage();
 	    	
 	    	
-	    	JobApplicationPage.clickOnWorkorderButton();
+	            JobApplication.clickOnWorkorderButton();
 	    	Thread.sleep(2000);
-	    	JobApplicationPage.clickOnActiveWorkorder();
+	    	JobApplication.clickOnActiveWorkorder();
 	    	Thread.sleep(2000);
-	    	JobApplicationPage.ClickToApproveChamp();
-	    	JobApplicationPage.JobApplicationStatus();
+	    	JobApplication.ClickToApproveChamp();
+	    	JobApplication.JobApplicationStatus();
 	  //  	Thread.sleep(3000);
 	  //  	JobApplicationPage.ClickToRejectChamp();
 	 //   	JobApplicationPage.JobApplicationStatus();
 	    	
-	    	String JobApplicationstatus = JobApplicationPage.JobApplicationStatus();
+	    	String JobApplicationstatus = JobApplication.JobApplicationStatus();
 	        softAssert.assertEquals(JobApplicationstatus, ExpectedResult);
 	        try {
 				softAssert.assertAll();
@@ -379,7 +391,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 	 public void ApplicationAgencyReject(String Date,String Title, String expectedSuccessmessage,
 	    		String EnterpriseLogin,String EnterprisePassword,String MobileNumber,
 	    		String EnterOTP,String agencyLogin,String agencyOTP,String ExpectedResult) throws InterruptedException {
-	    	JobApplicationPage = new ManageJobApplicationAccessPage(driver); 
+	    	ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver); 
 	    	CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 	    	CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 	    	AppLoginPage Applogin = new AppLoginPage(driver);
@@ -423,22 +435,29 @@ public class ManageJobApplicationAccess extends BaseTest {
 	    	    WorkorderPage.enterTitle(Title);     	
 	    	    WorkorderPage.clickOnSeeSummaryButton();    	
 	    	    WorkorderPage.clickOnSubmitforApprovalButton();
+	    	    
+	    	    JobApplication.clickOnCloseMessage(); 
                 Thread.sleep(2000);
 	    	    
 	    	    ProjectPage.clickOnProfileButton();
 	            ProjectPage.clickOnLogoutButton();
+	            
+	            
 	            ProjectPage.enterDhruviEmail(EnterpriseLogin);
 	            ProjectPage.enterDhruviPassword(EnterprisePassword);;	
 	            ProjectPage.clickOnLoginButton();
 	            
-	            ProjectPage.clickOnErrorMessage();
+	    //        ProjectPage.clickOnErrorMessage();
 	            
 	            WorkorderPage.clickOnWorkorderButton(); 
 	            WorkorderPage.clickOnApproveWorkorder();
+	            
+	            JobApplication.clickOnCloseMessage(); 
 	            Thread.sleep(2000);
 	    	    
 	    	    ProjectPage.clickOnProfileButton();
 	            ProjectPage.clickOnLogoutButton();
+	    
 	            
 	            driver.get(prop.getProperty("AppURL"));
 	            
@@ -470,17 +489,17 @@ public class ManageJobApplicationAccess extends BaseTest {
 	            
 	     //       ProjectPage.clickOnErrorMessage();
 	    	
-	    	JobApplicationPage.clickOnWorkorderButton();
+	            JobApplication.clickOnWorkorderButton();
 	  //  	Thread.sleep(2000);
-	    	JobApplicationPage.clickOnActiveWorkorder();
+	            JobApplication.clickOnActiveWorkorder();
 	    	Thread.sleep(2000);
 	  //  	JobApplicationPage.ClickToApproveChamp();
 	  //  	JobApplicationPage.JobApplicationStatus();
 	 //   	Thread.sleep(3000);
-	    	JobApplicationPage.ClickToRejectChamp();
-	    	JobApplicationPage.JobApplicationStatus();
+	    	JobApplication.ClickToRejectChamp();
+	    	JobApplication.JobApplicationStatus();
 	    	
-	    	String JobApplicationstatus = JobApplicationPage.JobApplicationStatus();
+	    	String JobApplicationstatus = JobApplication.JobApplicationStatus();
 	        softAssert.assertEquals(JobApplicationstatus, ExpectedResult);
 	        try {
 				softAssert.assertAll();
