@@ -33,12 +33,24 @@ public class Listeners extends TakeScreenshot implements ITestListener {
 
 		String assertionMsg = BaseTest.getAssertionMessage();
 
-		if (assertionMsg != null) {
-			extentTest.log(Status.FAIL, "Assertion Details : " + assertionMsg);
-			
+//		if (assertionMsg != null) {
+//			extentTest.log(Status.FAIL, "Assertion Details : " + assertionMsg);
+//
+//		} else {
+//			extentTest.log(Status.FAIL, "No assertion details available");
+//		}
+
+		// Capture exception details
+		Throwable throwable = result.getThrowable();
+		if (throwable instanceof AssertionError) {
+			// Log only the assertion error details
+			extentTest.log(Status.FAIL, "Assertion Failed: " + assertionMsg);
 		} else {
-			extentTest.log(Status.FAIL, "No assertion details available");
+			// Log other exceptions (like Selenium exceptions)
+			extentTest.log(Status.FAIL, "Test failed with exception: " + throwable.getMessage());
+			BaseTest.logExceptionToReport(new Exception(throwable));
 		}
+		assertionMessage.remove();
 
 		String testCaseName = result.getMethod().getMethodName();
 		try {
@@ -46,7 +58,7 @@ public class Listeners extends TakeScreenshot implements ITestListener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		 assertionMessage.remove();
+		assertionMessage.remove();
 	}
 
 	public void onTestSkipped(ITestResult result) {
@@ -54,13 +66,13 @@ public class Listeners extends TakeScreenshot implements ITestListener {
 		extentTest.log(Status.SKIP, "Test skipped");
 	}
 
-	public String getError(Throwable throwable) {
-		StringBuilder sb = new StringBuilder();
-		for (StackTraceElement element : throwable.getStackTrace()) {
-			sb.append(element.toString()).append("/n");
-		}
-
-		return sb.toString();
-	}
+//	public String getError(Throwable throwable) {
+//		StringBuilder sb = new StringBuilder();
+//		for (StackTraceElement element : throwable.getStackTrace()) {
+//			sb.append(element.toString()).append("/n");
+//		}
+//
+//		return sb.toString();
+//	}
 
 }

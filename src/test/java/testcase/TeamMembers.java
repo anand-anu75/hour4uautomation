@@ -43,7 +43,7 @@ public class TeamMembers extends BaseTest {
 		teamMembers.click_On_AddTeamMemberButton();
 		String actualMessage = teamMembers.get_MessageForTeamMemberAddedSuccessfully();
 		String teamMemberName = teamMembers.get_nameOfTeamMemberAdded();
-		String teamMemberMobileNo= teamMembers.get_mobileOfTeamMemberAdded();
+		String teamMemberMobileNo = teamMembers.get_mobileOfTeamMemberAdded();
 		String teamMemberEmail = teamMembers.get_emailOfTeamMemberAdded();
 
 		try {
@@ -55,12 +55,15 @@ public class TeamMembers extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify error message for invalid name in Team Members Section.")
-	public void validation_for_invalid_Name(String phoneOrEmail, String OTP, String invalidName, String mobile, String email,
-			String expectederrorMessage) throws InterruptedException {
+	public void validation_for_invalid_Name(String phoneOrEmail, String OTP, String invalidName, String mobile,
+			String email, String expectederrorMessage) throws InterruptedException {
 
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
@@ -92,6 +95,9 @@ public class TeamMembers extends BaseTest {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
 			throw e;
 		}
 	}
@@ -130,6 +136,9 @@ public class TeamMembers extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
 
@@ -165,6 +174,9 @@ public class TeamMembers extends BaseTest {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
 			throw e;
 		}
 	}

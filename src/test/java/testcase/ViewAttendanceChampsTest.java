@@ -45,6 +45,9 @@ public class ViewAttendanceChampsTest extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
 
@@ -53,14 +56,15 @@ public class ViewAttendanceChampsTest extends BaseTest {
 	 * test depends on successful login and uses data from an Excel sheet.
 	 * 
 	 * @param expectedMessage The expected message to validate after navigating.
-	 * @throws IOException 
-	 * @throws InterruptedException 
+	 * @throws IOException
+	 * @throws InterruptedException
 	 */
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void viewTask(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
-		
+	public void viewTask(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+			throws InterruptedException, IOException {
+
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
-		
+
 		// Initialize the ViewAttendanceChamps object
 		viewAttendanceChamps = new ViewAttendanceChamps(driver);
 
@@ -95,6 +99,9 @@ public class ViewAttendanceChampsTest extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
 
@@ -103,14 +110,15 @@ public class ViewAttendanceChampsTest extends BaseTest {
 	 * test depends on successful login and uses data from an Excel sheet.
 	 * 
 	 * @param expectedMessage The expected message to validate after navigating.
-	 * @throws IOException 
-	 * @throws InterruptedException 
+	 * @throws IOException
+	 * @throws InterruptedException
 	 */
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void workOrder(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
-		
+	public void workOrder(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+			throws InterruptedException, IOException {
+
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
-		
+
 		// Initialize the ViewAttendanceChamps object
 		viewAttendanceChamps = new ViewAttendanceChamps(driver);
 
@@ -134,6 +142,9 @@ public class ViewAttendanceChampsTest extends BaseTest {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
 			throw e;
 		}
 	}

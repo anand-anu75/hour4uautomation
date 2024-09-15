@@ -16,7 +16,7 @@ public class LoginPage extends BaseTest {
 	WebElement txt_OTP;
 	WebElement btn_login;
 	WebElement link_signup;
-	WebElement btn_signup;
+	WebElement btn_sign_Up;
 	WebElement txt_password;
 	WebElement errorMessage_invalidFormatPhNumOrEmail;
 	WebElement errorMessage_EmptyPassword;
@@ -83,7 +83,9 @@ public class LoginPage extends BaseTest {
 		} catch (Exception e) {
 			System.out.println("Overlay or modal still present.");
 		}
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn_signup);
+		btn_sign_Up = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_sign_Up"))));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn_sign_Up);
 	}
 
 	public void enterPassword(String password) {
@@ -131,10 +133,9 @@ public class LoginPage extends BaseTest {
 	}
 
 	public String get_emptyEmailPhoneErrorMessage() {
-		errorMessage_emptyEmailPhone = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_emptyEmailPh"))));
+		errorMessage_emptyEmailPhone = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_emptyEmailPh"))));
 		return errorMessage_emptyEmailPhone.getText();
-
 	}
 
 }

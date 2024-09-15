@@ -129,6 +129,9 @@ public class ManageJobApplicationAccess extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
 
@@ -150,7 +153,6 @@ public class ManageJobApplicationAccess extends BaseTest {
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 		AppLoginPage Applogin = new AppLoginPage(driver);
 
-		
 		WorkorderPage.clickOnWorkorderButton();
 		WorkorderPage.clickOnCreateWorkorderButton();
 		WorkorderPage.NavigateTodialogBox();
@@ -180,7 +182,6 @@ public class ManageJobApplicationAccess extends BaseTest {
 		ProjectPage.clickOnLogoutButton();
 		ProjectPage.enterDhruviEmail(EnterpriseLogin);
 		ProjectPage.enterDhruviPassword(EnterprisePassword);
-		;
 		ProjectPage.clickOnLoginButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -238,6 +239,9 @@ public class ManageJobApplicationAccess extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
 
@@ -246,7 +250,8 @@ public class ManageJobApplicationAccess extends BaseTest {
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	public void ApplicationAgencyAccept(String phoneOrEmail, String OTP, String expectedURL, String Date, String Title,
 			String expectedSuccessmessage, String EnterpriseLogin, String EnterprisePassword, String MobileNumber,
-			String EnterOTP, String agencyLogin, String agencyOTP, String ExpectedResult) throws InterruptedException, IOException {
+			String EnterOTP, String agencyLogin, String agencyOTP, String ExpectedResult)
+			throws InterruptedException, IOException {
 
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
@@ -366,6 +371,9 @@ public class ManageJobApplicationAccess extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
 
@@ -374,7 +382,8 @@ public class ManageJobApplicationAccess extends BaseTest {
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	public void ApplicationAgencyReject(String phoneOrEmail, String OTP, String expectedURL, String Date, String Title,
 			String expectedSuccessmessage, String EnterpriseLogin, String EnterprisePassword, String MobileNumber,
-			String EnterOTP, String agencyLogin, String agencyOTP, String ExpectedResult) throws InterruptedException, IOException {
+			String EnterOTP, String agencyLogin, String agencyOTP, String ExpectedResult)
+			throws InterruptedException, IOException {
 
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
@@ -493,23 +502,27 @@ public class ManageJobApplicationAccess extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
 
 	// Job Application for Accepting when logging as Vendor
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void JobApplicationVendorAcceptChamp(String phoneOrEmail, String agencyOTP, String expectedURL, String ProjectTitle, String ProjectDescription, String ProjectCode,
-			String LinkTitle, String LinkURL, String EnterMetrics, String EnterQuantity, String StartDate,
-			String EndDate, String FieldName, String EnterFrequency, String EnterRadius, String EnterItem,
-			String EnterDescription, String EnterRates, String EnterQty, String EnterDays, String ExpectedResult,
-			String ExpectedMessage, String vendorphoneOrEmail, String OTP, String Amount, String PaymentTerms,
-			String AdditionalTerms, String EnterEmail, String EnterOTP, String Date, String Title, String MobileNumber,
-			String VendorEmail, String VendorOTP, String ExpectedOutcome) throws InterruptedException, IOException {
+	public void JobApplicationVendorAcceptChamp(String phoneOrEmail, String agencyOTP, String expectedURL,
+			String ProjectTitle, String ProjectDescription, String ProjectCode, String LinkTitle, String LinkURL,
+			String EnterMetrics, String EnterQuantity, String StartDate, String EndDate, String FieldName,
+			String EnterFrequency, String EnterRadius, String EnterItem, String EnterDescription, String EnterRates,
+			String EnterQty, String EnterDays, String ExpectedResult, String ExpectedMessage, String vendorphoneOrEmail,
+			String OTP, String Amount, String PaymentTerms, String AdditionalTerms, String EnterEmail, String EnterOTP,
+			String Date, String Title, String MobileNumber, String VendorEmail, String VendorOTP,
+			String ExpectedOutcome) throws InterruptedException, IOException {
 
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
-		
+
 		loginAgency.login(phoneOrEmail, agencyOTP, expectedURL);
 
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -707,23 +720,27 @@ public class ManageJobApplicationAccess extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
 
 	// Job Application for Rejecting when logging as Vendor
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void JobApplicationVendorRejectChamp(String phoneOrEmail, String expectedURL, String ProjectTitle, String ProjectDescription, String ProjectCode,
-			String LinkTitle, String LinkURL, String EnterMetrics, String EnterQuantity, String StartDate,
-			String EndDate, String FieldName, String EnterFrequency, String EnterRadius, String EnterItem,
-			String EnterDescription, String EnterRates, String EnterQty, String EnterDays, String ExpectedResult,
-			String ExpectedMessage, String vendorphoneOrEmail, String OTP, String Amount, String PaymentTerms,
-			String AdditionalTerms, String EnterEmail, String EnterOTP, String Date, String Title, String MobileNumber,
-			String VendorEmail, String VendorOTP, String ExpectedOutcome) throws InterruptedException, IOException {
+	public void JobApplicationVendorRejectChamp(String phoneOrEmail, String expectedURL, String ProjectTitle,
+			String ProjectDescription, String ProjectCode, String LinkTitle, String LinkURL, String EnterMetrics,
+			String EnterQuantity, String StartDate, String EndDate, String FieldName, String EnterFrequency,
+			String EnterRadius, String EnterItem, String EnterDescription, String EnterRates, String EnterQty,
+			String EnterDays, String ExpectedResult, String ExpectedMessage, String vendorphoneOrEmail, String OTP,
+			String Amount, String PaymentTerms, String AdditionalTerms, String EnterEmail, String EnterOTP, String Date,
+			String Title, String MobileNumber, String VendorEmail, String VendorOTP, String ExpectedOutcome)
+			throws InterruptedException, IOException {
 
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
-		
+
 		loginAgency.login(phoneOrEmail, OTP, expectedURL);
 
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
@@ -920,6 +937,9 @@ public class ManageJobApplicationAccess extends BaseTest {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
 			throw e;
 		}
 	}

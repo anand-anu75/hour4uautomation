@@ -74,6 +74,9 @@ public class WorkorderbyVendor extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 
 	}
@@ -142,6 +145,9 @@ public class WorkorderbyVendor extends BaseTest {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
 			throw e;
 		}
 

@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcase.CreateProjectForCilentAgencies">
+      <class name="testcase.CreateProjectExistingEnterprise">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
           <include name="setupReport"/>
-          <include name="CreateProjectInvalidFieldName" invocation-numbers="0"/>
+          <include name="CreateExistingProjectPageData" invocation-numbers="0"/>
           <include name="tearDownReport"/>
         </methods>
-      </class> <!-- testcase.CreateProjectForCilentAgencies -->
+      </class> <!-- testcase.CreateProjectExistingEnterprise -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

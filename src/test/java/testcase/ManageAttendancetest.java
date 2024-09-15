@@ -11,15 +11,15 @@ import pages.ManageAttendance;
 import utilities.ReadXLData;
 
 public class ManageAttendancetest extends BaseTest {
-	
+
 	ManageAttendance manageAttendancetest;
 	LoginPage login;
-	
-	
-static String actualURL;
-	
+
+	static String actualURL;
+
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
-	public void verify_Attendance_Workorder(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
+	public void verify_Attendance_Workorder(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+			throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -36,21 +36,19 @@ static String actualURL;
 			assertionMessage.set(e.getMessage());
 			throw e;
 		}
-		
-		
+
 		manageAttendancetest = new ManageAttendance(driver);
 		manageAttendancetest.clickOnbtn_Workorder();
 		manageAttendancetest.clickOnbtn_ViewTasks();
 		String originalWindow = driver.getWindowHandle();
-		 
 
 		Set<String> allWindows = driver.getWindowHandles();
 
 		for (String windowHandle : allWindows) {
-		    if (!windowHandle.equals(originalWindow)) {
-		        driver.switchTo().window(windowHandle);
-		        break;
-		    }
+			if (!windowHandle.equals(originalWindow)) {
+				driver.switchTo().window(windowHandle);
+				break;
+			}
 		}
 		manageAttendancetest.clickOn_Openmenutoexplore();
 		manageAttendancetest.clickOn_ViewJobSeekerSchedules();
@@ -61,12 +59,16 @@ static String actualURL;
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
-		
+
 	}
-	
+
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
-	public void verify_Attendance_ViewTask(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
+	public void verify_Attendance_ViewTask(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+			throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -83,8 +85,7 @@ static String actualURL;
 			assertionMessage.set(e.getMessage());
 			throw e;
 		}
-		
-		
+
 		manageAttendancetest = new ManageAttendance(driver);
 		manageAttendancetest.clickOnbtn_Workorder();
 		manageAttendancetest.clickOnbtn_More();
@@ -97,11 +98,16 @@ static String actualURL;
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
-		
+
 	}
+
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
-	public void verify_Attendance_Active(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage) throws InterruptedException, IOException {
+	public void verify_Attendance_Active(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+			throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -118,8 +124,7 @@ static String actualURL;
 			assertionMessage.set(e.getMessage());
 			throw e;
 		}
-		
-		
+
 		manageAttendancetest = new ManageAttendance(driver);
 		manageAttendancetest.clickOnbtn_Workorder();
 		manageAttendancetest.clickOn_Active();
@@ -133,10 +138,11 @@ static String actualURL;
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
-		
+
 	}
-	
 
 }
-     
