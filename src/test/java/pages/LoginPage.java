@@ -16,11 +16,15 @@ public class LoginPage extends BaseTest {
 	WebElement txt_OTP;
 	WebElement btn_login;
 	WebElement link_signup;
-	WebElement btn_signup;
+	WebElement btn_sign_Up;
 	WebElement txt_password;
 	WebElement errorMessage_invalidFormatPhNumOrEmail;
 	WebElement errorMessage_EmptyPassword;
 	WebElement link_forget_password;
+	WebElement dialogBox_ForgotPassword;
+	WebElement errorMessage_dialogBoxTitle;
+	WebElement errorMessage_invalidPassword;
+	WebElement errorMessage_emptyEmailPhone;
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -79,7 +83,9 @@ public class LoginPage extends BaseTest {
 		} catch (Exception e) {
 			System.out.println("Overlay or modal still present.");
 		}
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn_signup);
+		btn_sign_Up = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_sign_Up"))));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn_sign_Up);
 	}
 
 	public void enterPassword(String password) {
@@ -89,10 +95,14 @@ public class LoginPage extends BaseTest {
 	}
 
 	public String get_ErrorMessageForInvalidFormatPhNumOrEmail() {
+		errorMessage_invalidFormatPhNumOrEmail = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_invalidFormatPhNumOrEmail"))));
 		return errorMessage_invalidFormatPhNumOrEmail.getText();
 	}
 
 	public String get_ErrorMessageForEmptyPassword() {
+		errorMessage_EmptyPassword = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_EmptyPassword"))));
 		return errorMessage_EmptyPassword.getText();
 
 	}
@@ -101,6 +111,31 @@ public class LoginPage extends BaseTest {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("link_forget_password"))))
 				.click();
 		// link_forget_password.click();
+	}
+
+	public void navigateToErrorDialogBox() {
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("dialogBox_ForgotPassword"))));
+		// wait.until(ExpectedConditions.visibilityOf(dialogBox_ForgotPassword));
+	}
+
+	public String get_DialogBoxErrorTitleMessage() {
+		errorMessage_dialogBoxTitle = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_dialogBoxTitle"))));
+		return errorMessage_dialogBoxTitle.getText();
+	}
+
+	public String get_InvalidPasswordErrorMessage() {
+		errorMessage_invalidPassword = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_invalidPassword"))));
+		return errorMessage_invalidPassword.getText();
+
+	}
+
+	public String get_emptyEmailPhoneErrorMessage() {
+		errorMessage_emptyEmailPhone = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_emptyEmailPh"))));
+		return errorMessage_emptyEmailPhone.getText();
 	}
 
 }

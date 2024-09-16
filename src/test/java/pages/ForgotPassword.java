@@ -21,6 +21,8 @@ public class ForgotPassword extends BaseTest {
 	WebElement errorMessage_OTP_ForgotPassword;
 	WebElement errorMessage_emptyNewPassword;
 	WebElement errorMessage_newPasswordLessThan6Digit;
+	WebElement errorMessage_dialogBoxTitle;
+	WebElement errorMessage_dialogBoxMessage;
 
 	public ForgotPassword(WebDriver driver) {
 		this.driver = driver;
@@ -57,11 +59,9 @@ public class ForgotPassword extends BaseTest {
 	}
 
 	public String get_ErrorMessageForEmptyEmailPhone() {
-		return wait
-				.until(ExpectedConditions
-						.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_emptyEmailPhone"))))
-				.getText();
-		// return errorMessage_emptyEmailPhone.getText();
+		errorMessage_emptyEmailPhone = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_emptyEmailPhone"))));
+		return errorMessage_emptyEmailPhone.getText();
 	}
 
 	public void navigateToErrorDialogBox() {
@@ -71,19 +71,15 @@ public class ForgotPassword extends BaseTest {
 	}
 
 	public String get_ErrorMessageForEmptyOTPForgotPassword() {
-		return wait
-				.until(ExpectedConditions
-						.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_OTP_ForgotPassword"))))
-				.getText();
-		// return errorMessage_OTP_ForgotPassword.getText();
+		errorMessage_OTP_ForgotPassword = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_OTP_ForgotPassword"))));
+		return errorMessage_OTP_ForgotPassword.getText();
 	}
 
 	public String get_ErrorMessageForEmptyNewPassword() {
-		return wait
-				.until(ExpectedConditions
-						.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_emptyNewPassword"))))
-				.getText();
-		// return errorMessage_emptyNewPassword.getText();
+		errorMessage_emptyNewPassword = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_emptyNewPassword"))));
+		return errorMessage_emptyNewPassword.getText();
 	}
 
 	public String get_ErrorMessageForLessThan6DigitNewPassword() {
@@ -92,4 +88,25 @@ public class ForgotPassword extends BaseTest {
 				.getText();
 		// return errorMessage_newPasswordLessThan6Digit.getText();
 	}
+
+	public void click_OnEmailPhoneNumField() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_emailMobile")))).click();
+	}
+
+	public String get_DialogBoxErrorTitleMessage() {
+		errorMessage_dialogBoxTitle = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_dialogBoxTitle"))));
+		return errorMessage_dialogBoxTitle.getText();
+	}
+
+	public String get_dialogBoxBodyMessage() {
+		errorMessage_dialogBoxMessage = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_dialogBoxMessage"))));
+		return errorMessage_dialogBoxMessage.getText();
+	}
+	
+	public void click_OnPasswordField() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_newPassword")))).click();
+	}
+	
 }

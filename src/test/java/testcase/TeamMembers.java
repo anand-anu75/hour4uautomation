@@ -1,9 +1,8 @@
 package testcase;
 
-import static org.testng.Assert.assertEquals;
-
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import base.BaseTest;
 import pages.AddTeamMembers;
@@ -17,11 +16,13 @@ public class TeamMembers extends BaseTest {
 	LoginPage login;
 	static String actualURL;
 
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify that team member is added with valid name, mobile number and email.")
+	public void addTeamMember(String phoneOrEmail, String OTP, String name, String mobile, String email,
+			String expectedMessage) throws InterruptedException {
 
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
+		softAssert = new SoftAssert();
+		assertionMessage = new ThreadLocal<>();
 
-	public void teamMember(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectedURL)
-			throws InterruptedException {
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -29,62 +30,85 @@ public class TeamMembers extends BaseTest {
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(5000);
-		
+
 		teamMembers = new AddTeamMembers(driver);
-        teamMembers.clickOnbtn_Users();
+		teamMembers.clickOnbtn_Users();
 		teamMembers.clickOnLink_TeamMembers();
 		teamMembers.clickOnbtn_InviteTeamMembers();
 		teamMembers.enterName(name);
 		teamMembers.enterMobile(mobile);
 		teamMembers.enterEmail(email);
-		teamMembers.click_On_AddTeamMember_Button();
-		actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
+		teamMembers.clickOn_RoleDropdown();
+		teamMembers.selectRoleType();
+		teamMembers.click_On_AddTeamMemberButton();
+		String actualMessage = teamMembers.get_MessageForTeamMemberAddedSuccessfully();
+		String teamMemberName = teamMembers.get_nameOfTeamMemberAdded();
+		String teamMemberMobileNo = teamMembers.get_mobileOfTeamMemberAdded();
+		String teamMemberEmail = teamMembers.get_emailOfTeamMemberAdded();
 
 		try {
+			softAssert.assertEquals(actualMessage, expectedMessage);
+			softAssert.assertEquals(teamMemberName, AddTeamMembers.expectedName);
+			softAssert.assertEquals(teamMemberMobileNo, AddTeamMembers.expectedMobileNo);
+			softAssert.assertEquals(teamMemberEmail, AddTeamMembers.expectedEmail);
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
-	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 
-	public void validation_for_invalid_Name(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectederrorMessage)
-			throws InterruptedException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify error message for invalid name in Team Members Section.")
+	public void validation_for_invalid_Name(String phoneOrEmail, String OTP, String invalidName, String mobile,
+			String email, String expectederrorMessage) throws InterruptedException {
+
+		softAssert = new SoftAssert();
+		assertionMessage = new ThreadLocal<>();
+
 		login = new LoginPage(driver);
 
+		// Login with valid credentials
 		login.clickOnLink_SignInUsingOtp();
 		login.enterPhoneOrEmail(phoneOrEmail);
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(5000);
-		
-		
+
+		// Create team member
 		teamMembers = new AddTeamMembers(driver);
-        teamMembers.clickOnbtn_Users();
+		teamMembers.clickOnbtn_Users();
 		teamMembers.clickOnLink_TeamMembers();
 		teamMembers.clickOnbtn_InviteTeamMembers();
-		teamMembers.enterName(name);
+		teamMembers.enterInvalidName(invalidName);
 		teamMembers.enterMobile(mobile);
 		teamMembers.enterEmail(email);
-		teamMembers.click_On_AddTeamMember_Button();
+		teamMembers.clickOn_RoleDropdown();
+		teamMembers.selectRoleType();
+		teamMembers.click_On_AddTeamMemberButton();
 		String actualerrorMessage = teamMembers.get_ErrorMessageForInvalidName();
-		softAssert.assertEquals(actualerrorMessage, expectederrorMessage);
+
 		try {
+			softAssert.assertEquals(actualerrorMessage, expectederrorMessage);
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 
-	public void validation_for_invalid_Mobile(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectederrorMessage)
-			throws InterruptedException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify error message for invalid mobile number in Team Members Section.")
+	public void validation_for_invalid_Mobile(String phoneOrEmail, String OTP, String name, String mobile, String email,
+			String expectederrorMessage) throws InterruptedException {
+
+		softAssert = new SoftAssert();
+		assertionMessage = new ThreadLocal<>();
+
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -93,30 +117,38 @@ public class TeamMembers extends BaseTest {
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
 		Thread.sleep(5000);
-		
-		
+
 		teamMembers = new AddTeamMembers(driver);
-        teamMembers.clickOnbtn_Users();
+		teamMembers.clickOnbtn_Users();
 		teamMembers.clickOnLink_TeamMembers();
 		teamMembers.clickOnbtn_InviteTeamMembers();
 		teamMembers.enterName(name);
 		teamMembers.enterMobile(mobile);
 		teamMembers.enterEmail(email);
-		teamMembers.click_On_AddTeamMember_Button();
+		teamMembers.clickOn_RoleDropdown();
+		teamMembers.selectRoleType();
+		teamMembers.click_On_AddTeamMemberButton();
 		String actualerrorMessage = teamMembers.get_ErrorMessageForInvalidMobile();
-		softAssert.assertEquals(actualerrorMessage, expectederrorMessage);
+
 		try {
+			softAssert.assertEquals(actualerrorMessage, expectederrorMessage);
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
-	
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 
-	public void validation_for_invalid_Email(String phoneOrEmail, String OTP, String name, String mobile, String email, String expectederrorMessage)
-			throws InterruptedException {
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify error message for Invalid Email in Team Members Section.")
+	public void validation_for_invalid_Email(String phoneOrEmail, String OTP, String name, String mobile, String email,
+			String expectederrorMessage) throws InterruptedException {
+
+		softAssert = new SoftAssert();
+		assertionMessage = new ThreadLocal<>();
+
 		login = new LoginPage(driver);
 
 		login.clickOnLink_SignInUsingOtp();
@@ -124,27 +156,28 @@ public class TeamMembers extends BaseTest {
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(5000);
-		
-		
+
 		teamMembers = new AddTeamMembers(driver);
-        teamMembers.clickOnbtn_Users();
+		teamMembers.clickOnbtn_Users();
 		teamMembers.clickOnLink_TeamMembers();
 		teamMembers.clickOnbtn_InviteTeamMembers();
 		teamMembers.enterName(name);
 		teamMembers.enterMobile(mobile);
 		teamMembers.enterEmail(email);
-		teamMembers.click_On_AddTeamMember_Button();
+		teamMembers.clickOn_RoleDropdown();
+		teamMembers.selectRoleType();
+		teamMembers.click_On_AddTeamMemberButton();
 		String actualerrorMessage = teamMembers.get_ErrorMessageForInvalidEmail();
-		softAssert.assertEquals(actualerrorMessage, expectederrorMessage);
+
 		try {
+			softAssert.assertEquals(actualerrorMessage, expectederrorMessage);
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 	}
-	
-	
-	
 }

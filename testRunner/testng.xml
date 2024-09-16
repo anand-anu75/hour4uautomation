@@ -5,19 +5,41 @@
 		<listener class-name="base.Listeners" />
 	</listeners>
 	<test thread-count="5" name="Test">
+
+		<!-- P0 Test cases -->
+
 		<classes>
-			<!-- 	
-			<class name="testcase.SignUp" />
 			<class name="testcase.Login" />
-			-->
-			<class name="testcase.CreditStatementTest" />
-		<!--	<class name="testcase.ManageAttendancetest" />
+			<class name="testcase.SignUp" />
+			<class name="testcase.CreateProjectEnterprise" />
+			<class name="testcase.CreateProjectSelfAgency" />
+			<class name="testcase.SendProposalsWithoutBillsAgencies" />
+			<class name="testcase.CreateProjectForCilentAgencies" />
+			<class name="testcase.AcceptRejectFromClients " />
+			<class name="testcase.ManageJobApplicationAccess" />
+			<class name="testcase.GetProjectApprovalAgencies" />
+			<class name="testcase.AssignProjectVendorAgency" />
+			<class name="testcase.AddChampsTest" />
+			<class name="testcase.AddChampsWorkOrderTest" />
+			<class name="testcase.RequestCreditTest" />
+			<class name="testcase.WithdrawCreditTest" />
+			<class name="testcase.TeamMembers" />
 			<class name="testcase.ManageDownloadstest" />
 			<class name="testcase.ProofOfWorktest" />
-			<class name="testcase.TeamMembers" /> -->
+			<class name="testcase.CreditStatementTest" />
+			<class name="testcase.CreateWorkorder" />
+			<class name="testcase.ViewTask" />  
+
+
+			<!-- P1 Test cases -->
+
+			<!-- 
+				<class name="testcase.AssignProjectVendorAgency" />
+				<class name="testcase.Assignvendortest" />
+				<class name="testcase.AddChampsWorkOrderVendorTest" />
+				<class name="testcase.WorkorderbyVendor" />
+				-->
 
 		</classes>
-	</test> <!--
-	Test -->
-</suite> <!--
-Suite -->
+	</test>
+</suite>

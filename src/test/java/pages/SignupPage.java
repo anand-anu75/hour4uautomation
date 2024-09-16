@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,20 +12,8 @@ import base.BaseTest;
 
 public class SignupPage extends BaseTest {
 
-	@FindBy(id = "mat-input-5")
-	WebElement txt_mobileNumber;
-
-	@FindBy(id = "mat-input-2")
-	WebElement txt_companyName;
-
-	@FindBy(id = "mat-input-3")
-	WebElement txt_companyGSTNumber;
-
-	@FindBy(id = "mat-input-4")
-	WebElement txt_companyAdd;
-
-	@FindBy(xpath = "//button[@class='primary-btn mt-6']")
-	WebElement btn_exploreThePlatform;
+	WebElement txt_mobileNumberSignUp;
+	WebElement btn_exploreThePlatformSignUp;
 
 	public SignupPage(WebDriver driver) {
 		this.driver = driver;
@@ -33,31 +22,75 @@ public class SignupPage extends BaseTest {
 	}
 
 	public void enter_MobileNumber(String mobileNumber) {
-		wait.until(ExpectedConditions.visibilityOf(txt_mobileNumber));
-		// enterMobileNumber.sendKeys(mobileNumber);;
-		txt_mobileNumber.sendKeys(mobileNumber);
+		txt_mobileNumberSignUp = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_mobileNumberSignUp"))));
+		txt_mobileNumberSignUp.sendKeys(mobileNumber);
 
 	}
 
 	public void enter_CompanyName(String companyName) {
-		txt_companyName.sendKeys(companyName);
-
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_companyNameSignUp"))))
+				.sendKeys(companyName);
 	}
 
 	public void enter_CompanyGSTNumber(String companyGSTNumber) {
-		txt_companyGSTNumber.sendKeys(companyGSTNumber);
-
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_companyGSTNumberSignUp"))))
+				.sendKeys(companyGSTNumber);
 	}
 
 	public void enter_CompanyAddress(String companyAddress) {
-		txt_companyAdd.sendKeys(companyAddress);
-
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_companyAddSignUp"))))
+				.sendKeys(companyAddress);
 	}
 
 	public void click_On_ExploreThePlatform_Button() {
-		//btn_exploreThePlatform.click();
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",btn_exploreThePlatform);
+		// btn_exploreThePlatform.click();
+		btn_exploreThePlatformSignUp = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_exploreThePlatformSignUp"))));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn_exploreThePlatformSignUp);
 
+	}
+
+	public String get_SignupEmptyPhoneEmailErrorMessage() {
+		return wait
+				.until(ExpectedConditions
+						.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_SignupEmptyPhoneEmail"))))
+				.getText();
+	}
+
+	public String get_SignupInvalidEmailPhoneFormatErrorMessage() {
+		return wait
+				.until(ExpectedConditions
+						.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_SignupInvalidEmailFormat"))))
+				.getText();
+	}
+
+	public String get_SignupDialogBoxErrorMessage() {
+		return wait
+				.until(ExpectedConditions
+						.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_SignupDialogBox"))))
+				.getText();
+	}
+
+	public String get_SignupDialogBoxIncorrectOTP() {
+		return wait
+				.until(ExpectedConditions
+						.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_SingupIncorrectOTP"))))
+				.getText();
+	}
+	
+	public String get_SignupInvalidMobileNoFormatErrorMessage() {
+		return wait
+				.until(ExpectedConditions
+						.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_SingupInvalidMobileNoFormat"))))
+				.getText();
+	}
+	public String get_SingupEmptyCompanyNameErrorMessage() {
+		return wait
+				.until(ExpectedConditions
+						.visibilityOfElementLocated(By.xpath(loc.getProperty("errorMessage_SingupEmptyCompanyName"))))
+				.getText();
 	}
 
 }

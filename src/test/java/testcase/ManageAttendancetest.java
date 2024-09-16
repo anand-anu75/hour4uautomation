@@ -3,7 +3,6 @@ package testcase;
 import java.io.IOException;
 import java.util.Set;
 
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -11,7 +10,6 @@ import pages.LoginPage;
 import pages.ManageAttendance;
 import utilities.ReadXLData;
 
-@Listeners(base.Listeners.class)
 public class ManageAttendancetest extends BaseTest {
 
 	ManageAttendance manageAttendancetest;
@@ -19,8 +17,8 @@ public class ManageAttendancetest extends BaseTest {
 
 	static String actualURL;
 
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void manageattendance(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
+	public void verify_Attendance_Workorder(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
 			throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
@@ -29,7 +27,7 @@ public class ManageAttendancetest extends BaseTest {
 		login.clickOnBtn_GetOTP();
 		login.enterOTP(OTP);
 		login.clickOnBtn_Login();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		actualURL = driver.getCurrentUrl();
 		softAssert.assertEquals(actualURL, expectedURL);
 		try {
@@ -61,12 +59,15 @@ public class ManageAttendancetest extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 
 	}
 
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void manageattendance1(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
+	public void verify_Attendance_ViewTask(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
 			throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
@@ -89,6 +90,7 @@ public class ManageAttendancetest extends BaseTest {
 		manageAttendancetest.clickOnbtn_Workorder();
 		manageAttendancetest.clickOnbtn_More();
 		manageAttendancetest.clickOn_ViewJobSeekerSchedules();
+		Thread.sleep(2000);
 		String actualMessage = manageAttendancetest.get_Actualmessage();
 		softAssert.assertEquals(actualMessage, expectedMessage);
 		try {
@@ -96,12 +98,15 @@ public class ManageAttendancetest extends BaseTest {
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
 
 	}
 
-	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void manageattendance2(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify attendnace in the Workorder.")
+	public void verify_Attendance_Active(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
 			throws InterruptedException, IOException {
 		login = new LoginPage(driver);
 
@@ -132,6 +137,9 @@ public class ManageAttendancetest extends BaseTest {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
 			throw e;
 		}
 

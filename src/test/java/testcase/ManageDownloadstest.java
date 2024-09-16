@@ -1,145 +1,179 @@
 package testcase;
 
 import java.io.IOException;
-import java.util.Set;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import base.BaseTest;
-import pages.LoginPage;
+import pages.AddChampsWorkOrder;
+import pages.CreateworkorderPage;
+import pages.DashboardAndDataPopulatePage;
 import pages.ManageDownloads;
 import utilities.ReadXLData;
 
 public class ManageDownloadstest extends BaseTest {
-		ManageDownloads managedownloadtest;
-		LoginPage login;
-		
-		static String actualURL;
-		
-		
-		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-		public void managedownload(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
-			login = new LoginPage(driver);
+	ManageDownloads managedownloadtest;
+	Login loginObject;
 
-			login.clickOnLink_SignInUsingOtp();
-			login.enterPhoneOrEmail(phoneOrEmail);
-			login.clickOnBtn_GetOTP();
-			login.enterOTP(OTP);
-			login.clickOnBtn_Login();
-			Thread.sleep(1000);
-			actualURL = driver.getCurrentUrl();
-			softAssert.assertEquals(actualURL, expectedURL);
-			try {
-				softAssert.assertAll();
-			} catch (AssertionError e) {
-				assertionMessage.set(e.getMessage());
-				throw e;
-			}
-			
-			
-			managedownloadtest = new ManageDownloads(driver);
+	static String actualURL;
+
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
+	public void verify_Download_Dashboard(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+			throws InterruptedException, IOException {
+
+		softAssert = new SoftAssert();
+		assertionMessage = new ThreadLocal<>();
+
+		// Login with valid credentials
+		loginObject = new Login();
+		loginObject.login(phoneOrEmail, OTP, expectedURL);
+
+		// Download files
+		managedownloadtest = new ManageDownloads(driver);
+		managedownloadtest.deleteExistingFile();
+		managedownloadtest.clickOnbtn_More();
+		managedownloadtest.clickOnbtn_DownloadProofofwork();
+
+		try {
+			boolean value = managedownloadtest.checkFileDownload();
+			softAssert.assertTrue(value);
+
 			managedownloadtest.clickOnbtn_More();
-			managedownloadtest.clickOnbtn_DownloadProofofwork();
-		
+			managedownloadtest.clickOnbtn_DownloadProofofworkPPT();
+			String actualDownloadProofofworkPPT_Message = managedownloadtest.get_downloadProofofworkPPTSuccessMessage()
+					+ "\n" + managedownloadtest.get_downloadProofofworkPPTToastMessage();
+
+			softAssert.assertEquals(actualDownloadProofofworkPPT_Message, expectedMessage);
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
-		
-		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-		public void managedownload1(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
-			login = new LoginPage(driver);
 
-			login.clickOnLink_SignInUsingOtp();
-			login.enterPhoneOrEmail(phoneOrEmail);
-			login.clickOnBtn_GetOTP();
-			login.enterOTP(OTP);
-			login.clickOnBtn_Login();
-			Thread.sleep(1000);
-			actualURL = driver.getCurrentUrl();
-			softAssert.assertEquals(actualURL, expectedURL);
-			try {
-				softAssert.assertAll();
-			} catch (AssertionError e) {
-				assertionMessage.set(e.getMessage());
-				throw e;
-			}
-			
-			
-			managedownloadtest = new ManageDownloads(driver);
-			
-  		    Actions actions = new Actions(driver); 
-			actions.sendKeys(Keys.PAGE_DOWN).perform();
-			Thread.sleep(2000);
-			managedownloadtest.clickOnbtn_ViewTasks();
-			String originalWindow = driver.getWindowHandle();
-			 
+	}
 
-			Set<String> allWindows = driver.getWindowHandles();
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
+	public void verify_Download_ViewTask(String phoneOrEmail, String OTP, String expectedURL, String expectedMessage)
+			throws InterruptedException, IOException {
 
-			for (String windowHandle : allWindows) {
-			    if (!windowHandle.equals(originalWindow)) {
-			        driver.switchTo().window(windowHandle);
-			        break;
-			    }
-			}
-			Thread.sleep(2000);
-			managedownloadtest.clickOn_Openmenutoexplore();
-			managedownloadtest.clickOnbtn_DownloadProofofwork();		
-			
-		
+		softAssert = new SoftAssert();
+		assertionMessage = new ThreadLocal<>();
+
+		loginObject = new Login();
+		loginObject.login(phoneOrEmail, OTP, expectedURL);
+
+		managedownloadtest = new ManageDownloads(driver);
+		managedownloadtest.deleteExistingFile();
+
+		managedownloadtest.clickOnLabel();
+		// Scroll the page down
+		scrollPageDown();
+
+		managedownloadtest.clickOnbtn_ViewTasks();
+
+		// Switch to new tab
+		switchToNewTab();
+
+		managedownloadtest.clickOn_Openmenutoexplore();
+		managedownloadtest.clickOnbtn_DownloadProofofwork();
+
+		try {
+			boolean value = managedownloadtest.checkFileDownload();
+			softAssert.assertTrue(value);
+
+			managedownloadtest.clickOnbtn_More();
+			managedownloadtest.clickOnbtn_DownloadProofofworkPPT();
+			String actualDownloadProofofworkPPT_Message = managedownloadtest.get_downloadProofofworkPPTSuccessMessage()
+					+ "\n" + managedownloadtest.get_downloadProofofworkPPTToastMessage();
+
+			softAssert.assertEquals(actualDownloadProofofworkPPT_Message, expectedMessage);
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
-		
-		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-		public void managedownload2(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
-			login = new LoginPage(driver);
 
-			login.clickOnLink_SignInUsingOtp();
-			login.enterPhoneOrEmail(phoneOrEmail);
-			login.clickOnBtn_GetOTP();
-			login.enterOTP(OTP);
-			login.clickOnBtn_Login();
-			Thread.sleep(1000);
-			actualURL = driver.getCurrentUrl();
-			softAssert.assertEquals(actualURL, expectedURL);
-			try {
-				softAssert.assertAll();
-			} catch (AssertionError e) {
-				assertionMessage.set(e.getMessage());
-				throw e;
-			}
-			
-			
-			managedownloadtest = new ManageDownloads(driver);
-			managedownloadtest.clickOn_Active();
-			Thread.sleep(2000);
-			managedownloadtest.clickOn_Openmenutoexplore();
-			managedownloadtest.clickOnbtn_DownloadProofofwork();
-			
+	}
+
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Workorders")
+	public void verify_Download_Workorder(String phoneOrEmail, String OTP, String expectedURL, String date,
+			String title, String expectedSuccessmessage, String expectedMessage)
+			throws InterruptedException, IOException {
+
+		softAssert = new SoftAssert();
+		assertionMessage = new ThreadLocal<>();
+
+//		// Create Active workorder
+//		CreateWorkorder createWorkOrder = new CreateWorkorder();
+//		createWorkOrder.CreateworkorderPage(phoneOrEmail, OTP, expectedURL, date, title, expectedSuccessmessage);
+
+		loginObject = new Login();
+		loginObject.login(phoneOrEmail, OTP, expectedURL);
+
+		// Download workorder
+		managedownloadtest = new ManageDownloads(driver);
+		managedownloadtest.deleteExistingFile();
+		AddChampsWorkOrder createWorkOrder = new AddChampsWorkOrder(driver);
+		managedownloadtest.clickOnLabel();
+		scrollPageDown();
+		createWorkOrder.clickDesiredWorkOrder();
+		managedownloadtest.clickOn_Openmenutoexplore();
+		managedownloadtest.clickOnbtn_DownloadProofofwork();
+
+		try {
+			boolean value = managedownloadtest.checkFileDownload();
+			softAssert.assertTrue(value);
+
+			managedownloadtest.clickOnbtn_More();
+			managedownloadtest.clickOnbtn_DownloadProofofworkPPT();
+			String actualDownloadProofofworkPPT_Message = managedownloadtest.get_downloadProofofworkPPTSuccessMessage()
+					+ "\n" + managedownloadtest.get_downloadProofofworkPPTToastMessage();
+
+			softAssert.assertEquals(actualDownloadProofofworkPPT_Message, expectedMessage);
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
-		
-		@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-		public void managedownload3(String phoneOrEmail, String OTP, String expectedURL) throws InterruptedException, IOException {
-			login = new LoginPage(driver);
 
-			login.clickOnLink_SignInUsingOtp();
-			login.enterPhoneOrEmail(phoneOrEmail);
-			login.clickOnBtn_GetOTP();
-			login.enterOTP(OTP);
-			login.clickOnBtn_Login();
-			Thread.sleep(1000);
-			actualURL = driver.getCurrentUrl();
-			softAssert.assertEquals(actualURL, expectedURL);
-			try {
-				softAssert.assertAll();
-			} catch (AssertionError e) {
-				assertionMessage.set(e.getMessage());
-				throw e;
-			}
-			
-			
-			managedownloadtest = new ManageDownloads(driver);
-			managedownloadtest.clickOn_ExportXLS();
+	}
+
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData", description = "Verify Download Data from Dashboard Page")
+	public void verify_Download_XLS(String phoneOrEmail, String OTP, String expectedURL)
+			throws InterruptedException, IOException {
+
+		softAssert = new SoftAssert();
+		assertionMessage = new ThreadLocal<>();
+
+		loginObject = new Login();
+		loginObject.login(phoneOrEmail, OTP, expectedURL);
+
+		managedownloadtest = new ManageDownloads(driver);
+		managedownloadtest.deleteWorkOrderExistingFile();
+		managedownloadtest.clickOn_ExportXLS();
+
+		try {
+			boolean value = managedownloadtest.checkWorkOrderFileDownload();
+			softAssert.assertTrue(value);
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
 		}
-	
-
+	}
 }
