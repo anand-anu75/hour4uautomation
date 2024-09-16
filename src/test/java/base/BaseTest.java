@@ -4,25 +4,25 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.Set;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -67,7 +67,8 @@ public class BaseTest {
 					System.getProperty("user.dir") + "\\src\\test\\resources\\configFiles\\locators.properties");
 			loc.load(frloc);
 
-			softAssert = new SoftAssert();
+			// softAssert = new SoftAssert();
+
 			assertionMessage = new ThreadLocal<>();
 
 		}
@@ -90,15 +91,33 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("testURL"));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
 	}
 
 	public static String getAssertionMessage() {
 		return assertionMessage.get();
 	}
 
+	public static void scrollPageDown() {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+	}
+
+	public static void switchToNewTab() {
+		String originalWindow = driver.getWindowHandle();
+		Set<String> allWindows = driver.getWindowHandles();
+		for (String windowHandle : allWindows) {
+			if (!windowHandle.equals(originalWindow)) {
+				driver.switchTo().window(windowHandle);
+				break;
+			}
+		}
+	}
+
 	@AfterMethod
-	public void tearDown() {
-		driver.close();
+	public void tearDown() throws InterruptedException {
+		// driver.close();
+		 driver.quit();
 
 	}
 
@@ -106,6 +125,14 @@ public class BaseTest {
 	public void tearDownReport() {
 		// Flush the report
 		extentReports.flush();
+	}
+
+	// Method to log any caught exception into Extent Reports
+	public static void logExceptionToReport(Exception e) {
+		extentTest.log(Status.FAIL, "Exception occurred: " + e.getMessage());
+		for (StackTraceElement element : e.getStackTrace()) {
+			extentTest.log(Status.FAIL, element.toString());
+		}
 	}
 
 }
