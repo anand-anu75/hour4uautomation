@@ -182,6 +182,8 @@ public class CreateProjectPage extends BaseTest {
 	WebElement msg_ProjectStatusUpdated;
 
 	WebElement msg_ProjectCreated;
+	
+	WebElement msg_ValidQuote;
 
 	// Initializing Driver
 
@@ -690,7 +692,7 @@ public class CreateProjectPage extends BaseTest {
 	public void SelectOptionEnterprise() {
 
 		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_SelectOptionEnterprise"))))
+				ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("drpd_SelectOptionEnterprise"))))
 				.click();
 	}
 
@@ -969,5 +971,18 @@ public class CreateProjectPage extends BaseTest {
 	        return baseEmail; // Fallback to the original email if the format is unexpected
 	    }
 	}
+
+	public String SelectValidQuoteMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String SelectValidtermMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+
 
 }
