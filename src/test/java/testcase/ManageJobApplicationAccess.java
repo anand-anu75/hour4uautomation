@@ -2,8 +2,10 @@ package testcase;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -63,7 +65,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 		WorkorderPage.clickOnSubmitforApprovalButton();
 
 		JobApplication.clickOnCloseMessage();
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
@@ -76,10 +78,16 @@ public class ManageJobApplicationAccess extends BaseTest {
 		// ProjectPage.clickOnErrorMessage();
 
 		WorkorderPage.clickOnWorkorderButton();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[normalize-space()='Agency']")))
+		.click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-pseudo-checkbox[@class=\"mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted\" and @xpath=\"1\"]")))
+		.click();
+		
 		WorkorderPage.clickOnApproveWorkorder();
 
 		JobApplication.clickOnCloseMessage();
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
@@ -88,23 +96,23 @@ public class ManageJobApplicationAccess extends BaseTest {
 
 		Applogin.clickOnLetStartButton();
 		Applogin.clickOnSkiptButton();
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 		Applogin.enterMobileNumber(MobileNumber);
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 		Applogin.clickOnMobileNextButton();
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 		Applogin.enterOTP(EnterOTP);
-		Thread.sleep(4000);
+	//	Thread.sleep(4000);
 		Applogin.clickOnOTPNext();
-		Thread.sleep(5000);
+	//	Thread.sleep(5000);
 		Applogin.clickOnAppActiveJob();
-		Thread.sleep(4000);
+	//	Thread.sleep(4000);
 		Applogin.clickOnApplyActiveJob();
 
-		Thread.sleep(4000);
+	//	Thread.sleep(4000);
 
 		driver.get(prop.getProperty("testURL"));
-		Thread.sleep(4000);
+	//	Thread.sleep(4000);
 
 		ProjectPage.enterDhruviEmail(enterpriseLogin);
 		ProjectPage.enterDhruviPassword(enterprisePassword);
@@ -114,7 +122,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 		// ProjectPage.clickOnErrorMessage();
 
 		JobApplication.clickOnWorkorderButton();
-		Thread.sleep(4000);
+	//	Thread.sleep(4000);
 		JobApplication.clickOnActiveWorkorder();
 		JobApplication.ClickToApproveChamp();
 		JobApplication.JobApplicationStatus();
@@ -195,6 +203,8 @@ public class ManageJobApplicationAccess extends BaseTest {
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 
+		//Switching to App URL 
+		
 		driver.get(prop.getProperty("AppURL"));
 
 		Applogin.clickOnLetStartButton();
@@ -213,6 +223,8 @@ public class ManageJobApplicationAccess extends BaseTest {
 		Applogin.clickOnApplyActiveJob();
 
 		Thread.sleep(4000);
+		
+		//Getting back to web URL
 
 		driver.get(prop.getProperty("testURL"));
 
@@ -324,6 +336,8 @@ public class ManageJobApplicationAccess extends BaseTest {
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		//Switching to App URL
 
 		driver.get(prop.getProperty("AppURL"));
 
@@ -343,6 +357,8 @@ public class ManageJobApplicationAccess extends BaseTest {
 		Applogin.clickOnApplyActiveJob();
 
 		Thread.sleep(4000);
+		
+		// Switching to Web URL
 
 		driver.get(prop.getProperty("testURL"));
 

@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 import base.BaseTest;
 import pages.CreateProjectPage;
+import pages.CreateProjectPage.RandomGeneratorUtil;
 import pages.CreateworkorderPage;
 import pages.InvitingclientPage;
 import utilities.ReadXLData;
@@ -21,6 +22,8 @@ public class AcceptRejectFromClients extends BaseTest {
 	CreateProjectPage ProjectPage;
 
 	Login loginObject = new Login();
+	
+	//Accepting project
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	public void AcceptRejectClients(String phoneOrEmail, String expectedURL, String CompanyName, String PersonName,
@@ -46,28 +49,21 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(1000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
-		Thread.sleep(1000);
+	//	Thread.sleep(1000);
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 
 		// ProjectPage.clickOnErrorMessage();
 
-		ProjectPage.enterAgencyEmail(randomEmail);
+		ProjectPage.enterAgencyEmail(Email);
 		ProjectPage.clickOnSignInUsingOTP();
 		ProjectPage.clickOnGetOTP();
 		ProjectPage.enterOTPforAgencyLogin(OTP);
@@ -80,7 +76,7 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnCreateProjectButton();
 		// ProjectPage.clickOnSelfClientButton();
 		// ProjectPage.clickOnNext1Button();
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		// ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 //	        Thread.sleep(2000);
@@ -120,13 +116,13 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnReviewProject();
 		ProjectPage.clickOnSaveProject();
 //	      ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		ProjectPage.ClickOnAssignAgency();
 		ProjectPage.enterSearchAgency(SearchAgency);
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		ProjectPage.ClickOnAugustAgency();
 		ProjectPage.clickOnSearchAssignAgency();
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 		ProjectPage.enterAgencyEmail(EnterAgencyEmail);
@@ -156,36 +152,10 @@ public class AcceptRejectFromClients extends BaseTest {
 		}
 
 	}
-	/*
-	 * private String generateRandomPhoneNumber() { long randomPhone = (long)
-	 * (Math.random() * 10000000000L); // Generates a random number and ensures it's
-	 * 10 digits return String.format("%010d", randomPhone); // Formats it as a
-	 * 10-digit string }
-	 */
-
-	private String generateRandomPhoneNumber() {
-		// Generate the first digit as a random number between 5 and 9
-		int firstDigit = 5 + (int) (Math.random() * 5);
-
-		// Generate the remaining 9 digits
-		long remainingDigits = (long) (Math.random() * 1000000000L); // 9 digits
-
-		// Combine the first digit with the remaining 9 digits and format as a 10-digit
-		// number
-		return String.format("%d%09d", firstDigit, remainingDigits);
-	}
-
-	// Utility method to generate a random email
-	private String generateRandomEmail(String baseEmail) {
-		int randomNum = (int) (Math.random() * 1000); // Generates a random number between 0 and 999
-		String[] emailParts = baseEmail.split("@");
-		if (emailParts.length == 2) {
-			return emailParts[0] + randomNum + "@" + emailParts[1]; // Inserts the random number before the '@' symbol
-		}
-		return baseEmail; // Fallback to the original email if the format is unexpected
-	}
+	
 
 	// Accept/Reject from Clients - Invalid Enterprise
+
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	public void AcceptRejectInvalidEnterprise(String phoneOrEmail, String OTP, String expectedURL, String CompanyName,
@@ -198,7 +168,9 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
 		ClientPage.clickOnUserButton();
 
@@ -208,19 +180,11 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		Thread.sleep(3000);
@@ -260,7 +224,9 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
 		ClientPage.clickOnUserButton();
 
@@ -270,19 +236,11 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -332,7 +290,9 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
 		ClientPage.clickOnUserButton();
 
@@ -342,19 +302,11 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -408,7 +360,9 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
 		ClientPage.clickOnUserButton();
 
@@ -418,19 +372,11 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -483,7 +429,9 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
 		ClientPage.clickOnUserButton();
 
@@ -493,19 +441,11 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -585,7 +525,9 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
 		ClientPage.clickOnUserButton();
 
@@ -595,19 +537,11 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();

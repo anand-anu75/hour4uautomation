@@ -28,21 +28,13 @@ public class CreateWorkorder extends BaseTest {
 		WorkorderPage = new CreateworkorderPage(driver);
 
 		WorkorderPage.clickOnWorkorderButton();
-
 		WorkorderPage.clickOnCreateWorkorderButton();
-
 		WorkorderPage.NavigateTodialogBox();
-
 		WorkorderPage.clickOnSelectProjectButton();
-
 		WorkorderPage.clickOnAddDetailsButton();
-
 		WorkorderPage.clickOnSearchAddressButton();
-
 		WorkorderPage.enterDate(Date);
-
 		WorkorderPage.clickOnStartTimeButton();
-
 		WorkorderPage.clickOnSelectStarttimeButton();
 
 		Actions actions = new Actions(driver);
@@ -51,14 +43,13 @@ public class CreateWorkorder extends BaseTest {
 		WorkorderPage.clickOnEndTimeButton();
 
 		WorkorderPage.clickOnSelectEndtimeButton();
+		Thread.sleep(2000);
 
 		WorkorderPage.clickOnAddBillingButton();
 
 		WorkorderPage.clickOnAddTitleButton();
 
 		WorkorderPage.enterTitle(Title);
-
-		WorkorderPage.clickOnAddTitleButton();
 
 		WorkorderPage.clickOnSeeSummaryButton();
 

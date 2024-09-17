@@ -106,7 +106,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
 		ProjectPage.clickOnGetOTP();
 		ProjectPage.enterOTPforAgencyLogin(EnterOTP);
 		ProjectPage.clickOnLoginButton();
-		ProjectPage.clickOnErrorMessage();
+	//	ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		ProjectPage.clickOnAcceptProject();
 
@@ -144,7 +144,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
 		WorkorderPage.enterDhruviEmail(phoneOrEmail);
 		WorkorderPage.enterDhruviPassword(EnterPassword);
 		WorkorderPage.clickOnLoginButton();
-		ProjectPage.clickOnErrorMessage();
+	//	ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnAcceptWorkOrder();
 
 		String actualSuccessmessage = WorkorderPage.WorkOrderApprovedMessage();

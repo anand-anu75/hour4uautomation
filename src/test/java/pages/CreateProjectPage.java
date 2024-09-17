@@ -944,5 +944,30 @@ public class CreateProjectPage extends BaseTest {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("txt_EnterAgencyEmail"))))
 				.sendKeys(EnterpriseLogin);
 	}
+	
+	public class RandomGeneratorUtil {
+
+	    // Utility method to generate a random phone number
+	    public static String generateRandomPhoneNumber() {
+	        // Generate the first digit as a random number between 5 and 9
+	        int firstDigit = 5 + (int) (Math.random() * 5);
+
+	        // Generate the remaining 9 digits
+	        long remainingDigits = (long) (Math.random() * 1000000000L); // 9 digits
+
+	        // Combine the first digit with the remaining 9 digits and format as a 10-digit number
+	        return String.format("%d%09d", firstDigit, remainingDigits);
+	    }
+
+	    // Utility method to generate a random email
+	    public static String generateRandomEmail(String baseEmail) {
+	        int randomNum = (int) (Math.random() * 1000); // Generates a random number between 0 and 999
+	        String[] emailParts = baseEmail.split("@");
+	        if (emailParts.length == 2) {
+	            return emailParts[0] + randomNum + "@" + emailParts[1]; // Inserts the random number before the '@' symbol
+	        }
+	        return baseEmail; // Fallback to the original email if the format is unexpected
+	    }
+	}
 
 }

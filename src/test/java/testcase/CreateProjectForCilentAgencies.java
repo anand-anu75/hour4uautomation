@@ -35,6 +35,9 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
+
 		ClientPage.clickOnUserButton();
 
 		ClientPage.clickOnClientsOption();
@@ -43,18 +46,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -126,27 +122,6 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 	}
 
-	private String generateRandomPhoneNumber() {
-		// Generate the first digit as a random number between 5 and 9
-		int firstDigit = 5 + (int) (Math.random() * 5);
-
-		// Generate the remaining 9 digits
-		long remainingDigits = (long) (Math.random() * 1000000000L); // 9 digits
-
-		// Combine the first digit with the remaining 9 digits and format as a 10-digit
-		// number
-		return String.format("%d%09d", firstDigit, remainingDigits);
-	}
-
-	// Utility method to generate a random email
-	private String generateRandomEmail(String baseEmail) {
-		int randomNum = (int) (Math.random() * 1000); // Generates a random number between 0 and 999
-		String[] emailParts = baseEmail.split("@");
-		if (emailParts.length == 2) {
-			return emailParts[0] + randomNum + "@" + emailParts[1]; // Inserts the random number before the '@' symbol
-		}
-		return baseEmail; // Fallback to the original email if the format is unexpected
-	}
 
 	// Invalid Project Type - Creating Project agencies
 
@@ -163,6 +138,9 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
+
 		ClientPage.clickOnUserButton();
 
 		ClientPage.clickOnClientsOption();
@@ -171,18 +149,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -232,6 +203,9 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
+
 		ClientPage.clickOnUserButton();
 
 		ClientPage.clickOnClientsOption();
@@ -240,18 +214,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -306,6 +273,9 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
+
 		ClientPage.clickOnUserButton();
 
 		ClientPage.clickOnClientsOption();
@@ -314,18 +284,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -381,6 +344,9 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
+
 		ClientPage.clickOnUserButton();
 
 		ClientPage.clickOnClientsOption();
@@ -389,18 +355,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -482,6 +441,9 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
+
 		ClientPage.clickOnUserButton();
 
 		ClientPage.clickOnClientsOption();
@@ -490,18 +452,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -583,6 +538,9 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
+
 		ClientPage.clickOnUserButton();
 
 		ClientPage.clickOnClientsOption();
@@ -591,18 +549,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -681,6 +632,9 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 
+		ClientPage = new InvitingclientPage(driver);
+		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
+
 		ClientPage.clickOnUserButton();
 
 		ClientPage.clickOnClientsOption();
@@ -689,18 +643,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		// String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		// ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		String actualErrorMessage = ClientPage.getErrorMessage();
@@ -721,8 +668,8 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 	// Invalid Phone number
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void verify_PhoneError(String phoneOrEmail, String OTP, String expectedURL, String Name, String Phone,
-			String Email, String Address, String expectedPhoneErrorMessage) throws InterruptedException, IOException {
+	public void verify_PhoneError(String phoneOrEmail, String OTP, String expectedURL, String CompanyName,
+			String PersonName, String Email, String MobileResponsible, String expectedSuccessMessage) throws InterruptedException, IOException {
 
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
@@ -739,20 +686,15 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the
-																	// name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		// ClientPage.enterMobileNumber(randomPhone);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(Address);
-
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		String actualPhoneErrorMessage = ClientPage.getPhoneErrorMessage();
-		softAssert.assertEquals(actualPhoneErrorMessage, expectedPhoneErrorMessage);
+		softAssert.assertEquals(actualPhoneErrorMessage, expectedSuccessMessage);
 
 		try {
 			softAssert.assertAll();
@@ -769,8 +711,8 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 	// Invalid Email
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void verify_EmailError(String phoneOrEmail, String OTP, String expectedURL, String Name, String Phone,
-			String Email, String Address, String expectedEmailErrorMessage) throws InterruptedException, IOException {
+	public void verify_EmailError(String phoneOrEmail, String OTP, String expectedURL, String CompanyName,
+			String PersonName, String Email, String MobileResponsible, String expectedSuccessMessage) throws InterruptedException, IOException {
 
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
@@ -787,20 +729,15 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the
-																	// name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomPhone);
-		// ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(Address);
-
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		String actualEmailErrorMessage = ClientPage.getEmailErrorMessage();
-		softAssert.assertEquals(actualEmailErrorMessage, expectedEmailErrorMessage);
+		softAssert.assertEquals(actualEmailErrorMessage, expectedSuccessMessage);
 
 		try {
 			softAssert.assertAll();
@@ -838,18 +775,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
