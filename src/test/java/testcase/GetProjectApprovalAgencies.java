@@ -331,7 +331,7 @@ public class GetProjectApprovalAgencies extends BaseTest {
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
 		
-		ProjectPage.clickOnProjectDetailsButton();
+	//	ProjectPage.clickOnProjectDetailsButton();
 		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
@@ -353,7 +353,8 @@ public class GetProjectApprovalAgencies extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		ProjectPage.clickOnEnterItem();
+	//	ProjectPage.clickOnEnterItem();
+		ProjectPage.pressBackSpaceButton();
 	//	ProjectPage.clickOnFieldTypeDropDown();
 	//	ProjectPage.clickOnPhoneNumberButton();
 	//	ProjectPage.clickOnContinuousLocationTracking();

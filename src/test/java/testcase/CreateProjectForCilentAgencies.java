@@ -399,7 +399,8 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		ProjectPage.clickOnEnterItem();
+	//	ProjectPage.clickOnEnterItem();
+		ProjectPage.pressBackSpaceButton();
 	//	ProjectPage.clickOnFieldTypeDropDown();
 	//	ProjectPage.clickOnPhoneNumberButton();
 	//	ProjectPage.clickOnContinuousLocationTracking();

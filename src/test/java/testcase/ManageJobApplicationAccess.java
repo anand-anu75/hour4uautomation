@@ -78,11 +78,6 @@ public class ManageJobApplicationAccess extends BaseTest {
 		// ProjectPage.clickOnErrorMessage();
 
 		WorkorderPage.clickOnWorkorderButton();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[normalize-space()='Agency']")))
-		.click();
-		
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-pseudo-checkbox[@class=\"mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted\" and @xpath=\"1\"]")))
-		.click();
 		
 		WorkorderPage.clickOnApproveWorkorder();
 

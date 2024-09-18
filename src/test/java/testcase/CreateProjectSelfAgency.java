@@ -293,7 +293,8 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		ProjectPage.clickOnEnterItem();
+	//	ProjectPage.clickOnEnterItem();
+		ProjectPage.pressBackSpaceButton();
 		
 		Actions actions = new Actions(driver);
 		actions.sendKeys(Keys.ESCAPE).perform();

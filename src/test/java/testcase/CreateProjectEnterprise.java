@@ -210,11 +210,11 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.enterFieldName(FieldName);
 		ProjectPage.pressBackSpaceButton();
 		
-		ProjectPage.clickOnContinuousLocationTracking();
-		ProjectPage.enterFrequency(EnterFrequency);
-		ProjectPage.enterRadius(EnterRadius);
+	//	ProjectPage.clickOnContinuousLocationTracking();
+	//	ProjectPage.enterFrequency(EnterFrequency);
+	//	ProjectPage.enterRadius(EnterRadius);
 		
-		ProjectPage.clickOnAddBilling();
+	//	ProjectPage.clickOnAddBilling();
 
 		String InvalidFieldName = ProjectPage.InvalidFieldName();
 		softAssert.assertEquals(InvalidFieldName, ExpectedResult);
