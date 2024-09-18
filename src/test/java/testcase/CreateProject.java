@@ -522,7 +522,7 @@ public class CreateProject extends BaseTest {
     //    ProjectPage.SelectNewProjectType();
         ProjectPage.clickOnNext2Button();
         
-        String ExistingInvalidProjectType = ProjectPage.ExistingInvalidProjectTitle();
+        String ExistingInvalidProjectType = ProjectPage.ExistingInvalidProjectType();
         softAssert.assertEquals(ExistingInvalidProjectType, ExpectedResult);
 		softAssert.assertAll();
     }
