@@ -45,15 +45,12 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
-		// ProjectPage.clickOnProjectTypeButton();
-		Thread.sleep(1000);
+		
+		
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -62,22 +59,21 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		ProjectPage.clickOnStartDateButton();
-		// ProjectPage.enterStartDate(StartDate);
+		
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-		// ProjectPage.enterEndDate(EndDate);
+		
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		Thread.sleep(1000);
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -118,14 +114,9 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-//		ProjectPage.clickOnSelfClientButton();
-//		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
-//		ProjectPage.clickOnProjectTypeButton();
-		// ProjectPage.clickOnSelectProjectTypeButton();
-		// ProjectPage.clickOnHotspotButton();
+		
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 
 		String SelectedImproperProjectType = ProjectPage.SelectedImproperProjectType();
 		softAssert.assertEquals(SelectedImproperProjectType, ExpectedResult);
@@ -155,14 +146,12 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-//		ProjectPage.clickOnSelfClientButton();
-//		ProjectPage.clickOnNext1Button();
-		Thread.sleep(1000);
-		// ProjectPage.clickOnProjectTypeButton();
+
+		
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		scrollPageDown();
 		ProjectPage.enterProjectDescription(ProjectDescription);
@@ -198,14 +187,11 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnNext1Button();
-		Thread.sleep(1000);
-		// ProjectPage.clickOnProjectTypeButton();
+		
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -218,17 +204,16 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnEndDateButton();
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
-		Thread.sleep(1000);
+		
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
 		ProjectPage.pressBackSpaceButton();
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFieldName = ProjectPage.InvalidFieldName();
@@ -244,59 +229,61 @@ public class CreateProjectEnterprise extends BaseTest {
 		}
 	}
 
-//	// Test for Invalid Field Type
-//
-//	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-//	public void EnterpriseInvalidFieldType(String phoneOrEmail, String enterPassword, String ProjectTitle, String ProjectDescription, String ProjectCode,
-//			String LinkTitle, String LinkURL, String EnterMetrics, String EnterQuantity, String FieldName,
-//			String ExpectedResult) throws InterruptedException, IOException {
-//		
-//		enterpriseLogin.loginDhruviEnterprise(phoneOrEmail, enterPassword);
-//		ProjectPage = new CreateProjectPage(driver);
-//
-//		// ProjectPage.clickOnErrorMessage();
-//		ProjectPage.clickOnProjectTabButton();
-//		// ProjectPage.clickOnErrorMessage();
-//		ProjectPage.clickOnCreateProjectButton();
-////		ProjectPage.clickOnSelfClientButton();
-////		ProjectPage.clickOnNext1Button();
-//		Thread.sleep(1000);
-//	//	ProjectPage.clickOnProjectTypeButton();
-//		ProjectPage.clickOnSelectProjectTypeButton();
-//		ProjectPage.clickOnHotspotButton();
-//		ProjectPage.clickOnProjectTypeNextButton();
-//		// ProjectPage.clickOnProjectDetailsButton();
-//		ProjectPage.enterProjectTitle(ProjectTitle);
-//		ProjectPage.enterProjectDescription(ProjectDescription);
-//		ProjectPage.enterProjectCode(ProjectCode);
-//		ProjectPage.enterLinkTitle(LinkTitle);
-//		ProjectPage.enterURL(LinkURL);
-//		ProjectPage.enterMetrics(EnterMetrics);
-//		ProjectPage.enterQuantity(EnterQuantity);
-//		ProjectPage.clickOnStartDateButton();
-//		ProjectPage.clickOnSelectStartDate();
-//		ProjectPage.clickOnEndDateButton();
-//		ProjectPage.clickOnSelectEndDate();
-//		ProjectPage.clickOnSelectLocationButton();
-//		Thread.sleep(1000);
-//		ProjectPage.clickOnSelectLocationDelhiButton();
-//		ProjectPage.clickOnAddTrackingButton();
-//		ProjectPage.enterFieldName(FieldName);
-//		ProjectPage.clickOnFieldTypeDropDown();
-//		// Perform actions to get successfull error message
-//		Actions actions = new Actions(driver);
-//		actions.sendKeys(Keys.ESCAPE).perform();
-//		ProjectPage.clickOnAddBilling();
-//
-//		String InvalidFieldType = ProjectPage.InvalidFielType();
-//		softAssert.assertEquals(InvalidFieldType, ExpectedResult);
-//		try {
-//			softAssert.assertAll();
-//		} catch (AssertionError e) {
-//			assertionMessage.set(e.getMessage());
-//			throw e;
-//		}
-//	}
+	// Test for Invalid Field Type
+
+/*
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
+	public void EnterpriseInvalidFieldType(String phoneOrEmail, String enterPassword, String ProjectTitle, String ProjectDescription, String ProjectCode,
+			String LinkTitle, String LinkURL, String EnterMetrics, String EnterQuantity, String FieldName,
+			String ExpectedResult) throws InterruptedException, IOException {
+		
+		enterpriseLogin.loginDhruviEnterprise(phoneOrEmail, enterPassword);
+		ProjectPage = new CreateProjectPage(driver);
+
+		 ProjectPage.clickOnErrorMessage();
+		ProjectPage.clickOnProjectTabButton();
+		 ProjectPage.clickOnErrorMessage();
+		ProjectPage.clickOnCreateProjectButton();
+		ProjectPage.clickOnSelfClientButton();
+		ProjectPage.clickOnNext1Button();
+		
+		ProjectPage.clickOnProjectTypeButton();
+		ProjectPage.clickOnSelectProjectTypeButton();
+		ProjectPage.clickOnHotspotButton();
+		ProjectPage.clickOnProjectTypeNextButton();
+		 ProjectPage.clickOnProjectDetailsButton();
+		ProjectPage.enterProjectTitle(ProjectTitle);
+		ProjectPage.enterProjectDescription(ProjectDescription);
+		ProjectPage.enterProjectCode(ProjectCode);
+		ProjectPage.enterLinkTitle(LinkTitle);
+		ProjectPage.enterURL(LinkURL);
+		ProjectPage.enterMetrics(EnterMetrics);
+		ProjectPage.enterQuantity(EnterQuantity);
+		ProjectPage.clickOnStartDateButton();
+		ProjectPage.clickOnSelectStartDate();
+		ProjectPage.clickOnEndDateButton();
+		ProjectPage.clickOnSelectEndDate();
+		ProjectPage.clickOnSelectLocationButton();
+		
+		ProjectPage.clickOnSelectLocationDelhiButton();
+		ProjectPage.clickOnAddTrackingButton();
+		ProjectPage.enterFieldName(FieldName);
+		ProjectPage.clickOnFieldTypeDropDown();
+		
+		Actions actions = new Actions(driver);
+		actions.sendKeys(Keys.ESCAPE).perform();
+		ProjectPage.clickOnAddBilling();
+
+		String InvalidFieldType = ProjectPage.InvalidFielType();
+		softAssert.assertEquals(InvalidFieldType, ExpectedResult);
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		}
+	}
+*/
 
 	// Test for Invalid Frequency
 
@@ -316,14 +303,12 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-//		ProjectPage.clickOnSelfClientButton();
-//		ProjectPage.clickOnNext1Button();
-		Thread.sleep(1000);
-//		ProjectPage.clickOnProjectTypeButton();
+
+
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -336,16 +321,15 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnEndDateButton();
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
-		Thread.sleep(1000);
+		
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -379,14 +363,12 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-//		ProjectPage.clickOnSelfClientButton();
-//		ProjectPage.clickOnNext1Button();
-		Thread.sleep(1000);
-//		ProjectPage.clickOnProjectTypeButton();
+
+
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+	
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -399,16 +381,15 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnEndDateButton();
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
-		Thread.sleep(1000);
+		
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidRadius = ProjectPage.InvalidRadius();
@@ -439,14 +420,13 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-//		ProjectPage.clickOnSelfClientButton();
-//		ProjectPage.clickOnNext1Button();
-		Thread.sleep(1000);
-//		ProjectPage.clickOnProjectTypeButton();
+
+
+
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();

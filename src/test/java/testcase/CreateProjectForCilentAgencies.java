@@ -58,27 +58,27 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
 		// ProjectPage.clickOnProjectDetailsButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		// ProjectPage.enterStartDate(StartDate);
@@ -93,11 +93,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -153,7 +153,7 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
@@ -161,17 +161,16 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
-		// ProjectPage.clickOnSelectProjectTypeButton();
-		// ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 
 		String SelectedImproperProjectType = ProjectPage.SelectedImproperProjectType();
 		softAssert.assertEquals(SelectedImproperProjectType, ExpectedResult);
@@ -218,28 +217,28 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();
@@ -288,25 +287,25 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
 		ProjectPage.enterProjectTitle(ProjectTitle);
@@ -359,38 +358,38 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
@@ -400,15 +399,16 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		ProjectPage.clickOnFieldTypeDropDown();
-		ProjectPage.clickOnPhoneNumberButton();
-		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+		ProjectPage.clickOnEnterItem();
+	//	ProjectPage.clickOnFieldTypeDropDown();
+	//	ProjectPage.clickOnPhoneNumberButton();
+	//	ProjectPage.clickOnContinuousLocationTracking();
+		
 		scrollPageDown();
-		ProjectPage.enterFrequency(EnterFrequency);
-		ProjectPage.enterRadius(EnterRadius);
+	//	ProjectPage.enterFrequency(EnterFrequency);
+	//	ProjectPage.enterRadius(EnterRadius);
 		// ProjectPage.clickOnOnlyGpsCoordinate();
-		ProjectPage.clickOnAddBilling();
+	//	ProjectPage.clickOnAddBilling();
 
 		String InvalidFieldName = ProjectPage.InvalidFieldName();
 		softAssert.assertEquals(InvalidFieldName, ExpectedResult);
@@ -456,38 +456,38 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
@@ -500,11 +500,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -553,38 +553,38 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
@@ -597,7 +597,7 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
@@ -647,7 +647,7 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		String actualErrorMessage = ClientPage.getErrorMessage();
@@ -690,7 +690,7 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		String actualPhoneErrorMessage = ClientPage.getPhoneErrorMessage();
@@ -733,7 +733,7 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		String actualEmailErrorMessage = ClientPage.getEmailErrorMessage();
@@ -779,15 +779,15 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		Thread.sleep(1000);
+		
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
 

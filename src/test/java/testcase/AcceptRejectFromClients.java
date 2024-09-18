@@ -53,36 +53,34 @@ public class AcceptRejectFromClients extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
-	//	Thread.sleep(1000);
+	
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 
-		// ProjectPage.clickOnErrorMessage();
+		
 
 		ProjectPage.enterAgencyEmail(Email);
 		ProjectPage.clickOnSignInUsingOTP();
 		ProjectPage.clickOnGetOTP();
 		ProjectPage.enterOTPforAgencyLogin(OTP);
 		ProjectPage.clickOnLoginButton();
-//	        ProjectPage.clickOnErrorMessage();
 
-		// ProjectPage.clickOnErrorMessage();
+
+	
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
+		
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnNext1Button();
-//		Thread.sleep(1000);
-		// ProjectPage.clickOnProjectTypeButton();
+	
+		
 		ProjectPage.clickOnSelectProjectTypeButton();
-//	        Thread.sleep(2000);
+
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -91,10 +89,10 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		ProjectPage.clickOnStartDateButton();
-		// ProjectPage.enterStartDate(StartDate);
+	
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-		// ProjectPage.enterEndDate(EndDate);
+	
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
@@ -105,7 +103,7 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -115,14 +113,13 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.enterDays(EnterDays);
 		ProjectPage.clickOnReviewProject();
 		ProjectPage.clickOnSaveProject();
-//	      ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
-//		Thread.sleep(1000);
+
 		ProjectPage.ClickOnAssignAgency();
 		ProjectPage.enterSearchAgency(SearchAgency);
-//		Thread.sleep(2000);
+
 		ProjectPage.ClickOnAugustAgency();
 		ProjectPage.clickOnSearchAssignAgency();
-//		Thread.sleep(1000);
+
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 		ProjectPage.enterAgencyEmail(EnterAgencyEmail);
@@ -184,18 +181,18 @@ public class AcceptRejectFromClients extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
-		Thread.sleep(3000);
+	
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		Thread.sleep(1000);
+
 		scrollPageDown();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnNext1Button();
 
 		String AcceptRejectInvalidEnterprise = ProjectPage.AcceptRejectInvalidEnterprise();
@@ -240,26 +237,24 @@ public class AcceptRejectFromClients extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnExistingEnterprise();
-		Thread.sleep(2000);
+		
 		ProjectPage.SelectDropdownEnterprise();
-		Thread.sleep(2000);
+	
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(2000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
-		// ProjectPage.SelectNewProjectType();
-		Thread.sleep(1000);
+		
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
 
@@ -306,29 +301,27 @@ public class AcceptRejectFromClients extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnExistingEnterprise();
-		Thread.sleep(2000);
+		
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(2000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
 
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();
@@ -383,18 +376,18 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
@@ -445,39 +438,39 @@ public class AcceptRejectFromClients extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
-		Thread.sleep(2000);
+	
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(2000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
@@ -490,11 +483,11 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -541,39 +534,39 @@ public class AcceptRejectFromClients extends BaseTest {
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
-		Thread.sleep(2000);
+	
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
@@ -586,7 +579,7 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);

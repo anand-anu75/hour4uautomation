@@ -39,34 +39,34 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
-		Thread.sleep(2000);
+		
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(2000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(2000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		// ProjectPage.clickOnProjectDetailsButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
@@ -76,7 +76,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		// Scroll Window
 		Actions actions = new Actions(driver);
 		actions.sendKeys(Keys.PAGE_DOWN).perform();
-		Thread.sleep(1000);
+		
 		ProjectPage.ClickOnAddCustomField();
 		ProjectPage.enterCustomFieldName(CustomFieldName);
 		ProjectPage.SelectCustomFieldType();
@@ -90,7 +90,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
@@ -143,16 +143,16 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		// ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
-		Thread.sleep(2000);
+		
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(2000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
-		Thread.sleep(2000);
+		
 		scrollPageDown();
-		// ProjectPage.SelectNewProjectType();
+		
 		ProjectPage.clickOnProjectTypeNextButton();
 
 		String ExistingInvalidProjectType = ProjectPage.ExistingInvalidProjectType();
@@ -185,24 +185,24 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnSelectLocationButton();
 
@@ -236,23 +236,23 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnSelectLocationButton();
 
@@ -288,32 +288,32 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
-		Thread.sleep(2000);
+		
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
@@ -323,15 +323,16 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		ProjectPage.clickOnFieldTypeDropDown();
-		ProjectPage.clickOnPhoneNumberButton();
-		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
-		scrollPageDown();
-		ProjectPage.enterFrequency(EnterFrequency);
-		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
-		ProjectPage.clickOnAddBilling();
+		ProjectPage.clickOnEnterItem();
+	//	ProjectPage.clickOnFieldTypeDropDown();
+	//	ProjectPage.clickOnPhoneNumberButton();
+	//	ProjectPage.clickOnContinuousLocationTracking();
+		
+	//	scrollPageDown();
+	//	ProjectPage.enterFrequency(EnterFrequency);
+	//	ProjectPage.enterRadius(EnterRadius);
+		
+	//	ProjectPage.clickOnAddBilling();
 
 		String InvalidFieldName = ProjectPage.InvalidFieldName();
 		softAssert.assertEquals(InvalidFieldName, ExpectedResult);
@@ -369,27 +370,27 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
@@ -402,11 +403,11 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -446,25 +447,25 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
@@ -477,7 +478,7 @@ public class CreateProjectExistingEnterprise extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+		
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);

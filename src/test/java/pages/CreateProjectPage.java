@@ -184,6 +184,10 @@ public class CreateProjectPage extends BaseTest {
 	WebElement msg_ProjectCreated;
 	
 	WebElement msg_ValidQuote;
+	
+	WebElement msg_ValidTerm;
+	
+	WebElement btn_SelectItem;
 
 	// Initializing Driver
 
@@ -196,7 +200,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnProjectTabButton() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("tab_Project")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("tab_Project")))).click();
 	}
 
 	// Creating Project
@@ -210,7 +214,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnSelfClientButton() {
 		// wait.until(ExpectedConditions.visibilityOf(btn_SelfClient)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SelfClient")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SelfClient")))).click();
 	}
 
 	// Next is button is clicked
@@ -248,7 +252,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnSelectProjectTypeButton() {
 		// wait.until(ExpectedConditions.visibilityOf(btn_SelectProjectType)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_SelectProjectType"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("drpd_SelectProjectType"))))
 				.click();
 	}
 
@@ -256,7 +260,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnHotspotButton() {
 		// wait.until(ExpectedConditions.visibilityOf(btn_Hotspot)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_Hotspot")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("drpd_Hotspot")))).click();
 	}
 
 	// Clicking Next Button
@@ -271,7 +275,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnProjectDetailsButton() {
 		// wait.until(ExpectedConditions.visibilityOf(btn_ProjectDetails)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ProjectDetails"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ProjectDetails"))))
 				.click();
 	}
 
@@ -360,7 +364,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnEndDateButton() throws InterruptedException {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_StartDate")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_StartDate")))).click();
 	}
 
 //public void enterEndDate(String EndDate) {
@@ -373,7 +377,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnSelectEndDate() throws InterruptedException {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SelectEndDate"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SelectEndDate"))))
 				.click();
 	}
 
@@ -381,7 +385,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnSelectLocationButton() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SelectLocation"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SelectLocation"))))
 				.click();
 	}
 
@@ -402,7 +406,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnAddTrackingButton() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AddTracking")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AddTracking")))).click();
 	}
 
 //Enter Field Name
@@ -423,22 +427,21 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnFieldTypeDropDown() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_FieldType")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("drpd_FieldType")))).click();
 	}
 
 //Selecting Phone Number as an option
 
 	public void clickOnPhoneNumberButton() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_PhoneNumber")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_PhoneNumber")))).click();
 	}
 
 //Selecting Continuous Location Tracking 
 
 	public void clickOnContinuousLocationTracking() {
 
-		wait.until(ExpectedConditions
-				.elementToBeClickable(By.xpath(loc.getProperty("checkbox_ContinousLocationTracking")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("checkbox_ContinousLocationTracking")))).click();
 	}
 
 // Enter Frequency
@@ -461,7 +464,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnOnlyGpsCoordinate() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_OnlyGpsCoordinate"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_OnlyGpsCoordinate"))))
 				.click();
 	}
 
@@ -469,14 +472,14 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnAddBilling() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AddBillingProject")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AddBillingProject")))).click();
 	}
 
 // Select Pricing Fixed
 
 	public void clickOnPricingFixed() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_PricingFixed"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_PricingFixed"))))
 				.click();
 	}
 
@@ -524,7 +527,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnReviewProject() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ReviewProject"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ReviewProject"))))
 				.click();
 	}
 
@@ -532,7 +535,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnSaveProject() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SaveProject")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SaveProject")))).click();
 	}
 
 //Display Project Created Successfully
@@ -569,7 +572,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnErrorMessage() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ErrorClose")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ErrorClose")))).click();
 	}
 
 //Display Invalid Field Name
@@ -620,7 +623,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnNewClient() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_NewClient")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_NewClient")))).click();
 	}
 
 //Enter Name for New Creating New Client as a Project
@@ -658,7 +661,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnCreateEnterprise() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_CreateEnterprise"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_CreateEnterprise"))))
 				.click();
 	}
 
@@ -675,7 +678,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnExistingEnterprise() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ExistingClient"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ExistingClient"))))
 				.click();
 	}
 
@@ -683,7 +686,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void SelectDropdownEnterprise() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_SelectEnterprise"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("drpd_SelectEnterprise"))))
 				.click();
 	}
 
@@ -707,7 +710,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void ClickOnAddCustomField() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AddCustomFields"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AddCustomFields"))))
 				.click();
 	}
 
@@ -719,19 +722,19 @@ public class CreateProjectPage extends BaseTest {
 
 	public void SelectCustomFieldType() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_CustomFieldType"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("drpd_CustomFieldType"))))
 				.click();
 	}
 
 	public void SelectCustomTextArea() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_CustomFieldText"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("drpd_CustomFieldText"))))
 				.click();
 	}
 
 	public void ClickOnAddField() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AddCustomField"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AddCustomField"))))
 				.click();
 	}
 
@@ -743,13 +746,13 @@ public class CreateProjectPage extends BaseTest {
 
 	public void ClickOnQuoteDate() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SelectQuoteDate"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SelectQuoteDate"))))
 				.click();
 	}
 
 	public void SelectValidDate() {
 		System.out.println();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SelectValidDate"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SelectValidDate"))))
 				.click();
 	}
 
@@ -767,19 +770,19 @@ public class CreateProjectPage extends BaseTest {
 
 	public void SelectNewProjectType() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_SelectProjectType"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("drpd_SelectProjectType"))))
 				.click();
 	}
 
 	public void ClickOnEnterEndDate() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_CLickOnEndDate"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_CLickOnEndDate"))))
 				.click();
 	}
 
 	public void ClickOnAddAditionalItems() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AddAditionalItems"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AddAditionalItems"))))
 				.click();
 	}
 
@@ -793,14 +796,14 @@ public class CreateProjectPage extends BaseTest {
 
 	public void ClickOnToggleSwitch() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ToggleSwitch"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ToggleSwitch"))))
 				.click();
 	}
 
 	public void ClickOnCloseMsgProjectCreatedSuccessfully() {
 
 		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_ProjectCreatedSuccessfullyClose")))).click();
+				.elementToBeClickable(By.xpath(loc.getProperty("msg_ProjectCreatedSuccessfullyClose")))).click();
 	}
 
 	public String ExistingInvalidEnterprise() {
@@ -819,7 +822,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void ClickOnAssignAgency() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AssignAgency"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AssignAgency"))))
 				.click();
 	}
 
@@ -831,14 +834,14 @@ public class CreateProjectPage extends BaseTest {
 
 	public void ClickOnAugustAgency() {
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_ClickOnAugustAgency"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("opt_ClickOnAugustAgency"))))
 				.click();
 	}
 
 	public void clickOnSearchAssignAgency() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
 		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnSearchAssignAgency")))).click();
+				.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnSearchAssignAgency")))).click();
 	}
 
 	public void clickOnProfileButton() {
@@ -855,13 +858,13 @@ public class CreateProjectPage extends BaseTest {
 			System.out.println("Overlay still present");
 		}
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnProfile"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnProfile"))))
 				.click();
 	}
 
 	public void clickOnLogoutButton() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Logout")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_Logout")))).click();
 	}
 
 	public void enterAgencyEmail(String EnterAgencyEmail) {
@@ -873,13 +876,13 @@ public class CreateProjectPage extends BaseTest {
 	public void clickOnSignInUsingOTP() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
 		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnSignInUsingOtp"))))
+				ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnSignInUsingOtp"))))
 				.click();
 	}
 
 	public void clickOnGetOTP() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnGetOtp"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnGetOtp"))))
 				.click();
 	}
 
@@ -898,19 +901,19 @@ public class CreateProjectPage extends BaseTest {
 			System.out.println("Overlay or modal still present.");
 		}
 		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnLoginforAgency"))))
+				ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnLoginforAgency"))))
 				.click();
 	}
 
 	public void clickOnAcceptProject() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AcceptProject"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AcceptProject"))))
 				.click();
 	}
 
 	public void clickOnAcceptWorkOrder() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AcceptWorkOrder"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AcceptWorkOrder"))))
 				.click();
 	}
 
@@ -922,9 +925,7 @@ public class CreateProjectPage extends BaseTest {
 	}
 
 	public String ProjectCreatedMessage() {
-		return wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_ProjectCreated"))))
-				.getText();
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_ProjectCreated")))).getText();
 
 	}
 
@@ -932,7 +933,7 @@ public class CreateProjectPage extends BaseTest {
 
 	public void clickOnNext2Button() {
 		// wait.until(ExpectedConditions.visibilityOf(btn_Next2)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Next2")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_Next2")))).click();
 	}
 
 	public void enterDhruviPassword(String EnterPassword) {
@@ -971,18 +972,19 @@ public class CreateProjectPage extends BaseTest {
 	        return baseEmail; // Fallback to the original email if the format is unexpected
 	    }
 	}
-
+	
 	public String SelectValidQuoteMessage() {
-		// TODO Auto-generated method stub
-		return null;
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_ValidQuote")))).getText();
+
 	}
 
 	public String SelectValidtermMessage() {
-		// TODO Auto-generated method stub
-		return null;
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("msg_ValidTerm")))).getText();
+
 	}
 	
-
-
-
+	public void clickOnEnterItem() {
+		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SelectItem")))).click();
+	}
 }

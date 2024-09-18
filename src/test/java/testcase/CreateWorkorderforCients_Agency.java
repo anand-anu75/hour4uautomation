@@ -44,7 +44,7 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		WorkorderPage.clickOnEndTimeButton();
 
 		WorkorderPage.clickOnSelectEndtimeButton();
-		Thread.sleep(2000);
+	
 
 		WorkorderPage.clickOnAddBillingButton();
 
@@ -112,10 +112,9 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+
 		ClientPage.clickOnCreateClientButton();
 
-	//	Thread.sleep(1000);
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
@@ -133,15 +132,12 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnNext1Button();
-//		Thread.sleep(1000);
-		// ProjectPage.clickOnProjectTypeButton();
+		
 		ProjectPage.clickOnSelectProjectTypeButton();
-//	        Thread.sleep(2000);
+//	  
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -174,14 +170,13 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		ProjectPage.enterDays(EnterDays);
 		ProjectPage.clickOnReviewProject();
 		ProjectPage.clickOnSaveProject();
-//	      ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
-//		Thread.sleep(1000);
+
 		ProjectPage.ClickOnAssignAgency();
 		ProjectPage.enterSearchAgency(SearchAgency);
-//		Thread.sleep(2000);
+//		
 		ProjectPage.ClickOnAugustAgency();
 		ProjectPage.clickOnSearchAssignAgency();
-//		Thread.sleep(1000);
+//	
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 		ProjectPage.enterAgencyEmail(EnterAgencyEmail);
@@ -213,7 +208,7 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		WorkorderPage.clickOnEndTimeButton();
 
 		WorkorderPage.clickOnSelectEndtimeButton();
-		Thread.sleep(2000);
+		
 
 		WorkorderPage.clickOnAddBillingButton();
 
@@ -281,10 +276,10 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
-	//	Thread.sleep(1000);
+	
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
@@ -302,12 +297,10 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnNext1Button();
-//		Thread.sleep(1000);
-		// ProjectPage.clickOnProjectTypeButton();
+		
+	
 		ProjectPage.clickOnSelectProjectTypeButton();
-//	        Thread.sleep(2000);
+//	    
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
 		// ProjectPage.clickOnProjectDetailsButton();
@@ -343,14 +336,13 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		ProjectPage.enterDays(EnterDays);
 		ProjectPage.clickOnReviewProject();
 		ProjectPage.clickOnSaveProject();
-//	      ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
-//		Thread.sleep(1000);
+//	   
 		ProjectPage.ClickOnAssignAgency();
 		ProjectPage.enterSearchAgency(SearchAgency);
-//		Thread.sleep(2000);
+//		
 		ProjectPage.ClickOnAugustAgency();
 		ProjectPage.clickOnSearchAssignAgency();
-//		Thread.sleep(1000);
+//	
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 		ProjectPage.enterAgencyEmail(EnterAgencyEmail);
@@ -382,7 +374,7 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		WorkorderPage.clickOnEndTimeButton();
 
 		WorkorderPage.clickOnSelectEndtimeButton();
-		Thread.sleep(2000);
+	
 
 		WorkorderPage.clickOnAddBillingButton();
 
@@ -701,7 +693,7 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 		ClientPage.enterContactPersonName(Name);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(Phone);
-	//	Thread.sleep(1000);
+	
 		ClientPage.clickOnCreateClientButton();
 
 		String actualErrorMessage = ClientPage.getErrorMessage();
@@ -742,15 +734,12 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 
 		String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the
 																	// name
-	//	String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		// String randomEmail = generateRandomEmail(Email); // Appends a random number
-		// to the email username
+
 
 		ClientPage.enterClientName(randomName);
 		ClientPage.enterContactPersonName(Name);
 		ClientPage.enterEmail(Email);
-//		ClientPage.enterContactPersonPhone(Phone);
-	//	Thread.sleep(1000);
+
 		ClientPage.clickOnCreateClientButton();
 
 		String actualPhoneErrorMessage = ClientPage.getPhoneErrorMessage();
@@ -791,15 +780,13 @@ public class CreateWorkorderforCients_Agency extends BaseTest{
 
 		String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the
 																	// name
-	//	String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		// String randomEmail = generateRandomEmail(Email); // Appends a random number
-		// to the email username
+	
 
 		ClientPage.enterClientName(randomName);
 		ClientPage.enterContactPersonName(Name);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(Phone);
-	//	Thread.sleep(1000);
+
 		ClientPage.clickOnCreateClientButton();
 
 		String actualEmailErrorMessage = ClientPage.getEmailErrorMessage();

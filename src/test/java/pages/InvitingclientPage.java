@@ -31,25 +31,25 @@ public class InvitingclientPage extends BaseTest {
  
     public void clickOnUserButton() {
         // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
- 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_User"))))
+ 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_User"))))
  		.click();
      }
  
     public void clickOnClientsOption() {
         // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
- 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Clients"))))
+ 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_Clients"))))
  		.click();
      }
     
     public void clickOnInviteClientButton() {
         // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
- 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_InviteClient"))))
+ 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_InviteClient"))))
  		.click();
      }
   
     public void NavigateToDialogBox() {
         // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
- 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("dialog_box"))))
+ 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("dialog_box"))))
  		.click();
      }
  
@@ -93,7 +93,7 @@ public class InvitingclientPage extends BaseTest {
 	
 	public void clickOnCreateClientButton() {
         // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
- 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_CreateClient"))))
+ 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_CreateClient"))))
  		.click();
      }
     public String getSuccessMessage() {

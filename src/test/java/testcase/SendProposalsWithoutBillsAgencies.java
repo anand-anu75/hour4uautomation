@@ -38,18 +38,18 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		// ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
-		// Thread.sleep(2000);
+		
 		ProjectPage.SelectOptionEnterprise();
 		scrollPageDown();
-		// Thread.sleep(2000);
+	
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
@@ -60,30 +60,24 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.enterQuantity(EnterQuantity);
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
-		// ProjectPage.enterStartDate(StartDate);
+	
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-		// ProjectPage.enterEndDate(EndDate);
+	
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+	
 		ProjectPage.clickOnAddBilling();
-		// Thread.sleep(2000);
+	
 		ProjectPage.ClickOnToggleSwitch();
-		// ProjectPage.clickOnPricingFixed();
-		// ProjectPage.enterItem(EnterItem);
-		// ProjectPage.enterDescription(EnterDescription);
-		// ProjectPage.enterRate(EnterRates);
-		// ProjectPage.enterQty(EnterQty);
-		// ProjectPage.enterDays(EnterDays);
+
 		ProjectPage.clickOnReviewProject();
 		ProjectPage.clickOnSaveProject();
 
@@ -114,14 +108,11 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
+	
 		ProjectPage.clickOnCreateProjectButton();
 
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnExistingEnterprise();
-		// ProjectPage.SelectDropdownEnterprise();
-		// ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(2000);
+	
+		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
 
@@ -154,17 +145,17 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+	
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
-		// ProjectPage.SelectNewProjectType();
-		Thread.sleep(1000);
+	
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
 
@@ -201,7 +192,7 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
 		// Thread.sleep(2000);
@@ -209,9 +200,9 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
-		Thread.sleep(1000);
+	
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+	
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();
@@ -245,23 +236,23 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+	
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
-		Thread.sleep(1000);
+	
 		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		scrollPageDown();
-		Thread.sleep(1000);
+	
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();
 
@@ -297,32 +288,32 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+	
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
-		Thread.sleep(1000);
+		
 		ProjectPage.clickOnProjectTypeNextButton();
 		// ProjectPage.clickOnProjectDetailsButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
-		Thread.sleep(1000);
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		scrollPageDown();
-		Thread.sleep(1000);
+	
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -332,14 +323,13 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
 		ProjectPage.pressBackSpaceButton();
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
-		ProjectPage.clickOnContinuousLocationTracking();
-		scrollPageDown();
-		ProjectPage.enterFrequency(EnterFrequency);
-		ProjectPage.enterRadius(EnterRadius);
+	
+//		ProjectPage.clickOnContinuousLocationTracking();
+//		scrollPageDown();
+	//	ProjectPage.enterFrequency(EnterFrequency);
+	//	ProjectPage.enterRadius(EnterRadius);
 		// ProjectPage.clickOnOnlyGpsCoordinate();
-		ProjectPage.clickOnAddBilling();
+	//	ProjectPage.clickOnAddBilling();
 
 		String InvalidFieldName = ProjectPage.InvalidFieldName();
 		softAssert.assertEquals(InvalidFieldName, ExpectedResult);
@@ -421,32 +411,32 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+	
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
-		Thread.sleep(1000);
+	
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
-		Thread.sleep(1000);
+	
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		scrollPageDown();
-		Thread.sleep(1000);
+	
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -455,13 +445,12 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -495,32 +484,31 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
-		// ProjectPage.clickOnProjectTypeButton();
+		
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
-		Thread.sleep(1000);
+	
 		ProjectPage.clickOnProjectTypeNextButton();
 		// ProjectPage.clickOnProjectDetailsButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
-		Thread.sleep(1000);
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		scrollPageDown();
-		Thread.sleep(1000);
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -529,14 +517,13 @@ public class SendProposalsWithoutBillsAgencies extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		scrollPageDown();
-		Thread.sleep(1000);
+		
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidRadius = ProjectPage.InvalidRadius();

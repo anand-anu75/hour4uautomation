@@ -40,13 +40,13 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
@@ -57,21 +57,19 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.enterQuantity(EnterQuantity);
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
-		// ProjectPage.enterStartDate(StartDate);
+		
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-		// ProjectPage.enterEndDate(EndDate);
+		
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
-		// ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -85,8 +83,7 @@ public class CreateProjectSelfAgency extends BaseTest {
 		String projectCreatedSuccesfullyMessage = ProjectPage.ProjectCreatedSuccesfully() + "\n"
 				+ ProjectPage.ProjectCreatedMessage();
 
-//		String ProjectCreatedMessage = ProjectPage.ProjectCreatedMessage();
-//		softAssert.assertEquals(ProjectCreatedMessage, ExpectedMessage);
+
 		try {
 			softAssert.assertEquals(projectCreatedSuccesfullyMessage, ExpectedResult);
 			softAssert.assertAll();
@@ -116,15 +113,14 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+		
 
 		ProjectPage.clickOnProjectTypeButton();
-		// ProjectPage.clickOnSelectProjectTypeButton();
-		// ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 
 		String SelectedImproperProjectType = ProjectPage.SelectedImproperProjectType();
 
@@ -158,13 +154,13 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		scrollPageDown();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
@@ -204,13 +200,13 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
@@ -273,13 +269,13 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
@@ -297,11 +293,11 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// Perform actions to get successfull error message
+		ProjectPage.clickOnEnterItem();
+		
 		Actions actions = new Actions(driver);
 		actions.sendKeys(Keys.ESCAPE).perform();
-		ProjectPage.clickOnAddBilling();
+	//	ProjectPage.clickOnAddBilling();
 
 		String InvalidFieldType = ProjectPage.InvalidFielType();
 		softAssert.assertEquals(InvalidFieldType, ExpectedResult);
@@ -336,13 +332,13 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
@@ -360,13 +356,12 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -403,13 +398,13 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
@@ -427,13 +422,12 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		;
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidRadius = ProjectPage.InvalidRadius();
@@ -468,13 +462,13 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		//Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();
