@@ -53,11 +53,6 @@ public class ViewAttendanceChampsTest extends BaseTest {
 
         // Click on View Task button
         viewAttendanceChamps.clickViewTask();
-        try {
-            Thread.sleep(5000); // Wait for 5 seconds to allow any UI changes to take effect
-        } catch (InterruptedException e) {
-            e.printStackTrace(); // Handle the exception if sleep is interrupted
-        }
 
         // Switch to the newly opened window
         String originalWindow = driver.getWindowHandle();
@@ -98,11 +93,6 @@ public class ViewAttendanceChampsTest extends BaseTest {
 
         // Perform the necessary actions for work order functionality
         viewAttendanceChamps.clickDesiredWorkOrder();
-        try {
-            Thread.sleep(5000); // Wait for 5 seconds to allow any UI changes to take effect
-        } catch (InterruptedException e) {
-            e.printStackTrace(); // Handle the exception if sleep is interrupted
-        }
 
         // Click on More Options and Job Seeker 2
         viewAttendanceChamps.clickMoreOpt();
