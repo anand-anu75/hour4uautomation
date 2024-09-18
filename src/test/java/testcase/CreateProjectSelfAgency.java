@@ -33,43 +33,51 @@ public class CreateProjectSelfAgency extends BaseTest {
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
 
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Click on Project Tab
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnProjectTypeNextButton();
 		
+		//Enter Project Details
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		scrollPageDown();
-		ProjectPage.clickOnStartDateButton();
 		
+		//Page Scroll Down
+		scrollPageDown();
+		
+		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-		
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
-		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
 		
+		//Add Billing
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -77,7 +85,11 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.enterRate(EnterRates);
 		ProjectPage.enterQty(EnterQty);
 		ProjectPage.enterDays(EnterDays);
+		
+		//Review Project
 		ProjectPage.clickOnReviewProject();
+		
+		//Save Project
 		ProjectPage.clickOnSaveProject();
 
 		String projectCreatedSuccesfullyMessage = ProjectPage.ProjectCreatedSuccesfully() + "\n"
@@ -109,19 +121,16 @@ public class CreateProjectSelfAgency extends BaseTest {
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		
-
 		ProjectPage.clickOnProjectTypeButton();
 		
-		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnProjectTypeNextButton();
 		
-
 		String SelectedImproperProjectType = ProjectPage.SelectedImproperProjectType();
 
 		try {
@@ -150,20 +159,26 @@ public class CreateProjectSelfAgency extends BaseTest {
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnProjectTypeNextButton();
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
+		//Enter Project Details
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
+		
+		//Add Location
 		ProjectPage.clickOnSelectLocationButton();
 
 		String ProperProjectDescription = ProjectPage.EnterProperProjectDescription();
@@ -225,16 +240,9 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
+		
+		//Pressing Backspace Button in the txt field
 		ProjectPage.pressBackSpaceButton();
-
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
-		ProjectPage.clickOnContinuousLocationTracking();
-		scrollPageDown();
-		ProjectPage.enterFrequency(EnterFrequency);
-		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
-		ProjectPage.clickOnAddBilling();
 
 		String InvalidFieldName = ProjectPage.InvalidFieldName();
 
@@ -250,8 +258,9 @@ public class CreateProjectSelfAgency extends BaseTest {
 		}
 	}
 
-	// Test for Invalid Field Type for Self Agency
+	// Test for Invalid Field Type for Self Agency ---> Assertion Removed in Web Application
 
+	/*
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	public void InvalidFieldType(String phoneOrEmail, String OTP, String expectedURL, String ProjectTitle,
 			String ProjectDescription, String ProjectCode, String LinkTitle, String LinkURL, String EnterMetrics,
@@ -265,26 +274,29 @@ public class CreateProjectSelfAgency extends BaseTest {
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
-		scrollPageDown();
-		ProjectPage.clickOnProjectTypeNextButton();
 		
+		scrollPageDown();
+		
+		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
+		
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
+		
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -293,7 +305,6 @@ public class CreateProjectSelfAgency extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-	//	ProjectPage.clickOnEnterItem();
 		ProjectPage.pressBackSpaceButton();
 		
 		Actions actions = new Actions(driver);
@@ -312,6 +323,8 @@ public class CreateProjectSelfAgency extends BaseTest {
 			throw e;
 		}
 	}
+	
+	*/
 
 	// Test for Invalid Frequency for Self Agency
 
@@ -326,43 +339,59 @@ public class CreateProjectSelfAgency extends BaseTest {
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
 
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Click on Project Tab
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
-		scrollPageDown();
-		ProjectPage.clickOnProjectTypeNextButton();
 		
+		//Page Scroll Down
+		scrollPageDown();
+		
+		//Enter Project Details
+		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
+		
+		//Add Location
 		ProjectPage.clickOnSelectLocationDelhiButton();
+		
+		//Add Tracking
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		
 		ProjectPage.clickOnContinuousLocationTracking();
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
 		
+		//Add Billing
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -392,43 +421,59 @@ public class CreateProjectSelfAgency extends BaseTest {
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
 
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Click on Project Tab
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
+		
+		//Page Scroll Down
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
 		
+		//Enter Project Details
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
+		
+		//Page Scroll Down
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
+		
+		//Add Location
 		ProjectPage.clickOnSelectLocationDelhiButton();
+		
+		//Add Tracking
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
 		
 		ProjectPage.clickOnContinuousLocationTracking();
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		;
+		
+		//Add Billing
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidRadius = ProjectPage.InvalidRadius();
@@ -456,22 +501,27 @@ public class CreateProjectSelfAgency extends BaseTest {
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
 
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Click on Project Tab
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		ProjectPage.clickOnNext1Button();
-	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
-		scrollPageDown();
-		ProjectPage.clickOnProjectTypeNextButton();
 		
+		//Page Scroll Down
+		scrollPageDown();
+		
+		//Enter Project Details
+		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
+		
+		//Add Location
 		ProjectPage.clickOnSelectLocationButton();
 
 		String InvalidProjectTitle = ProjectPage.InvalidProjectTitle();

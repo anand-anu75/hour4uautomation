@@ -55,8 +55,9 @@ public class InvitingclientPage extends BaseTest {
  
     public void enterClientName(String clientName) {
     	input_ClientName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("input_ClientName"))));
-    	input_ClientName.click(); // Clicking the input field before sending keys, if required
-    	input_ClientName.sendKeys(clientName);
+    	input_ClientName.click();
+    	String randomName = clientName + (int) (Math.random() * 1000); // Clicking the input field before sending keys, if required
+    	input_ClientName.sendKeys(randomName);
     }
     
     public static String generateRandomCompanyName(String companyName) {

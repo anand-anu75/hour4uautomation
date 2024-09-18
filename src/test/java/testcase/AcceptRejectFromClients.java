@@ -41,46 +41,39 @@ public class AcceptRejectFromClients extends BaseTest {
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
 
 	
+		//Logout from Profile
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
-
 		
-
+		//Logging into new agency account
+		
 		ProjectPage.enterAgencyEmail(Email);
 		ProjectPage.clickOnSignInUsingOTP();
 		ProjectPage.clickOnGetOTP();
 		ProjectPage.enterOTPforAgencyLogin(OTP);
 		ProjectPage.clickOnLoginButton();
-
-
-	
-		ProjectPage.clickOnProjectTabButton();
 		
-		ProjectPage.clickOnCreateProjectButton();
-	
+		//Creating project where new client is added
 		
+		ProjectPage.clickOnProjectTabButton();		
+		ProjectPage.clickOnCreateProjectButton();	
 		ProjectPage.clickOnSelectProjectTypeButton();
-
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -89,10 +82,8 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		ProjectPage.clickOnStartDateButton();
-	
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-	
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
@@ -103,7 +94,6 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -113,15 +103,21 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.enterDays(EnterDays);
 		ProjectPage.clickOnReviewProject();
 		ProjectPage.clickOnSaveProject();
+		
+		//Assigning Project to Agency
 
 		ProjectPage.ClickOnAssignAgency();
 		ProjectPage.enterSearchAgency(SearchAgency);
-
 		ProjectPage.ClickOnAugustAgency();
 		ProjectPage.clickOnSearchAssignAgency();
+		
+		//Logout from Profile
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		// Login through Dhruvi Enterprise Email
+		
 		ProjectPage.enterAgencyEmail(EnterAgencyEmail);
 		ProjectPage.clickOnSignInUsingOTP();
 		ProjectPage.clickOnGetOTP();
@@ -131,6 +127,9 @@ public class AcceptRejectFromClients extends BaseTest {
 		// ProjectPage.clickOnErrorMessage();
 
 		ProjectPage.clickOnProjectTabButton();
+		
+		// Accepting the Project
+		
 		ProjectPage.clickOnAcceptProject();
 
 		// ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
@@ -162,35 +161,31 @@ public class AcceptRejectFromClients extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
-
+		
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
 
-		ClientPage = new InvitingclientPage(driver);
-		ProjectPage = new CreateProjectPage(driver);
-
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
 
-	
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 
+		//Page Scroll Down
 		scrollPageDown();
 		
 		ProjectPage.clickOnNext1Button();
@@ -221,39 +216,38 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		
+		ProjectPage.clickOnCreateProjectButton();		
 		ProjectPage.SelectDropdownEnterprise();
-	
 		ProjectPage.SelectOptionEnterprise();
 	
+		//Page Scroll Down
+		
 		scrollPageDown();
-		ProjectPage.clickOnNext1Button();
-	
+		
+		ProjectPage.clickOnNext1Button();	
 		ProjectPage.clickOnProjectTypeButton();
 		
+		//Page Scroll Down
 		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
@@ -282,46 +276,47 @@ public class AcceptRejectFromClients extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
+		
+		//Inviting Client
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-
+		
+		//Creating project where new client is added
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
-		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
+		ClientPage.enterContactPersonPhone(MobileResponsible);	
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		
+		ProjectPage.clickOnCreateProjectButton();	
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-	
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnNext1Button();
-
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-	
-		scrollPageDown();
-		ProjectPage.clickOnProjectTypeNextButton();
 		
+		//Page Scroll Down
+		scrollPageDown();
+		
+		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();
@@ -353,42 +348,42 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
+		//Creating project where new client is added
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		
+		ProjectPage.clickOnCreateProjectButton();		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-	
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnNext1Button();
-	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
@@ -422,35 +417,32 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		
+		ProjectPage.clickOnCreateProjectButton();		
 		ProjectPage.clickOnExistingEnterprise();
-		ProjectPage.SelectDropdownEnterprise();
-	
+		ProjectPage.SelectDropdownEnterprise();	
 		ProjectPage.SelectOptionEnterprise();
 	
+		//Page Scroll Down
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
 	
@@ -458,20 +450,25 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 	
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnProjectTypeNextButton();
 		
+		ProjectPage.clickOnProjectTypeNextButton();		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -484,10 +481,11 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
 	
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.enterFrequency(EnterFrequency);
-		ProjectPage.enterRadius(EnterRadius);
 		
+		ProjectPage.enterFrequency(EnterFrequency);
+		ProjectPage.enterRadius(EnterRadius);		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -518,56 +516,59 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
-		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
+		ClientPage.enterContactPersonPhone(MobileResponsible);	
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		
+		ProjectPage.clickOnCreateProjectButton();		
 		ProjectPage.clickOnExistingEnterprise();
-		ProjectPage.SelectDropdownEnterprise();
-	
+		ProjectPage.SelectDropdownEnterprise();	
 		ProjectPage.SelectOptionEnterprise();
 	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnNext1Button();
 	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 	
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnProjectTypeNextButton();
 		
+		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -580,10 +581,11 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
 
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidRadius = ProjectPage.InvalidRadius();

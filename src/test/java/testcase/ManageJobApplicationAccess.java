@@ -41,6 +41,8 @@ public class ManageJobApplicationAccess extends BaseTest {
 		CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 		AppLoginPage Applogin = new AppLoginPage(driver);
+		
+		//Create Work Order
 
 		WorkorderPage.clickOnWorkorderButton();
 		WorkorderPage.clickOnCreateWorkorderButton();
@@ -57,68 +59,71 @@ public class ManageJobApplicationAccess extends BaseTest {
 
 		WorkorderPage.clickOnEndTimeButton();
 		WorkorderPage.clickOnSelectEndtimeButton();
-		Thread.sleep(2000);
 		WorkorderPage.clickOnAddBillingButton();
 		WorkorderPage.clickOnAddTitleButton();
 		WorkorderPage.enterTitle(Title);
 		WorkorderPage.clickOnSeeSummaryButton();
 		WorkorderPage.clickOnSubmitforApprovalButton();
 
+		//Close Notification
 		JobApplication.clickOnCloseMessage();
-	//	Thread.sleep(2000);
 
+		//Log out from the Profile
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
-
+		
+		//Log-In Enterprise 
 		ProjectPage.enterDhruviEmail(EnterpriseLogin);
 		ProjectPage.enterDhruviPassword(EnterprisePassword);
-		;
 		ProjectPage.clickOnLoginButton();
 
 		// ProjectPage.clickOnErrorMessage();
 
+		//Approve Workorder
 		WorkorderPage.clickOnWorkorderButton();
-		
 		WorkorderPage.clickOnApproveWorkorder();
-
+		
+		//Close Notification
 		JobApplication.clickOnCloseMessage();
 
-
+		//Log out from Profile
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		//Switch URL to Mobile Application URL
 
 		driver.get(prop.getProperty("AppURL"));
+		
+		//Log-In into App URL
 
 		Applogin.clickOnLetStartButton();
 		Applogin.clickOnSkiptButton();
-	
 		Applogin.enterMobileNumber(MobileNumber);
-
 		Applogin.clickOnMobileNextButton();
-
 		Applogin.enterOTP(EnterOTP);
-	
 		Applogin.clickOnOTPNext();
-	
+		
+		//Apply Active Job
 		Applogin.clickOnAppActiveJob();
-	
 		Applogin.clickOnApplyActiveJob();
 
-	
+	    //Switch to Web Application
 
 		driver.get(prop.getProperty("testURL"));
 	
 
+		//Log-In as Enterprise
 		ProjectPage.enterDhruviEmail(enterpriseLogin);
 		ProjectPage.enterDhruviPassword(enterprisePassword);
-		;
 		ProjectPage.clickOnLoginButton();
 
 		// ProjectPage.clickOnErrorMessage();
-
+		
+		//Click on Workorder Tab
 		JobApplication.clickOnWorkorderButton();
-	
 		JobApplication.clickOnActiveWorkorder();
+		
+		//Approve Champ
 		JobApplication.ClickToApproveChamp();
 		JobApplication.JobApplicationStatus();
 		
@@ -153,6 +158,8 @@ public class ManageJobApplicationAccess extends BaseTest {
 		CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 		AppLoginPage Applogin = new AppLoginPage(driver);
+		
+		//Create Workorder
 
 		WorkorderPage.clickOnWorkorderButton();
 		WorkorderPage.clickOnCreateWorkorderButton();
@@ -169,30 +176,34 @@ public class ManageJobApplicationAccess extends BaseTest {
 
 		WorkorderPage.clickOnEndTimeButton();
 		WorkorderPage.clickOnSelectEndtimeButton();
-	
 		WorkorderPage.clickOnAddBillingButton();
 		WorkorderPage.clickOnAddTitleButton();
 		WorkorderPage.enterTitle(Title);
 		WorkorderPage.clickOnSeeSummaryButton();
 		WorkorderPage.clickOnSubmitforApprovalButton();
-
+		
+		//Close Notification
 		JobApplication.clickOnCloseMessage();
 	
-
+		//Log-out from Profile
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		//LogIn as Enterprise
 		ProjectPage.enterDhruviEmail(EnterpriseLogin);
 		ProjectPage.enterDhruviPassword(EnterprisePassword);
 		ProjectPage.clickOnLoginButton();
 
 		// ProjectPage.clickOnErrorMessage();
-
+		
+		//Click on Workorder Tab and Approve Workorder
 		WorkorderPage.clickOnWorkorderButton();
 		WorkorderPage.clickOnApproveWorkorder();
 
+		//Close Notification
 		JobApplication.clickOnCloseMessage();
-	
-
+		
+		//Logout Progile
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 
@@ -202,37 +213,35 @@ public class ManageJobApplicationAccess extends BaseTest {
 
 		Applogin.clickOnLetStartButton();
 		Applogin.clickOnSkiptButton();
-	
 		Applogin.enterMobileNumber(MobileNumber);
-	
 		Applogin.clickOnMobileNextButton();
-	
 		Applogin.enterOTP(EnterOTP);
-		
 		Applogin.clickOnOTPNext();
 	
+		//Apply to Active Job
 		Applogin.clickOnAppActiveJob();
-	
 		Applogin.clickOnApplyActiveJob();
-
-	
 		
 		//Getting back to web URL
 
 		driver.get(prop.getProperty("testURL"));
+		
+		//LogIn as Enterprise
 
 		ProjectPage.enterDhruviEmail(enterpriseLogin);
 		ProjectPage.enterDhruviPassword(enterprisePassword);
-		;
 		ProjectPage.clickOnLoginButton();
 
 		// ProjectPage.clickOnErrorMessage();
 
+		//Go to Workorder Section
 		JobApplication.clickOnWorkorderButton();
-	
 		JobApplication.clickOnActiveWorkorder();
 		
+		//Reject Champ
 		JobApplication.ClickToRejectChamp();
+		
+		//Notification Updated
 		JobApplication.JobApplicationStatus();
 
 		String JobApplicationstatus = JobApplication.JobApplicationStatus();
@@ -268,6 +277,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 		AppLoginPage Applogin = new AppLoginPage(driver);
 
 
+		//Workorder is created
 		WorkorderPage.clickOnWorkorderButton();
 		WorkorderPage.clickOnCreateWorkorderButton();
 		WorkorderPage.NavigateTodialogBox();
@@ -283,31 +293,38 @@ public class ManageJobApplicationAccess extends BaseTest {
 
 		WorkorderPage.clickOnEndTimeButton();
 		WorkorderPage.clickOnSelectEndtimeButton();
-		
 		WorkorderPage.clickOnAddBillingButton();
 		WorkorderPage.clickOnAddTitleButton();
 		WorkorderPage.enterTitle(Title);
 		WorkorderPage.clickOnSeeSummaryButton();
 		WorkorderPage.clickOnSubmitforApprovalButton();
 
+		//CLose Notification
 		JobApplication.clickOnCloseMessage();
 	
-
+		//Log-out Profile
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		//Login as Enterprise Email
 
 		ProjectPage.enterDhruviEmail(EnterpriseLogin);
 		ProjectPage.enterDhruviPassword(EnterprisePassword);
-		;
+		
 		ProjectPage.clickOnLoginButton();
 
 		// ProjectPage.clickOnErrorMessage();
+		
+		//Go to Workorder Section and Approve Workorder
 
 		WorkorderPage.clickOnWorkorderButton();
 		WorkorderPage.clickOnApproveWorkorder();
+		
+		//Close Notification
 
 		JobApplication.clickOnCloseMessage();
 	
+		//Log out from Profile
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
@@ -318,24 +335,20 @@ public class ManageJobApplicationAccess extends BaseTest {
 
 		Applogin.clickOnLetStartButton();
 		Applogin.clickOnSkiptButton();
-		
 		Applogin.enterMobileNumber(MobileNumber);
-		
 		Applogin.clickOnMobileNextButton();
-		
 		Applogin.enterOTP(EnterOTP);
-		
 		Applogin.clickOnOTPNext();
 	
+		//Apply to Active Job
 		Applogin.clickOnAppActiveJob();
-		
 		Applogin.clickOnApplyActiveJob();
-
-		
 		
 		// Switching to Web URL
 
 		driver.get(prop.getProperty("testURL"));
+		
+		//LogIn as Agency
 
 		ProjectPage.enterAgencyEmail(agencyLogin);
 		ProjectPage.clickOnSignInUsingOTP();
@@ -344,12 +357,15 @@ public class ManageJobApplicationAccess extends BaseTest {
 		ProjectPage.clickOnLoginButton();
 
 		// ProjectPage.clickOnErrorMessage();
-
+		
+		//Go to workorder section
 		JobApplication.clickOnWorkorderButton();
-	
 		JobApplication.clickOnActiveWorkorder();
 		
+		//Approve Champ
 		JobApplication.ClickToApproveChamp();
+		
+		//Status Updated
 		JobApplication.JobApplicationStatus();
 	
 
@@ -384,7 +400,7 @@ public class ManageJobApplicationAccess extends BaseTest {
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 		AppLoginPage Applogin = new AppLoginPage(driver);
 
-		
+		//Workorder is created
 
 		WorkorderPage.clickOnWorkorderButton();
 		WorkorderPage.clickOnCreateWorkorderButton();
@@ -401,55 +417,63 @@ public class ManageJobApplicationAccess extends BaseTest {
 
 		WorkorderPage.clickOnEndTimeButton();
 		WorkorderPage.clickOnSelectEndtimeButton();
-		
 		WorkorderPage.clickOnAddBillingButton();
 		WorkorderPage.clickOnAddTitleButton();
 		WorkorderPage.enterTitle(Title);
 		WorkorderPage.clickOnSeeSummaryButton();
 		WorkorderPage.clickOnSubmitforApprovalButton();
 
+		//CLose Notification
 		JobApplication.clickOnCloseMessage();
 		
 
+		//Logout Profile
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 
+		//Enter Enterprise Email
 		ProjectPage.enterDhruviEmail(EnterpriseLogin);
 		ProjectPage.enterDhruviPassword(EnterprisePassword);
-		;
 		ProjectPage.clickOnLoginButton();
 
 		// ProjectPage.clickOnErrorMessage();
+		
+		//Go to Workorder Section and Approve Workorder
 
 		WorkorderPage.clickOnWorkorderButton();
 		WorkorderPage.clickOnApproveWorkorder();
+		
+		//CLose Notification
 
 		JobApplication.clickOnCloseMessage();
 	
 
+		//Logout Profile
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		//Switch to App URL
 
 		driver.get(prop.getProperty("AppURL"));
+		
+		//Login as Champ
 
 		Applogin.clickOnLetStartButton();
 		Applogin.clickOnSkiptButton();
-		
 		Applogin.enterMobileNumber(MobileNumber);
-	
 		Applogin.clickOnMobileNextButton();
-	
 		Applogin.enterOTP(EnterOTP);
-		
 		Applogin.clickOnOTPNext();
-	
+		
+		//Apply to active job
 		Applogin.clickOnAppActiveJob();
-	
 		Applogin.clickOnApplyActiveJob();
-
-	
+		
+		//Switch to Web Application
 
 		driver.get(prop.getProperty("testURL"));
+		
+		//Enter Agency Email
 
 		ProjectPage.enterAgencyEmail(agencyLogin);
 		ProjectPage.clickOnSignInUsingOTP();
@@ -458,11 +482,13 @@ public class ManageJobApplicationAccess extends BaseTest {
 		ProjectPage.clickOnLoginButton();
 
 		// ProjectPage.clickOnErrorMessage();
+		
+		//Go to Workorder Section
 
 		JobApplication.clickOnWorkorderButton();
-	
 		JobApplication.clickOnActiveWorkorder();
 		
+		//Reject Champ
 	
 		JobApplication.ClickToRejectChamp();
 		JobApplication.JobApplicationStatus();
@@ -504,39 +530,32 @@ public class ManageJobApplicationAccess extends BaseTest {
 		JobApplicationPage = new ManageJobApplicationAccessPage(driver);
 		AppLoginPage Applogin = new AppLoginPage(driver);
 		ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver);
+		
+		//Create Project
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
-	
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
-		
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
-		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-	
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
-		// ProjectPage.enterStartDate(StartDate);
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-		// ProjectPage.enterEndDate(EndDate);
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
@@ -545,11 +564,9 @@ public class ManageJobApplicationAccess extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -560,34 +577,31 @@ public class ManageJobApplicationAccess extends BaseTest {
 		ProjectPage.clickOnReviewProject();
 		ProjectPage.clickOnSaveProject();
 		ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
-
 		ProjectPage.clickOnProjectTabButton();
-	
+		
+		//Assign Project to Vendor
 		AssignProjectVendor.SelectCreatedProject();
 		AssignProjectVendor.ClickOnAssignVendor();
-	
 		AssignProjectVendor.clickOn_DropDown();
 		AssignProjectVendor.SelectVendorToAssignProject();
 		AssignProjectVendor.ClickOnAssignVendorButton();
 		AssignProjectVendor.SelectedVendorAssignedSuccessfully();
 	
-
+		//Log out from Profile
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
-
+		
+		//Login As Vendor
 		Vendorlogin.clickOnLink_SignInUsingOtp();
 		Vendorlogin.enterPhoneOrEmail(vendorphoneOrEmail);
 		Vendorlogin.clickOnBtn_GetOTP();
 		Vendorlogin.enterOTP(OTP);
 		Vendorlogin.clickOnBtn_Login();
-
-	
-
+		
+		//Send quotes
 		ProjectPage.clickOnProjectTabButton();
 		AssignProjectVendor.SelectCreatedProject();
-
 		JobApplication.clickOnPrepareAndSendQuote();
-		
 		JobApplication.enterAmount(Amount);
 
 		Actions actions = new Actions(driver);
@@ -600,11 +614,13 @@ public class ManageJobApplicationAccess extends BaseTest {
 		JobApplication.enterAdditionalTerms(AdditionalTerms);
 		JobApplication.clickOnSendQuote();
 	
+		//Logout from Profile
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 		
 
+		//Login As Agency
 		Vendorlogin.clickOnLink_SignInUsingOtp();
 		Vendorlogin.enterPhoneOrEmail(EnterEmail);
 		Vendorlogin.clickOnBtn_GetOTP();
@@ -612,10 +628,9 @@ public class ManageJobApplicationAccess extends BaseTest {
 		Vendorlogin.clickOnBtn_Login();
 		
 
+		//Create Workorder
 		WorkorderPage.clickOnWorkorderButton();
-		
 		WorkorderPage.clickOnCreateWorkorderButton();
-		
 		WorkorderPage.NavigateTodialogBox();
 		WorkorderPage.clickOnSelectProjectButton();
 		WorkorderPage.clickOnAddDetailsButton();
@@ -630,43 +645,43 @@ public class ManageJobApplicationAccess extends BaseTest {
 		WorkorderPage.clickOnSelectEndtimeButton();
 	
 		WorkorderPage.clickOnAddBillingButton();
-	
 		WorkorderPage.clickOnAddTitleButton();
 		WorkorderPage.enterTitle(Title);
 		
+		//Assign Vendor
 		JobApplication.clickOnAssignVendor();
-		
 		JobApplication.clickToSelectVendorFromOption();
-		
 		WorkorderPage.clickOnSeeSummaryButton();
 		
+		//Click on Approval
 		JobApplication.clickOnSubmitApproval();
 		JobApplication.clickOnCloseMessage();
 		
+		//Logout from Profile
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		//Switch to App URL
 
 		driver.get(prop.getProperty("AppURL"));
 
 		Applogin.clickOnLetStartButton();
 		Applogin.clickOnSkiptButton();
-		
 		Applogin.enterMobileNumber(MobileNumber);
-		
 		Applogin.clickOnMobileNextButton();
-		
 		Applogin.enterOTP(EnterOTP);
-		
 		Applogin.clickOnOTPNext();
 		
+		//Apply to Active Job
 		Applogin.clickOnAppActiveJob();
-	
 		Applogin.clickOnApplyActiveJob();
-
 		
-
+		//Switch to Web URL
+		
 		driver.get(prop.getProperty("testURL"));
+		
+		//Login As Vendor Email
 
 		Vendorlogin.clickOnLink_SignInUsingOtp();
 		Vendorlogin.enterPhoneOrEmail(VendorEmail);
@@ -674,12 +689,16 @@ public class ManageJobApplicationAccess extends BaseTest {
 		Vendorlogin.enterOTP(VendorOTP);
 		Vendorlogin.clickOnBtn_Login();
 		
-
+		//Go to Workorder Section
 		WorkorderPage.clickOnWorkorderButton();
 		
 		JobApplicationPage.clickOnActiveWorkorder();
 		
+		//Approve Chmap
+		
 		JobApplicationPage.ClickToApproveChamp();
+		
+		//Status Updated
 		JobApplicationPage.JobApplicationStatus();
 		
 
@@ -720,39 +739,32 @@ public class ManageJobApplicationAccess extends BaseTest {
 		JobApplicationPage = new ManageJobApplicationAccessPage(driver);
 		AppLoginPage Applogin = new AppLoginPage(driver);
 		ManageJobApplicationAccessPage JobApplication = new ManageJobApplicationAccessPage(driver);
+		
+		//Create Project
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
-		
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
-		
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
-		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-	
 		scrollPageDown();
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
-		// ProjectPage.enterStartDate(StartDate);
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-		// ProjectPage.enterEndDate(EndDate);
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
@@ -761,11 +773,9 @@ public class ManageJobApplicationAccess extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-	
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -776,39 +786,37 @@ public class ManageJobApplicationAccess extends BaseTest {
 		ProjectPage.clickOnReviewProject();
 		ProjectPage.clickOnSaveProject();
 		ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
-
 		ProjectPage.clickOnProjectTabButton();
 	
+		//Assign Project to Vendor
 		AssignProjectVendor.SelectCreatedProject();
 		AssignProjectVendor.ClickOnAssignVendor();
-		
 		AssignProjectVendor.clickOn_DropDown();
 		AssignProjectVendor.SelectVendorToAssignProject();
 		AssignProjectVendor.ClickOnAssignVendorButton();
 		AssignProjectVendor.SelectedVendorAssignedSuccessfully();
 		
+		//Log out from Profile
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		//Login as Vendor
 
 		Vendorlogin.clickOnLink_SignInUsingOtp();
 		Vendorlogin.enterPhoneOrEmail(vendorphoneOrEmail);
 		Vendorlogin.clickOnBtn_GetOTP();
 		Vendorlogin.enterOTP(OTP);
 		Vendorlogin.clickOnBtn_Login();
-
 		
+		//Send Quotes
 
 		ProjectPage.clickOnProjectTabButton();
 		AssignProjectVendor.SelectCreatedProject();
-
 		JobApplication.clickOnPrepareAndSendQuote();
-	
 		JobApplication.enterAmount(Amount);
 
-		Actions actions = new Actions(driver);
-		actions.sendKeys(Keys.PAGE_DOWN).perform();
-		Thread.sleep(2000);
+		scrollPageDown();
 
 		JobApplication.clickToOpenCalendar();
 		JobApplication.clickToSelectDate();
@@ -816,10 +824,12 @@ public class ManageJobApplicationAccess extends BaseTest {
 		JobApplication.enterAdditionalTerms(AdditionalTerms);
 		JobApplication.clickOnSendQuote();
 	
+		//Logout from Profile
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
 		
+		//Login As Agency
 
 		Vendorlogin.clickOnLink_SignInUsingOtp();
 		Vendorlogin.enterPhoneOrEmail(EnterEmail);
@@ -828,10 +838,9 @@ public class ManageJobApplicationAccess extends BaseTest {
 		Vendorlogin.clickOnBtn_Login();
 		
 
+		//Go to Workorder Section
 		WorkorderPage.clickOnWorkorderButton();
-		
 		WorkorderPage.clickOnCreateWorkorderButton();
-		
 		WorkorderPage.NavigateTodialogBox();
 		WorkorderPage.clickOnSelectProjectButton();
 		WorkorderPage.clickOnAddDetailsButton();
@@ -843,46 +852,44 @@ public class ManageJobApplicationAccess extends BaseTest {
 		Actions actions1 = new Actions(driver);
 		actions1.sendKeys(Keys.ESCAPE).perform();
 		WorkorderPage.clickOnEndTimeButton();
-		WorkorderPage.clickOnSelectEndtimeButton();
 		
+		WorkorderPage.clickOnSelectEndtimeButton();
 		WorkorderPage.clickOnAddBillingButton();
-	
 		WorkorderPage.clickOnAddTitleButton();
 		WorkorderPage.enterTitle(Title);
 	
+		//Assign Vendor
 		JobApplication.clickOnAssignVendor();
-	
 		JobApplication.clickToSelectVendorFromOption();
-		
 		WorkorderPage.clickOnSeeSummaryButton();
-		
 		JobApplication.clickOnSubmitApproval();
 		JobApplication.clickOnCloseMessage();
 		
+		//Logout from Profile
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		//Switch to App URL
 
 		driver.get(prop.getProperty("AppURL"));
 
 		Applogin.clickOnLetStartButton();
 		Applogin.clickOnSkiptButton();
-		
 		Applogin.enterMobileNumber(MobileNumber);
-		
 		Applogin.clickOnMobileNextButton();
-		
 		Applogin.enterOTP(EnterOTP);
-		
 		Applogin.clickOnOTPNext();
 		
+		//Apply Active Job
 		Applogin.clickOnAppActiveJob();
-		
 		Applogin.clickOnApplyActiveJob();
 
-		
+		//Switch to Web URL
 
 		driver.get(prop.getProperty("testURL"));
+		
+		//Login As Vendor
 
 		Vendorlogin.clickOnLink_SignInUsingOtp();
 		Vendorlogin.enterPhoneOrEmail(VendorEmail);
@@ -890,11 +897,13 @@ public class ManageJobApplicationAccess extends BaseTest {
 		Vendorlogin.enterOTP(VendorOTP);
 		Vendorlogin.clickOnBtn_Login();
 	
+		//Go to Workorder Section
 
 		WorkorderPage.clickOnWorkorderButton();
 		
 		JobApplicationPage.clickOnActiveWorkorder();
 		
+		//Reject Champ
 		
 		JobApplicationPage.ClickToRejectChamp();
 		JobApplicationPage.JobApplicationStatus();

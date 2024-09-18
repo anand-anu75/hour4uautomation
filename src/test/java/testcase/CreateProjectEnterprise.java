@@ -40,17 +40,21 @@ public class CreateProjectEnterprise extends BaseTest {
 		enterpriseLogin.loginDhruviEnterprise(phoneOrEmail, enterPassword);
 
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Clicking On Project Tab
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
+		
+		//Click On Create Project Button
 		ProjectPage.clickOnCreateProjectButton();
 		
-		
+		//Select Project Type Button
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
 		
+		//Enter Project Details
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -59,21 +63,22 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		ProjectPage.clickOnStartDateButton();
-		
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-		
 		ProjectPage.clickOnSelectEndDate();
+		
+		//Select Location
 		ProjectPage.clickOnSelectLocationButton();
-		Thread.sleep(1000);
 		ProjectPage.clickOnSelectLocationDelhiButton();
+		
+		//Add Tracking
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
 		
+		//Add Billing
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -81,7 +86,11 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.enterRate(EnterRates);
 		ProjectPage.enterQty(EnterQty);
 		ProjectPage.enterDays(EnterDays);
+		
+		//CLick on Review Project
 		ProjectPage.clickOnReviewProject();
+		
+		//Click on Save Project
 		ProjectPage.clickOnSaveProject();
 
 		String ProjectCreatedSuccesfully = ProjectPage.ProjectCreatedSuccesfully();
@@ -110,11 +119,15 @@ public class CreateProjectEnterprise extends BaseTest {
 
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Clicking On Project Tab
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
+		
+		//Click On Create Project Button
 		ProjectPage.clickOnCreateProjectButton();
 		
+		//Click On Project Type Button
 		ProjectPage.clickOnProjectTypeNextButton();
 		
 
@@ -142,18 +155,19 @@ public class CreateProjectEnterprise extends BaseTest {
 		enterpriseLogin.loginDhruviEnterprise(phoneOrEmail, enterPassword);
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Click on Project Tab
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-
-		
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		
 		ProjectPage.enterProjectTitle(ProjectTitle);
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();
 
@@ -182,16 +196,15 @@ public class CreateProjectEnterprise extends BaseTest {
 		assertionMessage = new ThreadLocal<>();
 		enterpriseLogin.loginDhruviEnterprise(phoneOrEmail, enterPassword);
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Click on Project Tab
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -204,17 +217,10 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnEndDateButton();
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
-		
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
 		ProjectPage.pressBackSpaceButton();
-		
-	//	ProjectPage.clickOnContinuousLocationTracking();
-	//	ProjectPage.enterFrequency(EnterFrequency);
-	//	ProjectPage.enterRadius(EnterRadius);
-		
-	//	ProjectPage.clickOnAddBilling();
 
 		String InvalidFieldName = ProjectPage.InvalidFieldName();
 		softAssert.assertEquals(InvalidFieldName, ExpectedResult);
@@ -230,6 +236,8 @@ public class CreateProjectEnterprise extends BaseTest {
 	}
 
 	// Test for Invalid Field Type
+	
+	//This Assertion is removed from the Web Application
 
 /*
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
@@ -299,16 +307,14 @@ public class CreateProjectEnterprise extends BaseTest {
 
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Click on Project Tab
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-
-
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
-		ProjectPage.clickOnProjectTypeNextButton();
-		
+		ProjectPage.clickOnProjectTypeNextButton();	
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -320,16 +326,19 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
 		ProjectPage.clickOnSelectEndDate();
+		
+		//Select Location
 		ProjectPage.clickOnSelectLocationButton();
-		
 		ProjectPage.clickOnSelectLocationDelhiButton();
-		ProjectPage.clickOnAddTrackingButton();
-		ProjectPage.enterFieldName(FieldName);
 		
+		//Add Tracking
+		ProjectPage.clickOnAddTrackingButton();
+		ProjectPage.enterFieldName(FieldName);	
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
 		
+		//Add Billing
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -359,16 +368,14 @@ public class CreateProjectEnterprise extends BaseTest {
 
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Click on Project Tab
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-
-
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-	
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -382,14 +389,17 @@ public class CreateProjectEnterprise extends BaseTest {
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		
+		//Add Location
 		ProjectPage.clickOnSelectLocationDelhiButton();
+		
+		//Add Tracking
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-		
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
 		
+		//Add Billing
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidRadius = ProjectPage.InvalidRadius();
@@ -416,17 +426,16 @@ public class CreateProjectEnterprise extends BaseTest {
 		enterpriseLogin.loginDhruviEnterprise(phoneOrEmail, enterPassword);
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Click on Project Tab
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-
-
-
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
 		
+		//Add Project Details
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();

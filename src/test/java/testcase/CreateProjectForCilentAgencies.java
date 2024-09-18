@@ -34,70 +34,83 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
+		
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Creating Client
 
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating Project using the same CLient
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext1Button();
 		
+		ProjectPage.clickOnNext1Button();
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		
+		//Page Scroll Down
 		scrollPageDown();
 		ProjectPage.clickOnNext2Button();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
+		//Enter Project Details
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		// ProjectPage.enterStartDate(StartDate);
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
 		// ProjectPage.enterEndDate(EndDate);
 		ProjectPage.clickOnSelectEndDate();
+		
+		//Add Location
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
+		
+		//Add Tracking
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
 		
+		//Add Billing
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -105,7 +118,11 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ProjectPage.enterRate(EnterRates);
 		ProjectPage.enterQty(EnterQty);
 		ProjectPage.enterDays(EnterDays);
+		
+		//Review Project
 		ProjectPage.clickOnReviewProject();
+		
+		//Save Project
 		ProjectPage.clickOnSaveProject();
 
 		String ProjectCreatedSuccesfully = ProjectPage.ProjectCreatedSuccesfully();
@@ -141,34 +158,34 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Creating New CLient
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
 
+		//Creating Project
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		ProjectPage.clickOnSelfClientButton();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext1Button();
 		
+		ProjectPage.clickOnNext1Button();	
 		ProjectPage.clickOnProjectTypeButton();
 		
-		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnNext2Button();
 		
 
@@ -204,41 +221,40 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Creating New Client
 
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating Project
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		
+		ProjectPage.clickOnCreateProjectButton();	
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext1Button();
 		
+		ProjectPage.clickOnNext1Button();
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext2Button();
 		
+		ProjectPage.clickOnNext2Button();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();
@@ -272,41 +288,41 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
+		//Creating New Client
+		
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
 
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating Project
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext1Button();
 		
+		ProjectPage.clickOnNext1Button();
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnNext2Button();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
@@ -345,52 +361,53 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Creating New Client
 
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext1Button();
 		
+		ProjectPage.clickOnNext1Button();
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext2Button();
 		
+		ProjectPage.clickOnNext2Button();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -399,17 +416,10 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
-	//	ProjectPage.clickOnEnterItem();
 		ProjectPage.pressBackSpaceButton();
-	//	ProjectPage.clickOnFieldTypeDropDown();
-	//	ProjectPage.clickOnPhoneNumberButton();
-	//	ProjectPage.clickOnContinuousLocationTracking();
 		
+		//Page Scroll Down
 		scrollPageDown();
-	//	ProjectPage.enterFrequency(EnterFrequency);
-	//	ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
-	//	ProjectPage.clickOnAddBilling();
 
 		String InvalidFieldName = ProjectPage.InvalidFieldName();
 		softAssert.assertEquals(InvalidFieldName, ExpectedResult);
@@ -444,52 +454,55 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
+		
+		//Creating New CLient
 
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
 
+		//Creating a Project using that Client
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		
+		ProjectPage.clickOnCreateProjectButton();	
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext1Button();
 		
+		ProjectPage.clickOnNext1Button();
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext2Button();
 		
+		ProjectPage.clickOnNext2Button();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -502,10 +515,13 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
 		
+		//Add Billing
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -538,71 +554,80 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
+		
+		//Creating New Client
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
 
+		//Creating Project using New Client
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext1Button();
 		
+		ProjectPage.clickOnNext1Button();
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnNext2Button();
 		
+		ProjectPage.clickOnNext2Button();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
+		
+		//Select Location
 		ProjectPage.clickOnSelectLocationDelhiButton();
+		
+		//Add Tracking
 		ProjectPage.clickOnAddTrackingButton();
 		ProjectPage.enterFieldName(FieldName);
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
 		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
+		//Add Billing
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidRadius = ProjectPage.InvalidRadius();
@@ -635,20 +660,15 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
-
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
 
 		String actualErrorMessage = ClientPage.getErrorMessage();
@@ -680,18 +700,13 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
 
 		String actualPhoneErrorMessage = ClientPage.getPhoneErrorMessage();
@@ -723,18 +738,13 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
 
 		String actualEmailErrorMessage = ClientPage.getEmailErrorMessage();
@@ -767,29 +777,28 @@ public class CreateProjectForCilentAgencies extends BaseTest {
 		InvitingclientPage ClientPage = new InvitingclientPage(driver);
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 		CreateworkorderPage WorkorderPage = new CreateworkorderPage(driver);
+		
+		//Creating New Client
 
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
 		ClientPage.enterClientName(CompanyName);
 		ClientPage.enterContactPersonName(PersonName);
 		ClientPage.enterEmail(Email);
 		ClientPage.enterContactPersonPhone(MobileResponsible);
-	
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating New Project using New Client
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
 		
-		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnNext1Button();
 
 		String AcceptRejectInvalidEnterprise = ProjectPage.AcceptRejectInvalidEnterprise();
