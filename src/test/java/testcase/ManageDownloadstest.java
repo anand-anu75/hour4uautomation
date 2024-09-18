@@ -139,13 +139,13 @@ public class ManageDownloadstest extends BaseTest {
 		// Download workorder
 		managedownloadtest = new ManageDownloads(driver);
 		managedownloadtest.deleteExistingFile();
-		AddChampsWorkOrder createWorkOrder = new AddChampsWorkOrder(driver);
+	//	AddChampsWorkOrder createWorkOrder = new AddChampsWorkOrder(driver);
 		managedownloadtest.clickOnLabel();
 		scrollPageDown();
-		createWorkOrder.clickDesiredWorkOrder();
+	//	createWorkOrder.clickDesiredWorkOrder();
 		
 		//click on open menu to explore
-		managedownloadtest.clickOn_Openmenutoexplore();
+		managedownloadtest.clickOnbtn_More();
 		
 		//click on Download proof of work
 		managedownloadtest.clickOnbtn_DownloadProofofwork();
