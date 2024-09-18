@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -25,7 +26,7 @@ public class Assignvendor extends BaseTest {
 	WebElement btn_Addbilling;
 	WebElement btn_Addtitle;
 	WebElement txt_Workordertitle;
-	WebElement btn_seesummary;
+	WebElement btn_SeeSummary;
 	WebElement btn_approval;
 	WebElement click_dropdown;
 	WebElement Assign_vendor;
@@ -103,8 +104,8 @@ public class Assignvendor extends BaseTest {
 	}
 	
 	public void clickOnbtn_Addbilling() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Addbilling"))))
-		.click();
+		WebElement btn_Addbilling = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Addbilling"))));
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", btn_Addbilling);
 	}
 	
 	public void clickOnbtn_Addtitle() {
@@ -118,7 +119,7 @@ public class Assignvendor extends BaseTest {
 	}
 	
 	public void clickOnbtn_SeeSummary() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_seesummary"))))
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SeeSummary"))))
 		.click();
 	}
 	
