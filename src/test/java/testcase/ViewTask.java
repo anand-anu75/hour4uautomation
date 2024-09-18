@@ -1,41 +1,49 @@
 package testcase;
- 
+
+import java.io.IOException;
 import java.util.Set;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
- 
+
 import base.BaseTest;
 import pages.CreateworkorderPage;
 import pages.ViewtaskPage;
 import utilities.ReadXLData;
 
- 
 public class ViewTask extends BaseTest {
 	ViewtaskPage ViewtaskPage;
- 
-    @Test(dependsOnMethods = {"testcase.Login.login"},dataProviderClass = ReadXLData.class, dataProvider = "testData" )
-    public void ViewtaskPage(String expectedURL) throws InterruptedException {
-    	ViewtaskPage = new ViewtaskPage(driver);
-    	
-         driver.getWindowHandles();
+	Login loginAgency = new Login();
+	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
+	public void ViewtaskPage(String phoneOrEmail, String OTP, String expectedURL, String expectedNewTabURL)
+			throws InterruptedException, IOException {
+		
+		
+		loginAgency.login(phoneOrEmail, OTP, expectedURL);
+		ViewtaskPage = new ViewtaskPage(driver);
 
-    	ViewtaskPage.clickOnWorkorderButton(); 
-       
-    	ViewtaskPage.clickOnViewTasksButton();
-    	
-    	
-    	ViewtaskPage.NavigatetoNewTab(); 
+		driver.getWindowHandles();
 
-    	String actualURL= driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedURL);
+		ViewtaskPage.clickOnWorkorderButton();
+
+		ViewtaskPage.clickOnViewTasksButton();
+
+		ViewtaskPage.NavigatetoNewTab();
+
+		String actualURL = driver.getCurrentUrl();
+		softAssert.assertEquals(actualURL, expectedNewTabURL);
 		System.out.println(actualURL);
-		softAssert.assertAll();
-	    
-    }
-    
-    
-    
+		try {
+			softAssert.assertAll();
+		} catch (AssertionError e) {
+			assertionMessage.set(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
+			throw e;
+		}
+
+	}
+
 }
- 
