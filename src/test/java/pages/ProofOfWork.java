@@ -59,8 +59,7 @@ public class ProofOfWork extends BaseTest {
 	}
 
 	public void clickOnbtn_clickheretoviewWorkorders() {
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_clickheretoviewWorkorders")))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_clickheretoviewWorkorders")))).click();
 	}
 
 	public void clickOnbtn_Workorders() {
@@ -68,7 +67,8 @@ public class ProofOfWork extends BaseTest {
 	}
 
 	public void clickOnbtn_ViewTasks() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ViewTasks")))).click();
+		WebElement btn_ViewTasks = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ViewTasks"))));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn_ViewTasks);
 	}
 
 	public void clickOn_Active() {

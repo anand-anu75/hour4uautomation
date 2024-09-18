@@ -140,8 +140,8 @@ public class ProofOfWorktest extends BaseTest {
 		//scroll the page down
 		scrollPageDown();
 
-		AddChampsWorkOrder createWorkOrder = new AddChampsWorkOrder(driver);
-		createWorkOrder.clickDesiredWorkOrder();
+	//	AddChampsWorkOrder createWorkOrder = new AddChampsWorkOrder(driver);
+	//	createWorkOrder.clickDesiredWorkOrder();
 		
 	//	Thread.sleep(2000);
 		//click on open menu to explore

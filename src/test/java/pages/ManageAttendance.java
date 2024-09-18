@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -45,7 +46,17 @@ public class ManageAttendance extends BaseTest {
 	}
 	
 	public void clickOn_Openmenutoexplore() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Openmenutoexplore")))).click();
+
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("click_Openmenutoexplore"))))
+					.click();
+
+		} catch (StaleElementReferenceException e) {
+
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("click_Openmenutoexplore"))))
+					.click();
+		}
+
 	}
 	
 	public void clickOn_Completed() {
