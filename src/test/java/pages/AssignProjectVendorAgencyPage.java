@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -29,30 +30,43 @@ public class AssignProjectVendorAgencyPage extends BaseTest{
 	
 	public void SelectCreatedProject() {
 	       // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_SelectCreatedProjects"))))
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("opt_SelectCreatedProjects"))))
 			.click();
 	    }
 	
 	public void ClickOnAssignVendor() {
 	       // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AssignVendor"))))
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AssignVendor"))))
 			.click();
 	    }
 	
-	public void clickOn_DropDown() {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("click_dropdown")))).click();
+	/* public void clickOn_DropDown() {
+        
+		WebElement click_dropdown =wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("click_dropdown"))));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", click_dropdown);
  
+	}
+	*/
+	
+	public void clickOn_DropDown() {
+		try {
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("cdk-overlay-backdrop")));
+		} catch (Exception e) {
+			System.out.println("Overlay or modal still present.");
+		}
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_dropdown_option")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("click_dropdown")))).click();
 	}
 	
 	public void SelectVendorToAssignProject() {
 	       // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_ClickOnVendor"))))
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("opt_ClickOnVendor"))))
 			.click();
 	    }
 	
 	public void ClickOnAssignVendorButton() {
 	       // wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnAssignVendor"))))
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnAssignVendor"))))
 			.click();
 	    }
 	

@@ -18,7 +18,6 @@
 			<class name="testcase.AcceptRejectFromClients " />
 			<class name="testcase.ManageJobApplicationAccess" />
 			<class name="testcase.GetProjectApprovalAgencies" />
-			<class name="testcase.AssignProjectVendorAgency" />
 			<class name="testcase.AddChampsTest" />
 			<class name="testcase.AddChampsWorkOrderTest" />
 			<class name="testcase.RequestCreditTest" />
@@ -28,18 +27,16 @@
 			<class name="testcase.ProofOfWorktest" />
 			<class name="testcase.CreditStatementTest" />
 			<class name="testcase.CreateWorkorder" />
-			<class name="testcase.ViewTask" />  
-
-
-			<!-- P1 Test cases -->
-
-			<!-- 
-				<class name="testcase.AssignProjectVendorAgency" />
-				<class name="testcase.Assignvendortest" />
-				<class name="testcase.AddChampsWorkOrderVendorTest" />
-				<class name="testcase.WorkorderbyVendor" />
-				-->
-
+			<class name="testcase.ViewTask" />
+			<class name="testcase.DashboardAndDataPopulation_AllUsers" />
+			<class
+				name="testcase.DashboardAndDataPopulation_Enterprise_AllUsers" />
+			<class name="testcase.WorkOrderApproval_Enterprise" />
+			<class name="testcase.CreateWorkorderforCients_Agency" />
+			<class name="testcase.ViewAttendanceChampsTest" />
+			<class name="testcase.ManageAttendancetest" />
+			<class name="testcase.InvitingClient" />
+			<class name="testcase.AddVendor" />
 		</classes>
 	</test>
 </suite>

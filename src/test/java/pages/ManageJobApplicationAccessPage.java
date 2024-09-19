@@ -75,19 +75,19 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 
 	public void clickOnProjectTabButton() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("tab_Project")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("tab_Project")))).click();
 	}
 
 	public void clickOnCreatedProjectOption() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
 		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_ClickOnCreatedProject"))))
+				ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("opt_ClickOnCreatedProject"))))
 				.click();
 	}
 
 	public void clickOnAssignAgency() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_AssignAgency"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_AssignAgency"))))
 				.click();
 	}
 
@@ -99,25 +99,24 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 
 	public void clickOnSearchAgency() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_ClickonSeachAgency"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("opt_ClickonSeachAgency"))))
 				.click();
 	}
 
 	public void clickOnSearchAssignAgency() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnSearchAssignAgency")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnSearchAssignAgency")))).click();
 	}
 
 	public void clickOnProfileButton() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnProfile"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnProfile"))))
 				.click();
 	}
 
 	public void clickOnLogoutButton() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Logout")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_Logout")))).click();
 	}
 
 	public void enterAgencyEmail(String EnterAgencyEmail) {
@@ -129,13 +128,13 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 	public void clickOnSignInUsingOTP() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
 		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnSignInUsingOtp"))))
+				ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnSignInUsingOtp"))))
 				.click();
 	}
 
 	public void clickOnGetOTP() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnGetOtp"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnGetOtp"))))
 				.click();
 	}
 
@@ -149,25 +148,25 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 	public void clickOnLoginButton() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
 		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ClickOnLoginforAgency"))))
+				ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ClickOnLoginforAgency"))))
 				.click();
 	}
 
 	public void clickOnWorkorderButton() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Workorder")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_Workorder")))).click();
 	}
 
 	public void clickOnActiveWorkorder() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
 		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_ClickOnActiveWorkOrder"))))
+				ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("opt_ClickOnActiveWorkOrder"))))
 				.click();
 	}
 
 	public void ClickToApproveChamp() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ChampApprove"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ChampApprove"))))
 				.click();
 	}
 
@@ -180,12 +179,12 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 
 	public void ClickToRejectChamp() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_ChampReject")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_ChampReject")))).click();
 	}
 
 	public void clickOnPrepareAndSendQuote() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_PrepareAndSendQuote"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_PrepareAndSendQuote"))))
 				.click();
 	}
 
@@ -197,13 +196,12 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 
 	public void clickToOpenCalendar() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SendingQuoteOpenCalendar")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SendingQuoteOpenCalendar")))).click();
 	}
 
 	public void clickToSelectDate() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SendQuoteSelectDate"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SendQuoteSelectDate"))))
 				.click();
 	}
 
@@ -221,31 +219,31 @@ public class ManageJobApplicationAccessPage extends BaseTest {
 
 	public void clickOnSendQuote() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SendQuote")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SendQuote")))).click();
 	}
 
 	public void clickOnAssignVendor() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("drpd_AssignVendor"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("drpd_AssignVendor"))))
 				.click();
 	}
 
 	public void clickToSelectVendorFromOption() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("opt_SelectToAssignVendor"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("opt_SelectToAssignVendor"))))
 				.click();
 	}
 
 	public void clickOnSubmitApproval() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_SubmitForApporval"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_SubmitForApporval"))))
 				.click();
 	}
 
 	public void clickOnCloseMessage() {
 		// wait.until(ExpectedConditions.visibilityOf(tab_Project)).click();
 		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_CloseMessagesAfterSuccess")))).click();
+				.elementToBeClickable(By.xpath(loc.getProperty("btn_CloseMessagesAfterSuccess")))).click();
 	}
 
 	public String getStarttimeErrorMessage() {

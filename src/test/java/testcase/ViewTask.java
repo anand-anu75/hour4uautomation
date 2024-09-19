@@ -8,19 +8,25 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
+import pages.AgencyloginPage;
 import pages.CreateworkorderPage;
 import pages.ViewtaskPage;
 import utilities.ReadXLData;
 
 public class ViewTask extends BaseTest {
 	ViewtaskPage ViewtaskPage;
-	Login loginAgency = new Login();
+	AgencyloginPage Agencylogin;
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
-	public void ViewtaskPage(String phoneOrEmail, String OTP, String expectedURL, String expectedNewTabURL)
+	public void ViewtaskPage(String PhoneEmail, String Password,String TextField, String expectedNewTabURL)
 			throws InterruptedException, IOException {
 		
 		
-		loginAgency.login(phoneOrEmail, OTP, expectedURL);
+      Agencylogin = new AgencyloginPage(driver);
+		
+		Agencylogin.enterPhoneEmail(PhoneEmail);
+		Agencylogin.enterPassword(Password);
+		Agencylogin.clickOnLoginBtn(); 
+
 		ViewtaskPage = new ViewtaskPage(driver);
 
 		driver.getWindowHandles();
@@ -29,21 +35,33 @@ public class ViewTask extends BaseTest {
 
 		ViewtaskPage.clickOnViewTasksButton();
 
-		ViewtaskPage.NavigatetoNewTab();
+		//ViewtaskPage.NavigatetoNewTab();
+		
+		Thread.sleep(2000);
+		
+		ViewtaskPage.clickOnaddTasksButton();
+		
+		ViewtaskPage.clickOnselectjobseekerButton();
+		
+		ViewtaskPage.clickOnSelectchampButton();
 
-		String actualURL = driver.getCurrentUrl();
-		softAssert.assertEquals(actualURL, expectedNewTabURL);
-		System.out.println(actualURL);
-		try {
+		ViewtaskPage.clickOntextfieldButton();
+		
+		ViewtaskPage.enterTextField(TextField);
+		
+		ViewtaskPage.clickOnsubmitButton();
+		
+		String actualSuccessMessage = ViewtaskPage.getSuccessMessage();
+        softAssert.assertEquals(actualSuccessMessage, expectedNewTabURL);
+ 
+    	try {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
 			throw e;
-		} catch (Exception e) {
-			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
-			throw e;
 		}
-
-	}
+        
+  
+    }
 
 }

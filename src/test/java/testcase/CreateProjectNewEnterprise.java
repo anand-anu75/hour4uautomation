@@ -44,20 +44,19 @@ public class CreateProjectNewEnterprise extends BaseTest {
 		ProjectPage.enterMobile(Mobile);
 		ProjectPage.enterEmail(Email);
 		ProjectPage.enterAddress(Address);
-		// JavascriptExecutor js = (JavascriptExecutor) driver;
-		// js.executeScript("window.scrollBy(0,800)");
+		
 		Actions actions = new Actions(driver);
 		actions.sendKeys(Keys.PAGE_DOWN).perform();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnCreateEnterprise();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.clickOnSelectProjectTypeButton();
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -78,7 +77,7 @@ public class CreateProjectNewEnterprise extends BaseTest {
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);

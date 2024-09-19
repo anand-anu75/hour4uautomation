@@ -39,12 +39,22 @@ public class ProofOfWorktest extends BaseTest {
 		proofOfWorktest = new ProofOfWork(driver);
 		manageDownloads = new ManageDownloads(driver);
 
+		//Delete the existing file
 		manageDownloads.deleteExistingFile();
+		
 		manageDownloads.clickOnLabel();
+		
+		// Scroll the page down
 		scrollPageDown();
+		
+	//	Thread.sleep(2000);
+		//click on three dot
 		proofOfWorktest.clickOnbtn_More();
+		
+		//click on download proof of work
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
 
+		// Ensure that the proof of work file has been successfully downloaded
 		try {
 			boolean value = manageDownloads.checkFileDownload();
 			softAssert.assertTrue(value);
@@ -66,21 +76,36 @@ public class ProofOfWorktest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with valid details
 		loginObject = new Login();
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
 
 		manageDownloads = new ManageDownloads(driver);
+		
+		//Delete the existing file
 		manageDownloads.deleteExistingFile();
 
 		proofOfWorktest = new ProofOfWork(driver);
+		
+		//click on projects button
 		proofOfWorktest.clickOnbtn_Projects();
-		proofOfWorktest.clickOnbtn_NextPage();
+		
+		//Navigate to Next page
+	//	proofOfWorktest.clickOnbtn_NextPage();
+		
+		//click to view workorder
 		proofOfWorktest.clickOnbtn_clickheretoviewWorkorders();
 		Actions actions = new Actions(driver);
 		actions.sendKeys(Keys.ARROW_LEFT).perform();
-		proofOfWorktest.clickOn_Openmenutoexplore();
+		
+		//click open menu to explore
+		proofOfWorktest.clickOnbtn_More();
+		
+		
+		//click on download proof of work
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
 
+		// Ensure that the proof of work file has been successfully downloaded
 		try {
 			boolean value = manageDownloads.checkFileDownload();
 			softAssert.assertTrue(value);
@@ -107,15 +132,25 @@ public class ProofOfWorktest extends BaseTest {
 
 		proofOfWorktest = new ProofOfWork(driver);
 		manageDownloads = new ManageDownloads(driver);
+		
+		//Delete the existing file
 		manageDownloads.deleteExistingFile();
 		manageDownloads.clickOnLabel();
+		
+		//scroll the page down
 		scrollPageDown();
 
-		AddChampsWorkOrder createWorkOrder = new AddChampsWorkOrder(driver);
-		createWorkOrder.clickDesiredWorkOrder();
+	//	AddChampsWorkOrder createWorkOrder = new AddChampsWorkOrder(driver);
+	//	createWorkOrder.clickDesiredWorkOrder();
+		
+	//	Thread.sleep(2000);
+		//click on open menu to explore
 		proofOfWorktest.clickOn_Openmenutoexplore();
+		
+		//click on Download proof of work
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
 
+		// Ensure that the proof of work file has been successfully downloaded
 		try {
 			boolean value = manageDownloads.checkFileDownload();
 			softAssert.assertTrue(value);
@@ -137,20 +172,33 @@ public class ProofOfWorktest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with valid Details
 		loginObject = new Login();
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
 
 		proofOfWorktest = new ProofOfWork(driver);
 		manageDownloads = new ManageDownloads(driver);
+		
+		//Delete the existing file
 		manageDownloads.deleteExistingFile();
 		manageDownloads.clickOnLabel();
+		
+		//scroll the page down
 		scrollPageDown();
 
+		//click on view task button
 		proofOfWorktest.clickOnbtn_ViewTasks();
+		
+		//Switch to new Tab
 		switchToNewTab();
+		
+		//click on open menu to explore
 		proofOfWorktest.clickOn_Openmenutoexplore();
+		
+		//click on download proof of work
 		proofOfWorktest.clickOnbtn_DownloadProofofwork();
 
+		// Ensure that the proof of work file has been successfully downloaded
 		try {
 			boolean value = manageDownloads.checkFileDownload();
 			softAssert.assertTrue(value);

@@ -2,17 +2,15 @@ package testcase;
 
 import java.io.IOException;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import base.BaseTest;
-import pages.AddChampsWorkOrder;
-import pages.CreateworkorderPage;
-import pages.DashboardAndDataPopulatePage;
 import pages.ManageDownloads;
 import utilities.ReadXLData;
+
+@Listeners(base.Listeners.class)
 
 public class ManageDownloadstest extends BaseTest {
 	ManageDownloads managedownloadtest;
@@ -33,10 +31,17 @@ public class ManageDownloadstest extends BaseTest {
 
 		// Download files
 		managedownloadtest = new ManageDownloads(driver);
+		
+		//Delete the existing file
 		managedownloadtest.deleteExistingFile();
+		
+		//click on Three dot
 		managedownloadtest.clickOnbtn_More();
+		
+		//click on download proof of work
 		managedownloadtest.clickOnbtn_DownloadProofofwork();
 
+		// Ensure that the proof of work file has been successfully downloaded
 		try {
 			boolean value = managedownloadtest.checkFileDownload();
 			softAssert.assertTrue(value);
@@ -69,20 +74,27 @@ public class ManageDownloadstest extends BaseTest {
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
 
 		managedownloadtest = new ManageDownloads(driver);
+		
+		//Delete the existing file
 		managedownloadtest.deleteExistingFile();
 
 		managedownloadtest.clickOnLabel();
 		// Scroll the page down
 		scrollPageDown();
 
+	//	Thread.sleep(2000);
 		managedownloadtest.clickOnbtn_ViewTasks();
 
 		// Switch to new tab
 		switchToNewTab();
 
+		//click on open menu to explore
 		managedownloadtest.clickOn_Openmenutoexplore();
+		
+		//click on Download proof of work
 		managedownloadtest.clickOnbtn_DownloadProofofwork();
 
+		// Ensure that the proof of work file has been successfully downloaded
 		try {
 			boolean value = managedownloadtest.checkFileDownload();
 			softAssert.assertTrue(value);
@@ -122,13 +134,18 @@ public class ManageDownloadstest extends BaseTest {
 		// Download workorder
 		managedownloadtest = new ManageDownloads(driver);
 		managedownloadtest.deleteExistingFile();
-		AddChampsWorkOrder createWorkOrder = new AddChampsWorkOrder(driver);
+	//	AddChampsWorkOrder createWorkOrder = new AddChampsWorkOrder(driver);
 		managedownloadtest.clickOnLabel();
 		scrollPageDown();
-		createWorkOrder.clickDesiredWorkOrder();
-		managedownloadtest.clickOn_Openmenutoexplore();
+	//	createWorkOrder.clickDesiredWorkOrder();
+		
+		//click on open menu to explore
+		managedownloadtest.clickOnbtn_More();
+		
+		//click on Download proof of work
 		managedownloadtest.clickOnbtn_DownloadProofofwork();
 
+		// Ensure that the proof of work file has been successfully downloaded
 		try {
 			boolean value = managedownloadtest.checkFileDownload();
 			softAssert.assertTrue(value);
@@ -157,13 +174,19 @@ public class ManageDownloadstest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with valid details
 		loginObject = new Login();
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
 
 		managedownloadtest = new ManageDownloads(driver);
+		
+		//Delete the existing file
 		managedownloadtest.deleteWorkOrderExistingFile();
+		
+		//click on Export XLS
 		managedownloadtest.clickOn_ExportXLS();
 
+		// Ensure that the proof of work file has been successfully downloaded
 		try {
 			boolean value = managedownloadtest.checkWorkOrderFileDownload();
 			softAssert.assertTrue(value);

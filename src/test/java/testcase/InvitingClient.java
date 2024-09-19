@@ -23,7 +23,6 @@ public class InvitingClient extends BaseTest {
 
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
-
 		loginAgency.login(phoneOrEmail, OTP, expectedURL);
 
 		ClientPage = new InvitingclientPage(driver);
@@ -38,14 +37,15 @@ public class InvitingClient extends BaseTest {
 
 		String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the
 																	// name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+	//	String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
+		// String randomEmail = generateRandomEmail(Email); // Appends a random number
+		// to the email username
 
 		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomPhone);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(Address);
-
+		ClientPage.enterContactPersonName(Name);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(Phone);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		String actualSuccessMessage = ClientPage.getSuccessMessage();
@@ -82,16 +82,17 @@ public class InvitingClient extends BaseTest {
 
 		ClientPage.NavigateToDialogBox();
 
-		// String randomName = Name + (int) (Math.random() * 1000); // Appends a random
-		// number between 0 and 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+		String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the
+																	// name
+	//	String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
+		// String randomEmail = generateRandomEmail(Email); // Appends a random number
+		// to the email username
 
-		// ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomPhone);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(Address);
-
+		ClientPage.enterClientName(randomName);
+		ClientPage.enterContactPersonName(Name);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(Phone);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		String actualErrorMessage = ClientPage.getErrorMessage();
@@ -130,15 +131,15 @@ public class InvitingClient extends BaseTest {
 
 		String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the
 																	// name
-		// String randomPhone = generateRandomPhoneNumber(); // Generates a random phone
-		// number
-		String randomEmail = generateRandomEmail(Email); // Appends a random number to the email username
+	//	String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
+		// String randomEmail = generateRandomEmail(Email); // Appends a random number
+		// to the email username
 
 		ClientPage.enterClientName(randomName);
-		// ClientPage.enterMobileNumber(randomPhone);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(Address);
-
+		ClientPage.enterContactPersonName(Name);
+		ClientPage.enterEmail(Email);
+//		ClientPage.enterContactPersonPhone(Phone);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		String actualPhoneErrorMessage = ClientPage.getPhoneErrorMessage();
@@ -177,15 +178,15 @@ public class InvitingClient extends BaseTest {
 
 		String randomName = Name + (int) (Math.random() * 1000); // Appends a random number between 0 and 999 to the
 																	// name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
+	//	String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
 		// String randomEmail = generateRandomEmail(Email); // Appends a random number
 		// to the email username
 
 		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomPhone);
-		// ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(Address);
-
+		ClientPage.enterContactPersonName(Name);
+	//	ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(Phone);
+	//	Thread.sleep(1000);
 		ClientPage.clickOnCreateClientButton();
 
 		String actualEmailErrorMessage = ClientPage.getEmailErrorMessage();
@@ -203,6 +204,7 @@ public class InvitingClient extends BaseTest {
 
 	}
 
+	/*
 	private String generateRandomPhoneNumber() {
 		long randomPhone = (long) (Math.random() * 10000000000L); // Generates a random number and ensures it's 10
 																	// digits
@@ -218,5 +220,5 @@ public class InvitingClient extends BaseTest {
 		}
 		return baseEmail; // Fallback to the original email if the format is unexpected
 	}
-
+ */
 }

@@ -44,7 +44,7 @@ public class LoginPage extends BaseTest {
 	}
 
 	public void clickOnBtn_GetOTP() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_GetOTP")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("btn_GetOTP")))).click();
 		// btn_GetOTP.click();
 	}
 
@@ -108,7 +108,7 @@ public class LoginPage extends BaseTest {
 	}
 
 	public void clickOnLink_ForgotPassword() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("link_forget_password"))))
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("link_forget_password"))))
 				.click();
 		// link_forget_password.click();
 	}

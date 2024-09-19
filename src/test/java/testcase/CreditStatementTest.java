@@ -31,30 +31,73 @@ public class CreditStatementTest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with enterprise email and password
 		creditStatementTest = new CreditStatement(driver);
 
+		//Enter valid phone or email
 		creditStatementTest.enterPhoneOrEmail(phoneOrEmail);
+		
+		//Enter password
 		creditStatementTest.enterPassword(password);
+		
+		//click on login button
 		creditStatementTest.clickOnBtn_Login();
+		
+		//click on credits button
 		creditStatementTest.clickOnbtn_Credits();
+		
+		//click on cash credit Topup button
 		creditStatementTest.clickOnbtn_Topup();
+		
+		//Enter Amount
 		creditStatementTest.enteramount(amount);
+		
+		//click on pay later button
 		creditStatementTest.clickOnbtn_Paylater();
-		creditStatementTest.clickOn_dropdown();
+		
+		//click on dropdown
+		creditStatementTest.clickOn_DropDown_Option();
+		
+		//click on Days
 		creditStatementTest.clickOn_days();
+		
+		//Tick the checkbox
 		creditStatementTest.clickOn_checkbox();
+		
+		//click on Request credits button
 		creditStatementTest.clickOnbtn_RequestCredits();
+		
+		//click on Account icon
 		creditStatementTest.clickOn_accounticon();
+		
+		//click on logout
 		creditStatementTest.clickOn_logout();
+		
+		//Enter Superadmin Email ID
 		creditStatementTest.enterSuperadminemail(Superadminemail);
+		
+		//Enter Superadmin password
 		creditStatementTest.enterSuperadminpassword(Superadminpassword);
+		
+		//click on login button
 		creditStatementTest.clickOnBtn_Login();
+		
+		//click on credits button
 		creditStatementTest.clickOnbtn_Credits();
+		
+		//click on Approve
 		creditStatementTest.clickOn_approve();
+		
+		//Enter six digit verification code
 		creditStatementTest.enterverificationcode(Verificationcode);
+		
+		//click on Next
 		creditStatementTest.clickOn_Next();
+		
+		//Fetch success message for cash credit status
 		String actualMessage = creditStatementTest.get_MessageForCreditstatus();
 
+		//Verify success message for credit status
 		try {
 			softAssert.assertEquals(actualMessage, Expectedmessage);
 			softAssert.assertAll();
@@ -76,30 +119,73 @@ public class CreditStatementTest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with enterprise email and password
 		creditStatementTest = new CreditStatement(driver);
 
+		//Enter valid phone or email
 		creditStatementTest.enterPhoneOrEmail(phoneOrEmail);
+		
+		//Enter password
 		creditStatementTest.enterPassword(password);
+		
+		//click on login button
 		creditStatementTest.clickOnBtn_Login();
+		
+		//click on credits button
 		creditStatementTest.clickOnbtn_Credits();
+		
+		//click on Task credit Topup button
 		creditStatementTest.clickOnbtn_Topup1();
+		
+		//Enter Amount
 		creditStatementTest.enteramount(amount);
+		
+		//click on pay later button
 		creditStatementTest.clickOnbtn_Paylater();
-		creditStatementTest.clickOn_dropdown();
+		
+		//click on dropdown
+		creditStatementTest.clickOn_DropDown_Option();
+		
+		//click on Days
 		creditStatementTest.clickOn_days();
+		
+		//Tick the checkbox
 		creditStatementTest.clickOn_checkbox();
+		
+		//click on Request credits button
 		creditStatementTest.clickOnbtn_RequestCredits();
+		
+		//click on Account icon
 		creditStatementTest.clickOn_accounticon();
+		
+		//click on logout
 		creditStatementTest.clickOn_logout();
+		
+		//Enter Superadmin Email ID
 		creditStatementTest.enterSuperadminemail(Superadminemail);
+		
+		//Enter Superadmin password
 		creditStatementTest.enterSuperadminpassword(Superadminpassword);
+		
+		//click on login button
 		creditStatementTest.clickOnBtn_Login();
+		
+		//click on credits button
 		creditStatementTest.clickOnbtn_Credits();
+		
+		//click on Approve
 		creditStatementTest.clickOn_approve();
+		
+		//Enter six digit verification code
 		creditStatementTest.enterverificationcode(Verificationcode);
+		
+		//click on Next
 		creditStatementTest.clickOn_Next();
+		
+		//Fetch success message for Task credit status
 		String actualMessage = creditStatementTest.get_MessageForCreditstatus();
 
+		//Verify success message for Task credit status
 		try {
 			softAssert.assertEquals(actualMessage, Expectedmessage);
 			softAssert.assertAll();
@@ -120,15 +206,28 @@ public class CreditStatementTest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with enterprise email and password
 		creditStatementTest = new CreditStatement(driver);
-
+		
+		//Enter valid phone or email
 		creditStatementTest.enterPhoneOrEmail(phoneOrEmail);
+		
+		//Enter password
 		creditStatementTest.enterPassword(password);
+		
+		//click on login button
 		creditStatementTest.clickOnBtn_Login();
+		
+		//click on credits button
 		creditStatementTest.clickOnbtn_Credits();
+		
+		//click on view statement
 		creditStatementTest.clickOn_ViewStatement();
+		
+		//Get the current URL
 		actualURL = driver.getCurrentUrl();
 
+		//Verify with the current URL
 		try {
 			softAssert.assertEquals(actualURL, expectedURL);
 			softAssert.assertAll();
@@ -148,15 +247,29 @@ public class CreditStatementTest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with enterprise email and password
 		creditStatementTest = new CreditStatement(driver);
+		
+		//Delete the existing file
 		creditStatementTest.deleteExistingCreditFile();
+		
+		//Enter valid phone or email
 		creditStatementTest.enterPhoneOrEmail(phoneOrEmail);
+		
+		//Enter password
 		creditStatementTest.enterPassword(password);
+		
+		//click on login button
 		creditStatementTest.clickOnBtn_Login();
+		
+		//click on credits button
 		creditStatementTest.clickOnbtn_Credits();
+		
+		//click on Export XLS
 		creditStatementTest.clickOn_ExporttoXLS();
 
-		try {
+		// Ensure that the credit list file has been successfully downloaded
+        try {
 			boolean value = creditStatementTest.checkCreditFileDownload();
 			softAssert.assertTrue(value);
 			softAssert.assertAll();
@@ -177,16 +290,31 @@ public class CreditStatementTest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with enterprise email and password
 		creditStatementTest = new CreditStatement(driver);
 
+		//Delete the existing file
 		creditStatementTest.deleteExistingWithdrawnFile();
+		
+		//Enter valid phone or email
 		creditStatementTest.enterPhoneOrEmail(phoneOrEmail);
+		
+		//Enter password
 		creditStatementTest.enterPassword(password);
+		
+		//click on login button
 		creditStatementTest.clickOnBtn_Login();
+		
+		//click on credits button
 		creditStatementTest.clickOnbtn_Credits();
+		
+		//click on view statement
 		creditStatementTest.clickOn_ViewStatement();
+		
+		//click on Export XLS
 		creditStatementTest.clickOn_ExporttoXLS();
 
+		// Ensure that the withdrawn payouts file has been successfully downloaded
 		try {
 			boolean value = creditStatementTest.checkwithdrawnFileDownload();
 			softAssert.assertTrue(value);
@@ -207,22 +335,47 @@ public class CreditStatementTest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with enterprise email and password
 		creditStatementTest = new CreditStatement(driver);
 
+		//Enter valid phone or email
 		creditStatementTest.enterPhoneOrEmail(phoneOrEmail);
+		
+		//Enter password
 		creditStatementTest.enterPassword(password);
+		
+		//click on login button
 		creditStatementTest.clickOnBtn_Login();
+		
+		//click on credits button
 		creditStatementTest.clickOnbtn_Credits();
+		
+		//click on pay button
 		creditStatementTest.clickOnbtn_Pay();
+		
+		//Navigate to payment frame
 		creditStatementTest.navigateToPaymentFrame();
+		
+		//enter Mobile Number
 		creditStatementTest.enterMobilenumber(Mobilenumber);
+		
+		//click on continue button
 		creditStatementTest.clickOnbtn_Continue();
+		
+		//click on UPI
 		creditStatementTest.clickOn_upi();
+		
+		//Enter UPI ID
 		creditStatementTest.enterUPIID(UPIID);
+		
+		//click on Verify and pay button
 		creditStatementTest.clickOnbtn_verifyandpay();
-		String actualMessage = creditStatementTest.get_MessageForPaymentSuccessful();
+		
+		// Handle successful payment response
+        String actualMessage = creditStatementTest.get_MessageForPaymentSuccessful();
 
-		try {
+        // Check if the payment response contains a success message
+        try {
 			softAssert.assertEquals(actualMessage, expectedmessage);
 			softAssert.assertAll();
 		} catch (AssertionError e) {
@@ -241,21 +394,46 @@ public class CreditStatementTest extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 
+		//login with enterprise email and password
 		creditStatementTest = new CreditStatement(driver);
-
+		
+		//Enter valid phone or email
 		creditStatementTest.enterPhoneOrEmail(phoneOrEmail);
+		
+		//Enter password
 		creditStatementTest.enterPassword(password);
+		
+		//click on login button
 		creditStatementTest.clickOnBtn_Login();
+		
+		//click on credits button
 		creditStatementTest.clickOnbtn_Credits();
+		
+		//click on pay button
 		creditStatementTest.clickOnbtn_Pay1();
+		
+		//Navigate to payment frame
 		creditStatementTest.navigateToPaymentFrame();
+		
+		//enter Mobile Number
 		creditStatementTest.enterMobilenumber(Mobilenumber);
+		
+		//click on continue button
 		creditStatementTest.clickOnbtn_Continue();
+		
+		//click on UPI
 		creditStatementTest.clickOn_upi();
+		
+		//Enter UPI ID
 		creditStatementTest.enterUPIID(UPIID);
+		
+		//click on Verify and pay button
 		creditStatementTest.clickOnbtn_verifyandpay();
+		
+		// Handle successful payment response
 		String actualMessage = creditStatementTest.get_MessageForPaymentSuccessful();
 
+		 // Check if the payment response contains a success message
 		try {
 			softAssert.assertEquals(actualMessage, expectedmessage);
 			softAssert.assertAll();
@@ -269,3 +447,4 @@ public class CreditStatementTest extends BaseTest {
 	}
 
 }
+

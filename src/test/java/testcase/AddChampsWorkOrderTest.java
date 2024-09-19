@@ -1,18 +1,13 @@
 package testcase;
 
 import java.io.IOException;
-import java.util.Set;
-
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import base.BaseTest;
 import pages.AddChampsWorkOrder;
-import pages.CreateworkorderPage;
-import pages.DashboardAndDataPopulatePage;
+import pages.DashboardPage;
 import utilities.ReadXLData;
 
 @Listeners(base.Listeners.class)
@@ -47,7 +42,7 @@ public class AddChampsWorkOrderTest extends BaseTest {
 				expectedSuccessmessageWorkorder);
 
 		// Click on Dashboard
-		DashboardAndDataPopulatePage dashboard = new DashboardAndDataPopulatePage(driver);
+		DashboardPage dashboard = new DashboardPage(driver);
 		dashboard.clickOnDashboardMenu();
 
 		addChampsWorkorder = new AddChampsWorkOrder(driver);
@@ -405,7 +400,7 @@ public class AddChampsWorkOrderTest extends BaseTest {
 
 		// Adding champ to workorder
 		addChampsWorkorder.navigateToWorkOrderMenu(); // Navigate to Work order menu
-		addChampsWorkorder.clickDesiredWorkOrder(); //Select the created workorder
+		addChampsWorkorder.clickDesiredWorkOrder(); // Select the created workorder
 		addChampsWorkorder.clickAddChamps_btn(); // Click to Add Champs
 		addChampsWorkorder.clickSelectChamp(); // Select a Champ
 		addChampsWorkorder.clickSendReq(); // Send the Request

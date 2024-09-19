@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression">
+	<listeners>
+		<listener class-name="base.Listeners" />
+	</listeners>
+	<test thread-count="5" name="Test">
+	<classes>
+		<!-- P1 Test cases -->
+		<class name="testcase.AssignProjectVendorAgency" />
+		<class name="testcase.Assignvendortest" />
+		<class name="testcase.AddChampsWorkOrderVendorTest" />
+		<class name="testcase.WorkorderbyVendor" />
+		</classes>
+	</test>
+</suite>
+
+
+		

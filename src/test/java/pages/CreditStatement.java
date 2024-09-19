@@ -21,6 +21,7 @@ public class CreditStatement extends BaseTest {
 	WebElement txt_amount;
 	WebElement btn_Paylater;
 	WebElement click_days;
+	WebElement click_dropdown_option;
 	WebElement click_checkbox;
 	WebElement btn_RequestCredits;
 	WebElement click_accounticon;
@@ -84,9 +85,16 @@ public class CreditStatement extends BaseTest {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("btn_Paylater")))).click();
 	}
 
-	public void clickOn_dropdown() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_dropdown")))).click();
+	public void clickOn_DropDown_Option() {
+		try {
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("cdk-overlay-backdrop")));
+		} catch (Exception e) {
+			System.out.println("Overlay or modal still present.");
+		}
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_dropdown_option")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("click_dropdown_option")))).click();
 	}
+	
 
 	public void clickOn_days() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_days")))).click();

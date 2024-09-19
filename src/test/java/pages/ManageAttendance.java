@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -15,7 +16,7 @@ public class ManageAttendance extends BaseTest {
 	WebElement click_ViewJobSeekerSchedules;
 	WebElement btn_ViewTasks;
 	WebElement click_Openmenutoexplore;
-	WebElement click_Active;
+	WebElement click_Completed;
 	WebElement actual_message;
 
 	
@@ -45,11 +46,21 @@ public class ManageAttendance extends BaseTest {
 	}
 	
 	public void clickOn_Openmenutoexplore() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Openmenutoexplore")))).click();
+
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("click_Openmenutoexplore"))))
+					.click();
+
+		} catch (StaleElementReferenceException e) {
+
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("click_Openmenutoexplore"))))
+					.click();
+		}
+
 	}
 	
-	public void clickOn_Active() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Active")))).click();
+	public void clickOn_Completed() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("click_Completed")))).click();
 	}
 	
 	public String get_Actualmessage() {

@@ -31,12 +31,12 @@ public class AssignProjectVendorAgency extends BaseTest {
 		CreateProjectPage ProjectPage = new CreateProjectPage(driver);
 
 		ProjectPage.clickOnProjectTabButton();
-		// Thread.sleep(2000);
+		
 		AssignProjectVendor.SelectCreatedProject();
 		AssignProjectVendor.ClickOnAssignVendor();
-		// Thread.sleep(2000);
+		
 		AssignProjectVendor.clickOn_DropDown();
-		// Thread.sleep(2000);
+		
 		AssignProjectVendor.SelectVendorToAssignProject();
 		AssignProjectVendor.ClickOnAssignVendorButton();
 		AssignProjectVendor.SelectedVendorAssignedSuccessfully();
@@ -75,21 +75,21 @@ public class AssignProjectVendorAgency extends BaseTest {
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
-		// Thread.sleep(2000);
+		
 		ProjectPage.SelectOptionEnterprise();
 		scrollPageDown();
-		// Thread.sleep(2000);
+		
 		ProjectPage.clickOnNext1Button();
-		// Thread.sleep(2000);
+		
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		scrollPageDown();
@@ -101,12 +101,13 @@ public class AssignProjectVendorAgency extends BaseTest {
 		scrollPageDown();
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
-		// ProjectPage.clickOnEndDateButton();
+		
 		ProjectPage.ClickOnEnterEndDate();
 		ProjectPage.clickOnSelectEndDate();
+		
 		// Scroll Window
 		scrollPageDown();
-		Thread.sleep(1000);
+		
 		ProjectPage.ClickOnAddCustomField();
 		ProjectPage.enterCustomFieldName(CustomFieldName);
 		ProjectPage.SelectCustomFieldType();
@@ -116,14 +117,12 @@ public class AssignProjectVendorAgency extends BaseTest {
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
 		ProjectPage.clickOnAddTrackingButton();
-		// ProjectPage.enterFieldName(FieldName);
-		// ProjectPage.clickOnFieldTypeDropDown();
-		// ProjectPage.clickOnPhoneNumberButton();
+		
 		ProjectPage.clickOnContinuousLocationTracking();
 		scrollPageDown();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -141,10 +140,10 @@ public class AssignProjectVendorAgency extends BaseTest {
 		ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
 
 		ProjectPage.clickOnProjectTabButton();
-		// Thread.sleep(2000);
+		
 		AssignProjectVendor.SelectCreatedProject();
 		AssignProjectVendor.ClickOnAssignVendor();
-		// Thread.sleep(2000);
+		
 		AssignProjectVendor.clickOn_DropDown();
 		AssignProjectVendor.SelectVendorToAssignProject();
 		AssignProjectVendor.ClickOnAssignVendorButton();

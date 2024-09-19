@@ -42,32 +42,11 @@ public class RequestCreditTest extends BaseTest {
         requestCredit.clickDropdown();
         requestCredit.clickDropdownOption();
 
-        // Wait for 5 seconds to allow any UI changes to take effect
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace(); // Handle the exception if sleep is interrupted
-        }
-
         // Interact with the checkbox and request credit
         requestCredit.clickCheckBox();
 
-        // Wait for 5 seconds to allow any UI changes to take effect
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace(); // Handle the exception if sleep is interrupted
-        }
-
         // Submit the credit request
         requestCredit.clickRequestCredit();
-
-        // Wait for 2 seconds to allow any UI changes to take effect
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace(); // Handle the exception if sleep is interrupted
-        }
 
         // Assert that the actual results match the expected values
         String ActualConfirmAmount = requestCredit.getConfirmAmount();
@@ -84,9 +63,6 @@ public class RequestCreditTest extends BaseTest {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
-			throw e;
-		} catch (Exception e) {
-			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
 			throw e;
 		}
 
@@ -124,22 +100,8 @@ public class RequestCreditTest extends BaseTest {
         requestCredit.clickDropdown();
         requestCredit.clickDropdownOption();
 
-        // Wait for 5 seconds to allow any UI changes to take effect
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace(); // Handle the exception if sleep is interrupted
-        }
-
         // Interact with the checkbox and request credit
         requestCredit.clickCheckBox();
-
-        // Wait for 5 seconds to allow any UI changes to take effect
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace(); // Handle the exception if sleep is interrupted
-        }
 
         // Submit the credit request
         requestCredit.clickRequestCredit();
@@ -159,9 +121,6 @@ public class RequestCreditTest extends BaseTest {
 			softAssert.assertAll();
 		} catch (AssertionError e) {
 			assertionMessage.set(e.getMessage());
-			throw e;
-		} catch (Exception e) {
-			BaseTest.logExceptionToReport(e); // Log exception to Extent Reports
 			throw e;
 		}
 

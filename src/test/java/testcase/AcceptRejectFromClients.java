@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 import base.BaseTest;
 import pages.CreateProjectPage;
+import pages.CreateProjectPage.RandomGeneratorUtil;
 import pages.CreateworkorderPage;
 import pages.InvitingclientPage;
 import utilities.ReadXLData;
@@ -21,6 +22,8 @@ public class AcceptRejectFromClients extends BaseTest {
 	CreateProjectPage ProjectPage;
 
 	Login loginObject = new Login();
+	
+	//Accepting project
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	public void AcceptRejectClients(String phoneOrEmail, String expectedURL, String CompanyName, String PersonName,
@@ -38,55 +41,39 @@ public class AcceptRejectFromClients extends BaseTest {
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber(); // Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(1000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
 		ClientPage.clickOnCreateClientButton();
 
-		Thread.sleep(1000);
+	
+		//Logout from Profile
 
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
-
-		// ProjectPage.clickOnErrorMessage();
-
-		ProjectPage.enterAgencyEmail(randomEmail);
+		
+		//Logging into new agency account
+		
+		ProjectPage.enterAgencyEmail(Email);
 		ProjectPage.clickOnSignInUsingOTP();
 		ProjectPage.clickOnGetOTP();
 		ProjectPage.enterOTPforAgencyLogin(OTP);
 		ProjectPage.clickOnLoginButton();
-//	        ProjectPage.clickOnErrorMessage();
-
-		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnNext1Button();
-		Thread.sleep(1000);
-		// ProjectPage.clickOnProjectTypeButton();
+		
+		//Creating project where new client is added
+		
+		ProjectPage.clickOnProjectTabButton();		
+		ProjectPage.clickOnCreateProjectButton();	
 		ProjectPage.clickOnSelectProjectTypeButton();
-//	        Thread.sleep(2000);
 		ProjectPage.clickOnHotspotButton();
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.enterProjectCode(ProjectCode);
@@ -95,10 +82,8 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
 		ProjectPage.clickOnStartDateButton();
-		// ProjectPage.enterStartDate(StartDate);
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
-		// ProjectPage.enterEndDate(EndDate);
 		ProjectPage.clickOnSelectEndDate();
 		ProjectPage.clickOnSelectLocationButton();
 		ProjectPage.clickOnSelectLocationDelhiButton();
@@ -109,7 +94,6 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnContinuousLocationTracking();
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
 		ProjectPage.clickOnAddBilling();
 		ProjectPage.clickOnPricingFixed();
 		ProjectPage.enterItem(EnterItem);
@@ -119,16 +103,21 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.enterDays(EnterDays);
 		ProjectPage.clickOnReviewProject();
 		ProjectPage.clickOnSaveProject();
-//	      ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
-		Thread.sleep(1000);
+		
+		//Assigning Project to Agency
+
 		ProjectPage.ClickOnAssignAgency();
 		ProjectPage.enterSearchAgency(SearchAgency);
-		Thread.sleep(2000);
 		ProjectPage.ClickOnAugustAgency();
 		ProjectPage.clickOnSearchAssignAgency();
-		Thread.sleep(1000);
+		
+		//Logout from Profile
+
 		ProjectPage.clickOnProfileButton();
 		ProjectPage.clickOnLogoutButton();
+		
+		// Login through Dhruvi Enterprise Email
+		
 		ProjectPage.enterAgencyEmail(EnterAgencyEmail);
 		ProjectPage.clickOnSignInUsingOTP();
 		ProjectPage.clickOnGetOTP();
@@ -138,6 +127,9 @@ public class AcceptRejectFromClients extends BaseTest {
 		// ProjectPage.clickOnErrorMessage();
 
 		ProjectPage.clickOnProjectTabButton();
+		
+		// Accepting the Project
+		
 		ProjectPage.clickOnAcceptProject();
 
 		// ProjectPage.ClickOnCloseMsgProjectCreatedSuccessfully();
@@ -156,36 +148,10 @@ public class AcceptRejectFromClients extends BaseTest {
 		}
 
 	}
-	/*
-	 * private String generateRandomPhoneNumber() { long randomPhone = (long)
-	 * (Math.random() * 10000000000L); // Generates a random number and ensures it's
-	 * 10 digits return String.format("%010d", randomPhone); // Formats it as a
-	 * 10-digit string }
-	 */
-
-	private String generateRandomPhoneNumber() {
-		// Generate the first digit as a random number between 5 and 9
-		int firstDigit = 5 + (int) (Math.random() * 5);
-
-		// Generate the remaining 9 digits
-		long remainingDigits = (long) (Math.random() * 1000000000L); // 9 digits
-
-		// Combine the first digit with the remaining 9 digits and format as a 10-digit
-		// number
-		return String.format("%d%09d", firstDigit, remainingDigits);
-	}
-
-	// Utility method to generate a random email
-	private String generateRandomEmail(String baseEmail) {
-		int randomNum = (int) (Math.random() * 1000); // Generates a random number between 0 and 999
-		String[] emailParts = baseEmail.split("@");
-		if (emailParts.length == 2) {
-			return emailParts[0] + randomNum + "@" + emailParts[1]; // Inserts the random number before the '@' symbol
-		}
-		return baseEmail; // Fallback to the original email if the format is unexpected
-	}
+	
 
 	// Accept/Reject from Clients - Invalid Enterprise
+
 
 	@Test(dataProviderClass = ReadXLData.class, dataProvider = "testData")
 	public void AcceptRejectInvalidEnterprise(String phoneOrEmail, String OTP, String expectedURL, String CompanyName,
@@ -195,43 +161,33 @@ public class AcceptRejectFromClients extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
-
+		
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
 		ClientPage.clickOnCreateClientButton();
 
-		Thread.sleep(3000);
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
-		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnCreateProjectButton();
-		Thread.sleep(1000);
+
+		//Page Scroll Down
 		scrollPageDown();
-		// ProjectPage.clickOnSelfClientButton();
+		
 		ProjectPage.clickOnNext1Button();
 
 		String AcceptRejectInvalidEnterprise = ProjectPage.AcceptRejectInvalidEnterprise();
@@ -260,48 +216,39 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnExistingEnterprise();
-		Thread.sleep(2000);
+		ProjectPage.clickOnCreateProjectButton();		
 		ProjectPage.SelectDropdownEnterprise();
-		Thread.sleep(2000);
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(2000);
+	
+		//Page Scroll Down
+		
 		scrollPageDown();
-		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+		
+		ProjectPage.clickOnNext1Button();	
 		ProjectPage.clickOnProjectTypeButton();
-		// ProjectPage.SelectNewProjectType();
-		Thread.sleep(1000);
+		
+		//Page Scroll Down
+		
 		scrollPageDown();
 		ProjectPage.clickOnProjectTypeNextButton();
 
@@ -329,54 +276,47 @@ public class AcceptRejectFromClients extends BaseTest {
 		softAssert = new SoftAssert();
 		assertionMessage = new ThreadLocal<>();
 		loginObject.login(phoneOrEmail, OTP, expectedURL);
+		
+		//Inviting Client
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
-
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
+		
+		//Creating project where new client is added
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);	
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
-		// ProjectPage.clickOnExistingEnterprise();
-		Thread.sleep(2000);
+		ProjectPage.clickOnCreateProjectButton();	
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(2000);
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnNext1Button();
-
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
 		ProjectPage.clickOnSelectLocationButton();
@@ -408,48 +348,42 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
 		ClientPage.clickOnCreateClientButton();
 
+		//Creating project where new client is added
+		
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		ProjectPage.clickOnCreateProjectButton();		
 		ProjectPage.clickOnExistingEnterprise();
 		ProjectPage.SelectDropdownEnterprise();
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+		
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnProjectTypeNextButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
@@ -483,62 +417,58 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		ProjectPage.clickOnCreateProjectButton();		
 		ProjectPage.clickOnExistingEnterprise();
-		ProjectPage.SelectDropdownEnterprise();
-		Thread.sleep(2000);
+		ProjectPage.SelectDropdownEnterprise();	
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(2000);
+	
+		//Page Scroll Down
 		scrollPageDown();
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+	
+		//Page Scroll Down
 		scrollPageDown();
-		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
+		
+		ProjectPage.clickOnProjectTypeNextButton();		
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -550,11 +480,12 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterFrequency(EnterFrequency);
-		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
+		ProjectPage.enterRadius(EnterRadius);		
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidFrequency = ProjectPage.InvalidFrequency();
@@ -585,62 +516,59 @@ public class AcceptRejectFromClients extends BaseTest {
 
 		ClientPage = new InvitingclientPage(driver);
 		ProjectPage = new CreateProjectPage(driver);
-		WorkorderPage = new CreateworkorderPage(driver);
+		ClientPage = new InvitingclientPage(driver);
+		ProjectPage = new CreateProjectPage(driver);
 
+		//Inviting Client
+		
 		ClientPage.clickOnUserButton();
-
 		ClientPage.clickOnClientsOption();
-
 		ClientPage.clickOnInviteClientButton();
-
 		ClientPage.NavigateToDialogBox();
-
-		String randomName = CompanyName + (int) (Math.random() * 1000);
-		String randomAnotherName = PersonName + (int) (Math.random() * 1000); // Appends a random number between 0 and
-																				// 999 to the name
-		String randomPhone = generateRandomPhoneNumber();// Generates a random phone number
-		String randomEmail = generateRandomEmail(Email);
-		// Appends a random number to the email username
-
-		ClientPage.enterClientName(randomName);
-		ClientPage.enterMobileNumber(randomAnotherName);
-		ClientPage.enterEmail(randomEmail);
-		Thread.sleep(3000);
-		ClientPage.enterAddress(randomPhone);
-		Thread.sleep(4000);
+		ClientPage.enterClientName(CompanyName);
+		ClientPage.enterContactPersonName(PersonName);
+		ClientPage.enterEmail(Email);
+		ClientPage.enterContactPersonPhone(MobileResponsible);	
 		ClientPage.clickOnCreateClientButton();
+		
+		//Creating project where new client is added
 
 		// ProjectPage.clickOnErrorMessage();
 		ProjectPage.clickOnProjectTabButton();
 		// ProjectPage.clickOnErrorMessage();
-		ProjectPage.clickOnCreateProjectButton();
-		// ProjectPage.clickOnSelfClientButton();
+		ProjectPage.clickOnCreateProjectButton();		
 		ProjectPage.clickOnExistingEnterprise();
-		ProjectPage.SelectDropdownEnterprise();
-		Thread.sleep(2000);
+		ProjectPage.SelectDropdownEnterprise();	
 		ProjectPage.SelectOptionEnterprise();
-		Thread.sleep(1000);
+	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnNext1Button();
-		Thread.sleep(2000);
+	
 		ProjectPage.clickOnProjectTypeButton();
 		ProjectPage.SelectNewProjectType();
 		ProjectPage.clickOnHotspotButton();
-		Thread.sleep(1000);
+	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnProjectTypeNextButton();
-		// ProjectPage.clickOnProjectDetailsButton();
 		ProjectPage.enterProjectTitle(ProjectTitle);
 		ProjectPage.enterProjectDescription(ProjectDescription);
-		Thread.sleep(1000);
+	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterProjectCode(ProjectCode);
 		ProjectPage.enterLinkTitle(LinkTitle);
 		ProjectPage.enterURL(LinkURL);
 		ProjectPage.enterMetrics(EnterMetrics);
 		ProjectPage.enterQuantity(EnterQuantity);
-		Thread.sleep(1000);
+	
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.clickOnStartDateButton();
 		ProjectPage.clickOnSelectStartDate();
 		ProjectPage.clickOnEndDateButton();
@@ -652,11 +580,12 @@ public class AcceptRejectFromClients extends BaseTest {
 		ProjectPage.clickOnFieldTypeDropDown();
 		ProjectPage.clickOnPhoneNumberButton();
 		ProjectPage.clickOnContinuousLocationTracking();
-		Thread.sleep(1000);
+
+		//Page Scroll Down
 		scrollPageDown();
+		
 		ProjectPage.enterFrequency(EnterFrequency);
 		ProjectPage.enterRadius(EnterRadius);
-		// ProjectPage.clickOnOnlyGpsCoordinate();
 		ProjectPage.clickOnAddBilling();
 
 		String InvalidRadius = ProjectPage.InvalidRadius();

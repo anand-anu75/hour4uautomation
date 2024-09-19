@@ -90,7 +90,7 @@ public class BaseTest {
 		}
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("testURL"));
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 	}
 
@@ -117,7 +117,8 @@ public class BaseTest {
 	@AfterMethod
 	public void tearDown() throws InterruptedException {
 		// driver.close();
-		 driver.quit();
+	//	Thread.sleep(1000);
+	//	driver.quit();
 
 	}
 
